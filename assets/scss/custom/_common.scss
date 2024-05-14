@@ -1,0 +1,211 @@
+/* ---------------- Sidebar ------------------- */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: -1;
+    display: none;
+    visibility: hidden;
+    transition: $anchor-transition;
+    background-color: rgba(59, 59, 59, .7);
+
+    .has-activeNavPages &,
+    .openSearchMobile &,
+    .openAuthSidebar &{
+        z-index: 102;
+        opacity: 1;
+        display: block;
+        visibility: visible;
+    }
+}
+
+.openSearchMobile {
+    overflow: hidden;
+
+    #custom-search-mobile {
+        left: 0;
+        z-index: 105;
+    }
+}
+
+/* ----------------- Load Animation ----------------------*/
+.no-js .custom-animation {
+    transform: translatey(0);
+}
+
+.custom-animation {
+    transform: translatey(100px);
+}
+
+.js .custom-animation {
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transform: translatey(100px);
+    opacity: 0;
+
+
+    @for $i from 0 through 100 {
+        &[data-step-animate="#{$i}"] {
+            transition-delay: 0.1s + $i * 0.02;
+            transition-duration: 0.3s + $i * 0.1;
+        }
+    }
+}
+
+/* Fade In left Animation */
+
+.js .animated.custom-animation {
+    transform: translatey(0);
+    opacity: 1;
+}
+
+.no-js .custom-fadeInLeft {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.js .custom-fadeInLeft {
+    // opacity: 0;
+
+    @for $i from 0 through 100 {
+        &[data-step-animate="#{$i}"] {
+            animation-delay: .15s + $i*0.1 !important;
+        }
+    }
+}
+
+.js .animated .custom-fadeInLeft,
+.js .slick-active .custom-fadeInLeft {
+    animation: fadeInLeft .25s cubic-bezier(0, 0, .3, 1) forwards;
+}
+
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-20px);
+        opacity: 0.01;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@include smin-m {
+    /* ------------------ Hover Image Zoom ------------------------- */
+    .hover-image {
+        overflow: hidden;
+        cursor: pointer;
+        img {
+            transition: all .6s ease;
+        }
+    
+        &:hover {
+            img {
+                transform: scale3d(1.1, 1.1, 1);
+            }
+        }
+    }
+    
+    /* ------------------ Hover Link ------------------------- */
+    .hover-link {
+        color: #444444;
+        position: relative;
+        text-decoration: none;
+    
+        &::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            border-radius: 4px;
+            background-color: var(--underlineColor);
+            bottom: var(--underlineBottom);
+            left: 0;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+          
+        &:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
+    }
+}
+
+/* ------------------ Banner Hover Effect -------------- */
+.hover-banner {
+    &:before {
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        left: 0;
+        left: auto;
+        bottom: auto;
+        z-index: 2;
+        -webkit-transform: none;
+        transform: none;
+        position: absolute;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        background-color: rgba(246, 246, 246, 0.2);
+    }
+
+    @include smin-m {
+        &:hover:before {
+            width: 100%;
+        }
+    }
+}
+
+
+/* ----------------- Grid Layout ----------------- */
+.row {
+    --f-col: var(--rowDesktop);
+    --f-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--f-gap) / -2);
+    margin-right: calc(var(--f-gap) / -2);
+
+    @include smax-m {
+        --f-col: var(--rowTablet);
+    }
+
+    @include smax-s {
+        --f-col: var(--rowMobile);
+    }
+
+    .col {
+        padding-left: calc(var(--f-gap) / 2);
+        padding-right: calc(var(--f-gap) / 2);
+        flex: 0 0 calc(100% / var(--f-col));
+        max-width: calc(100% / var(--f-col));
+    }
+}
+
+/* ----------------- Custom Scrollbar ----------------- */
+.customScrollbar {
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #000000;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555555;
+    }
+}
