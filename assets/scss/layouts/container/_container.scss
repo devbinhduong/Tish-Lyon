@@ -5,19 +5,19 @@
 .container {
     position: relative;
     width: layout("fixed");
-    max-width: 1440px;
-    padding: 0 15px;
+    max-width: 100%;
+    padding: 0 16px;
     margin-inline: auto;
-
-    &.container--full {
-        max-width: 100%;
-    }
 
     @include smin-m {
         padding: 0 30px;
     }
 
     @include smin-xl {
-        padding: 0 75px;
+        padding: 0 50px;
+    }
+
+    &.container--full {
+        padding: 0;
     }
 }

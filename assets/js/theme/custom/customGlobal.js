@@ -59,7 +59,10 @@ export default function(context) {
         });
 
         /* Load when scroll */
-        window.addEventListener('scroll', (e) => {});
+        window.addEventListener('scroll', (e) => {
+            scroll_position = window.scrollY;
+            headerSticky(scroll_position);
+        });
 
         /* Load when user action on site */
         ['keydown', 'mousemove', 'touchstart'].forEach(event => {
@@ -229,6 +232,16 @@ export default function(context) {
                     menuItem.classList.remove('animated');
                 });
             });
+        }
+    }
+
+    function headerSticky(scroll_position) {
+        const header = document.querySelector('.header');
+
+        if(scroll_position > 2 ) {
+            header.classList.add('is-sticky');
+        } else {
+            header.classList.remove('is-sticky');
         }
     }
 }

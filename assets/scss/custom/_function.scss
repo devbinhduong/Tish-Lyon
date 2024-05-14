@@ -1,0 +1,13 @@
+// Header Sticky
+// -----------------------------------------------------------------------------
+.header {
+    &.is-sticky {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        width: 100%;
+        padding: 0;
+        animation-duration: 0.25s;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+}

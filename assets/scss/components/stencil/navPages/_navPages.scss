@@ -45,11 +45,15 @@
     }
 
     @include smin-m {
-        background: transparent;
+        background: $header-bg;
         display: block;
         height: auto;
         padding: 0;
         position: relative;
+
+        .header-layout-2 & {
+            background-color: transparent;
+        }
     }
 
     &.is-open {

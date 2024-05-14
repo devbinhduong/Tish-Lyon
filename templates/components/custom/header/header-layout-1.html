@@ -1,0 +1,101 @@
+<div class="headerMiddle">
+    <div class="container static flex flex-between flex-center-y">
+        <div class="headerMiddle_item headerMiddle_item--left text-left">
+            <div class="items item--hamburger">
+                <a class="mobileMenu-toggle" href="#" data-mobile-menu-toggle="menu">
+                    <span class="mobileMenu-toggleIcon">{{lang 'header.toggle_menu'}}</span>
+                </a>
+            </div>
+            <div class="items item--searchMobile hide-on-desktop">
+                <a class="navUser-action" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false" aria-label="Search Icon">
+                    <div class="navUser-icon">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
+                    </div>
+                </a>
+            </div>
+
+            <div class="hide-on-tablet">
+                <div class="items item--logo">
+                    {{#if page_type '===' 'default'}}
+                        <h1 class="header-logo">
+                            {{> components/common/store-logo}}
+                        </h1>
+                    {{else}}
+                        <div class="header-logo">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+
+        <div class="headerMiddle_item headerMiddle_item--center text-center">
+            <div class="hide-on-desktop logo-mobile-wrapper">
+                <div class="items item--logo">
+                    {{#if page_type '===' 'default'}}
+                        <h1 class="header-logo">
+                            {{> components/common/store-logo}}
+                        </h1>
+                    {{else}}
+                        <div class="header-logo">
+                            {{> components/common/store-logo}}
+                        </div>
+                    {{/if}}
+                </div>
+            </div>
+
+            <div class="items item--quicksearch custom-search">
+                <div id="quickSearch" data-prevent-quick-search-close>
+                    {{> components/common/quick-search}}
+                </div>
+            </div>
+        </div>
+
+        <div class="headerMiddle_item headerMiddle_item--right text-right">
+            <div class="items item--account">
+                {{#if customer}}
+                    <a class="navUser-action navUser-action--logged button button--transparent flex-center-y hover-link hide-on-tablet" href="{{urls.account.index}}" aria-label="{{customer.name}}" data-login-form>
+                        {{lang 'account.logged'}}
+                    </a>
+
+                    {{> components/custom/custom-account-popup data="account-pc"}}
+                {{else}}
+                    <a class="navUser-action flex-center-y hover-link hide-on-tablet" href="{{urls.auth.login}}" aria-label="{{lang 'account.title'}}" data-login-form>
+                        {{lang 'account.title'}}
+                    </a>
+
+                    {{> components/custom/custom-login-popup data="login-pc" email_id="login_email" password_id="login_pass"}}
+                {{/if}}
+
+                 <!-- Mobile -->
+                 <a class="navUser-action myAccountMobile hide-on-desktop" {{#if customer}}href="{{urls.account.index}}"{{else}}href="{{urls.auth.login}}"{{/if}} data-login-form-mobile aria-label="{{lang 'account.title'}}">
+                    <span class="navUser-icon">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-user"></use></svg>
+                    </span>
+                </a>
+            </div>
+
+            <div class="items item--cart custom-cart">
+                <!-- Cart Icon for Desktop -->
+                <a class="navUser-action hide-on-tablet"
+                    data-cart-preview
+                    href="{{urls.cart}}"
+                    aria-label="{{lang 'cart.nav_aria_label'}}">
+                    <span class="navUser-icon navUser-item-cartIcon">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart-header"></use></svg>
+                    </span>
+                </a>
+                <span class="countPill{{#if cart.items}} countPill--positive{{/if}} cart-quantity hide-on-tablet header-countPill">{{cart.quantity}}</span>
+                <div class="dropdown-cart" id="cart-preview-dropdown" aria-hidden="true"></div>
+
+                <!-- Cart Icon for Mobile -->
+                <a class="navUser-action cartMobile hide-on-desktop" data-cart-preview2 href="/cart.php" aria-label="{{lang 'cart.nav_aria_label'}}">
+                    <span class="navUser-icon navUser-item-cartIcon">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-cart-header"></use></svg>
+                        <span class="countPill cart-quantity header-countPill">{{#if cart.items}}{{cart.quantity}}{{else}}0{{/if}}</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

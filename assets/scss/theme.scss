@@ -27,6 +27,8 @@
 //
 // -----------------------------------------------------------------------------
 
+@import "custom/customMixins";
+
 @import "settings/global/global"; // 1
 
 @import "../../node_modules/@bigcommerce/citadel/dist/settings/global/global"; // 2
