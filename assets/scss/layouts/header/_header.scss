@@ -75,8 +75,12 @@
 
                 @include smin-m {
                     .navUser-action,
-                    .navPages-action span:not(.navPages-label) {
+                    .navPages-action {
                         color: #ffffff;
+
+                        span:not(.navPages-label) {
+                            color: #ffffff;
+                        }
                     }
 
                     &.is-visible {
@@ -91,8 +95,12 @@
                         }
 
                         .navUser-action,
-                        .navPages-action span:not(.navPages-label) {
+                        .navPages-action {
                             color: stencilColor("navPages-color");
+
+                            span:not(.navPages-label) {
+                                color: stencilColor("navPages-color");
+                            }
                         }
                     }
                     
@@ -149,7 +157,7 @@
         position: relative;
         z-index: 11;
         background-color: $header-bg;
-        padding: 24px 0;
+        padding: 15px 0;
 
         @include smax-m {
             padding: 8px 0;

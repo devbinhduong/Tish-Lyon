@@ -7,7 +7,7 @@
                 </a>
             </div>
             <div class="items item--searchMobile hide-on-desktop">
-                <a class="navUser-action" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false" aria-label="Search Icon">
+                <a class="navUser-action headerSearch__button" href="#" data-search="quickSearch" aria-controls="quickSearch" aria-expanded="false" aria-label="Search Icon">
                     <div class="navUser-icon">
                         <svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
                     </div>
@@ -29,24 +29,9 @@
                     {{/if}}
                 </div>
             </div>
-
-            <div class="items item--quicksearch custom-search hide-on-desktop">
-                <div id="quickSearch" data-prevent-quick-search-close>
-                    {{> components/common/quick-search}}
-                </div>
-            </div>
         </div>
 
         <div class="headerMiddle_item headerMiddle_item--right text-right">
-            <div class="items item--search">
-                <a class="navUser-action hide-on-tablet"
-                    href="#"
-                    aria-label="Icon Search Header">
-                    <span class="navUser-icon navUser-item-searchIcon">
-                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
-                    </span>
-                </a>
-            </div>
 
             <div class="items item--account">
                 {{#if customer}}
@@ -71,6 +56,16 @@
                  <a class="navUser-action myAccountMobile hide-on-desktop" {{#if customer}}href="{{urls.account.index}}"{{else}}href="{{urls.auth.login}}"{{/if}} data-login-form-mobile aria-label="{{lang 'account.title'}}">
                     <span class="navUser-icon">
                         <svg class="icon" aria-hidden="true"><use xlink:href="#icon-user"></use></svg>
+                    </span>
+                </a>
+            </div>
+
+            <div class="items item--search">
+                <a class="navUser-action headerSearch__button hide-on-tablet"
+                    href="#"
+                    aria-label="Icon Search Header">
+                    <span class="navUser-icon navUser-item-searchIcon">
+                        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-search"></use></svg>
                     </span>
                 </a>
             </div>

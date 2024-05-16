@@ -10,8 +10,8 @@
                 </p>
             </li>
             <li class="navPage-subMenu-item-child navPages-action-end navPage-subMenu-all">
-                <a class="navPage-subMenu-action navPages-action navPages-action-lv1 no-subMenu" href="{{url}}">
-                    <span class="text hover-link">{{lang 'category.view_all.name' category=name}}</span>
+                <a class="navPage-subMenu-action navPages-action navPages-action-lv1 no-subMenu hover-link" href="{{url}}">
+                    <span class="text">{{lang 'category.view_all.name' category=name}}</span>
                 </a>
             </li>
             {{#each children}}
@@ -34,13 +34,13 @@
                                     </p>
                                 </li>
                                 <li class="navPage-subMenu-item-child navPages-action-end navPage-subMenu-all">
-                                    <a class="navPage-subMenu-action navPages-action navPages-action-lv2 no-subMenu {{#if is_active}} activePage{{/if}}" href="{{url}}">
-                                        <span class="text hover-link">{{lang 'category.view_all.name' category=name}}</span>
+                                    <a class="navPage-subMenu-action navPages-action hover-link navPages-action-lv2 no-subMenu {{#if is_active}} activePage{{/if}}" href="{{url}}">
+                                        <span class="text">{{lang 'category.view_all.name' category=name}}</span>
                                     </a>
                                 </li>
                                 {{#each children}}
                                     <li class="navPage-subMenu-item-child navPages-action-end">
-                                        <a class="navPage-subMenu-action navPages-action navPages-action-lv3 no-subMenu level-3 {{#if is_active}} activePage{{/if}}" href="{{url}}"><span class="text hover-link">{{name}}</span></a>
+                                        <a class="navPage-subMenu-action navPages-action navPages-action-lv3 no-subMenu hover-link level-3 {{#if is_active}} activePage{{/if}}" href="{{url}}"><span class="text">{{name}}</span></a>
                                     </li>
                                 {{/each}}
                             </ul>
@@ -48,7 +48,7 @@
                     </li>
                 {{else}}
                     <li class="navPage-subMenu-item-child navPages-action-end custom-fadeInLeft" data-step-animate="0">
-                        <a class="navPage-subMenu-action navPages-action navPages-action-lv2 no-subMenu{{#if is_active}} activePage{{/if}}" href="{{url}}"><span class="text hover-link">{{name}}</span></a>
+                        <a class="navPage-subMenu-action navPages-action navPages-action-lv2 hover-link no-subMenu{{#if is_active}} activePage{{/if}}" href="{{url}}"><span class="text">{{name}}</span></a>
                     </li>
                 {{/if}}
             {{/each}}

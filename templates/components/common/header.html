@@ -17,6 +17,15 @@
     <!-- Header Middle -->
     
     {{#if theme_settings.enable_header_layout_2}}
+        <!-- * Custom Search Form Layout 2 -->
+        <div class="searchNewLayout__wrapper">
+            <div class="items item--quicksearch custom-search">
+                <div id="quickSearch" data-prevent-quick-search-close>
+                    {{> components/common/quick-search}}
+                </div>
+            </div>
+        </div>
+
         {{> components/custom/header/header-layout-2 }}
     {{else}}
         {{> components/custom/header/header-layout-1 }}

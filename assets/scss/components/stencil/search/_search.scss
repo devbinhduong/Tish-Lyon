@@ -351,3 +351,102 @@
 .openSearchDropdown {
     overflow: hidden;
 }
+
+// * ------ Search Layout 2  ------
+.header {
+    &.header-layout-2 {
+        .openSearchDropdown2 & {
+            z-index: 105;
+        }
+        .searchNewLayout__wrapper {
+            background-color: #f4f2f0;
+            position: absolute;
+            z-index: 103;
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s ease, transform .5s ease, visibility 0s linear .5s;
+            transform: translate3d(0, -100%, 0);
+            box-shadow: 0 5px 10px #0000001a;
+            padding: 35px 0;
+
+            .openSearchDropdown2 & {
+                opacity: 1;
+                visibility: visible;
+                transition-delay: 0s;
+                transform: translateZ(0);
+                max-height: 100vh;
+            }
+
+            .custom-search {
+                max-width: 80vw;
+                margin: 0 auto;
+
+                .container {
+                    padding: 0 35px;
+                }
+            }
+
+            .form {
+                @include flexbox($display: flex, $justify-content: space-between, $align-items: center);
+                margin-bottom: 0;
+
+                .form-fieldset {
+                    width: 100%;
+                    flex: 1;
+                }
+
+                .form-field {
+                    margin-bottom: 0;
+                }
+
+                .form-input {
+                    border: none;
+                    background-color: transparent;
+                    color: $color-custom-black;
+                    padding: 15px;
+                    font-weight: 400;
+
+                    &::placeholder {
+                        color: $color-custom-black;
+                        font-weight: 400;
+                    }
+                }
+
+                .search-header-button {
+                    width: 36px;
+                    height: 49px;
+                    @include flexcb($cb: center);
+                    padding: 0;
+
+                    .icon {
+                        @include square(24px);
+                    }
+
+                    svg {
+                        fill: none;
+                    }
+                }
+
+                .search-popdown__close {
+                    color: $color-custom-black;
+
+                    &:hover {
+                        opacity: 0.7;
+
+                        svg {
+                            transform: rotate(90deg);
+                        }
+                    }
+                    
+                    svg {
+                        @include square(24px);
+                    }
+                }
+            }
+        }
+    }
+}

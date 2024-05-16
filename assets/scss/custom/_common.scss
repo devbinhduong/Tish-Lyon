@@ -1,25 +1,31 @@
 /* ---------------- Sidebar ------------------- */
 .background-overlay {
-    position: absolute;
+    position: fixed;
+    z-index: 102;
+    visibility: hidden;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    height: 100vh;
+    width: 100%;
     opacity: 0;
-    z-index: -1;
-    display: none;
-    visibility: hidden;
-    transition: $anchor-transition;
-    background-color: rgba(59, 59, 59, .7);
+    background: rgba($color: #000000, $alpha: 0.4);
+    transition: opacity .3s ease .1s, visibility 0s linear .4s;
 
+    .openSearchDropdown2 &,
     .has-activeNavPages &,
     .openSearchMobile &,
     .openAuthSidebar &{
-        z-index: 102;
         opacity: 1;
-        display: block;
         visibility: visible;
+        transition-duration: .3s, 0s;
+        transition-delay: .1s, 0s;
     }
+
+}
+
+.openSearchDropdown2 {
+    overflow: hidden;
+    padding-inline-end: var(--scrollbar-width);
 }
 
 .openSearchMobile {
@@ -112,26 +118,27 @@
     
     /* ------------------ Hover Link ------------------------- */
     .hover-link {
-        color: #444444;
         position: relative;
         text-decoration: none;
+
+        span {
+            transition: color .25s cubic-bezier(.215,.61,.355,1);
+        }
     
         &::before {
-            content: '';
+            content: "";
             position: absolute;
-            width: 100%;
-            height: 2px;
-            border-radius: 4px;
-            background-color: var(--underlineColor);
-            bottom: var(--underlineBottom);
-            left: 0;
-            transform-origin: right;
+            left: 15px;
+            right: 15px;
+            bottom: 0;
+            height: 1px;
+            background-color: currentColor;
             transform: scaleX(0);
-            transition: transform .3s ease-in-out;
+            will-change: transform;
+            transition: transform .25s cubic-bezier(.215,.61,.355,1);
         }
           
         &:hover::before {
-            transform-origin: left;
             transform: scaleX(1);
         }
     }

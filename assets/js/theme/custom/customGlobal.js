@@ -2,7 +2,7 @@ import utils from '@bigcommerce/stencil-utils';
 import modalFactory from '../global/modal';
 import { load } from 'webfontloader';
 import event from '../global/jquery-migrate/event';
-import { forEach } from 'lodash';
+import { forEach, head } from 'lodash';
 
 import megaMenuEditor from './megaMenuEditor';
 
@@ -19,21 +19,17 @@ export default function(context) {
         if(check_JS_load) {
             check_JS_load = false;
             const wWidth = window.innerWidth;
-            console.log("JS is loaded");
 
             /* Add global function here */
             closeSidebar();
             clickOverlay();
-            searchFormMobile();
-
-            if (wWidth <= 1024) {
-                searchMobileClick();
-            }
 
             /* Mega Menu Editor */
             megaMenuEditor(context);
             activeMenuMobile();
             hoverMenu();
+            openSearchDropdown();
+            getScrollbarWidth();
         }
     }
 
@@ -91,6 +87,7 @@ export default function(context) {
 
         searchMobileButton.classList.remove('is-open');
         body.classList.remove('openSearchMobile');
+        body.classList.remove('openSearchDropdown2');
         body.classList.remove('openSidebar');
         pageSidebar?.classList.remove('is-open');
         pageSidebarMobile?.classList.remove('is-open');
@@ -161,41 +158,6 @@ export default function(context) {
         });
     }
 
-    /* Search Mobile */
-    function searchFormMobile() {
-        const quickSearchForm = document.getElementById("quickSearch"),
-            hasOnDesktop = document.querySelector('.item--quicksearch #quickSearch'),
-            searchSidebarDesktop = document.querySelector('.item--quicksearch'),
-            searchSidebarMobile = document.querySelector('#custom-search-mobile .custom-sidebar-wrapper');
-
-        if(window.innerWidth <= 1024) {
-            if(hasOnDesktop) {
-                searchSidebarMobile.appendChild(quickSearchForm);
-            } 
-        } else {
-            if(!hasOnDesktop) {
-                searchSidebarDesktop.appendChild(quickSearchForm);
-            }
-        }
-    }
-
-    function searchMobileClick() {
-        const body = document.body,
-            searchMobileButton = document.querySelector("[data-search='quickSearch']");
-
-        if(!searchMobileButton) return;
-
-        searchMobileButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            if(searchMobileButton.classList.contains('is-open')) {
-                body.classList.remove('openSearchMobile');
-                searchMobileButton.classList.remove('is-open');
-            } else {
-                body.classList.add('openSearchMobile');
-                searchMobileButton.classList.add('is-open');
-            }
-        });
-    }
 
     function activeMenuMobile() {
         var menuPc = document.querySelector('#menu .navPages-list:not(.navPages-list--user)'),
@@ -243,5 +205,33 @@ export default function(context) {
         } else {
             header.classList.remove('is-sticky');
         }
+    }
+
+    function openSearchDropdown() {
+        const body = document.body;
+        const closeButton = document.querySelector('.search-popdown__close__button');
+        const headerSearchIcons = document.querySelectorAll(".headerSearch__button");
+
+
+        if (!headerSearchIcons) return;
+
+        for(let i = 0; i < headerSearchIcons.length; i++) {
+            headerSearchIcons[i].addEventListener('click', (e) => {
+                e.preventDefault();
+                body.classList.toggle('openSearchDropdown2');
+            });
+        }
+
+        closeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            body.classList.remove('openSearchDropdown2');
+        });
+    }
+
+    function getScrollbarWidth() {
+        const width = window.innerWidth - document.documentElement.clientWidth;
+      
+        if (width > 17) return;
+        document.documentElement.style.setProperty('--scrollbar-width', `${width}px`);
     }
 }

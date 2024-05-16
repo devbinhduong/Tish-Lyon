@@ -197,20 +197,20 @@
 .navPages-action {
     color: stencilColor("navPages-color");
     display: block;
-    font-size: fontSize("smaller");
-    font-weight: fontWeight("bold");
+    font-size: $fontSize-root - 2;
+    font-weight: $fontWeight-normal;
     padding: spacing("half") 0;
     text-decoration: none;
-    text-transform: capitalize;
     margin-bottom: 0;
+    line-height: 1.2;
 
     &.navPages-action-lv1:not(.has-subMenu) {
-        padding: 15px 15px 14px;
+        padding: 15px;
     }
 
     &.navPages-action-lv1.has-subMenu {
         >a {
-            padding: 15px 15px 14px;
+            padding: 15px;
             display: block;
         }
     }
@@ -691,7 +691,7 @@
                     opacity: 0;
                     visibility: hidden;
                     pointer-events: none;
-                    transform: translate3d(0, 2px, 0);
+                    transform: translate3d(0, 0, 0);
                     transition: $anchor-transition;
                     box-shadow: 0px 1px 50px 0px rgba(0, 0, 0, 0.1);
                     background-color: $navPages-backgroundColor;
@@ -745,7 +745,7 @@
                     >.navPage-subMenu {
                         top: 0;
                         left: 100%;
-                        transform: translate3d(0, 2px, 0) !important;
+                        transform: translate3d(0, 0, 0) !important;
                         border-left: 1px solid #313031;
                     }
                 }
@@ -764,13 +764,13 @@
                 &:hover,
                 .navPage-subMenu-item-child:hover {
                     >.navPage-subMenu {
-                        transform: translate3d(0, 2px, 0);
+                        transform: translate3d(0, 0, 0);
                     }
                 }
 
                 .navPage-subMenu-item-child {
                     >.navPage-subMenu {
-                        transform: translate3d(0, 2px, 0) !important;
+                        transform: translate3d(0, 0, 0) !important;
                     }
                 }
             }
@@ -788,7 +788,7 @@
                 opacity: 0;
                 visibility: hidden;
                 pointer-events: none;
-                transform: translate3d(0, 2px, 0);
+                transform: translate3d(0, 0, 0);
                 -webkit-transition: $anchor-transition;
                 -moz-transition: $anchor-transition;
                 -ms-transition: $anchor-transition;

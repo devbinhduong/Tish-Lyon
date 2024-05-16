@@ -51,9 +51,9 @@
         "id": "body-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
             "group": "Karla",
@@ -144,14 +144,14 @@
         "id": "headings-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins Bold",
-            "value": "Google_Poppins_700"
+            "group": "Montserrat",
+            "label": "Montserrat Bold",
+            "value": "Google_Montserrat_700"
           },
           {
             "group": "Montserrat",
@@ -2228,14 +2228,14 @@
         "id": "optimizedCheckout-headingPrimary-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins Bold",
-            "value": "Google_Poppins_700"
+            "group": "Montserrat",
+            "label": "Montserrat Bold",
+            "value": "Google_Montserrat_700"
           },
           {
             "group": "OpenSans",
@@ -2290,14 +2290,14 @@
         "id": "optimizedCheckout-headingSecondary-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins Bold",
-            "value": "Google_Poppins_700"
+            "group": "Montserrat",
+            "label": "Montserrat Bold",
+            "value": "Google_Montserrat_700"
           },
           {
             "group": "OpenSans",
@@ -2370,14 +2370,14 @@
         "id": "optimizedCheckout-contentPrimary-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins",
-            "value": "Google_Poppins_500"
+            "group": "Montserrat",
+            "label": "Montserrat",
+            "value": "Google_Montserrat_500"
           },
           {
             "group": "OpenSans",
@@ -2432,14 +2432,14 @@
         "id": "optimizedCheckout-contentSecondary-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins",
-            "value": "Google_Poppins_500"
+            "group": "Montserrat",
+            "label": "Montserrat",
+            "value": "Google_Montserrat_500"
           },
           {
             "group": "OpenSans",
@@ -2494,14 +2494,14 @@
         "id": "optimizedCheckout-link-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins",
-            "value": "Google_Poppins_500"
+            "group": "Montserrat",
+            "label": "Montserrat",
+            "value": "Google_Montserrat_500"
           },
           {
             "group": "OpenSans",
@@ -2565,14 +2565,14 @@
         "id": "optimizedCheckout-buttonPrimary-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins",
-            "value": "Google_Poppins_500"
+            "group": "Montserrat",
+            "label": "Montserrat",
+            "value": "Google_Montserrat_500"
           },
           {
             "group": "OpenSans",
@@ -2686,14 +2686,14 @@
         "id": "optimizedCheckout-buttonSecondary-font",
         "options": [
           {
-            "group": "Poppins",
-            "label": "Poppins Light",
-            "value": "Google_Poppins_400"
+            "group": "Montserrat",
+            "label": "Montserrat Light",
+            "value": "Google_Montserrat_400"
           },
           {
-            "group": "Poppins",
-            "label": "Poppins",
-            "value": "Google_Poppins_500"
+            "group": "Montserrat",
+            "label": "Montserrat",
+            "value": "Google_Montserrat_500"
           },
           {
             "group": "OpenSans",

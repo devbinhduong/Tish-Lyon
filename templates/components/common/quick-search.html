@@ -1,5 +1,12 @@
 <div class="container">
     <form class="form" onsubmit="return false" data-url="{{urls.search}}" data-quick-search-form>
+        <button class="search-header-button" type="submit" data-search-quick-submit>
+            <span class="is-srOnly">Search Button</span>
+            <span class="icon icon--search">
+                <svg><use xlink:href="#icon-search"></use></svg>
+            </span>
+        </button>
+
         <fieldset class="form-fieldset">
             <div class="form-field">
                 <label class="is-srOnly" for="{{name}}">{{lang "search.quick_search.input_label"}}</label>
@@ -15,12 +22,9 @@
             </div>
         </fieldset>
 
-        <button class="search-header-button" type="submit" data-search-quick-submit>
-            <span class="is-srOnly">Search Button</span>
-            <span class="icon icon--search">
-                <svg><use xlink:href="#icon-search"></use></svg>
-            </span>
-        </button>
+        <div class="search-popdown__close">
+            <button type="button" class="search-popdown__close__button" title="Close" data-popdown-close=""><svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-cancel" viewBox="0 0 24 24"><path d="M6.758 17.243 12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
+        </div>
     </form>
     <section class="quickSearchResults customQuickSearchResults" data-bind="html: results"></section>
 

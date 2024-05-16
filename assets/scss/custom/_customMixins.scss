@@ -1,3 +1,4 @@
+
 // Custom Mixins
 // -----------------------------------------------------------------------------
 @mixin image-padding-bottom($imageWidth, $imageHeight) {
@@ -93,6 +94,35 @@
     left: 0;
 }
 
+@mixin flexcb($cb: null, $dic: row) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @if $cb == 'center' {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @if $cb == 'center-x' {
+        justify-content: center;
+    }
+
+    @if $cb == 'center-y' {
+        align-items: center;
+    }
+
+    @if($dic == 'col') {
+        flex-direction: column;
+    } @else if $dic == 'col-re' {
+        flex-direction: column-reverse;
+    } @else if $dic == 'row-re' {
+        flex-direction: row-reverse;
+    } @else {
+        flex-direction: row;
+    }
+}
+
 @mixin pos($t: null, $r: null, $b: null, $l: null, $pos: relative, $z: 1, $cb: null) {
     @if $pos == 'abs' {
         position: absolute;
@@ -126,6 +156,13 @@
         height: 100%;
     }
 
+    @if $cb == 'full-inset' {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
     @if $cb == 'center' {
         top: 50%;
         left: 50%;
@@ -141,17 +178,4 @@
         top: 50%;
         transform: translateY(-50%);
     }
-}
-
-
-@mixin lineClamp($row, $lineHeight) {
-    line-height: $lineHeight;
-    height: calc(#{$lineHeight} * #{$row});
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: $row;
-
-    /* Add inline css code below to which tag use line clamp */
-    // style="-webkit-box-orient: vertical;"
 }

@@ -28,6 +28,29 @@ blog:
     {{/each}}
 
 <div class="main full">
+
+    <div style="background-color: #cccccc; width: 100%; height: 500px;">
+        <a href="#" class="button button--primary">
+            Shop Now 
+            
+            <span class="icon icon--arrow-right">
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+            </span>
+        </a>
+
+        <a href="#" class="button button--primary color-2">
+            Shop Now 
+            
+            <span class="icon icon--arrow-right">
+                <svg><use xlink:href="#icon-arrow-right"></use></svg>
+            </span>
+        </a>
+
+        <a href="#" class="button button--transparent">
+            Shop Now 
+        </a>
+    </div>
+
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}

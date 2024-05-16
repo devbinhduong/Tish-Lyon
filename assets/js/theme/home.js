@@ -32,17 +32,19 @@ export default class Home extends PageManager {
     }
 
     hoverHomeMenu() {
-        const navPages = document.querySelector(".navPages-container .navPages"),
+        const navPageList = document.querySelectorAll(".navPages-container .navPages .navPages-item.has-dropdown"),
             header = document.querySelector(".header.header-layout-2");
 
-        if(!navPages || !header) return;
+        if(!navPageList || !header) return;
 
-        navPages.addEventListener('mouseover', (e) => {
-            header.classList.add('is-visible');
-        });
+        navPageList.forEach((navPage) => {
+            navPage.addEventListener('mouseover', (e) => {
+                header.classList.add('is-visible');
+            });
 
-        navPages.addEventListener('mouseleave', (e) => {
-            header.classList.remove('is-visible');
+            navPage.addEventListener('mouseleave', (e) => {
+                header.classList.remove('is-visible');
+            });
         });
     }
 }
