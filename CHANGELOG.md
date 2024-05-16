@@ -6,6 +6,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Draft
 
+## 6.14.0 (05-15-2024)
+- Account.php <a href> is inside of a list item [#2457](https://github.com/bigcommerce/cornerstone/pull/2457)
+- Screen Reader only text must be provided [#2454](https://github.com/bigcommerce/cornerstone/pull/2454)
+- Remove "cookie notification" JS and CSS [#2447](https://github.com/bigcommerce/cornerstone/pull/2447)
+- Storefront nav for switching between country-specific websites (step 1) [#2453](https://github.com/bigcommerce/cornerstone/pull/2453)
+- ADA Compliance - Accordion buttons are not read by screen reader correctly [#2441](https://github.com/bigcommerce/cornerstone/pull/2441)
+- ADA Compliance - Region requires additional ARIA markup to assist screen reader users [#2435](https://github.com/bigcommerce/cornerstone/pull/2435)
+- ADA Compliance - Add translations to accessibility attributes for Coupon Code and Gift Certificates [#2440](https://github.com/bigcommerce/cornerstone/pull/2440)
+- ADA Compliance - The Add to Cart modal dialog container is not labeled [#2427](https://github.com/bigcommerce/cornerstone/pull/2427)
+- ADA Compliance - Decorative SVG elements should be hidden from screen reader users [#2432](https://github.com/bigcommerce/cornerstone/pull/2432)
+- ADA Compliance - Content that functions as a list should be indicated as such to screen reader users [#2429](https://github.com/bigcommerce/cornerstone/pull/2429)
+- ADA Compliance - All form fields must be properly labeled [#2433](https://github.com/bigcommerce/cornerstone/pull/2433)
+- ADA Compliance - Errors are not identified to screen reader users within the Refine By accordions [#2424](https://github.com/bigcommerce/cornerstone/pull/2424)
+- ADA Compliance - Expandable items should be read by screen reader [2422](https://github.com/bigcommerce/cornerstone/pull/2422)
+- Page Suggested Items still listed on Cornerstone [#2438](https://github.com/bigcommerce/cornerstone/pull/2438)
+- Remove shop_by_price: true from category.html [#2431](https://github.com/bigcommerce/cornerstone/pull/2431)
+- Added SEPA and ECP stored bank accounts typesto the Payment methods page [#2434](https://github.com/bigcommerce/cornerstone/pull/2434)
+- Added min-height for vaulted payment methods [#2455](https://github.com/bigcommerce/cornerstone/pull/2455)
+
 ## 6.13.0 (02-12-2024)
 - Fix HTML markup for product listing and below content region [#2426](https://github.com/bigcommerce/cornerstone/pull/2426)
 - With Product Filtering enabled widgets on category page disappear after navigating using pagination [#2425](https://github.com/bigcommerce/cornerstone/pull/2425)
