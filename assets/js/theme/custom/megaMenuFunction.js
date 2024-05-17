@@ -24,7 +24,8 @@ export default class megaMenuFunction {
                     imagesTop: '',
                     imagesCustom: '',
                     imagesLeft: '',
-                    imagesRight: ''
+                    imagesRight: '',
+                    imageAspectRatio: '1.0',
                 }, param);
 
                 var $scope = $('.navPages-list-custom > li:nth-child('+num+')');
@@ -32,104 +33,6 @@ export default class megaMenuFunction {
                 if(!$scope.hasClass('navPages-item-toggle')){
                     if (param.disabled === false) {
                         const subMegaMenu = $scope.find('> .navPage-subMenu');
-
-                        if(param.style === 'style 1') {
-                            if(!$scope.hasClass('has-megamenu')){
-                                $scope.addClass('has-megamenu style-1 fullWidth');
-
-                                if(!subMegaMenu.find('.cateArea').length){
-
-                                    subMegaMenu.find('.container > .navPage-subMenu-list').wrap('<div class="cateArea test12121212 columns-'+param.cateColumns+'"></div>');
-                                }
-
-                                subMegaMenu.find('.imageArea').css({
-                                    'width': '100%',
-                                    'max-width': param.imageAreaWidth
-                                });
-
-                                subMegaMenu.find('.cateArea').css({
-                                    'width': '100%',
-                                    'max-width': param.cateAreaWidth
-                                });
-
-                                if (param.imagesTop.length && (param.imagesTop !== '')) {
-                                    function megaImageTop(array) {
-                                        var j = 2;
-                                        for (var i = 0, l = array.length; i < l; i++) {
-                                            j = j + 1;
-                                            subMegaMenu.find('.cateArea > ul > li:nth-child(' + j + ') > .navPages-action').after(array[i]);
-                                        }
-                                    }
-                                    megaImageTop(param.imagesTop);
-                                }
-
-                                if (!subMegaMenu.find('.bottomMegamenu').length) {
-                                    subMegaMenu.append('<div class="bottomMegamenu custom-fadeInLeft" data-step-animate="0">' + param.bottomMegamenu + '</div>');
-                                }
-
-                                subMegaMenu.addClass('customScrollbar');
-                            }
-                        }
-
-                        if(param.style === 'style 2') {
-                            if(!$scope.hasClass('has-megamenu')){
-                                $scope.addClass('has-megamenu style-2 fullWidth');
-
-                                if(!subMegaMenu.find('.cateArea').length){
-                                    subMegaMenu.find('.container > .navPage-subMenu-list').wrap('<div class="cateArea columns-'+param.cateColumns+'"></div>');
-                                }
-
-                                if(!subMegaMenu.find('.imageArea').length){
-                                    subMegaMenu.find('.container').append('<div class="imageArea"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">'+param.imagesRight+'</div></div>');
-
-                                    if (param.products.length && (param.products !== '')) {
-                                        subMegaMenu.find('.imageArea').prepend('<div class="megamenu-left-item megamenu-product-list custom-fadeInLeft" data-step-animate="0">'+param.products+'</div>');
-                                    }
-                                }
-
-                                subMegaMenu.find('.imageArea').css({
-                                    'width': '100%',
-                                    'max-width': param.imageAreaWidth
-                                });
-
-                                subMegaMenu.find('.cateArea').css({
-                                    'width': '100%',
-                                    'max-width': param.cateAreaWidth
-                                });
-
-                                subMegaMenu.addClass('customScrollbar');
-                            }
-                        }
-
-                        if(param.style === 'style 3') {
-                            if(!$scope.hasClass('has-megamenu')){
-                                $scope.addClass('has-megamenu style-3 fullWidth');
-
-                                if(!subMegaMenu.find('.cateArea').length){
-                                    subMegaMenu.find('.container > .navPage-subMenu-list').wrap('<div class="cateArea columns-'+param.cateColumns+'"></div>');
-                                }
-
-                                if(!subMegaMenu.find('.imageArea').length){
-                                    subMegaMenu.find('.container').append('<div class="imageArea"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">'+param.imagesRight+'</div></div>');
-                                }
-
-                                subMegaMenu.find('.imageArea').css({
-                                    'width': '100%',
-                                    'max-width': param.imageAreaWidth
-                                });
-
-                                subMegaMenu.find('.cateArea').css({
-                                    'width': '100%',
-                                    'max-width': param.cateAreaWidth
-                                });
-
-                                if (!subMegaMenu.find('.bottomMegamenu').length) {
-                                    subMegaMenu.append('<div class="bottomMegamenu custom-fadeInLeft" data-step-animate="0">' + param.bottomMegamenu + '</div>');
-                                }
-
-                                subMegaMenu.addClass('customScrollbar');
-                            }
-                        }
 
                         /* Custom Mega Menu Style By Mint */
                         if(param.style === 'style custom') {
@@ -141,7 +44,7 @@ export default class megaMenuFunction {
                                 }
 
                                 if(!subMegaMenu.find('.imageArea').length){
-                                    subMegaMenu.find('.container').append('<div class="imageArea"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">'+param.imagesRight+'</div></div>');
+                                    subMegaMenu.find('.container').append('<div class="imageArea etsewesdadadasd" style="--aspect-ratio: '+param.imageAspectRatio+';"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">'+param.imagesRight+'</div></div>');
                                 }
 
                                 subMegaMenu.find('.imageArea').css({
@@ -153,10 +56,6 @@ export default class megaMenuFunction {
                                     'width': '100%',
                                     'max-width': param.cateAreaWidth
                                 });
-
-                                if (!subMegaMenu.find('.bottomMegamenu').length) {
-                                    subMegaMenu.append('<div class="bottomMegamenu custom-fadeInLeft" data-step-animate="0">' + param.bottomMegamenu + '</div>');
-                                }
 
                                 subMegaMenu.addClass('customScrollbar');
                             }

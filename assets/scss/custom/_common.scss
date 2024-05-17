@@ -61,44 +61,6 @@
     }
 }
 
-/* Fade In left Animation */
-
-.js .animated.custom-animation {
-    transform: translatey(0);
-    opacity: 1;
-}
-
-.no-js .custom-fadeInLeft {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.js .custom-fadeInLeft {
-    // opacity: 0;
-
-    @for $i from 0 through 100 {
-        &[data-step-animate="#{$i}"] {
-            animation-delay: .15s + $i*0.1 !important;
-        }
-    }
-}
-
-.js .animated .custom-fadeInLeft,
-.js .slick-active .custom-fadeInLeft {
-    animation: fadeInLeft .25s cubic-bezier(0, 0, .3, 1) forwards;
-}
-
-@keyframes fadeInLeft {
-    from {
-        transform: translateX(-20px);
-        opacity: 0.01;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
 @include smin-m {
     /* ------------------ Hover Image Zoom ------------------------- */
@@ -140,32 +102,6 @@
           
         &:hover::before {
             transform: scaleX(1);
-        }
-    }
-}
-
-/* ------------------ Banner Hover Effect -------------- */
-.hover-banner {
-    &:before {
-        content: "";
-        width: 0;
-        height: 100%;
-        top: 0;
-        left: 0;
-        left: auto;
-        bottom: auto;
-        z-index: 2;
-        -webkit-transform: none;
-        transform: none;
-        position: absolute;
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        background-color: rgba(246, 246, 246, 0.2);
-    }
-
-    @include smin-m {
-        &:hover:before {
-            width: 100%;
         }
     }
 }
@@ -215,4 +151,37 @@
     &::-webkit-scrollbar-thumb:hover {
         background: #555555;
     }
+}
+
+.image-loader {
+    overflow: hidden;
+
+    img {
+        transform: scale(1.06);
+        transform-origin: bottom center;
+        transition: transform .75s cubic-bezier(.215,.61,.355,1);
+        will-change: transform;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .animated & {
+        img {
+            transform: scale(1);
+            transition: transform 1.5s cubic-bezier(.215,.61,.355,1);
+            transition-delay: 200ms;
+        }
+    }
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #000000;
+    opacity: 0.25;
+    will-change: opacity;
 }

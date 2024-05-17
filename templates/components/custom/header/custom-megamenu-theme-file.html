@@ -1,0 +1,86 @@
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>
+    ['keydown', 'mousemove', 'touchstart'].forEach(event => {
+        document.addEventListener(event, () => {
+            megaMenuEvent();
+        });
+    });
+
+    let check_js_loaded = true;
+
+    function megaMenuEvent() {
+        if (check_js_loaded) {
+            check_js_loaded = false;
+
+            var megaMenuFunction = new window.megaMenuFunction();
+
+            console.log("megaMenuFunction", megaMenuFunction)
+
+            function SetItemMegaMenu(){
+                $('.navPages-list-megamenu > li:not(.navPages-item-toggle)').mouseover(event => {
+                    var numberItem = $(event.currentTarget).index() + 1;
+
+                    if (!$(event.currentTarget).hasClass('has-megamenu')) {
+                        LoadMegaMenu(numberItem);
+                    }
+                });
+
+                $(document).on('click','#custom-menu-mobile .navPages-list:not(.navPages-list--user) > li > .navPages-action' , event => {
+                    var numberItem = $(event.currentTarget).parent().index() + 1;
+
+                    if (!$(event.currentTarget).parent().hasClass('has-megamenu')) {
+                        LoadMegaMenu(numberItem);
+                    }
+                });
+            }
+                
+            function LoadMegaMenu(numberItem){
+                if (numberItem == 1) {
+                    megaMenuFunction.menuItem(1).setMegaMenu({
+                        style: 'style 1',
+                        imageAreaWidth: '40%',
+                        cateAreaWidth: '60%',
+                        cateColumns: 2,
+                        imagesRight: `
+                        <div class="megamenu-right-item custom-fadeInLeft" data-step-animate="1">
+                            <a class="image hover-banner" href="#" aria-label="Shop All">
+                                <img src="https://cdn11.bigcommerce.com/s-eayt5v1360/images/stencil/original/image-manager/megamenu-style1-img-1.jpg" alt="Shop All Image">
+                            </a>
+                        </div>
+
+                        <div class="megamenu-right-item custom-fadeInLeft" data-step-animate="2">
+                            <a class="image hover-banner" href="#" aria-label="Spring/Summer Catalogue">
+                                <img src="https://cdn11.bigcommerce.com/s-eayt5v1360/images/stencil/original/image-manager/megamenu-style1-img-2.jpg" alt="Spring/Summer Catalogue Image">
+                            </a>
+                        </div>
+                        `,
+                    });
+                }else if (numberItem == 2){
+                    megaMenuFunction.menuItem(2).setMegaMenu({
+                        style: 'style 2',
+                        imageAreaWidth: '75%',
+                        cateAreaWidth: '25%',
+                        cateColumns: 3,
+                        imagesRight: `
+                        <a class="image hover-banner" href="#" aria-label="Style Spotlight">
+                            <img src="https://cdn11.bigcommerce.com/s-eayt5v1360/images/stencil/original/image-manager/megamenu-style2-img-1.jpg" alt="Style Spotlight Image">
+                        </a>
+                        <a class="image hover-banner" href="#" aria-label="Adorning Rooks">
+                            <img src="https://cdn11.bigcommerce.com/s-eayt5v1360/images/stencil/original/image-manager/megamenu-style2-img-2.jpg" alt="Adorning Rooks Image">
+                        </a>
+                        <a class="image hover-banner" href="#" aria-label="Unite Your Piercings">
+                            <img src="https://cdn11.bigcommerce.com/s-eayt5v1360/images/stencil/original/image-manager/megamenu-style2-img-3.jpg" alt="Unite Your Piercings Image">
+                        </a>
+                        `,
+                    });
+                } else{
+                    return;
+                }
+            }
+
+            var setItemMegaMenu = SetItemMegaMenu();
+
+            window.onload = setItemMegaMenu;
+        }
+    }
+</script>

@@ -817,7 +817,7 @@
                     z-index: 1;
 
                     .container {
-                        padding: 35px 0 15px;
+                        padding: 35px 50px 15px;
                         display: flex;
                     }
                 }
@@ -1155,6 +1155,8 @@
 
                 img {
                     width: 100%;
+                    aspect-ratio: var(--aspect-ratio);
+                    object-fit: cover;
                 }
 
                 +.image {
@@ -1169,60 +1171,24 @@
             .megamenu-right-item {
                 width: 100%;
                 display: flex;
-                margin-left: -8px;
-                margin-right: -8px;
+                margin-right: 0;
+                margin-left: 0;
+                padding: 0;
 
                 .image {
                     position: relative;
                     height: fit-content;
-                    padding: 0 8px;
 
                     + .image {
                         margin-top: 0;
+                        margin-left: 30px;
                     }
                 }
             }
         }
-    }
 
-    .style-1 {
-        .cateArea {
-            >.navPage-subMenu-list {
-                padding-left: 0;
-
-                >.navPage-subMenu-item-child {
-                    >.navPage-subMenu-action {
-                        border-bottom: none;
-                        margin-bottom: 0;
-                    }
-                }
-            }
-        }
-    }
-
-    .style-3 {
-        &.has-megamenu {
-            >.navPage-subMenu {
-                >.container {
-                    padding: 35px 0 0;
-                }
-            }
-        }
-
-        .imageArea {
-            .megamenu-right-item {
-                padding: 0;
-                width: 100%;
-    
-                .image {
-                    padding: 0 15px;
-                    margin-bottom: 30px;
-    
-                    +.image {
-                        margin-top: 0;
-                    }
-                }
-            }
+        .content {
+            display: none;
         }
     }
 }
