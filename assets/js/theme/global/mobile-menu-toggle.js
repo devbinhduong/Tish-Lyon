@@ -172,6 +172,15 @@ export class MobileMenuToggle {
 
             if ($closestAction.hasClass('is-open')) {
                 $parentSiblings.addClass('is-hidden');
+
+                const subMenuList = $closestAction.find('.navPage-subMenu-list--lv2 > li');
+
+                console.log(".$subMenuList", subMenuList)
+
+                subMenuList.each(function (index, element) {
+                    $(element).addClass('fadeInRight');
+                });
+
             }
         } else {
             const $closestAction2 = $(event.target).closest('.navPage-subMenu');
@@ -187,6 +196,13 @@ export class MobileMenuToggle {
 
             $parentSiblings2.removeClass('is-open');
             $parentAction2.removeClass('is-hidden');
+
+            const subMenuList2 = $('.navPage-subMenu-list--lv2 > li.fadeInRight');
+
+            subMenuList2.each(function (index, element) {
+                $(element).removeClass('fadeInRight');
+            });
+
         }
     }
     

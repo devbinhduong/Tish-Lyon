@@ -4,3 +4,36 @@
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
 }
+
+@keyframes itemFadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.has-activeNavPages {
+     .fadeInRight {
+        &[data-step-animate] {
+            -webkit-animation-name: itemFadeInRight;
+            animation-name: itemFadeInRight;
+            opacity: 0;
+            will-change: transform, opacity;
+            animation-fill-mode: both;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    
+            @for $i from 0 through 100 {
+                &[data-step-animate='#{$i}'] {
+                    animation-delay: 0.25s + $i * 0.05;
+                    animation-duration: .5s;
+                }
+            }
+        }
+    }
+}

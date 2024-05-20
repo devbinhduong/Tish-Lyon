@@ -45,7 +45,7 @@ export default class megaMenuFunction {
                                 }
 
                                 if(!subMegaMenu.find('.imageArea').length){
-                                    subMegaMenu.find('.container').append(`<div class="imageArea columns-${param.imageColumns}" style="--aspect-ratio: ${param.imageAspectRatio};"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">${param.imagesRight}</div></div>`);
+                                    subMegaMenu.find('.container').append(`<div class="imageArea columns-${param.imageColumns}" style="--aspect-ratio: ${param.imageAspectRatio};"><div class="megamenu-right-item fadeInRight" data-step-animate="5">${param.imagesRight}</div></div>`);
                                 }
 
                                 subMegaMenu.find('.imageArea').css({
@@ -71,7 +71,7 @@ export default class megaMenuFunction {
                                 }
 
                                 if(!subMegaMenu.find('.imageArea').length){
-                                    subMegaMenu.find('.container').append(`<div class="imageArea"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">${param.imagesRight}</div></div>`);
+                                    subMegaMenu.find('.container').append(`<div class="imageArea"><div class="megamenu-right-item fadeInRight" data-step-animate="5">${param.imagesRight}</div></div>`);
                                 }
 
                                 subMegaMenu.find('.imageArea').css({

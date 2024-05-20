@@ -4,6 +4,8 @@ import { load } from 'webfontloader';
 import event from '../global/jquery-migrate/event';
 import { forEach, head } from 'lodash';
 
+import Aos from 'aos';
+
 import megaMenuEditor from './megaMenuEditor';
 
 export default function(context) {
@@ -30,6 +32,9 @@ export default function(context) {
             hoverMenu();
             openSearchDropdown();
             getScrollbarWidth();
+
+            /* AOS */
+            Aos.init();
         }
     }
 

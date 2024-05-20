@@ -73,6 +73,12 @@
                     }
                 }
 
+                @include smax-m {
+                    .navUser-action {
+                        color: #ffffff;
+                    }
+                }; 
+
                 @include smin-m {
                     .navUser-action,
                     .navPages-action {
@@ -514,67 +520,20 @@
 // -----------------------------------------------------------------------------
 
 .mobileMenu-toggle {
-    width: 25px;
-    height: 25px;
     display: inline-block;
     font-size: 0;
     left: 0;
     overflow: hidden;
     position: absolute;
     z-index: zIndex('high');
+    color: #ffffff;
+
+    svg {
+        width: 24px;
+        height: 24px;
+    }
 
     @include smin-m {
         display: none;
-    }
-
-    .mobileMenu-toggleIcon,
-    .mobileMenu-toggleIcon::before,
-    .mobileMenu-toggleIcon::after {
-        background: $header-font-color;
-        content: '';
-        display: block;
-        height: 2px;
-        position: absolute;
-        transform: rotate(0deg);
-        transition: transform 100ms ease-in, top 100ms ease-in 150ms,
-            bottom 100ms ease-in 150ms; // 1
-        width: 100%;
-    }
-
-    .mobileMenu-toggleIcon {
-        top: 50%;
-        transition: background-color 10ms ease-in 100ms;
-    }
-
-    .mobileMenu-toggleIcon::before {
-        top: -8px;
-    }
-
-    .mobileMenu-toggleIcon::after {
-        bottom: -8px;
-    }
-
-    &.is-open .mobileMenu-toggleIcon {
-        background-color: transparent;
-        transition-delay: 100ms;
-
-        &::before,
-        &::after {
-            background-color: $header-font-color;
-            bottom: auto;
-            top: auto;
-            transition: transform 100ms ease-in 150ms, top 100ms ease-in,
-                bottom 100ms ease-in; // Animate lines from hamburger to 'x'
-        }
-
-        &::before {
-            top: 0;
-            transform: rotate(45deg);
-        }
-
-        &::after {
-            bottom: 0;
-            transform: rotate(-45deg);
-        }
     }
 }
