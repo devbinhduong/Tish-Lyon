@@ -186,12 +186,16 @@ export default function(context) {
             menuItemList.forEach(menuItem => {
                 menuItem.addEventListener('mouseover', (e) => {
                     document.body.classList.add('openMenuPC');
-                    menuItem.classList.add('animated');
+                    setTimeout(() => {
+                        menuItem.classList.add('animated');
+                    }, 20);
                 });
 
                 menuItem.addEventListener('mouseleave', (e) => {
                     document.body.classList.remove('openMenuPC');
-                    menuItem.classList.remove('animated');
+                    setTimeout(() => {
+                        menuItem.classList.remove('animated');
+                    }, 20);
                 });
             });
         }

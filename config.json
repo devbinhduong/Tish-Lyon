@@ -776,6 +776,7 @@
         "mega_menu_styleCustom_img2_title": "Spring/Summer Catalogue",
         "mega_menu_styleCustom_img2_desc": "Get your free catalogue today.",
         "mega_menu_styleCustom_item1_imgAspectRatio": "2.0",
+        "mega_menu_styleCustom_item1_imgAspectRatio1": "1.0",
 
 
         "mega_menu_styleCustom_item2": "2",
@@ -889,9 +890,11 @@
         "mega_menu_styleCustom_img21": "megamenu-style2-img-19.jpg",
         "mega_menu_styleCustom_link21": "#",
         "mega_menu_styleCustom_img21_title": "Tish Tips Blog",
+        "mega_menu_styleCustom_img21_desc": "",
         "mega_menu_styleCustom_img22": "megamenu-style2-img-20.jpg",
         "mega_menu_styleCustom_link22": "#",
         "mega_menu_styleCustom_img22_title": "FAQs",
+        "mega_menu_styleCustom_img22_desc": "",
         "mega_menu_styleCustom_item7_imgAspectRatio": "1.0",
         
 

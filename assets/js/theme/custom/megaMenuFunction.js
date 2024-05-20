@@ -11,6 +11,7 @@ export default class megaMenuFunction {
                     dropAlign: 'fullWidth',
                     dropWidth: '493px',
                     cateColumns: 1,
+                    imageColumns: 4,
                     disabled: false,
                     bottomCates: '',
                     products:'',
@@ -40,11 +41,11 @@ export default class megaMenuFunction {
                                 $scope.addClass('has-megamenu style-custom fullWidth');
 
                                 if(!subMegaMenu.find('.cateArea').length){
-                                    subMegaMenu.find('.container > .navPage-subMenu-list').wrap('<div class="cateArea columns-'+param.cateColumns+'"></div>');
+                                    subMegaMenu.find('.container > .navPage-subMenu-list').wrap(`<div class="cateArea columns-${param.cateColumns}"></div>`);
                                 }
 
                                 if(!subMegaMenu.find('.imageArea').length){
-                                    subMegaMenu.find('.container').append('<div class="imageArea etsewesdadadasd" style="--aspect-ratio: '+param.imageAspectRatio+';"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">'+param.imagesRight+'</div></div>');
+                                    subMegaMenu.find('.container').append(`<div class="imageArea columns-${param.imageColumns}" style="--aspect-ratio: ${param.imageAspectRatio};"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">${param.imagesRight}</div></div>`);
                                 }
 
                                 subMegaMenu.find('.imageArea').css({
@@ -61,24 +62,30 @@ export default class megaMenuFunction {
                             }
                         }
 
-                        const navPagesAction = $scope.children('.navPages-action');
+                        if(param.style === 'style custom 2') {
+                            if(!$scope.hasClass('has-megamenu')){
+                                $scope.addClass('has-megamenu style-custom style-custom-2 fullWidth');
 
-                        if (param.labelType === 'new') {
-                            navPagesAction.find('.text').append('<span class="navPages-label new-label">'+param.label+'</span>');
-                        } else if (param.labelType === 'sale') {
-                            navPagesAction.find('.text').append('<span class="navPages-label sale-label">'+param.label+'</span>');
-                        } else if (param.labelType === 'hot') {
-                            navPagesAction.find('.text').append('<span class="navPages-label hot-label">'+param.label+'</span>');
-                        }
-                    } else{
-                        const navPagesAction = $scope.children('.navPages-action');
+                                if(!subMegaMenu.find('.cateArea').length){
+                                    subMegaMenu.find('.container > .navPage-subMenu-list').wrap(`<div class="cateArea columns-${param.cateColumns}"></div>`);
+                                }
 
-                        if (param.labelType === 'new') {
-                            navPagesAction.find('.text').append('<span class="navPages-label new-label">'+param.label+'</span>');
-                        } else if (param.labelType === 'sale') {
-                            navPagesAction.find('.text').append('<span class="navPages-label sale-label">'+param.label+'</span>');
-                        } else if (param.labelType === 'hot') {
-                            navPagesAction.find('.text').append('<span class="navPages-label hot-label">'+param.label+'</span>');
+                                if(!subMegaMenu.find('.imageArea').length){
+                                    subMegaMenu.find('.container').append(`<div class="imageArea"><div class="megamenu-right-item custom-fadeInLeft" data-step-animate="0">${param.imagesRight}</div></div>`);
+                                }
+
+                                subMegaMenu.find('.imageArea').css({
+                                    'width': '100%',
+                                    'max-width': param.imageAreaWidth
+                                });
+
+                                subMegaMenu.find('.cateArea').css({
+                                    'width': '100%',
+                                    'max-width': param.cateAreaWidth
+                                });
+
+                                subMegaMenu.addClass('customScrollbar');
+                            }
                         }
                     }
                 }

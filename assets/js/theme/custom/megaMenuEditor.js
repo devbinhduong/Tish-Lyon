@@ -60,7 +60,7 @@ export default function (context) {
 
 			if (settings.mega_menu_styleCustom_img1 != '') {
 				mega_menu_styleCustom_img_1 = `
-					<a class="image image-loader" href="${settings.mega_menu_styleCustom_link1}" aria-label="${settings.mega_menu_styleCustom_img1}">
+					<a class="image image-loader" href="${settings.mega_menu_styleCustom_link1}" aria-label="${settings.mega_menu_styleCustom_img1}" style="--aspect-ratio: ${settings.mega_menu_styleCustom_item1_imgAspectRatio}; width: 100%; max-width: 66.666%;">
 						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img1}" alt="${settings.mega_menu_styleCustom_img1}">
 						
 						<div class="image-overlay"></div>
@@ -77,7 +77,7 @@ export default function (context) {
 
 			if (settings.mega_menu_styleCustom_img2 != '') {
 				mega_menu_styleCustom_img_2 = `
-					<a class="image image-loader" href="${settings.mega_menu_styleCustom_link2}" aria-label="${settings.mega_menu_styleCustom_img2}">
+					<a class="image image-loader" href="${settings.mega_menu_styleCustom_link2}" aria-label="${settings.mega_menu_styleCustom_img2}" style="--aspect-ratio: ${settings.mega_menu_styleCustom_item1_imgAspectRatio1}; width: 100%; max-width: 33.333%;">
 						<img src="${urlStoreHash}${settings.mega_menu_styleCustom_img2}" alt="${settings.mega_menu_styleCustom_img2}">
 						
 						<div class="image-overlay"></div>
@@ -403,6 +403,7 @@ export default function (context) {
 					</a>
 				`
 			}
+
 			if(settings.mega_menu_styleCustom_img22 != '') {
 				mega_menu_styleCustom_img_22 = `
 					<a class="image image-loader" href="${settings.mega_menu_styleCustom_link22}" aria-label="${settings.mega_menu_styleCustom_img22}">
@@ -423,7 +424,7 @@ export default function (context) {
 
 	        if (mega_menu_styleCustom_item1 == numberItem) {
 	            megaMenuFunction.menuItem(mega_menu_styleCustom_item1).setMegaMenu({
-	                style: 'style custom',
+	                style: 'style custom 2',
 	                imageAreaWidth: settings.mega_menu_styleCustom_item1_imgWidth,
 	                cateAreaWidth: settings.mega_menu_styleCustom_item1_cateWidth,
 	                cateColumns: settings.mega_menu_styleCustom_item1_col,
@@ -431,8 +432,7 @@ export default function (context) {
 						`
 						${mega_menu_styleCustom_img_1}
 						${mega_menu_styleCustom_img_2}
-						`,
-					imageAspectRatio: settings.mega_menu_styleCustom_item1_imgAspectRatio
+						`
 	            });
 	        } else if (mega_menu_styleCustom_item2 == numberItem) {
 	            megaMenuFunction.menuItem(mega_menu_styleCustom_item2).setMegaMenu({
@@ -446,7 +446,8 @@ export default function (context) {
 						${mega_menu_styleCustom_img_4}
 						${mega_menu_styleCustom_img_5}
 						`,
-					imageAspectRatio: settings.mega_menu_styleCustom_item2_imgAspectRatio
+					imageAspectRatio: settings.mega_menu_styleCustom_item2_imgAspectRatio,
+					imageColumns: 3
 	            });
 	        } else if (mega_menu_styleCustom_item3 == numberItem) {
 	            megaMenuFunction.menuItem(mega_menu_styleCustom_item3).setMegaMenu({
@@ -460,7 +461,8 @@ export default function (context) {
 						${mega_menu_styleCustom_img_7}
 						${mega_menu_styleCustom_img_8}
 						`,
-					imageAspectRatio: settings.mega_menu_styleCustom_item3_imgAspectRatio
+					imageAspectRatio: settings.mega_menu_styleCustom_item3_imgAspectRatio,
+					imageColumns: 3
 	            });
 	        } else if (mega_menu_styleCustom_item4 == numberItem) {
 	            megaMenuFunction.menuItem(mega_menu_styleCustom_item4).setMegaMenu({
@@ -474,7 +476,8 @@ export default function (context) {
 						${mega_menu_styleCustom_img_10}
 						${mega_menu_styleCustom_img_11}
 						`,
-					imageAspectRatio: settings.mega_menu_styleCustom_item4_imgAspectRatio
+					imageAspectRatio: settings.mega_menu_styleCustom_item4_imgAspectRatio,
+					imageColumns: 3
 	            });
 			} else if (mega_menu_styleCustom_item5 == numberItem) {
 					megaMenuFunction.menuItem(mega_menu_styleCustom_item5).setMegaMenu({
@@ -490,7 +493,8 @@ export default function (context) {
 						${mega_menu_styleCustom_img_15}
 						${mega_menu_styleCustom_img_16}
 						`,
-					imageAspectRatio: settings.mega_menu_styleCustom_item5_imgAspectRatio
+					imageAspectRatio: settings.mega_menu_styleCustom_item5_imgAspectRatio,
+					imageColumns: 5
 	            });
 			} else if (mega_menu_styleCustom_item6 == numberItem) {
 					megaMenuFunction.menuItem(mega_menu_styleCustom_item6).setMegaMenu({
@@ -503,7 +507,8 @@ export default function (context) {
 						${mega_menu_styleCustom_img_17}
 						${mega_menu_styleCustom_img_18}
 						`,
-					imageAspectRatio: settings.mega_menu_styleCustom_item6_imgAspectRatio
+					imageAspectRatio: settings.mega_menu_styleCustom_item6_imgAspectRatio,
+					imageColumns: 2
 	            });
 			} else if (mega_menu_styleCustom_item7 == numberItem) {
 					megaMenuFunction.menuItem(mega_menu_styleCustom_item7).setMegaMenu({
@@ -518,7 +523,8 @@ export default function (context) {
 						${mega_menu_styleCustom_img_21}
 						${mega_menu_styleCustom_img_22}
 						`,
-					imageAspectRatio: settings.mega_menu_styleCustom_item7_imgAspectRatio
+					imageAspectRatio: settings.mega_menu_styleCustom_item7_imgAspectRatio,
+					imageColumns: 4
 	            });
 			} else {
 	            return;
