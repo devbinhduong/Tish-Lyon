@@ -28,7 +28,7 @@
     transition: .25s ease-out;
     transition-property: color,background,border;
     backface-visibility: hidden;
-
+    
 
     &::after {
         content: "";
@@ -54,11 +54,23 @@
         background-color: $buttonStyle-default-backgroundColorActive;
     }
 
+    &.no-after {
+        &::after {
+            content: unset;
+        }
+    }
+
     .icon--arrow-right {
         margin: 0 0 0 4px;
         transition: transform .5s ease;
         transform: translateZ(0);
         height: 36px;
+        margin-left: 0;
+
+        svg {
+            width: 20px;
+            transform: translateY(-1px);
+        }
     }
 
     &:hover {

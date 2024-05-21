@@ -1,4 +1,5 @@
 <section class="heroCarousel"
+    {{#gt carousel.slides.length 1}}
     data-slick='{
         "arrows": {{arrows}},
         "mobileFirst": true,
@@ -7,7 +8,7 @@
         "autoplay": false,
         "autoplaySpeed": {{carousel.swap_frequency}},
         "slide": "[data-hero-slide]"
-    }'
+    }'{{/gt}}
 >
 
     {{#each carousel.slides}}
@@ -61,7 +62,11 @@
                     <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-{{../settings.store_hash}}/product_images/uploaded_images/{{imageMobile}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
                 {{/if}}
             {{else}}
-                <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="{{getImageSrcset stencil_image 1x=(default fallback_size '960w')}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                {{#if @first}}
+                    <img class="image-mobile" src="{{getImageSrcset stencil_image 1x=(default fallback_size '960w')}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                {{else}}
+                    <img class="lazyload image-mobile" src="{{cdn 'img/loading.svg'}}" data-src="{{getImageSrcset stencil_image 1x=(default fallback_size '960w')}}" alt="{{stencil_image.alt}}" title="{{stencil_image.alt}}">
+                {{/if}}
             {{/if}}
 
             {{#if button_text}}

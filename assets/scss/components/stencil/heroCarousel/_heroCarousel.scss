@@ -59,6 +59,7 @@
         opacity: 1 !important;
         visibility: visible !important;
         object-fit: cover;
+        height: 100%;
     }
 
     a {
@@ -185,11 +186,16 @@
         display: block;
         overflow: hidden;
         background: $color-custom-loading;
-        max-height: 1317px;
+        height: 100vh;
+        max-height: 100vh;
+
+        @include smax-s {
+            height: 75vh;
+        }; 
 
         > img:not(.image-mobile) {
 
-            @include smax-xs {
+            @include smax-s {
                 display: none;
             }
         }
@@ -200,10 +206,6 @@
             height: 0;
             width: 100%;
             padding-bottom: var(--pb);
-
-            @include smax-xs {
-                padding-bottom: 99.307%;
-            }
         }
 
         &:before {
@@ -221,7 +223,7 @@
         .image-mobile {
             display: none;
 
-            @include smax-xs {
+            @include smax-s {
                 bottom: 0;
                 left: 0;
                 margin: auto;
@@ -232,6 +234,8 @@
                 width: 100%;
                 max-height: 100%;
                 display: block;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
@@ -268,78 +272,38 @@
 }
 
 .heroCarousel-content {
-    position: absolute;
     background-color: stencilColor('carousel-bgColor');
-    top: 50%;
-    left: 50%;
-    right: 0;
-    z-index: 3;
     width: 100%;
-    max-width: 500px;
-    text-align: center;
-    padding: 20px 15px 45px;
-    transform: translate(-50%, -50%);
+    text-align: left;
+    padding: 50px 50px 34px;
     white-space: normal;
     margin: 0;
+    max-width: 50%;
+    @include pos($pos: abs, $b: 0, $l: 0, $r: unset, $t: unset);
+    transform: translate(0);
+    z-index: 10;
 
-    @include smax-xs {
-        margin: 0 auto;
-        max-height: 80%;
-        overflow: auto;
-        position: relative;
-        top: 0;
-        transform: unset;
-    }
-
-    @include smin-xs {
-        padding: 0 15px 8px;
-    }
-
-    @include smin-m {
-        max-width: 450px;
-        @include pos($pos: abs, $b: 0, $l: 0, $r: unset, $t: unset);
-        transform: translate(0);
-        z-index: 10;
-
-    }
-
-    @include smin-xxl {
-        &.heroCarousel-content--left {
-            left: calc((100% - 1394px)/ 2);
-
-            .home-layout-2 & {
-                left: 55px;
-            }
-        }
-
-        &.heroCarousel-content--right {
-            right: calc((100% - 1394px)/ 2);
-
-            .home-layout-2 & {
-                right: 55px;
-            }
-        }
-    }
+    @include smax-s {
+        padding: 16px 16px 7px;
+    }; 
 }
 
 .heroCarousel-title {
     display: inline-block;
     vertical-align: top;
     width: 100%;
-    font-size: $fontSize-hero - 16px;
-    font-weight: $fontWeight-bold;
-    color: $carousel-title-mb-color;
+    font-size: $fontSize-hero - 10px;
+    font-weight: 400;
+    color: $carousel-title-color;
     letter-spacing: 0;
-    line-height: 1.2;
-    margin: 0 0 10px 0;
-
-    @include smin-xs {
-        color: $carousel-title-color;
-    }
+    line-height: 51px;
+    margin: 0 0 8px 0;
 
     @include smin-m {
         font-size: $fontSize-hero;
         margin-bottom: 15px;
+        line-height: 62px;
+        margin: 0 0 10px 0;
     }
 }
 
@@ -349,44 +313,20 @@
     display: inline-block;
     vertical-align: top;
     margin: 0 0 8px 0;
-    color: $carousel-description-mb-color;
+    color: $carousel-description-color;
+    font-weight: 300;
 
-    @include smin-xs {
-        color: $carousel-description-color;
-    }
-
-    @include smin-m {
-        font-size: $fontSize-root + 2;
-        margin-bottom: 17px;
-    }
+    @include smax-s {
+        font-size: 14px;
+    }; 
 }
 
 .heroCarousel-action {
-    margin: 10px 0 0 0;
+    display: block;
+    width: fit-content;
 
-    .button {
-        min-width: 146px;
-        height: 42px;
-        line-height: 40px;
-        font-size: 14px;
-
-        &.button--large {
-            min-width: 200px;
-        }
-
-        +.button {
-            margin-top: 10px;
-        }
-    }
-
-    @include smin-xs {
-        margin: 8px 0 0 0;
-
-        .button {
-            +.button {
-                margin-left: 30px;
-                margin-top: 0;
-            }
-        }
-    }
+    @include smax-s {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }; 
 }
