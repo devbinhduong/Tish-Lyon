@@ -9,11 +9,6 @@
                     <a class="text hover-link" href="{{url}}"><span>{{name}}</span></a>
                 </p>
             </li>
-            <li class="navPage-subMenu-item-child navPages-action-end navPage-subMenu-all">
-                <a class="navPage-subMenu-action navPages-action navPages-action-lv1 no-subMenu hover-link" href="{{url}}">
-                    <span class="text">{{lang 'category.view_all.name' category=name}}</span>
-                </a>
-            </li>
             {{#each children}}
                 {{#if children}}
                     <li class="navPage-subMenu-item-child has-dropdown fadeInRight" data-step-animate="{{@index}}">
@@ -32,11 +27,6 @@
                                         </span>
                                         <a class="text hover-link" href="{{url}}"><span>{{name}}</span></a>
                                     </p>
-                                </li>
-                                <li class="navPage-subMenu-item-child navPages-action-end navPage-subMenu-all">
-                                    <a class="navPage-subMenu-action navPages-action hover-link navPages-action-lv2 no-subMenu {{#if is_active}} activePage{{/if}}" href="{{url}}">
-                                        <span class="text">{{lang 'category.view_all.name' category=name}}</span>
-                                    </a>
                                 </li>
                                 {{#each children}}
                                     <li class="navPage-subMenu-item-child navPages-action-end">

@@ -416,10 +416,11 @@
     .navPages-list:not(.navPages-list-depth-max) .navPages-action.has-subMenu+& {
         .navPage-subMenu-list {
             margin-right: 0;
-            margin-bottom: 20px;
+            margin-bottom: 0;
 
             @include smin-m {
                 margin-right: auto;
+                margin-bottom: 20px;
             }
         }
     }
@@ -1084,6 +1085,30 @@
             width: 50%;
 
             .image {
+                +.image {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}
+
+.style-custom {
+    .imageArea {
+        .megamenu-right-item {
+            width: 100%;
+            display: flex;
+            margin-right: 0;
+            margin-left: 0;
+            padding: 0;
+
+            @include smax-m {
+                flex-wrap: wrap;
+            }; 
+
+            .image {
+                position: relative;
+                height: fit-content;
                 display: inline-block;
                 vertical-align: top;
                 width: auto;
@@ -1095,86 +1120,92 @@
                     object-fit: cover;
                 }
 
-                +.image {
-                    margin-top: 30px;
+                @include smax-m {
+                    max-width: 100% !important;
+                    width: 100%  !important;
+                    margin-top: 15px;
+                }; 
+
+                + .image {
+                    margin-left: 30px;
+
+                    @include smax-m {
+                        margin-left: 0;
+                    }; 
                 }
+            }
+        }
+
+        &.columns-2 {
+            .image {
+                width: 50%;
+            }
+        }
+
+        &.columns-3 {
+            .image {
+                width: 33.333333%;
+            }
+        }
+
+        &.columns-4 {
+            .image {
+                width: 25%;
+            }
+        }
+
+        &.columns-5 {
+            .image {
+                width: 20%;
             }
         }
     }
 
-    .style-custom {
-        .imageArea {
-            .megamenu-right-item {
-                width: 100%;
-                display: flex;
-                margin-right: 0;
-                margin-left: 0;
-                padding: 0;
+    .content {
+        position: absolute;
+        z-index: 10;
+        bottom: 0;
+        text-align: left;
+        padding: 14px;
 
-                .image {
-                    position: relative;
-                    height: fit-content;
+        @include smax-m {
+            padding: 30px;
+        }; 
 
-                    + .image {
-                        margin-top: 0;
-                        margin-left: 30px;
-                    }
-                }
-            }
+        .title {
+            color: #ffffff;
+            font-size: 31px;
+            line-height: 37px;
+            text-transform: unset;
 
-            &.columns-2 {
-                .image {
-                    width: 50%;
-                }
-            }
-
-            &.columns-3 {
-                .image {
-                    width: 33.333333%;
-                }
-            }
-
-            &.columns-4 {
-                .image {
-                    width: 25%;
-                }
-            }
-
-            &.columns-5 {
-                .image {
-                    width: 20%;
-                }
-            }
+            @include smax-m {
+                font-size: 26px;
+                line-height: 32px;
+                margin-top: 0;
+                margin-bottom: 9px;
+            }; 
         }
 
-        .content {
-            position: absolute;
-            z-index: 10;
-            bottom: 0;
-            text-align: left;
-            padding: 14px;
+        .text {
+            font-size: 16px;
+            color: #ffffff;
+            margin: 0 0 16px;
 
-            .title {
-                color: #ffffff;
-                font-size: 31px;
-                line-height: 37px;
-                text-transform: unset;
-            }
-
-            .text {
-                font-size: 16px;
-                color: #ffffff;
-                margin: 0 0 16px;
-            }
+            @include smax-m {
+                font-size: 14px;
+                font-weight: 300;
+                line-height: 18px;
+                margin-bottom: 9px;
+            };
         }
+    }
 
-        &.style-custom-2 {
-            .image {
-                height: 100% !important; 
+    &.style-custom-2 {
+        .image {
+            height: 100% !important; 
 
-                > img {
-                    height: 100%;
-                }
+            > img {
+                height: 100%;
             }
         }
     }
@@ -1596,9 +1627,7 @@
 
         .navPage-subMenu-title {
             >.navPages-action {
-                font-weight: $fontWeight-medium;
                 color: stencilColor('navPages-level-1-color');
-                background-color: #f5f5f5;
 
                 .navPages-action-moreIcon {
                     display: flex;
@@ -1617,7 +1646,6 @@
                 }
 
                 .text {
-                    font-weight: 500;
                     max-width: calc(100% - 70px);
                     white-space: nowrap;
                     overflow: hidden;
@@ -1628,24 +1656,8 @@
                     margin: 0 auto;
                     text-align: center;
                     color: stencilColor('navPages-level-1-color');
-                    text-transform: uppercase
                 }
 
-                @include smin-m {
-                    &:hover {
-                        color: stencilColor('navPages-level-1-color-hover');
-
-                        .navPages-action-moreIcon {
-                            svg {
-                                fill: stencilColor('navPages-level-1-color-hover');
-                            }
-                        }
-
-                        .text {
-                            color: stencilColor('navPages-level-1-color-hover');
-                        }
-                    }
-                }
             }
         }
 
@@ -1738,8 +1750,9 @@
             max-width: 100% !important;
 
             .image  {
+                position: relative;
                 & + .image {
-                    margin-top: 20px;
+                    margin-top: 15px;
                     display: block;
                 }
             }

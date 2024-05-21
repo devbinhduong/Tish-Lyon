@@ -528,6 +528,10 @@
     z-index: zIndex('high');
     color: #ffffff;
 
+    .is-sticky & {
+        color: stencilColor("navUser-color");
+    }
+
     svg {
         width: 24px;
         height: 24px;
