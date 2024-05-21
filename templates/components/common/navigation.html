@@ -1,8 +1,4 @@
 <nav class="navUser">
-    {{#or customer (unless settings.hide_price_from_guests)}}
-        {{> components/common/currency-selector}}
-    {{/or}}
-
     <ul class="navUser-section navUser-section--alt">
         {{#if customer.store_credit.value '>' 0}}
             <li class="navUser-item">

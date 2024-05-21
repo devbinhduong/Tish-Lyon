@@ -16,9 +16,19 @@
 .footer {
     background-color: $footer-background;
     border-top: container("border");
-    padding: spacing("double") 0;
+    padding: 26px 0 30px;
     position: relative;
     transform: translateZ(0); // 3
+}
+
+.footerLogo {
+    padding: 20px 0;
+    &__wrapper {
+
+        img {
+            max-width: 100px;
+        }
+    }
 }
 
 .footer-title-sr-only {
@@ -42,31 +52,49 @@
     float: none;
     font-size: fontSize("base"); // 2
     overflow-wrap: break-word;
-    text-align: center;
     vertical-align: top;
     // TODO: specifically use vendor only for IE11 since overflow-wrap is not supported here
     -ms-word-break: break-all;
-    @include breakpoint("small") {
-        text-align: left;
+    margin-bottom: 16px;
+
+    @include smin-s {
         width: width("6/12");
     }
 
-    @include breakpoint("medium") {
+    @include smin-m {
         width: width("4/12");
+        margin-bottom: 32px;
     }
 
-    > :first-child {
-        margin-top: 0;
-    }
+    &[data-section-type="footer-socials"] {
+        .text {
+            color: stencilColor("color-textBase");
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
 
-    > :last-child {
-        margin-bottom: 0;
+        .footer-info-list {
+            @include flexbox($align-items: center);
+            margin: -8px;
+
+            > li {
+                margin: 8px;
+            }
+
+            .icon {
+                @include square(20);
+
+                svg {
+                    fill: none;
+                }
+            }
+        }
     }
 }
 
 .footer-info-col--small {
-    @include breakpoint("medium") {
-        width: width("2/12");
+    @include smin-m {
+        width:20%;
     }
 }
 
@@ -75,19 +103,19 @@
 }
 
 .footer-info-col--left {
-    @include breakpoint("small") {
+    @include smin-s {
         padding: 0;
     }
 }
 
 .footer-info-col--right {
-    @include breakpoint("small") {
+    @include smin-s {
         left: 50%;
         position: inherit;
         width: 50%;
     }
 
-    @include breakpoint("medium") {
+    @include smin-m {
         left: 0;
         padding: 0;
         text-align: right;
@@ -100,21 +128,49 @@
 // -----------------------------------------------------------------------------
 
 .footer-info-heading {
-    color: $footer-heading-fontColor;
-    font-size: fontSize("base");
-    text-transform: inherit;
+    font-size: 23px;
+    line-height: 28px;
+    letter-spacing: 0;
+    margin: 11.5px 0;
+    padding: 0 0 10px;
+
+    @include smax-s {
+        font-size: 20px;
+        line-height: 24px;
+        margin: 10px 0;
+    }; 
 }
 
 .footer-info-list {
     list-style: none;
     margin-left: 0;
 
+    > li {
+        margin: 0 0 1.25rem;
+        line-height: 19px;
+
+        @include smax-s {
+            line-height: 18px;
+        }; 
+
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     a {
         color: stencilColor("color-textSecondary");
         text-decoration: none;
+        transition: color .25s ease;
+
+        @include smax-s {
+            font-size: $fontSize-root - 2;
+            font-weight: 300;
+        }; 
 
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: rgba(stencilColor("color-textSecondary--hover"), 0.7);
         }
     }
 }
@@ -122,7 +178,7 @@
 .footer-copyright {
     text-align: center;
 
-    @include breakpoint("small") {
+    @include smin-s {
         text-align: left;
     }
 
@@ -142,34 +198,149 @@
     }
 }
 
-.footer-payment-icons {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style-type: none;
-    margin-left: 0;
-    margin-top: spacing("single");
-
-    @include breakpoint("small") {
-        justify-content: normal;
-    }
-
-    @include breakpoint("medium") {
-        margin-top: spacing("double");
-    }
-
-    .footer-payment-icon {
-        height: remCalc(40);
-        margin: spacing("quarter");
-        vertical-align: middle;
-        width: remCalc(50);
-    }
-
-    svg {
-        fill: stencilColor("icon-color");
-    }
-}
-
 .footer-newsletter-summary {
     text-align: left;
+}
+
+
+// * ------ Footer bottom ------
+.footerBottom {
+    padding-top: 30px;
+
+    &__item {
+        @include flexbox($align-items: center);
+
+        &.right {
+            justify-content: flex-end;
+            flex: 1 0 auto;
+
+            .footer-payment-icons {
+                --gap: 5px;
+                --gap-offset: calc(var(--gap) * -1);
+                display: flex;
+                flex-wrap: wrap;
+                margin: var(--gap-offset);
+
+                > li {
+                    padding: var(--gap);
+                    display: inline-block;
+                    margin-bottom: 0;
+
+                    svg {
+                        display: block;
+                        width: 36px;
+                        height: 24px;
+                    }
+                }
+            }
+        }
+
+        &.left {
+            flex: 1 0 auto;
+            .navUser-section {
+                margin: 0;
+            }
+
+            .navUser-action--currencySelector {
+                border: 1px solid $color-custom-yellow;
+                padding: 14px 16px;
+                margin: 0 10px;
+                white-space: nowrap;
+                background-image: none;
+                font-weight: 300;
+                text-transform: uppercase;
+                white-space: .12em;
+                font-size: 10px;
+                line-height: 10px;
+                border-radius: 22px;
+
+                @include smax-m {
+                    margin-left: 0;
+                }; 
+
+                svg {
+                    stroke: none;
+                }
+
+                + #currencySelection {
+                    bottom: 50px !important;
+                    min-width: 200px;
+                    top: unset !important;
+                    border: 1px solid $color-custom-yellow;
+                    background-color: #ffffff;
+                    opacity: 0;
+                    visibility: hidden;
+                    margin: 0;
+                    padding: 10px 0;
+                    min-width: 150px;
+                    max-width: 100vw;
+                    min-height: 30px;
+                    max-height: 300px;
+                    z-index: 100;
+                    overflow-y: auto;
+                    list-style-type: none;
+                    pointer-events: none;
+                    transition: opacity .2s ease, visibility .2s;
+
+                    &.is-open {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                        transition: opacity .4s ease, visibility .4s;
+                    }
+
+                    .dropdown-menu-item {
+                        white-space: nowrap;
+                        padding: 0;
+                        margin: 0;
+                        text-align: left;
+
+                        > a {
+                            font-size: 12px;
+                            font-weight: 300;
+                            padding: 8px 15px;
+                            transition: color .25s ease;
+                            color: $color-custom-yellow;
+
+                            &.is-active {
+                                text-decoration: underline;
+                                text-decoration-color: #646464;
+                                text-underline-offset: 2px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .navUser-item {
+                display: block;
+            }
+        }
+
+        &.center {
+            flex: 1 1 auto;
+        }
+    }
+
+    &__socialList {
+        @include flexbox($flex-wrap: wrap);
+        --gap: 8px;
+        --gap-offset: calc(var(--gap) * -1);
+
+        margin: 0 var(--gap-offset);
+        list-style: none;
+
+        li {
+            margin-bottom: 0;
+            padding: 10px var(--gap);
+
+            a {
+                text-decoration: none;
+                transition: color .25s ease;
+                color: $color-custom-yellow;
+                font-size: 14px;
+                font-weight: 300;
+            }
+        }
+    }
 }

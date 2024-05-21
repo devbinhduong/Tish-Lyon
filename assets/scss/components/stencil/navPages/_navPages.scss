@@ -1086,7 +1086,9 @@
 
             .image {
                 +.image {
-                    margin-top: 30px;
+                    @include smax-m {
+                        margin-top: 30px;
+                    }; 
                 }
             }
         }
