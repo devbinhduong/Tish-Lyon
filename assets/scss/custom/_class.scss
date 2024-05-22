@@ -443,6 +443,10 @@
     padding-left: 0;
 }
 
+.mb-16 {
+    margin-bottom: 16px;
+}
+
 @include smax-m {
     .p-0-tablet {
         padding: 0;
@@ -524,6 +528,10 @@
 
     .pl-0-mobile {
         padding-left: 0;
+    }
+
+    .mb-10-mobile {
+        margin-bottom: 10px;
     }
 }
 

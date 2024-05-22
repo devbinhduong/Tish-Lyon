@@ -168,7 +168,8 @@
         backface-visibility: hidden;
     }
 
-    .animated & {
+    .animated &,
+    .slick-active & {
         img {
             transform: scale(1);
             transition: transform 1.5s cubic-bezier(.215,.61,.355,1);
@@ -217,24 +218,65 @@
     }; 
 }
 
-.heading-size-4 {
-    font-size: 22px;
-    line-height: 26px;
-    letter-spacing: 0;
+.image-overlay {
+    --bg: #000000;
+    --overlay-opacity: 0.35;
 
-    @include smax-s {
-        font-size: 18px;
-        line-height: 22px
-    }; 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: var(--bg);
+    opacity: var(--overlay-opacity);
 }
 
-.body-size-3 {
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 24px;
-    letter-spacing: 0;
+.heading-size {
+    &-4 {
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: 0;
+    
+        @include smax-s {
+            font-size: 18px;
+            line-height: 22px
+        }; 
+    }
 
-    @include smax-s {
-        line-height: 21px;
-    }; 
+    &-12 {
+        font-size: 71px;
+        line-height: 86px;
+        letter-spacing: 0;
+
+        @include smax-s {
+            font-size: 54px;
+            line-height: 64px;
+        }; 
+    }
+}
+
+.body-size {
+    &-3 {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 24px;
+        letter-spacing: 0;
+    
+        @include smax-s {
+            line-height: 21px;
+        }; 
+    }
+
+    &-4 {
+        font-size: 19px;
+        font-weight: 300;
+        line-height: 23px;
+        letter-spacing: 0;
+
+        @include smax-s {
+            font-size: 16px;
+            line-height: 19.2px;
+        }; 
+    }
 }

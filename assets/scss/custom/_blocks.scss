@@ -28,3 +28,72 @@
         }
     }
 }
+
+// * ------ Home Slick Banner ------
+.homeSlickBanner {
+    overflow: hidden;
+    
+    &__list {
+        &:not(.slick-initialized) {
+            .homeSlickBanner__item:nth-child(n + 2) {
+                display: none;
+            } 
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__image {
+    }
+
+    &__link {
+        @include image-padding-bottom(2543, 878);
+        display: block;
+        min-height: 878px;
+
+        @include smax-s {
+            min-height: 659px;
+        }
+    }
+
+    &__content {
+        @include pos($pos: abs, $b: 0, $l: 0);
+        padding: 50px 50px 34px;
+        max-width: 50%;
+        text-align: left;
+        background-color: transparent;
+        z-index: 11;
+
+        @include smax-s {
+            max-width: 100%;
+            padding:  16px 16px 7px;
+            @include pos($pos: abs, $cb: center-y);
+            z-index: 12;
+        }
+    }
+
+     /* Show Arrow Effect */
+    .slick-arrow {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .2s ease-in-out, transform .2s ease-in-out, visibility .2s;
+
+        &.slick-prev {
+            transform: translate(-100%);
+        }
+
+        &.slick-next {
+            transform: translate(100%);
+        }
+    }
+
+    &:hover {
+        .slick-arrow {
+            opacity: 1;
+            visibility: visible;
+            transform: translateZ(0);
+        }
+    }
+}

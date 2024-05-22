@@ -543,11 +543,11 @@
         "carousel-bgColor": "transparent",
         "carousel-title-color": "#fffffff",
         "carousel-description-color": "#ffffff",
-        "carousel-dot-color": "#333333",
-        "carousel-dot-color-active": "#757575",
+        "carousel-dot-color": "#ffffff",
+        "carousel-dot-color-active": "#ffffff",
         "carousel-dot-bgColor": "#ffffff",
-        "carousel-arrow-color": "#8f8f8f",
-        "carousel-arrow-color--hover": "#474747",
+        "carousel-arrow-color": "#212121",
+        "carousel-arrow-color--hover": "#212121",
         "carousel-arrow-bgColor": "#ffffff",
         "carousel-arrow-borderColor": "#ffffff",
         "carousel-play-pause-button-textColor": "8f8f8f",
@@ -948,7 +948,18 @@
         "footer_col4_desc": "Keep up to date with all the latest Tish Lyon news via our socials.",
         "footer_col4_item1_link": "https://www.instagram.com/tish_lyon/",
         "footer_col4_item2_link": "https://www.facebook.com/TishLyonJewellery/",
-        "footer_col4_item3_link": "https://www.tiktok.com/@tish_lyon_gold"
+        "footer_col4_item3_link": "https://www.tiktok.com/@tish_lyon_gold",
+        "home_banner_carousel_1_img": "section-banner-carousel-1.jpg",
+        "home_banner_carousel_1_title": "20% Off Selected Solid Gold Barbells",
+        "home_banner_carousel_1_text": "Use code: BAR20 at the cart to redeem your discount. Offer valid until stocks last.",
+        "home_banner_carousel_1_button": "Shop Now",
+        "home_banner_carousel_1_link": "#",
+
+        "home_banner_carousel_2_img": "section-banner-carousel-2.jpg",
+        "home_banner_carousel_2_title": "New Mini Tooth Gems",
+        "home_banner_carousel_2_text": "3 of our best selling tooth gem designs, in a brand new mini size. Available in 18ct solid gold.",
+        "home_banner_carousel_2_button": "Shop Now",
+        "home_banner_carousel_2_link": "#"
       }
     }
   ]

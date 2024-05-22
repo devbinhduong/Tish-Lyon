@@ -30,22 +30,7 @@
     backface-visibility: hidden;
     
 
-    &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -60px;
-        z-index: -1;
-        width: calc(100% + 120px);
-        height: 100%;
-        background-color: currentColor;
-        opacity: .1;
-        transform: translate3d(-100%, 0, 0) skew(30deg);
-        transition: transform .5s cubic-bezier(.33,0,0,1);
-        will-change: transform;
-        -webkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-    }
+   
 
     &:focus,
     &:active {
@@ -54,9 +39,22 @@
         background-color: $buttonStyle-default-backgroundColorActive;
     }
 
-    &.no-after {
+    &.has-effect {
         &::after {
-            content: unset;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -60px;
+            z-index: -1;
+            width: calc(100% + 120px);
+            height: 100%;
+            background-color: currentColor;
+            opacity: .1;
+            transform: translate3d(-100%, 0, 0) skew(30deg);
+            transition: transform .5s cubic-bezier(.33,0,0,1);
+            will-change: transform;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
         }
     }
 

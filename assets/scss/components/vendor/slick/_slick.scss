@@ -20,19 +20,18 @@
 .slick-prev {
     @include carouselOpaqueBackgrounds($slick-arrow-bgColor);
     border: 1px solid $slick-arrow-borderColor;
-    height: remCalc(61px);
     margin-top: -(remCalc(15px));
-    padding: remCalc(10px);
-    width: remCalc(40px);
+    @include square(40);
+    @include flexcb($cb: center);
     z-index: 1;
+    border-radius: 50%;
 
     &::before {
         background-position: 50%;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat;   
         background-size: 100%;
         display: block;
-        height: remCalc(41px);
-        width: remCalc(20px);
+        @include square(28);
     }
 
     &:hover,
@@ -47,9 +46,6 @@
 .slick-next {
     right: $slick-arrows-offset;
 
-    @include breakpoint("large") {
-        right: -(spacing("double") + spacing("quarter"));
-    }
 
     &::before {
         @include carousel-arrow-color( $slick-arrow-color, "next");
@@ -65,9 +61,6 @@
 .slick-prev {
     left: $slick-arrows-offset;
 
-    @include breakpoint("large") {
-        left: -(spacing("double") + spacing("quarter"));
-    }
 
     &::before {
         @include carousel-arrow-color( $slick-arrow-color, "prev");
@@ -96,16 +89,18 @@
 
 .slick-dots {  // 2
     margin: 0;
+    bottom: 0;
 
     li {
-        @include square(32px);
+        width: remCalc(40px);
+        height: remCalc(2px);
         margin: 0;
-        padding: remCalc(5px);
+        vertical-align: middle;
 
         button,
         button::before {
-            @include square(15px);
-            border-radius: 50%;
+            width: remCalc(40px);
+            height: remCalc(2px);
         }
 
         button {
@@ -115,7 +110,9 @@
             padding: 0;
             position: relative;
             text-align: center;
-            vertical-align: middle;
+            vertical-align: top;
+            background: $slick-dot-color;
+            opacity: 0.25;
 
             &:hover {
                 &::before {
@@ -132,9 +129,15 @@
         }
 
         &.slick-active {
+            button,
             button::before {
                 background: $slick-dot-color-active;
+                opacity: 1;
             }
+        }
+
+        + li {
+            margin-left: 10px;
         }
     }
 

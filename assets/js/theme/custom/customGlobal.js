@@ -41,20 +41,6 @@ export default function(context) {
     function eventLoad(){
         /* Load when DOM ready */
         window.addEventListener('load', (e) =>{
-
-            /* Global Slick Slider */
-            const sectionSlicks = document.querySelectorAll('.section-slick');
-            if(sectionSlicks.length > 0) {
-                for(let i = 0; i < sectionSlicks.length; i++) {
-                    const sectionSlick = sectionSlicks[i];
-                    const sectionSlickOptions = sectionSlick.getAttribute('data-slick-options');
-                    if(sectionSlickOptions) {
-                        const options = JSON.parse(sectionSlickOptions);
-                        $(sectionSlick).slick(options);
-                    }
-                }
-            }
-
             /* Load Section when scroll */
             sectionLoad();
         });
@@ -130,6 +116,17 @@ export default function(context) {
         section.classList.add('animated');
     }
 
+    /* Global Init Slick Slider */
+    function globalInitSlickSlider(section) {
+        const slickOptions = section.getAttribute('data-slick-options');
+        if(!slickOptions) return;
+
+        const options = JSON.parse(slickOptions);
+        $(section).slick(options);
+    }
+
+    
+
     function sectionLoad() {
         const handler = (entries, observer) => {
             entries.forEach(entry => {
@@ -140,6 +137,11 @@ export default function(context) {
                     switch(sectionType) {
                         case 'animation':
                             customAnimate(section);
+                            break;
+
+                        case 'slick-slider':
+                            if(section.classList.contains('slick-initialized')) return;
+                            globalInitSlickSlider(section);
                             break;
                         
                         default:
