@@ -959,7 +959,25 @@
         "home_banner_carousel_2_title": "New Mini Tooth Gems",
         "home_banner_carousel_2_text": "3 of our best selling tooth gem designs, in a brand new mini size. Available in 18ct solid gold.",
         "home_banner_carousel_2_button": "Shop Now",
-        "home_banner_carousel_2_link": "#"
+        "home_banner_carousel_2_link": "#",
+
+        "home_col_banner_1_img": "home-banner-column-1.jpg",
+        "home_col_banner_1_title": "Bee-autiful Piercing Jewellery",
+        "home_col_banner_1_text": "Hello Spring! Discover our range of bee-themed hinged rings and attachments, for a sparkle as sweet as honey.",
+        "home_col_banner_1_button": "Shop Now",
+        "home_col_banner_1_link": "#",
+
+        "home_col_banner_2_img": "home-banner-column-2.jpg",
+        "home_col_banner_2_title": "Semi-Precious Pieces",
+        "home_col_banner_2_text": "A selection of 14ct gold gemstone pieces, designed to be worn in a variety of piercings.",
+        "home_col_banner_2_button": "Shop Now",
+        "home_col_banner_2_link": "#",
+        
+        "home_col_banner_3_img": "home-banner-column-3.jpg",
+        "home_col_banner_3_title": "Precious Piercing Rings",
+        "home_col_banner_3_text": "Add that extra special touch to your clients piercings with our precious gemstone hinged rings.",
+        "home_col_banner_3_button": "Shop Now",
+        "home_col_banner_3_link": "#"
       }
     }
   ]

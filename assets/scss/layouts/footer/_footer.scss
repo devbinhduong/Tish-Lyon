@@ -23,11 +23,11 @@
 
 .footerLogo {
     padding: 20px 0;
+    
     &__wrapper {
-
-        img {
-            max-width: 100px;
-        }
+        @include image-padding-bottom(100, 100);
+        max-width: 100px;
+        display: block;
     }
 }
 

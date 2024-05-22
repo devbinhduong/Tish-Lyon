@@ -45,9 +45,6 @@
         position: relative;
     }
 
-    &__image {
-    }
-
     &__link {
         @include image-padding-bottom(2543, 878);
         display: block;
@@ -95,5 +92,37 @@
             visibility: visible;
             transform: translateZ(0);
         }
+    }
+}
+
+// * ------ Home Columns Banner ------
+.homeColBanner {
+    &__list {
+        @include smin-s {
+            @include flex-layout(3, 32px);
+        }; 
+    }
+
+    &__title {
+        margin-top: 0;
+        margin: 7px;
+    }
+
+    &__description {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    &__image {
+        margin-bottom: 20px;
+    }
+
+    &__content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &__link {
+        @include image-padding-bottom(793, 1030);
     }
 }
