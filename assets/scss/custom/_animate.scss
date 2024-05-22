@@ -16,6 +16,18 @@
     }
 }
 
+@keyframes heroFade {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 15px, 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateZ(0)
+    }
+}
+
 
 .has-activeNavPages {
      .fadeInRight {
@@ -34,6 +46,27 @@
                     animation-duration: .5s;
                 }
             }
+        }
+    }
+}
+
+// * ------ Custom AOS Animate ------
+[data-aos=hero] {
+    opacity: 0;
+    will-change: transform, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+
+    &.aos-animate {
+        animation-name: heroFade;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+
+    @for $i from 0 through 100 {
+        &[data-aos-order="#{$i}"] {
+            animation-delay: 0.15s * $i;
         }
     }
 }

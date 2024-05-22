@@ -586,7 +586,11 @@
     margin-top: 0;
     color: #3a8dde;
     font-size: clamp(24px, 1.8vw, 35px);
-} 
+}
+
+.bg-global {
+    background-color: #f4f2f0;
+}
 
 .hide-on {
     &-all {
@@ -611,3 +615,4 @@
         }
     }
 }
+

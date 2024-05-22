@@ -1,0 +1,30 @@
+// * ------ Home Service Block ------
+.serviceBlock {
+    padding: 50px 0;
+
+    @include smax-s {
+        padding: 30px 0;
+    }; 
+
+    &__list {
+        @include smin-s {
+            @include flex-layout(4, 32px);
+        }; 
+    }
+    &__item {
+        .item-icon {
+            color: $color-custom-yellow;
+            margin-bottom: 20px;
+
+            svg {
+                fill: none;
+                @include square(20);
+            }
+        }
+
+        .item-heading {
+            margin-top: 0;
+            margin-bottom: 9px;
+        }
+    }
+}

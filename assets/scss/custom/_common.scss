@@ -62,47 +62,50 @@
 }
 
 
-@include smin-m {
-    /* ------------------ Hover Image Zoom ------------------------- */
-    .hover-image {
-        overflow: hidden;
-        cursor: pointer;
-        img {
-            transition: all .6s ease;
-        }
-    
-        &:hover {
-            img {
-                transform: scale3d(1.1, 1.1, 1);
-            }
-        }
-    }
-    
-    /* ------------------ Hover Link ------------------------- */
-    .hover-link {
-        position: relative;
-        text-decoration: none;
+/* ------------------ Hover Link ------------------------- */
+.hover-link {
+    position: relative;
+    text-decoration: none;
 
-        span {
-            transition: color .25s cubic-bezier(.215,.61,.355,1);
-        }
-    
-        &::before {
-            content: "";
-            position: absolute;
-            left: 15px;
-            right: 15px;
-            bottom: 0;
-            height: 1px;
-            background-color: currentColor;
-            transform: scaleX(0);
-            will-change: transform;
-            transition: transform .25s cubic-bezier(.215,.61,.355,1);
-        }
-          
-        &:hover::before {
-            transform: scaleX(1);
-        }
+    span {
+        transition: color .25s cubic-bezier(.215,.61,.355,1);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 15px;
+        right: 15px;
+        bottom: 0;
+        height: 1px;
+        background-color: currentColor;
+        transform: scaleX(0);
+        will-change: transform;
+        transition: transform .25s cubic-bezier(.215,.61,.355,1);
+    }
+        
+    &:hover::before {
+        transform: scaleX(1);
+    }
+}
+
+.hover-link-2 {
+    --link: currentColor;
+    --link-hover: currentColor;
+    display: inline;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0 0 5px;
+    color: var(--link);
+    background: linear-gradient(to right, currentColor, currentColor);
+    background-size: 100% 1px;
+    background-position: 50% 86%;
+    background-repeat: no-repeat;
+    transition: color .25s ease-in, background-size .25s ease-in;
+
+    &:hover {
+        color: currentColor;
+        background-size: 0% 1px;
     }
 }
 
@@ -184,4 +187,54 @@
     background-color: #000000;
     opacity: 0.25;
     will-change: opacity;
+}
+
+.custom-mobile-slider {
+    --gap: 16px;
+    --offset: calc(var(--gap) * -1);
+
+    @include smax-s {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        gap: 0;
+        margin: 0 var(--offset);
+        padding-left: var(--gap);
+        overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scroll-padding: var(--gap);
+        scrollbar-width: none;
+
+        .item {
+            padding: 0;
+            flex: 0 0 auto;
+            width: calc(100% - 50px);
+            margin: 0 var(--gap) 0 0;
+            scroll-snap-align: start;
+        }
+    }; 
+}
+
+.heading-size-4 {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0;
+
+    @include smax-s {
+        font-size: 18px;
+        line-height: 22px
+    }; 
+}
+
+.body-size-3 {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0;
+
+    @include smax-s {
+        line-height: 21px;
+    }; 
 }
