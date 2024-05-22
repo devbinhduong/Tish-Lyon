@@ -126,3 +126,106 @@
         @include image-padding-bottom(793, 1030);
     }
 }
+
+// * ------ Home Gallery Section ------
+.homeHoverBanner {
+    position: relative;
+
+    &__content {
+        @include pos($pos: abs, $cb: center);
+        width: 100%;
+        z-index: 11;
+
+        @include smax-s {
+            position: sticky;
+            top: 0;
+            left: 0;
+            transform: none;
+            min-height: 1257px;
+            @include flexbox($flex-direction: column, $justify-content: center);
+        }; 
+    }
+    
+    --gap: 32px;
+    --offset: calc(var(--gap) * -1);
+
+    @include smax-s {
+        --gap: 16px;
+    }; 
+
+    &__list {
+        @include flexcb($cb: center);
+        flex-wrap: wrap;
+        width: 100%;
+
+        @include smin-s {
+            margin: 0 --offset;
+        }
+
+        @include smax-s {
+            flex-direction: column;
+        }; 
+    }
+
+    &__item {
+        padding: var(--gap);
+    }
+
+    &__title {
+        color: $color-custom-white;
+        opacity: 0.5;
+        transition: opacity .8s cubic-bezier(.215,.61,.355,1);
+        text-decoration: none;
+        font-size: 37px;
+        line-height: 49px;
+        letter-spacing: 0;
+        white-space: nowrap;
+
+        @include smax-s {
+            font-size: 31px;
+            line-height: 42px;
+        }; 
+
+        &:hover {
+            color: $color-custom-white;
+            opacity: 1;
+        }
+
+        .is-visible & {
+            opacity: 1;
+        }
+    }
+
+    &__imageList {
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+
+        @include smin-s {
+            display: grid;
+            height: 100%;
+        }
+    }
+
+    &__imageItem {
+        @include smin-s {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            min-height: 100%;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(1.1);
+            transition: opacity .8s cubic-bezier(.215,.61,.355,1), transform .8s cubic-bezier(.215,.61,.355,1);
+
+            &.is-visible {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            @include image-padding-bottom(2543, 1080);
+            min-height: 1080px;
+        }
+    }
+}

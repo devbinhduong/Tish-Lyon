@@ -977,7 +977,24 @@
         "home_col_banner_3_title": "Precious Piercing Rings",
         "home_col_banner_3_text": "Add that extra special touch to your clients piercings with our precious gemstone hinged rings.",
         "home_col_banner_3_button": "Shop Now",
-        "home_col_banner_3_link": "#"
+        "home_col_banner_3_link": "#",
+
+        "home_gallery_1_title": "Attachments",
+        "home_gallery_1_img": "home-gallery-banner-1.jpg",
+        "home_gallery_1_link": "#",
+        "home_gallery_2_title": "Labrets",
+        "home_gallery_2_img": "home-gallery-banner-2.jpg",
+        "home_gallery_2_link": "#",
+        "home_gallery_3_title": "Chains & Charms",
+        "home_gallery_3_img": "home-gallery-banner-3.jpg",
+        "home_gallery_3_link": "#",
+        "home_gallery_4_title": "Hinged Rings",
+        "home_gallery_4_img": "home-gallery-banner-4.jpg",
+        "home_gallery_4_link": "#",
+        "home_gallery_5_title": "Barbell Earrings",
+        "home_gallery_5_img": "home-gallery-banner-5.jpg",
+        "home_gallery_5_link": "#"
+        
       }
     }
   ]
