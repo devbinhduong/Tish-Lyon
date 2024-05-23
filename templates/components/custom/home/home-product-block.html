@@ -1,0 +1,43 @@
+<div id="list-product-detail-block" class="home-product-block">
+    <div class="pl-0 pr-0">
+        <div id="list-product-detail" class="product-block" data-columns="4" data-limit="8" data-dots="false">
+            <div class="productsByListId custom-block-product" data-list-id="{{theme_settings.home_product_banner_listid}}" id="product-by-list-id">
+                <div class="custom_productLoading productSkeleton__list no-wrap">
+                    <div class="skeleton-loader productSkeleton__item"></div>
+                   {{> components/custom/global/product-skeleton }}
+                   {{> components/custom/global/product-skeleton }}
+                   {{> components/custom/global/product-skeleton }}
+                   {{> components/custom/global/product-skeleton }}
+                </div>
+                <section class="productCarousel productCarouselCustom">
+                   <div class="customBlockBanner productCarousel-slide">
+                    <div class="customBlockBanner__image">
+                        <a href="{{theme_settings.home_product_banner_link}}" class="customBlockBanner__link">
+                            <img class="lazyload" src="" data-src="/product_images/uploaded_images/{{theme_settings.home_product_banner_image}}" alt="{{theme_settings.home_product_banner_text}}">
+                            
+                            <div class="image-overlay" style="--overlay-opacity: 0.35;"></div>
+                        </a>
+                    </div>
+
+                    <div class="customBlockBanner__content">
+                        <div class="content-top">
+                            <p class="customBlockBanner__description body-size-3 text-white m-0" data-aos="hero" data-aos-order="1">{{theme_settings.home_product_banner_count}}</p>
+                        </div>
+
+                        <div class="content-bottom">
+                            <p class="customBlockBanner__description body-size-3 text-white mb-16 mb-10-mobile" data-aos="hero" data-aos-order="2">{{theme_settings.home_product_banner_text}}</p>
+
+                            <a href="{{theme_settings.home_product_banner_link}}" class="customBlockBanner__button button uppercase" data-aos="hero" data-aos-order="3">
+                                {{theme_settings.home_product_banner_button}}
+                                <span class="icon icon--arrow-right">
+                                    <svg><use xlink:href="#icon-arrow-right"></use></svg>
+                                </span>
+                            </a>
+                        </div>
+
+                   </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone 6-14 Custom Before Add AOS",
+  "name": "Cornerstone Update 23052024",
   "version": "6.14.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -993,8 +993,14 @@
         "home_gallery_4_link": "#",
         "home_gallery_5_title": "Barbell Earrings",
         "home_gallery_5_img": "home-gallery-banner-5.jpg",
-        "home_gallery_5_link": "#"
+        "home_gallery_5_link": "#",
         
+        "home_product_banner_listid": "10510,10511,10512,10513,10515",
+        "home_product_banner_image": "home-banner-product-block.jpg",
+        "home_product_banner_count": "24 products",
+        "home_product_banner_text": "Best Sellers",
+        "home_product_banner_button": "View All",
+        "home_product_banner_link": "#"
       }
     }
   ]

@@ -245,4 +245,5 @@ export default function(context) {
         if (width > 17) return;
         document.documentElement.style.setProperty('--scrollbar-width', `${width}px`);
     }
+
 }

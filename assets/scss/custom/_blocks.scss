@@ -70,29 +70,6 @@
             z-index: 12;
         }
     }
-
-     /* Show Arrow Effect */
-    .slick-arrow {
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity .2s ease-in-out, transform .2s ease-in-out, visibility .2s;
-
-        &.slick-prev {
-            transform: translate(-100%);
-        }
-
-        &.slick-next {
-            transform: translate(100%);
-        }
-    }
-
-    &:hover {
-        .slick-arrow {
-            opacity: 1;
-            visibility: visible;
-            transform: translateZ(0);
-        }
-    }
 }
 
 // * ------ Home Columns Banner ------
@@ -227,5 +204,58 @@
             @include image-padding-bottom(2543, 1080);
             min-height: 1080px;
         }
+    }
+}
+
+// * ------ Home Section Account ------
+.homeAccount {
+    padding: 100px 0;
+
+    @include smax-m {
+        padding: 80px 0;
+    }; 
+
+    @include smax-s {
+        padding: 60px 0;
+    }; 
+}
+
+// * ------ Home Products Block ------
+#list-product-detail {
+    --outer: 50px;
+    --scrollbar-width: 17px;
+    
+    padding: 32px 0 95px;
+
+    .productCarouselCustom:not(.slick-initialized) {
+       .customBlockBanner {
+            display: none;
+       }
+    }
+
+    .customBlockBanner {
+        position: relative;
+        width: calc((100vw - var(--scrollbar-width) - var(--outer) * 2) * .28);
+
+        &__link {
+            @include image-padding-bottom(540, 540);
+        }
+
+        &__content {
+            @include abs-full;
+            @include flexbox($flex-direction: column, $justify-content: space-between);
+            z-index: 11;
+            padding: 20px;
+        }
+    }
+
+    .productCarousel {
+        margin: 0;
+        overflow: hidden;
+    }
+
+    .productCarousel-slide {
+        padding: 0;
+        margin-left: 32px;
     }
 }

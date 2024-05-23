@@ -296,3 +296,27 @@ div.slick-slider {
         min-width: 80px;
     }
 }
+
+
+ /* Show Arrow Effect */
+ .slick-arrow {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out, visibility .2s;
+
+    &.slick-prev {
+        transform: translate(-100%);
+    }
+
+    &.slick-next {
+        transform: translate(100%);
+    }
+}
+
+.slick-slider:hover {
+    .slick-arrow {
+        opacity: 1;
+        visibility: visible;
+        transform: translateZ(0);
+    }
+}
