@@ -16,12 +16,16 @@
     @include grid-row($behavior: "nest");
     font-size: 0; // 1
     margin-bottom: spacing("single");
+    margin-left: -1rem;
+    margin-right: -1rem;
 
     .product {
         @include grid-column(6, $float: none);
         display: inline-block;
         font-size: fontSize("base"); // 1
         vertical-align: top;
+        padding-left: 1rem;
+        padding-right: 1rem;
 
         @include breakpoint("small") {
             width: grid-calc(4, $total-columns);

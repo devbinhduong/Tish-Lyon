@@ -28,6 +28,28 @@
     }
 }
 
+@keyframes pulseHover {
+    0% {
+        transform: scale(1);
+        opacity: .3;
+    }
+
+    15% {
+        transform: scale(1.2);
+        opacity: .05;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: .3;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: .3;
+    }
+}
+
 
 .has-activeNavPages {
      .fadeInRight {

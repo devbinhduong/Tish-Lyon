@@ -260,4 +260,12 @@
     <symbol id="icon-tiktok-footer" viewBox="0 0 24 24">
         <path d="M21 8v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path><path d="M10 12a3 3 0 1 0 3 3V6c.333 1 1.6 3 4 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
     </symbol>
+
+    <symbol id="icon-bag" viewBox="0 0 24 24">
+        <path d="m19.26 9.696 1.385 9A2 2 0 0 1 18.67 21H5.33a2 2 0 0 1-1.977-2.304l1.385-9A2 2 0 0 1 6.716 8h10.568a2 2 0 0 1 1.977 1.696zM14 5a2 2 0 1 0-4 0" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+
+    <symbol viewBox="0 0 24 24" id="icon-close2">
+        <path d="M6.758 17.243 12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
 </svg>
