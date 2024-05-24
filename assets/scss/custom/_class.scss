@@ -622,6 +622,18 @@
             display: none !important;
         }
     }
+
+    &-minTablet {
+        @include smin-m {
+            display: none !important;
+        }
+    }
+
+    &-minMobile {
+        @include smin-s {
+            display: none !important;
+        }
+    }
 }
 
 .frame {

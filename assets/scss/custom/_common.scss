@@ -340,6 +340,28 @@
         }; 
     }
 
+    &-8 {
+        font-size: 44px;
+        line-height: 52px;
+        letter-spacing: 0;
+
+        @include smax-s {
+            font-size: 37px;
+            line-height: 44px;
+        }
+    }
+
+    &-9 {
+        font-size: 52px;
+        line-height: 62px;
+        letter-spacing: 0;
+
+        @include smax-s {
+            font-size: 43px;
+            line-height: 51px;
+        }; 
+    }
+
     &-12 {
         font-size: 71px;
         line-height: 86px;
@@ -375,5 +397,25 @@
             font-size: 16px;
             line-height: 19.2px;
         }; 
+    }
+
+    &-5 {
+        font-size: 23px;
+        line-height: 29px;
+
+        @include smax-s {
+            font-size: 21px;
+            line-height: 26px;
+        }; 
+    }
+}
+
+.slick-gap {
+    &-32 {
+        margin: 0 -16px;
+
+        .slick-slide {
+            padding: 0 16px;
+        }
     }
 }

@@ -1,0 +1,31 @@
+<section class="homeFeaturePost">
+    <div class="homeFeaturePost__wrapper">
+        {{#each (limit post 1)}}
+            <div class="postItem">
+                <div class="postItem__left">
+                    <div class="postItem__content">
+                        <p class="postItem__subHeading uppercase">Tish Tips Featured post</p>
+                        <h3 class="title">
+                            <a href="{{url}}" class="" style="-webkit-box-orient: vertical;">
+                                <span>{{title}}</span>
+                            </a>
+                        </h3>
+
+                        <p class="desc">
+                            {{summary}}&hellip;
+                        </p>
+
+                        <a class="readMore hover-link-2 uppercase" href="{{url}}" aria-label="Link to {{title}}">
+                            {{lang 'blog.read_more'}}
+                        </a>
+                    </div>
+                </div>
+                <div class="postItem__right">
+                    <a class="postItem__image" href="{{url}}">
+                        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage thumbnail}}" alt="{{title}}">
+                    </a>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>

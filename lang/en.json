@@ -1039,5 +1039,19 @@
         "privacy_policy": "Privacy Policy",
         "allow_category_tracking": "Allow [CATEGORY_NAME] tracking",
         "disallow_category_tracking": "Disallow [CATEGORY_NAME] tracking"
+    },
+    "custom": {
+        "home_review1_author_name": "Lucy",
+        "home_review1_author_subHeading": "No Divide Piercing & Tattoo Studio",
+        "home_review1_author_content": "Tish Lyon is just truly stunning. Such an exquisite collection which is classy and accessible to all. All of our clients love Tish Lyon... Thank you for being a brand we can trust every time.",
+        "home_review2_author_name": "Lisa",
+        "home_review2_author_subHeading": "The Owl and the Pussycat Piercing",
+        "home_review2_author_content": "Tish Lyon is a huge hit with our clients, an absolute staple in our cabinets. We love the huge array of designs and the fact that it’s so accessible. We love using Tish Lyon and we are very proud stockists.",
+        "home_review3_author_name": "Brett",
+        "home_review3_author_subHeading": "That Place Piercing Studio",
+        "home_review3_author_content": "Tish Lyon jewellery offers our customers a fantastic and ever-expanding choice of high quality pieces. We find that the gold is made to an excellent standard and is very competitively priced. Tish Lyon is by far our best selling brands on sale at our studio.",
+        "home_review4_author_name": "Ash",
+        "home_review4_author_subHeading": " ",
+        "home_review4_author_content": "The Tish team are very helpful and friendly. With fast shipping and value. I would highly recommend them for all your piercing needs."
     }
 }

@@ -290,17 +290,13 @@
             }
 
             &-bg {
-                position: absolute;
-                top: 0;
-                left: 0;
+                @include pos($pos: abs, $t: 0, $l: 0);
                 width: 100%;
                 height: 100%;
                 padding-top: 0;
 
                 img {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
+                    @include pos($pos: abs, $t: 0, $l: 0);
                     width: 100%;
                     height: 100%;
                     image-rendering: auto;
@@ -333,10 +329,8 @@
         };
 
         @include smax-s {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 5600;
+            @include pos($pos: fixed, $t: 0, $l: 0);
+            z-index: 101;
             width: 100vw;
             height: 100%;
             pointer-events: none;
@@ -356,9 +350,7 @@
             }
 
             .productsByListId2 {
-                position: absolute;
-                right: 0;
-                bottom: 0;
+                @include pos($pos: abs, $b: 0, $r: 0);
                 top: auto;
                 z-index: 2;
                 overflow-x: hidden;
@@ -394,9 +386,7 @@
 
     &__overlay {
        @include smax-s {
-            position: absolute;
-            top: 0;
-            left: 0;
+            @include pos($pos: abs, $t: 0, $l: 0);
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.4);
@@ -406,10 +396,9 @@
 
     &__close {
         @include smax-s {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include pos($pos: abs, $t: 22px, $r: 28px);
+            z-index: 2;
+            @include flexcb($cb: center);
             padding: 5px;
             color: $color-custom-yellow;
             background: transparent;
@@ -418,9 +407,6 @@
             text-decoration: none;
             transform: translate3d(0, -50%, 0);
             transition: color .3s ease;
-            right: 28px;
-            top: 22px;
-            z-index: 2;
 
             svg {
                 @include square(24);
@@ -453,47 +439,34 @@
    };
 
    .look__dots {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        bottom: 11px;
-        right: 11px;
+        @include pos($pos: abs, $t: 12px, $l: 12px, $b: 11px, $r: 11px);
 
         .look__dot__button {
-            position: absolute;
-            width: 23px;
-            height: 23px;
+            @include pos($pos: abs, $t: var(--dot-top), $l: var(--dot-left));
+            @include square(23);
             padding: 0;
             margin-top: -12px;
             margin-left: -12px;
-            top: var(--dot-top);
-            left: var(--dot-left);
             cursor: pointer;
 
             .look__dot {
-                position: absolute;
-                top: 0;
-                left: 0;
+                @include pos($pos: abs, $t: 0, $l: 0);
                 z-index: 100;
                 width: 100%;
                 height: 100%;
                 background-color: #ffffff;
                 border-radius: 300px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                @include flexcb($cb: center);
 
                 &::after,
                 &::before {
+                    @include pos($pos: abs, $t: -6px, $l: -6px);
                     content: "";
                     width: 35px;
                     height: 35px;
                     background-color: inherit;
                     border-radius: inherit;
                     opacity: .3;
-                    position: absolute;
-                    top: -6px;
-                    left: -6px;
                     will-change: transform;
                 }
 
@@ -525,9 +498,7 @@
     }
 
     &__actions {
-        position: absolute;
-        bottom: 0;
-        left: 0;
+        @include pos($pos: abs, $b: 0, $l: 0);
         width: 100%;
         padding: 16px;
 
@@ -550,4 +521,304 @@
             fill: none;
         }
     }
+}
+
+// * ------ Home Section 2 Banners ------
+.sectionBannerCol {
+    &__list {
+        @include flex-layout(2, 0px);
+
+        @include smax-s {
+            @include flex-layout(1, 0px);
+        }
+    }
+
+    &__item {
+        position: relative;
+    }
+
+    &__link {
+        @include image-padding-bottom(1272, 878);
+        min-height: 878px;
+        display: block;
+
+        @include smax-s {
+            min-height: 659px;
+        }
+    }
+
+    &__content {
+        @include pos($pos: abs, $b: 0, $l: 0);
+        padding: 50px 50px 34px;
+        text-align: left;
+        background-color: transparent;
+        z-index: 11;
+
+        @include smax-s {
+            max-width: 100%;
+            padding:  16px 16px 7px;
+            z-index: 12;
+        }
+    }
+}
+
+// * ------ Home Testimonial ------
+.homeTestimonial {
+    --inner: 40px;
+    overflow: hidden;
+
+    @include smax-s {
+        --inner: 30px;
+    };
+
+    &__heading {
+        padding: 62px 0 26px;
+
+        @include smax-m {
+            padding: 50px 20px;
+        }; 
+
+        @include smax-s {
+            padding: 37px 16px;
+        }; 
+    }
+
+    &__list {
+        .slick-list {
+            padding: 22px 50px 50px;
+            margin: 0 -50px;
+        }
+
+        &:not(.slick-initialized) {
+            @include flex-layout(4, 32px);
+
+            .homeTestimonial__item:nth-child(n + 5) {
+                display: none;
+            } 
+        }
+        
+        .slick-track {
+            display: flex !important;
+        }
+        
+        .slick-slide {
+            height: inherit !important;
+        }
+    }
+
+    .review {
+        &__content {
+
+            color: $color-custom-yellow;
+            position: relative;
+            padding: var(--inner) 0;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+
+            blockquote {
+                font-family: $header-font-family;
+                font-weight: 400;
+                font-style: normal;
+                border: 0;
+                margin: 0 0 48px;
+                padding: 0;
+                line-height: 1.24;
+
+                @include smax-m {
+                    margin: 0 0 32px;
+                }; 
+
+                @include smax-s {
+                    margin: 0 0 28px;
+                }; 
+
+                p {
+                    margin-bottom: 0;
+                }
+            }
+
+            .review__quote {
+                position: absolute;
+                z-index: 1;
+                width: var(--inner);
+                height: var(--inner);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                line-height: var(--inner);
+                overflow: visible;
+                font-size: 58px;
+                line-height: 40px;
+
+                &--open {
+                    left: 0;
+                    top: calc(var(--inner) / -2);
+                    transform: translate(-8px, 16px);
+                }
+
+                &--close {
+                    bottom: calc(var(--inner) / -2);
+                    right: 0;
+                    transform: translate(10px, 14px);
+                }
+            }
+        }
+
+        &__author {
+            margin: 28.5px 0 0;
+
+            @include smax-s {
+                margin-top: 24px;
+            }; 
+
+            &__name {
+                font-size: 14.4px;
+                font-weight: 300;
+            }
+
+            &__subheading {
+                font-size: 12px;
+                font-weight: 300;
+                letter-spacing: 0;
+                font-style: italic;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+// * ------ Home Full Banner ------
+.homeFullBanner {
+    &__item {
+        position: relative;
+    }
+
+    &__link {
+        @include image-padding-bottom(2543, 878);
+        display: block;
+        min-height: 878px;
+
+        @include smax-s {
+            min-height: 659px;
+        }
+    }
+
+    &__content {
+        @include pos($pos: abs, $b: 0, $l: 0);
+        padding: 50px 50px 34px;
+        text-align: left;
+        background-color: transparent;
+        z-index: 11;
+
+        @include smax-s {
+            max-width: 100%;
+            padding:  16px 16px 7px;
+            z-index: 12;
+        }
+    }
+    &__button {
+        margin-top: 8px;
+    }
+}
+
+
+.homeFeaturePost {
+    padding-top: 29px;
+    padding-bottom: 32px;
+
+    .postItem {
+        @include flex-layout(2, 0px);
+
+        @include smax-s {
+            @include flex-layout(1, 0px);
+            flex-direction: column-reverse;
+        };
+
+        &__subHeading {
+            padding-left: 5px;
+            padding-bottom: 5.5px;
+            margin: 0 0 auto;
+            font-size: 11px;
+            font-weight: 300;
+            letter-spacing: 1.32px;
+            margin-bottom: 29px;
+
+            @include smax-s {
+                margin-bottom: 0;
+            }; 
+        }
+
+        &__content {
+            padding: 84px 104px;
+
+            @include smax-m {
+                padding: 70px 60px;
+            }; 
+
+            @include smax-s {
+                padding: 40px 16px;
+            };
+
+            .title {
+                padding-top: 29px;
+                margin: 0;
+                margin-bottom: 22px;
+
+                @include smax-s {
+                    padding-top: 0;
+                    margin-bottom: 18px;
+                }; 
+
+                > a {
+                    text-decoration: none;
+                    font-size: 44px;
+                    line-height: 52px;
+                    letter-spacing: 0;
+                    color: $color-custom-black;
+                    
+                    @include smax-s {
+                        font-size: 37px;
+                        line-height: 44px;
+                    }; 
+                }
+            }
+
+            .desc {
+                margin: 0;
+                padding: 8px 0;
+                font-weight: 300;
+
+                @include smax-s {
+                    font-size: 14px;
+                    padding: 0;
+                }; 
+            }
+
+            .readMore {
+                margin-top: 16px;
+                display: inline-block;
+                font-size: 13px;
+                line-height: 2;
+                letter-spacing: 1.3px;
+                padding: 0;
+
+                @include smax-s {
+                    margin-top: 14px;
+                }; 
+            }
+        }
+
+        &__image {
+            @include image-padding-bottom(1270, 550);
+            min-height: 550px;
+            display: block;
+        }
+    }
+}
+
+.homeInstagram {
+    padding: 50px 0;
 }

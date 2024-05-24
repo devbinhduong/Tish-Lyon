@@ -1000,7 +1000,24 @@
         "home_product_banner_count": "24 products",
         "home_product_banner_text": "Best Sellers",
         "home_product_banner_button": "View All",
-        "home_product_banner_link": "#"
+        "home_product_banner_link": "#",
+
+        "home_banner_2col_item1_image": "home-banner-2col-1.jpg",
+        "home_banner_2col_item1_title": "Piercer",
+        "home_banner_2col_item1_text": "Keep your piercing studio stock in style with our best selling 14ct solid gold piercing jewellery.",
+        "home_banner_2col_item1_button": "Start Browsing",
+        "home_banner_2col_item1_link": "#",
+        "home_banner_2col_item2_image": "home-banner-2col-2.jpg",
+        "home_banner_2col_item2_title": "Reseller",
+        "home_banner_2col_item2_text": "Looking to grow your Tish Lyon stock in your shop? Check out our curated collection of best picks for resellers.",
+        "home_banner_2col_item2_button": "Start Browsing",
+        "home_banner_2col_item2_link": "#",
+
+        "home_fullwidth_banner_image": "home-banner-full.jpg",
+        "home_fullwidth_banner_title": "The finishing touch.",
+        "home_fullwidth_banner_text": "Luxury displays for luxury jewellery.",
+        "home_fullwidth_banner_button": "View products",
+        "home_fullwidth_banner_link": "#"
       }
     }
   ]
