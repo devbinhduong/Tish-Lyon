@@ -15,23 +15,19 @@ body {
 
     &:not(.page-type-default):not(.page-type-product):not(.ezStreetPage):not(.page-type-cart) {
         .page-heading {
-            font-size: $fontSize-root + 10;
+            font-size: 44px;
+            line-height: 53px;
             margin-bottom: 25px;
-            text-align: center;
+            margin: 0 0 16px 0;
+            text-align: left;
         }
 
         .body {
-            padding-bottom: 30px;
+            padding: 50px 0;
 
-            @include smin-m {
-                padding-bottom: 100px;
-            }
-        }
-    }
-
-    .page-content--textCenter {
-        .page-heading {
-            text-align: center;
+            @include smax-s {
+                padding: 30px 0;
+            }; 
         }
     }
 }

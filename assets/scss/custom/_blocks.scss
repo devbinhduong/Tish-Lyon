@@ -822,3 +822,101 @@
 .homeInstagram {
     padding: 50px 0;
 }
+
+// * ------ Store Locator Page ------
+.storeLocator {
+    &__wrapper {
+        display: flex;
+        gap: 32px;
+        height: 600px;
+
+        @include smax-s {
+            flex-direction: column-reverse;
+            height: auto;
+        }; 
+    }
+
+    &__left {
+        width: 350px;
+
+        @include smax-s {
+            width: 100%;
+        }; 
+    }
+
+    &__address {
+        max-height: 600px;
+
+        .address__item {
+            padding: 15px 0;
+            border-top: 1px dotted rgba(0,0,0,.2);
+            display: flex;
+            flex-direction: column;
+
+            > * {
+                width: fit-content;
+                font-size: 14px;
+
+                @include smax-s {
+                    font-size: 12px;
+                }; 
+            }
+
+            &:last-child {
+                border-bottom: 1px dotted rgba(0,0,0,.2);
+            }
+
+            .title {
+                font-size: 16px;
+                font-weight: 700;
+                line-height: 20px;
+                letter-spacing: 0;
+                color: $color-custom-yellow;
+                font-family: $body-font-family;
+                margin: 0;
+                margin-bottom: 8px;
+            }
+        }
+    }
+
+    &__right {
+        width: calc(100% - 350px);
+        flex: 1;
+
+        @include smax-s {
+            width: 100%;
+        }; 
+    }
+
+    &__map {
+        position: relative;
+        overflow: hidden;
+
+        @include smax-s {
+            height: 300px;
+
+            iframe {
+                height: 300px;
+            }
+        }; 
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: linear-gradient(to bottom, #fafafa 8%, #f8f8f8 60%);
+            transform: translateY(-100%);
+            z-index: 2;
+        }
+
+        &.map-loading {
+            &::after {
+                animation: overlaySlide 1.2s ease forwards;
+            }
+        }
+    }
+}

@@ -2,11 +2,12 @@ import utils from '@bigcommerce/stencil-utils';
 import modalFactory from '../global/modal';
 import { load } from 'webfontloader';
 import event from '../global/jquery-migrate/event';
-import { forEach, head } from 'lodash';
+import { forEach, head, map } from 'lodash';
 
 import Aos from 'aos';
 
 import megaMenuEditor from './megaMenuEditor';
+import { data } from 'jquery';
 
 export default function(context) {
     const themeSettings = context.themeSettings;
@@ -32,7 +33,7 @@ export default function(context) {
             hoverMenu();
             openSearchDropdown();
             getScrollbarWidth();
-
+            loadFindAStoreMap();
             /* AOS */
             Aos.init();
         }
@@ -57,6 +58,9 @@ export default function(context) {
                 loadFunction();
             });
         });
+
+
+        readMapdata();
 
         /* Load when resize */
         window.addEventListener('resize', (e) => {});
@@ -246,4 +250,58 @@ export default function(context) {
         document.documentElement.style.setProperty('--scrollbar-width', `${width}px`);
     }
 
+    function readMapdata() {
+        const mapContainer = document.querySelector(".address__list");
+
+        mapData.forEach(data => {
+            const mapElement = document.createElement("div");
+            mapElement.classList.add("address__item");
+            mapElement.setAttribute("data-map", data.embedMap);
+            mapElement.innerHTML = `
+                <h2 class="title">${data.title}</h2>
+                ${data.Address ? `<div class="text">${data.Address}</div>` : ''}
+                ${data.phone ? `<a href="tel:${data.phone}" class="phone">${data.phone}</a>` : ''}
+                ${data.mail ? `<a href="mailto:${data.mail}" class="mail">${data.mail}</a>` : ''}
+                ${data.siteLink ? `<a href="${data.siteLink}" class="website">${data.siteName}</a>` : ''}
+            `;
+
+            mapContainer.appendChild(mapElement);
+        });
+
+        // * ------ Active first item ------
+        const mapView = document.getElementById("storeLocator__map");
+        const firstItem = mapContainer.querySelector(".address__item");
+        firstItem.classList.add("is-active");
+        mapView.innerHTML = firstItem.getAttribute('data-map');
+    }
+
+
+    function loadFindAStoreMap() {
+        const mapView = document.getElementById("storeLocator__map");
+        const dataMapList = document.querySelectorAll(".storeLocator__address .address__item");
+
+        if (!mapView || !dataMapList) return;
+
+        dataMapList.forEach(dataMapItem => {
+            dataMapItem.addEventListener('click', (e) => {
+                const dataMap = dataMapItem.getAttribute('data-map');
+
+                if (dataMapItem.classList.contains('is-active')) return;
+
+                dataMapList.forEach(item => {
+                    item.classList.remove('is-active');
+                });
+                dataMapItem.classList.add('is-active');
+
+                if (!dataMap) return;
+                mapView.classList.add('map-loading');
+
+                mapView.innerHTML = dataMap;
+
+                setTimeout(() => {
+                    mapView.classList.remove('map-loading');
+                }, 1000);
+            });
+        });
+    }
 }
