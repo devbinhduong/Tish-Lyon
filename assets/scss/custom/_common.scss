@@ -410,6 +410,48 @@
     }
 }
 
+.hero {
+    &__subheading {
+        margin-bottom: 16px;
+        margin-top: 0;
+
+        @include smax-s {
+            margin-bottom: 10px;
+        }; 
+    }
+
+    &__title {
+        margin-bottom: 16px;
+        margin-top: 0;
+
+        @include smax-s {
+            margin-bottom: 10px;
+        }; 
+    }
+
+    &__rte {
+        margin-bottom: 16px;
+        margin-top: 0;
+
+        @include smax-s {
+            margin-bottom: 10px;
+        }; 
+    }
+}
+
+.field {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid rgba(33, 33, 33, 0.35);
+    padding: 1em 0;
+    border-radius: 0;
+    color: $color-custom-black;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+}
+
 .slick-gap {
     &-32 {
         margin: 0 -16px;

@@ -20,6 +20,11 @@ body {
             margin-bottom: 25px;
             margin: 0 0 16px 0;
             text-align: left;
+
+            @include smax-s {
+                font-size: 37px;
+                line-height: 44px;
+            }; 
         }
 
         .body {

@@ -5,10 +5,12 @@
 {{/unless}}
 
 <main class="page">
-    {{#unless theme_settings.hide_contact_us_page_heading }}
-        <h1 class="page-heading">{{page.title}}</h1>
+    {{#unless (toLowerCase page.title) '==' 'store locator'}}
+        {{#unless theme_settings.hide_contact_us_page_heading }}
+            <h1 class="page-heading">{{page.title}}</h1>
+        {{/unless}}
     {{/unless}}
-
+ 
     {{#if (toLowerCase page.title) '==' 'store locator'}}
        {{> components/custom/page/store-locator-map }}
     {{/if}}
@@ -28,7 +30,11 @@
             <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
         {{else}}
             <p>{{{page.content}}}</p>
-            {{> components/page/contact-us-form}}
+            {{#if (toLowerCase page.title) '==' 'store locator'}}
+                {{> components/page/contact-us-form-locator}}
+            {{else}}
+                {{> components/page/contact-us-form}}
+            {{/if}}
         {{/if}}
 
     </div>
