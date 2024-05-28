@@ -44,7 +44,7 @@ $checkRadio-borderStyle:                    solid;
 $checkRadio-borderWidth:                    1px;
 $checkRadio-borderColor:                    stencilColor("checkRadio-borderColor");
 // sizing
-$checkRadio-baseDimension:                  16px;
+$checkRadio-baseDimension:                  14px;
 $checkRadio-pip-scale:                      $checkRadio-borderWidth * 2;
 $checkRadio-outerSize:                      remCalc($checkRadio-baseDimension);
 $checkRadio-pip-size:                       remCalc($checkRadio-baseDimension - $checkRadio-pip-scale);

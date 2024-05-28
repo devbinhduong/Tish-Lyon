@@ -21,10 +21,10 @@
 }
 
 .accordion-title {
-    color: stencilColor("color-textHeading");
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-    font-size: remCalc(15px);
-    margin: 0;
+    font-size: 13px;
+    font-weight: 300;
+    color: $color-custom-black;
+    font-family: $body-font-family;
 }
 
 .accordion-navigation {
@@ -57,14 +57,15 @@
     }
 
     .accordion-block {
-        @include breakpoint("medium") {
-            margin-top: $accordion-navList-spacing;
-        }
+        position: relative;
+        border-bottom: 1px solid var(--COLOR-BORDER-HAIRLINE);
+        padding: 0 15px 5px 0;
+        margin-bottom: 0;
+        font-weight: var(--FONT-WEIGHT-BODY-BOLD);
+        cursor: pointer;
     }
 
     .accordion-heading {
-        font-size: fontSize("base");
-        line-height: lineHeight("smaller");
         margin: 0;
     }
 
@@ -80,7 +81,6 @@
         @include breakpoint("medium") {
             background-position: right 0 top 50%;
             border: 0;
-            margin-bottom: spacing("half") !important;
             padding: 0;
         }
     }

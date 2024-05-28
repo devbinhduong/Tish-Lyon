@@ -34,6 +34,9 @@ export default function(context) {
             openSearchDropdown();
             getScrollbarWidth();
             loadFindAStoreMap();
+            toggleSidebarProductListing();
+            hideCustomSidebar2();
+
             /* AOS */
             Aos.init();
         }
@@ -253,6 +256,8 @@ export default function(context) {
     function readMapdata() {
         const mapContainer = document.querySelector(".address__list");
 
+        if(!mapContainer || mapData) return;
+
         mapData.forEach(data => {
             const mapElement = document.createElement("div");
             mapElement.classList.add("address__item");
@@ -302,6 +307,56 @@ export default function(context) {
                     mapView.classList.remove('map-loading');
                 }, 1000);
             });
+        });
+    }
+
+    function toggleSidebarProductListing() {
+        const filterButton = document.querySelector('.popout--group .popout__toggle');
+        const filterSidebar = document.querySelector(".productListingPage__sidebar");
+        const sortButton = document.querySelector('.popout--sort .popout__toggle');
+
+        if (!filterButton || !filterSidebar) return;
+
+        filterButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            filterButton.getAttribute('aria-expanded') === 'true' ? filterButton.setAttribute('aria-expanded', 'false') : filterButton.setAttribute('aria-expanded', 'true');
+            filterSidebar.classList.toggle('is-show');
+        });
+
+        if (!sortButton) return;
+
+        document.addEventListener('click', (e) => {
+            if (!sortButton.parentElement.contains(e.target)) {
+                sortButton.parentElement.classList.remove('is-active');
+                sortButton.setAttribute('aria-expanded', 'false');
+
+            } else {
+                sortButton.parentElement.classList.toggle('is-active');
+                sortButton.getAttribute('aria-expanded') === 'true' ? sortButton.setAttribute('aria-expanded', 'false') : sortButton.setAttribute('aria-expanded', 'true');
+            }
+        });
+        
+        const sortDropdownList = document.querySelectorAll('.popout--sort .form-select option');
+
+        if (!sortDropdownList) return;
+
+        sortDropdownList.forEach(option => {
+            option.addEventListener('click', (e) => {
+                e.stopPropagation();
+                sortButton.parentElement.classList.remove('is-active');
+            });
+        });
+    }
+
+    function hideCustomSidebar2() {
+        const closeButton = document.querySelector('.collection__sidebar__close');
+        const sidebar = document.querySelector('.productListingPage__sidebar ');
+
+        if (!closeButton) return;
+
+        closeButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            sidebar.classList.remove('is-show');
         });
     }
 }

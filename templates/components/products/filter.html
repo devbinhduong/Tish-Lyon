@@ -1,3 +1,3 @@
-<form class="actionBar" method="get" data-sort-by="product">
-    {{> components/category/sort-box sort=sort}}
+<form class="actionBar{{#if hasEffect}} has-effect-dropdown{{/if}}" method="get" data-sort-by="product">
+    {{> components/category/sort-box sort=sort hasEffect=hasEffect}}
 </form>

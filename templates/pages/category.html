@@ -15,7 +15,10 @@ category:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{#if theme_settings.show_category_breadcrumbs}}
+    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{/if}}
+
 {{#if category.image}}
     {{> components/common/responsive-img
         image=category.image
@@ -28,28 +31,35 @@ category:
     <h1 class="page-heading">{{category.name}}</h1>
     {{{region name="category_below_header"}}}
 {{/unless}}
-{{{category.description}}}
-<div class="page">
-    {{#if category.faceted_search_enabled}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if category.subcategories}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{else if theme_settings.shop_by_price_visibility}}
-        <aside class="page-sidebar" id="faceted-search-container">
-            {{> components/category/sidebar}}
-        </aside>
-    {{/if}}
+{{#if theme_settings.show_category_description}}
+    {{{category.description}}}
+{{/if}}
 
-    <main class="page-content" id="product-listing-container">
-        {{> components/category/product-listing}}
-    </main>
+<div class="category__title category__title--no-image">
+    <h1 class="hero__title h4">Products</h1>
+</div>
 
-    <div class="page-region">
-        {{{region name="category_below_content"}}}
+<div class="productListingPage__wrapper">
+{{> components/custom/page/product-listing-nav }}
+    
+    <div class="productListingPage__main">
+        {{#if category.faceted_search_enabled}}
+            <aside class="page-sidebar productListingPage__sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{else if category.subcategories}}
+            <aside class="page-sidebar productListingPage__sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{else if theme_settings.shop_by_price_visibility}}
+            <aside class="page-sidebar productListingPage__sidebar" id="faceted-search-container">
+                {{> components/category/sidebar}}
+            </aside>
+        {{/if}}
+    
+        <main class="page-content productListingPage__products" id="product-listing-container">
+            {{> components/category/product-listing}}
+        </main>
     </div>
 </div>
 

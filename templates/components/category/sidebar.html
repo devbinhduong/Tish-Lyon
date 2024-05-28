@@ -1,16 +1,14 @@
 <nav>
-    {{#if category.subcategories}}
-        <div class="sidebarBlock">
-            <h2 class="sidebarBlock-heading">{{category.name}}</h2>
-            <ul class="navList">
-                {{#each category.subcategories}}
-                <li class="navList-item">
-                    <a class="navList-action" href="{{url}}" title="{{name}}">{{name}}</a>
-                </li>
-                {{/each}}
-            </ul>
-        </div>
-    {{/if}}
+    <div class="collection__sidebar__head hide-on-minMobile">
+        <h3>Filters<span class="filter-count hidden" data-active-filters="">0</span>
+        </h3>
+
+        <a href="#filters-group" class="collection__sidebar__close" data-collection-sidebar-close="" aria-label="Hide Filters">
+            <span class="icon icon--close2">
+                <svg><use xlink:href="#icon-close2"></use></svg>
+            </span>
+        </a>
+    </div>
 
     {{#if category.faceted_search_enabled}}
         {{> components/faceted-search/index category}}
