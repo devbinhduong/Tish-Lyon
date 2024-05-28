@@ -28,8 +28,8 @@
     transition: .25s ease-out;
     transition-property: color,background,border;
     backface-visibility: hidden;
-    
-
+    overflow: hidden;
+    z-index: 1;
    
 
     &:focus,
@@ -39,7 +39,7 @@
         background-color: $buttonStyle-default-backgroundColorActive;
     }
 
-    &.has-effect {
+    &:not(.button--icon) {
         &::after {
             content: "";
             position: absolute;
@@ -49,7 +49,7 @@
             width: calc(100% + 120px);
             height: 100%;
             background-color: currentColor;
-            opacity: .1;
+            opacity: 1;
             transform: translate3d(-100%, 0, 0) skew(30deg);
             transition: transform .5s cubic-bezier(.33,0,0,1);
             will-change: transform;
@@ -78,6 +78,8 @@
 
         &::after {
             transform: translateZ(0);
+            background-color: $buttonStyle-default-backgroundColorHover;
+            opacity: 1;
         }
 
         .icon--arrow-right {
@@ -105,10 +107,19 @@
         border-color: $buttonStyle-primary-borderColor;
         background-color: $buttonStyle-primary-backgroundColor;
 
+        
+        &::after {
+            background-color: $buttonStyle-primary-backgroundColorHover;
+        }
+
         &:hover {
             color: $buttonStyle-primary-colorHover;
             border-color: $buttonStyle-primary-borderColorHover;
-            background-color: $buttonStyle-primary-backgroundColorHover;
+            background-color: $buttonStyle-primary-backgroundColor;
+
+            &::after {
+                background-color: $buttonStyle-primary-backgroundColorHover;
+            }
         }
     }
 
@@ -123,6 +134,10 @@
             color: $buttonStyle-secondary-colorHover;
             border-color: $buttonStyle-secondary-borderColorHover;
             background-color: $buttonStyle-secondary-backgroundColorHover;
+
+            &::after {
+                background-color: $buttonStyle-secondary-backgroundColorHover;
+            }
         }
     }
 }

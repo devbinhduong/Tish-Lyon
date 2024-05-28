@@ -117,7 +117,7 @@ $select-padding:                    $input-verticalPadding (spacing("double")) $
 $select-borderRadius:               $global-radius;
 $select-hover-borderColor:          null;
 $select-arrow-color:                rgba(stencilColor("select-arrow-color"), 0.999);
-$select-backgroundImage:            url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z' fill='#{$select-arrow-color}' /%3E%3C/svg%3E");
+$select-backgroundImage:            url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" width="30px" height="30px" stroke-width="1.01" viewBox="0 0 24 24" fill="none" color="%23000000"><path d="M6 9l6 6 6-6" stroke="%23000000" stroke-width="1.01" stroke-linecap="round" stroke-linejoin="round"/></svg>');
 $select-backgroundPosition:         right (spacing("quarter") + spacing("eighth")) top spacing("third") + spacing("eighth");
 
 $form-label-small-marginTop:        spacing("quarter");

@@ -43,3 +43,17 @@
         text-transform: none;
     }
 }
+
+
+select {
+    appearance: none;
+    background-image: $select-backgroundImage;
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-color: transparent;
+    background-size: 18px auto;
+    padding-right: 28px;
+    text-indent: .01px;
+    text-overflow: unset;
+    cursor: pointer;
+}
