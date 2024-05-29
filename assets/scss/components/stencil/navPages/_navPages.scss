@@ -205,12 +205,16 @@
     line-height: 1.2;
 
     &.navPages-action-lv1:not(.has-subMenu) {
-        padding: 15px;
+        padding: 15px 0;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 
     &.navPages-action-lv1.has-subMenu {
         >a {
-            padding: 15px;
+            padding: 15px 0;
+            margin-left: 15px;
+            margin-right: 15px;
             display: block;
         }
     }

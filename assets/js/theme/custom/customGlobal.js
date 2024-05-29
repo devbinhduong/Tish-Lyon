@@ -62,8 +62,9 @@ export default function(context) {
             });
         });
 
-
-        readMapdata();
+        if(document.body.classList.contains('storeLocator')) {
+            readMapdata();
+        }
 
         /* Load when resize */
         window.addEventListener('resize', (e) => {});
@@ -255,8 +256,6 @@ export default function(context) {
 
     function readMapdata() {
         const mapContainer = document.querySelector(".address__list");
-
-        if(!mapContainer || mapData) return;
 
         mapData.forEach(data => {
             const mapElement = document.createElement("div");

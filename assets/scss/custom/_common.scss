@@ -66,6 +66,7 @@
 .hover-link {
     position: relative;
     text-decoration: none;
+    width: fit-content !important;
 
     span {
         transition: color .25s cubic-bezier(.215,.61,.355,1);
@@ -74,8 +75,8 @@
     &::before {
         content: "";
         position: absolute;
-        left: 15px;
-        right: 15px;
+        left: 0;
+        right: 0;
         bottom: 0;
         height: 1px;
         background-color: currentColor;
