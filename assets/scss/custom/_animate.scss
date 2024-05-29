@@ -101,3 +101,28 @@
         }
     }
 }
+
+// * ------ Card Animate ------
+.aos-initialized  {
+    [data-aos=img-in] {
+        opacity: 0;
+        transform: scale(1.06);
+        transition-duration: .5s;
+        transition-property: transform, opacity;
+
+        &.aos-animate {
+            opacity: 1;
+            transform: translateZ(0);
+        }
+    }
+
+    [data-aos][data-aos][data-aos-duration="800"], 
+    body[data-aos-duration="800"] [data-aos] {
+        transition-duration: 0.8s;
+    }
+
+    [data-aos][data-aos][data-aos-easing=ease-out-quart], 
+    body[data-aos-easing=ease-out-quart] [data-aos] {
+        transition-timing-function: cubic-bezier(.25,.46,.45,.94);
+    }
+}

@@ -64,7 +64,7 @@
            aria-label="{{> components/products/product-info}}"
            data-event-type="product-click"
         >
-            <div class="card-img-container">
+            <div class="card-img-container" data-aos="img-in" data-aos-delay="0" data-aos-duration="800" data-aos-easing="ease-out-quart">
                 {{> components/common/responsive-img
                     image=image
                     class="card-image"
@@ -73,6 +73,22 @@
                     default_image=theme_settings.default_image_product
                 }}
             </div>
+
+            {{#gt images.length 1}}
+            <div class="card-img-container card-img-container-under" data-aos="img-in" data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-out-quart">
+                {{#each images }}
+                    {{#if @index '==' 1}}
+                        {{> components/common/responsive-img
+                            image=this
+                            class="card-image"
+                            fallback_size=theme_settings.productgallery_size
+                            lazyload=theme_settings.lazyload_mode
+                            default_image=theme_settings.default_image_product
+                        }}
+                    {{/if}}    
+                {{/each}}
+            </div>
+            {{/gt}}
         </a>
 
         <figcaption class="card-figcaption">

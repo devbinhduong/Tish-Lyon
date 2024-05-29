@@ -55,7 +55,7 @@
         {{~inject 'token' settings.storefront_api.token}}
         {{~inject 'money' settings.money}}
     </head>
-    <body class="page-type-{{page_type}}{{#if (toLowerCase page.title) '==' 'store locator'}} storeLocator{{/if}}">
+    <body class="page-type-{{page_type}} aos-initialized{{#if (toLowerCase page.title) '==' 'store locator'}} storeLocator{{/if}}">
         <svg data-src="{{cdn 'img/icon-sprite.svg'}}" class="icons-svg-sprite"></svg>
 
         {{> components/common/header }}

@@ -44,9 +44,25 @@
 }
 
 .card-img-container {
-
     @include lazy-loaded-padding("productgallery_size");
     max-width: get-width(stencilString("productgallery_size"));
+
+    &.card-img-container-under {
+        @include pos($pos: abs, $t: -1px, $r: -1px, $b: -1px, $l: -1px);
+        width: auto;
+        height: auto;
+        display: block;
+        z-index: 1;
+        background-color: #ffffff;
+        line-height: 0;
+        overflow: hidden;
+        transition: opacity .25s ease-in-out;
+        opacity: 0 !important;
+
+        &:hover {
+            opacity: 1 !important;
+        }
+    }
 }
 
 .card-figcaption {
