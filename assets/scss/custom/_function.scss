@@ -276,3 +276,149 @@
     stroke-width: var(--ICON-STROKE-WIDTH);
     stroke: currentColor;
 }
+
+
+// * ------ Options On Product Card ------
+
+.customCard__options {
+    --swatch-size: 26px;
+
+    position: relative;
+    min-height: 35.6px;
+    margin: 0 -10px;
+    padding: 0;
+    font-size: 0;
+}
+
+.card-option {
+    visibility: hidden;
+    opacity: 0;
+    min-width: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    background-color: var(--COLOR-BG);
+    transition: opacity .3s ease, visibility .3s;
+
+    &.is-visible {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+
+        + .cardSwatch_count {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    .form-field {
+        position: relative;
+        margin: -5px;
+        padding: 5px;
+        width: calc(100% + 10px);
+        white-space: nowrap;
+        overflow-y: hidden;
+        overflow-x: auto;
+        scrollbar-width: none;
+
+        > a {
+            --swatch: #ccc;
+            --swatch-outline-offset: 3px;
+            --swatch-size: 26px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 10px 0 0;
+            position: relative;
+            pointer-events: initial;
+            vertical-align: middle;
+            border: none;
+
+            .form-option-variant--color {
+                width: var(--swatch-size);
+                height: var(--swatch-size);
+                border-radius: 50%;
+                display: inline-block;
+                border: none;
+            }
+        }
+    }
+
+    .form-option {
+        position: relative;
+    }
+
+    .form-option-tooltip {
+        display: none;
+        font-size: $fontSize-root - 2px;
+        font-weight: $fontWeight-normal;
+        letter-spacing: $letterSpacing-base;
+        line-height: 1;
+        color: $color-white;
+        text-align: center;
+        background: stencilColor('color-textBase');
+        position: absolute;
+        bottom: -200%;
+        left: 50%;
+        padding: 4px 7px;
+        z-index: 2;
+        min-width: 40px;
+        transform: translate(-50%, 0);
+        margin: 0 0 10px 0;
+        white-space: nowrap;
+        transition: transform 0.2s linear;
+
+        &:before {
+            content: " ";
+            position: absolute;
+            top: -7px;
+            left: 50%;
+            height: 0;
+            width: 0;
+            border-bottom: 7px solid stencilColor('color-textBase');
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            transform: translateX(-50%);
+        }
+    }
+
+    @media (min-width: 1025px) {
+        .form-field {
+            .form-option {
+                .form-option-tooltip {
+                    display: block;
+                    opacity: 0;
+                    visibility: hidden;
+                    pointer-events: none;
+                    transform: translate(-50%, 8px);
+                }
+
+                &:hover {
+                    .form-option-tooltip {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                        transform: translate(-50%, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cardSwatch_count {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    padding: 8px 10px;
+    font-size: 14px;
+    color: #646464;
+    font-style: italic;
+    transition: opacity .3s ease, visibility .3s;
+    cursor: pointer;
+}

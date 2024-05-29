@@ -60,6 +60,8 @@ export default class ProductDetails extends ProductDetailsBase {
         $(window).on('load', () => {
             this.registerAddToCartValidation();
             $.each($productSwatchLabels, placeSwatchLabelImage);
+
+            this.selectSwatchOption();
         });
 
         if (context.showSwatchNames) {
@@ -590,5 +592,17 @@ export default class ProductDetails extends ProductDetailsBase {
             bubbles: true,
             detail: { productDetails },
         }));
+    }
+
+    selectSwatchOption() {
+        const optionId = window.location.search.replace('?', '').split('=')[1];
+
+        if(!optionId) return;
+
+        const optionSelect = document.getElementById(optionId);
+
+        if(!optionSelect) return;
+
+        optionSelect.click();
     }
 }

@@ -36,6 +36,11 @@ export default function(context) {
             loadFindAStoreMap();
             toggleSidebarProductListing();
             hideCustomSidebar2();
+            
+            setTimeout(() => {
+                cardOptionsEvent();
+                showOptions();
+            }, 1000);
 
             /* AOS */
             Aos.init();
@@ -356,6 +361,57 @@ export default function(context) {
         closeButton.addEventListener('click', (e) => {
             e.preventDefault();
             sidebar.classList.remove('is-show');
+        });
+    }
+
+    function cardOptionsEvent() {
+        const optionsList = document.querySelectorAll('.card-option .form-option-swatch');
+
+        if (!optionsList) return;
+
+        for (let option of optionsList) {
+            option.addEventListener('mouseenter', (e) => {
+                const card = option.closest('.card');
+                const cardImageWrapper = card.querySelector('.card-img-container-options');
+                const cardImage = cardImageWrapper.querySelector('img');
+                const optionImage = option.getAttribute('data-image');
+
+                cardImage.setAttribute('src', optionImage);
+                cardImageWrapper.classList.add('is-visible');
+            });
+
+            option.addEventListener('mouseleave', (e) => {
+                const card = option.closest('.card');
+                const cardImageWrapper = card.querySelector('.card-img-container-options');
+                const cardImage = cardImageWrapper.querySelector('img');
+
+                cardImage.setAttribute('src', '');
+                cardImageWrapper.classList.remove('is-visible');
+            });
+        }
+    }
+
+    function showOptions() {
+        const countOptions = document.querySelectorAll('.customCard__options');
+
+        if (!countOptions) return;
+
+        countOptions.forEach(option => {
+            option.addEventListener('mouseenter', (e) => {
+                e.stopPropagation();
+
+                const card = option.closest('.card');
+                const optionForm = card.querySelector('.card-option');
+                optionForm.classList.add('is-visible');
+            });
+
+            option.addEventListener('mouseleave', (e) => {
+                e.stopPropagation();
+
+                const card = option.closest('.card');
+                const optionForm = card.querySelector('.card-option');
+                optionForm.classList.remove('is-visible');
+            });
         });
     }
 }

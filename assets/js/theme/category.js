@@ -4,6 +4,8 @@ import compareProducts from './global/compare-products';
 import FacetedSearch from './common/faceted-search';
 import { createTranslationDictionary } from '../theme/common/utils/translations-utils';
 
+import customAddOptionForProduct from './custom/customAddOptionForProduct';
+
 export default class Category extends CatalogPage {
     constructor(context) {
         super(context);
@@ -56,6 +58,8 @@ export default class Category extends CatalogPage {
         $('a.reset-btn').on('click', () => this.setLiveRegionsAttributes($('span.reset-message'), 'status', 'polite'));
 
         this.ariaNotifyNoProducts();
+
+        this.loadOptionForProductCard(this.context);
     }
 
     ariaNotifyNoProducts() {
@@ -97,6 +101,10 @@ export default class Category extends CatalogPage {
 
             $('body').triggerHandler('compareReset');
 
+            if($('#product-listing-container .product').length > 0){
+                customAddOptionForProduct(this.context, 'product-listing-container');
+            }
+
             $('html, body').animate({
                 scrollTop: 0,
             }, 100);
@@ -109,5 +117,11 @@ export default class Category extends CatalogPage {
                 onInvalidPrice,
             },
         });
+    }
+
+    loadOptionForProductCard(context) {
+        if($('#product-listing-container .product').length > 0){
+            customAddOptionForProduct(context, 'product-listing-container');
+        }
     }
 }

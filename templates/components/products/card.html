@@ -4,6 +4,7 @@
     data-test="card-{{id}}"
     data-event-type="{{event}}"
     data-entity-id="{{id}}"
+    data-product-id="{{id}}"
     data-position="{{position}}"
     data-name="{{name}}"
     data-product-category="
@@ -89,6 +90,11 @@
                 {{/each}}
             </div>
             {{/gt}}
+
+
+            <div class="card-img-container card-img-container-options" data-aos="img-in" data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-out-quart">
+                <img class="lazyload" src="" data-src="" alt="">
+            </div>
         </a>
 
         <figcaption class="card-figcaption">
@@ -148,6 +154,20 @@
                 {{> components/common/login-for-pricing}}
             {{/or}}
         </div>
+
+       <div class="customCard__options">
+            {{#if theme_settings.customAddOptionForProduct}}
+                <div class="card-option card-option-{{id}}">
+                    <div class="form-field"></div>
+                </div>
+            {{/if}}
+
+            <!-- * Card options -->
+            <div class="cardSwatch_count cardSwatch_count-{{id}}">
+                <span data-swatch-count></span>
+            </div>
+       </div>
+
         {{> components/products/bulk-discount-rates}}
     </div>
 </article>
