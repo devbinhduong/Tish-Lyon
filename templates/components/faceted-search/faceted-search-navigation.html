@@ -5,14 +5,14 @@
          aria-label="{{lang 'search.faceted.toggleSection' title=title}}"
     >
         <span class="accordion-title">
-            {{title}}
+            {{title}} <span>{{#if selected}} ({{items.length}}){{/if}}</span>
         </span>
 
         <span>
-            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off">
+            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--off icon-plus">
                 <use href="#icon-add" />
             </svg>
-            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on">
+            <svg class="icon accordion-indicator toggleLink-text toggleLink-text--on icon-minus">
                 <use href="#icon-remove" />
             </svg>
         </span>

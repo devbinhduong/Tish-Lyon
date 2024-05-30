@@ -213,11 +213,43 @@
         }
 
         #facetedSearch {
-            padding: 24px 18px;
+            padding: 15px 0 24px 18px;
+        }
+
+        .facetedSearch-refineFilters {
+            &.has-result {
+                padding: 20px 32px 0 32px;
+            }
+
+            .inlineList { 
+                > li {
+                    .facetLabel {
+                        color: $color-custom-black;
+                        display: flex;
+                        background-color: #f4f2f0;
+                        padding: 8px 7px 8px 14px;
+                        margin: 0 7px 7px 0;
+                        font-size: 12px;
+                        @include flexbox($display: inline-flex, $align-items: center);
+                        margin-bottom: 0;
+
+                        .icon {
+                            top: 0;
+                            margin-left: 4px;
+                        }
+
+                        &:hover {
+                            .icon {
+                                stroke: $color-custom-yellow;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         #facetedSearch-navList {
-            padding: 20px 32px 20px 32px;
+            padding: 0 31px 20px 32px;
             margin-top: 0;
         }
     }

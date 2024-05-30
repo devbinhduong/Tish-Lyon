@@ -126,3 +126,46 @@
 .reset-filters {
     display: none;
 }
+
+
+// * ------ Accordion Indicator Animate ------
+.accordion-heading {
+    margin: 0;
+    .toggleLink {
+        .accordion-indicator {
+            display: block;
+            position: absolute;
+            top: 8px;
+            right: -4px;
+            transform: translateY(-50%);
+            transition: opacity .3s ease, transform .3s ease, visibility .3s;
+            
+            &.icon-minus {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+        &.is-open {
+            .icon-plus {
+                visibility: hidden;
+                opacity: 0;
+                transform: translateY(-50%) rotate(90deg);
+            }
+
+            .icon-minus {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+.accordion-block {
+    .accordion-content {
+        overflow: hidden;
+        will-change: height;
+        transition: height .3s ease;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+}

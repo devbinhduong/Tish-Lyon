@@ -1,4 +1,4 @@
-<div class="facetedSearch-refineFilters sidebarBlock" role="region" aria-label="{{lang 'search.faceted.selected.facet-label'}}">
+<div class="facetedSearch-refineFilters sidebarBlock{{#if items}} has-result{{/if}}" role="region" aria-label="{{lang 'search.faceted.selected.facet-label'}}">
     {{#if items}}
         <ul class="inlineList inlineList--labels">
             {{#each items}}
@@ -21,11 +21,5 @@
                 </li>
             {{/each}}
         </ul>
-    {{/if}}
-
-    {{#if remove_all_url}}
-        <a href="{{remove_all_url}}" data-faceted-search-facet>
-            {{lang 'search.faceted.selected.clear-all'}}
-        </a>
     {{/if}}
 </div>

@@ -123,6 +123,11 @@
                                 display: block;
                                 font-size: 11.6px;
                                 font-weight: 300;
+                                background-color: #ffffff;
+
+                                &:hover {
+                                    background-color: var(--COLOR-BORDER-HAIRLINE);
+                                }
 
                                 &:checked {
                                     background-color: transparent;

@@ -58,30 +58,30 @@
 
     .accordion-block {
         position: relative;
-        border-bottom: 1px solid var(--COLOR-BORDER-HAIRLINE);
-        padding: 0 15px 5px 0;
+        border-bottom: none;
+        padding: 0 0 5px 0;
         margin-bottom: 0;
         font-weight: var(--FONT-WEIGHT-BODY-BOLD);
         cursor: pointer;
+        margin-bottom: 16px;
     }
 
     .accordion-heading {
-        margin: 0;
+        margin-bottom: 5px;
     }
 
     .accordion-content {
-        padding: $accordion-navList-padding;
-
-        @include breakpoint("medium") {
-            padding: 0;
-        }
+        padding: 5px 0;
     }
 
     .accordion-navigation {
-        @include breakpoint("medium") {
-            background-position: right 0 top 50%;
-            border: 0;
-            padding: 0;
+        border: 0;
+        padding: 0;
+        border-bottom: 1px solid var(--COLOR-BORDER-HAIRLINE);
+        line-height: 1;
+
+        .icon {
+            @include square(18);
         }
     }
 
@@ -95,10 +95,6 @@
             padding: 0;
         }
     }
-
-    .accordion-indicator {
-        fill: color("greys", "light");
-    }
 }
 
 
@@ -108,23 +104,10 @@
 // Purpose: Child blocks of an accordion
 //
 // -----------------------------------------------------------------------------
-.accordion-block:first-child {
-    margin-top: 0;
-
-    .accordion-navigation {
-        border-radius: $accordion-borderRadius $accordion-borderRadius 0 0;
-    }
-}
 
 .accordion-block:last-child {
-    .accordion-navigation,
-    .accordion-content {
-        border-radius: 0 0 $accordion-borderRadius $accordion-borderRadius;
-    }
-
+    margin-bottom: 0;
     .accordion-navigation {
-        border-bottom-width: 0;
-
         &.is-open {
             border-bottom-width: 1px;
             border-radius: 0;
