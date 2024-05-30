@@ -40,6 +40,21 @@
 
     &:not(.button--icon) {
         overflow: hidden;
+        width: auto;
+        padding: 10px 18px;
+        border-radius: 300px;
+        line-height: 1.375;
+        font-style:normal;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
+        text-transform: uppercase;
+        transition: .25s ease-out;
+        transition-property: color, background, border;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
 
         &::after {
             content: "";
@@ -131,15 +146,24 @@
         border-color: $buttonStyle-secondary-borderColor;
         background-color: $buttonStyle-secondary-backgroundColor;
 
+        &::after {
+            background-color: $buttonStyle-secondary-backgroundColorHover;
+            opacity: 0.1;
+        }
+
         &:hover {
             color: $buttonStyle-secondary-colorHover;
             border-color: $buttonStyle-secondary-borderColorHover;
-            background-color: $buttonStyle-secondary-backgroundColorHover;
 
             &::after {
                 background-color: $buttonStyle-secondary-backgroundColorHover;
+                opacity: 0.1;
             }
         }
+    }
+
+    &.button--full {
+        width: 100%;
     }
 }
 

@@ -11,7 +11,7 @@ export const CartPreviewEvents = {
 export default function (secureBaseUrl, cartId, context) {
     const loadingClass = 'is-loading';
     const $cart = $('[data-cart-preview]');
-    const $cartDropdown = $('#cart-preview-dropdown');
+    const $cartDropdown = $('#custom-cart-sidebar .custom-sidebar-wrapper');
     const $cartLoading = $('<div class="loadingOverlay"></div>');
 
      /* Custom Start */
@@ -61,7 +61,8 @@ export default function (secureBaseUrl, cartId, context) {
             event.preventDefault();
     
             /* Custom Start */
-            $body.toggleClass('openCartDropdown');
+            $body.toggleClass('openCartSidebar');
+            event.stopPropagation();
             $cartDropdown2.empty();
     
             $cartDropdown

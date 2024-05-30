@@ -1,9 +1,5 @@
 <div class="previewCart-header">
     <h2 class="title">{{lang 'cart.preview.title'}}</h2>
-    <span class="text">
-        <span class="countPill cart-quantity" data-cart-quantity="{{cart.quantity}}">{{cart.quantity}}</span>
-        <span> {{#if cart.quantity '>=' 2}} items{{else}} item{{/if}}</span>
-    </span>
 </div>
 <div class="previewCartWrapper">
   <div class="previewCart">
@@ -139,7 +135,30 @@
             {{/and}}
         {{else}}
             <div role="alert" aria-live="polite" aria-atomic="false" class="previewCart-emptyBody">
-                {{lang 'cart.checkout.empty_cart'}}
+                <p>{{lang 'cart.checkout.empty_cart'}}</p>
+
+                <div class="emptyBody__buttons">
+                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="50">
+                       <a href="/" class="button button--secondary button--full">
+                       Home
+                       </a>
+                    </div>
+                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="100">
+                       <a href="/collections/new-arrivals" class="button button--secondary button--full">
+                       New Arrivals
+                       </a>
+                    </div>
+                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="150">
+                       <a href="/collections/best-sellers" class="button button--secondary button--full">
+                       Best Sellers
+                       </a>
+                    </div>
+                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="200">
+                       <a href="/pages/contact" class="button button--secondary button--full">
+                       Contact
+                       </a>
+                    </div>
+                </div>
             </div>
         {{/if}}
     </div>
