@@ -18,8 +18,11 @@
     margin-bottom: spacing("single");
     text-align: center;
 
+    @include flexcb($cb: center);
+
     .pagination-item { // 2
         display: inline-block;
+        margin-left: 0;
     }
 }
 
@@ -32,12 +35,20 @@
 // -----------------------------------------------------------------------------
 
 .pagination-item {
-    border: $pagination-item-border;
     line-height: 1;
 
     .pagination-link {
         text-decoration: none;
-        transition: $pagination-link-transition;
+        border: $pagination-item-border;
+        margin: 0 12px;
+        color: var(--text);
+        display: block;
+        padding: 4px 8px;
+        transition: color .3s ease;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: 0;
+        line-height: 18px;
 
         &:hover {
             color: $pagination-link-color-hover;
@@ -45,8 +56,12 @@
     }
 
     &.pagination-item--current { // 1
-        border-color: $pagination-link-current-borderColor;
-        border-radius: $pagination-link-current-borderRadius;
+
+        .pagination-link {
+            border-color: $pagination-link-current-borderColor;
+            border-radius: $pagination-link-current-borderRadius;
+            box-shadow: 0 0 0 1px currentColor;
+        }
         margin: $pagination-link-current-margin;
     }
 
@@ -58,40 +73,22 @@
 
             &:hover {
                 color: $pagination-item-previousNext-color-hover;
-
-                .icon > svg {
-                    fill: $pagination-item-previousNext-color-hover;
-                }
             }
         }
     }
 }
 
-.pagination-item--previous,
-.pagination-item--next {
-    .icon {
-        height: remCalc(20px);
-        margin-top: -(remCalc(2px));
-        width: remCalc(20px);
+.pagination-item  {
+    &.pagination-item--previous {
+        float: left;
+        margin-right: 32px;
+    }
+    
+    &.pagination-item--next {
+        float: right;
+        margin-left: 32px;
     }
 }
-
-.pagination-item--previous {
-    float: left;
-
-    .icon {
-        margin-left: -(remCalc(12px));
-    }
-}
-
-.pagination-item--next {
-    float: right;
-
-    .icon {
-        margin-right: -(remCalc(12px));
-    }
-}
-
 
 // Simple/small pagination (Next/Previous arrows are the only way to navigate)
 // -----------------------------------------------------------------------------

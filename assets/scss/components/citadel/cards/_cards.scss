@@ -109,8 +109,10 @@
 }
 
 .card-title {
-    font-size: $card-title-fontSize;
+    font-size: $fontSize-root;
     margin: $card-title-margin;
+    font-family: $body-font-family;
+    font-weight: 300;
 
     > a {
         color: $card-title-color;
@@ -118,14 +120,21 @@
         text-decoration: $card-title-textDecoration;
 
         &:hover {
-            color: $card-title-color-hover;
+            color: rgba($card-title-color-hover, 0.7);
         }
     }
 }
 
-.card-text {
-    margin-bottom: $card-text-marginBottom;
+.custom-text {
+    margin-bottom: 0;
+    color: var(--COLOR-TEXT-LIGHT);
+    font-size: $fontSize-root - 2;
+    font-weight: 300;
+    line-height: 19.6px;
+    letter-spacing: 0;
+}
 
+.card-text {
     abbr {
         border: 0;
         color: inherit;

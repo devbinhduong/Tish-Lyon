@@ -58,11 +58,11 @@ $pagination-link-current-active-bg:      null;
 $pagination-item-border:                1px solid transparent;
 
 $pagination-link-current-borderColor:   container("borderColor");
-$pagination-link-current-borderRadius:  $global-radius;
-$pagination-link-current-margin:        0 spacing("quarter") 0 spacing("half");
+$pagination-link-current-borderRadius:  300px;
+$pagination-link-current-margin:        0;
 
-$pagination-item-previousNext-color:        stencilColor("color-textLink");
-$pagination-item-previousNext-color-hover:  stencilColor("color-textLink--hover");
+$pagination-item-previousNext-color:        #cba052;
+$pagination-item-previousNext-color-hover:  rgba(203, 160, 82, 0.7);
 
 $pagination-link-transition:            all 0.2s ease;
 $pagination-link-color-hover:           stencilColor("color-textSecondary--hover");

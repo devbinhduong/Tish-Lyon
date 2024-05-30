@@ -8,6 +8,23 @@
     text-decoration: line-through;
 }
 
-.price-section--minor {
-    color: color("greys", "light");
+// * ------ Start Custom Price Section ------
+.priceSection__wrapper {
+    @include flexbox($align-items: center);
+
+    .price-section {
+        span,
+        abbr {
+            color: #000000;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 19.6px;
+            letter-spacing: 0;
+            text-decoration: none;
+        }
+
+        &.price-section--withTax {
+            margin-left: 4px;
+        }
+    }
 }

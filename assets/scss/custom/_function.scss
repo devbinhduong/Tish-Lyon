@@ -13,6 +13,9 @@
     --ICON-STROKE-WIDTH: 1px;
     --COLOR-BG: #ffffff;
     --COLOR-PRIMARY: #cba052;
+    --COLOR-TEXT-LIGHT: #646464;
+    --text: #212121;
+    --RADIUS: 300px;
 
     @include smax-m {
         --outer: 30px;
@@ -284,6 +287,7 @@
     --swatch-size: 26px;
 
     position: relative;
+    width: fit-content;
     min-height: 35.6px;
     margin: 0 -10px;
     padding: 0;
@@ -294,7 +298,7 @@
     visibility: hidden;
     opacity: 0;
     min-width: 0;
-    width: 100%;
+    width: fit-content;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -319,7 +323,7 @@
         position: relative;
         margin: -5px;
         padding: 5px;
-        width: calc(100% + 10px);
+        width: fit-content;
         white-space: nowrap;
         overflow-y: hidden;
         overflow-x: auto;
