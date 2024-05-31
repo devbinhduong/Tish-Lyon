@@ -300,15 +300,11 @@
                 }
 
                 + .items {
-                    margin-left: 22px;
+                    margin-left: 15px;
                 }
 
                 &.item--searchMobile {
                     @include smax-m {
-                        margin-left: 50px;
-                    }
-
-                    @include smax-s {
                         margin-left: 15px;
                     }
                 }

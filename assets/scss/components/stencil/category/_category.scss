@@ -150,17 +150,12 @@
     
     &__nav {
         position: sticky;
-        top: 118px;
         z-index: 11;
         display: flex;
         flex-grow: 1;
         background: var(--COLOR-BG);
         border-top: 1px solid var(--COLOR-BORDER);
         border-bottom: 1px solid var(--COLOR-BORDER);
-
-        @include smax-m {
-            top: 60px
-        }; 
 
         &.productListingPage__nav--filter.productListingPage__nav--sort {
             justify-content: space-between;

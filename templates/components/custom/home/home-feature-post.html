@@ -1,4 +1,4 @@
-<section class="homeFeaturePost">
+<section class="homeFeaturePost" data-section-load="check-aos">
     <div class="homeFeaturePost__wrapper">
         {{#each (limit post 1)}}
             <div class="postItem">
@@ -20,9 +20,9 @@
                         </a>
                     </div>
                 </div>
-                <div class="postItem__right">
+                <div class="postItem__right skeleton-loader">
                     <a class="postItem__image" href="{{url}}">
-                        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage thumbnail}}" alt="{{title}}">
+                        <img class="lazyload" src="" data-src="{{getImage thumbnail}}" alt="{{title}}">
                     </a>
                 </div>
             </div>

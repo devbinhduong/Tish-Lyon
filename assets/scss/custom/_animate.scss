@@ -60,6 +60,44 @@
 }
 
 
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes indeterminate {
+    0% {
+        transform: translate(0) scaleX(.35);
+    }
+
+    60% {
+        transform: translate(50%) scaleX(.9);
+    }
+
+    100% {
+        transform: translate(100%) scaleX(.9);
+    }
+}
+
+@keyframes indeterminate-short {
+    0% {
+        transform: translate(0) scaleX(2);
+    }
+
+    60% {
+        transform: translate(460px) scaleX(.01);
+    }
+
+    100% {
+        transform: translate(460px) scaleX(.01);
+    }
+}
+
 .has-activeNavPages {
      .fadeInRight {
         &[data-step-animate] {
@@ -124,5 +162,9 @@
     [data-aos][data-aos][data-aos-easing=ease-out-quart], 
     body[data-aos-easing=ease-out-quart] [data-aos] {
         transition-timing-function: cubic-bezier(.25,.46,.45,.94);
+    }
+
+    [data-animation=animate-items-fade] {
+        animation-name: itemFadeInRight;
     }
 }

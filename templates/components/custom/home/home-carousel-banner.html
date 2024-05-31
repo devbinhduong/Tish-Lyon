@@ -1,4 +1,4 @@
-<section class="homeSlickBanner">
+<section class="homeSlickBanner" data-section-load="check-aos">
     <div class="homeSlickBanner__list section-slick" data-section-load="slick-slider" data-slick-options='{
         "autoplay": true, 
         "autoplaySpeed": 2000, 
@@ -11,7 +11,7 @@
     }'>
         <div class="homeSlickBanner__item">
             <div class="image-overlay" style="--overlay-opacity: 0.35;"></div>
-            <div class="homeSlickBanner__image">
+            <div class="homeSlickBanner__image skeleton-loader">
                 <a href="{{theme_settings.home_banner_carousel_1_link}}" class="homeSlickBanner__link image-loader">
                     <img class="lazyload" src="" data-src="/product_images/uploaded_images/{{theme_settings.home_banner_carousel_1_img}}" alt="{{theme_settings.home_banner_carousel_1_title}}">
                 </a>
@@ -38,7 +38,7 @@
 
         <div class="homeSlickBanner__item">
             <div class="image-overlay" style="--overlay-opacity: 0.35;"></div>
-            <div class="homeSlickBanner__image">
+            <div class="homeSlickBanner__image skeleton-loader">
                 <a href="{{theme_settings.home_banner_carousel_2_link}}" class="homeSlickBanner__link image-loader">
                     <img class="lazyload" src="" data-src="/product_images/uploaded_images/{{theme_settings.home_banner_carousel_2_img}}" alt="{{theme_settings.home_banner_carousel_2_title}}">
                 </a>

@@ -255,6 +255,24 @@
         #facetedSearch-navList {
             padding: 0 31px 20px 32px;
             margin-top: 0;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+        
+            &::-webkit-scrollbar-track {
+                background: #f5f5f5;
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                background: $color-custom-yellow;
+            }
+        
+            &::-webkit-scrollbar-thumb:hover {
+                background: #555555;
+            }
 
             @include smax-m {
                 padding: 15px 30px 0;
@@ -262,6 +280,7 @@
 
             @include smax-s {
                 padding: 16px;
+                max-height: calc(100vh - 100px);
             }; 
         }
     }

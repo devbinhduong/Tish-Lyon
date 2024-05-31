@@ -42,6 +42,8 @@ export default function(context) {
                 showOptions();
             }, 1000);
 
+            facetedSearchToggle();
+
             /* AOS */
             Aos.init();
         }
@@ -124,9 +126,7 @@ export default function(context) {
     /* Custom Animate */
     function customAnimate(section) {
         if(section.matches('.animate-loaded')) return;
-
         section.classList.add('animate-loaded');
-
         section.classList.add('animated');
     }
 
@@ -139,7 +139,16 @@ export default function(context) {
         $(section).slick(options);
     }
 
-    
+    // * ------ Add Animate for first section before action on site ------
+    function addAOSManually(section) {
+        const aosItems = section.querySelectorAll('[data-aos]');
+
+        if(!aosItems) return;
+
+        aosItems.forEach(item => {
+            item.classList.add('aos-animate');
+        });
+    }
 
     function sectionLoad() {
         const handler = (entries, observer) => {
@@ -156,6 +165,12 @@ export default function(context) {
                         case 'slick-slider':
                             if(section.classList.contains('slick-initialized')) return;
                             globalInitSlickSlider(section);
+                            break;
+
+                        case 'check-aos':
+                            if(!check_JS_load) return;
+
+                            addAOSManually(section);
                             break;
                         
                         default:
@@ -270,9 +285,9 @@ export default function(context) {
             mapElement.innerHTML = `
                 <h2 class="title">${data.title}</h2>
                 ${data.Address ? `<div class="text">${data.Address}</div>` : ''}
-                ${data.phone ? `<a href="tel:${data.phone}" class="phone">${data.phone}</a>` : ''}
-                ${data.mail ? `<a href="mailto:${data.mail}" class="mail">${data.mail}</a>` : ''}
-                ${data.siteLink ? `<a href="${data.siteLink}" class="website">${data.siteName}</a>` : ''}
+                ${data.phone ? `<a class="hover-link-2" href="tel:${data.phone}" class="phone">${data.phone}</a>` : ''}
+                ${data.mail ? `<a class="hover-link-2" href="mailto:${data.mail}" class="mail">${data.mail}</a>` : ''}
+                ${data.siteLink ? `<a class="hover-link-2" href="${data.siteLink}" class="website">${data.siteName}</a>` : ''}
             `;
 
             mapContainer.appendChild(mapElement);
@@ -414,6 +429,28 @@ export default function(context) {
                 const card = option.closest('.card');
                 const optionForm = card.querySelector('.card-option');
                 optionForm.classList.remove('is-visible');
+            });
+        });
+    }
+
+    function facetedSearchToggle () {
+        const facetedSearchButtons = document.querySelectorAll('#facetedSearch .accordion-navigation.toggleLink');
+
+        if (!facetedSearchButtons) return;
+
+        forEach(facetedSearchButtons, (filterTitle) => {
+            filterTitle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                e.preventDefault();
+
+                filterTitle.classList.toggle('is-show');
+
+                const filterHeader = filterTitle.closest('.accordion-heading');
+                const filterContent = filterHeader.nextElementSibling;
+
+                filterContent.classList.toggle('is-show');
+
+                $(filterContent).slideToggle();
             });
         });
     }
