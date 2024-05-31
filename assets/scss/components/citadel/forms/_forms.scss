@@ -371,6 +371,11 @@
         padding-left: $form-minMaxRow-column-gutter;
         padding-right: $form-minMaxRow-column-gutter;
         width: 50%;
+        margin-bottom: 20px;
+
+        @include smax-s {
+            margin-bottom: 16px;
+        }; 
 
         &.form-field--full {
             width: 100%;

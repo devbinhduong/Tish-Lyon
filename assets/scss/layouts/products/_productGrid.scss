@@ -27,11 +27,11 @@
         padding-left: 1rem;
         padding-right: 1rem;
 
-        @include breakpoint("small") {
+        @include smin-s {
             width: grid-calc(4, $total-columns);
         }
 
-        @include breakpoint("medium") {
+        @include smin-l {
             width: grid-calc(3, $total-columns);
         }
     }
@@ -48,7 +48,13 @@
 .page-sidebar + .page-content {
     .productGrid {
         .product { // 1
-            @include breakpoint("small") {
+            width: grid-calc(6, $total-columns);
+
+            @include smin-s {
+                width: grid-calc(4, $total-columns);
+            }
+    
+            @include smin-l {
                 width: grid-calc(3, $total-columns);
             }
         }

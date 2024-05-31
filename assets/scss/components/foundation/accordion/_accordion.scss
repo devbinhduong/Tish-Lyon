@@ -10,6 +10,12 @@
     .navList {
         margin-bottom: 0;
     }
+    
+    &.accordion--navList {
+        @include smax-m {
+            border: none;
+        }; 
+    }
 }
 
 .accordion-content {
@@ -87,13 +93,9 @@
 
     .accordion-title {
         font-weight: normal;
-        padding: $accordion-navList-padding;
+        padding: 0;
         text-decoration: none;
         text-transform: inherit;
-
-        @include breakpoint("medium") {
-            padding: 0;
-        }
     }
 }
 

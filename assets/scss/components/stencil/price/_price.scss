@@ -10,7 +10,7 @@
 
 // * ------ Start Custom Price Section ------
 .priceSection__wrapper {
-    @include flexbox($align-items: center);
+    @include flexbox($align-items: center, $flex-wrap: wrap);
 
     .price-section {
         span,
@@ -23,8 +23,8 @@
             text-decoration: none;
         }
 
-        &.price-section--withTax {
-            margin-left: 4px;
+        &.price-section--withoutTax {
+            margin-right: 4px;
         }
     }
 }

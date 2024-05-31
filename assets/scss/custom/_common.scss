@@ -13,6 +13,7 @@
 
     .openSearchDropdown2 &,
     .has-activeNavPages &,
+    .openProductListingSidebar &,
     .openSearchMobile &,
     .openAuthSidebar &{
         opacity: 1;
@@ -26,6 +27,19 @@
 .openSearchDropdown2 {
     overflow: hidden;
     padding-inline-end: var(--scrollbar-width);
+}
+
+.openProductListingSidebar {
+    @include smax-s {
+        overflow: hidden;
+        padding-inline-end: var(--scrollbar-width);
+    };
+
+    .background-overlay {
+        @include smin-s {
+            display: none;
+        }
+    }
 }
 
 .openSearchMobile {

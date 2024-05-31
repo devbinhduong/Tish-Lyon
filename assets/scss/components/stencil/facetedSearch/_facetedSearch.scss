@@ -56,15 +56,7 @@
 //
 // -----------------------------------------------------------------------------
 .facetedSearch-navList {
-    display: none;
-
-    @include breakpoint("medium") {
-        display: block !important; // 1
-    }
-
     &.is-open {
-        display: block;
-
         .accordion--navList,
         .accordion-block:first-child .accordion-navigation {
             border-top-left-radius: 0;

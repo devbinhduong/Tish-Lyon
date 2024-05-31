@@ -166,11 +166,11 @@
         padding: 15px 0;
 
         @include smax-m {
-            padding: 8px 0;
+            padding: 7px 0;
         }
 
         @include smax-s {
-            padding: 4px 0;
+            padding: 2px 0 3px;
         }
         
         &_item {
@@ -526,7 +526,10 @@
     overflow: hidden;
     position: absolute;
     z-index: zIndex('high');
-    color: #ffffff;
+    
+    .page-type-default & {
+        color: #ffffff;
+    }
 
     .is-sticky & {
         color: stencilColor("navUser-color");

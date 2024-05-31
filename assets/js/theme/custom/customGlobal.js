@@ -93,6 +93,7 @@ export default function(context) {
         body.classList.remove('openSearchMobile');
         body.classList.remove('openSearchDropdown2');
         body.classList.remove('openSidebar');
+        body.classList.remove('openProductListingSidebar');
         pageSidebar?.classList.remove('is-open');
         pageSidebarMobile?.classList.remove('is-open');
 
@@ -325,6 +326,7 @@ export default function(context) {
             e.preventDefault();
             filterButton.getAttribute('aria-expanded') === 'true' ? filterButton.setAttribute('aria-expanded', 'false') : filterButton.setAttribute('aria-expanded', 'true');
             filterSidebar.classList.toggle('is-show');
+            document.body.classList.toggle('openProductListingSidebar');
         });
 
         if (!sortButton) return;
@@ -361,6 +363,7 @@ export default function(context) {
         closeButton.addEventListener('click', (e) => {
             e.preventDefault();
             sidebar.classList.remove('is-show');
+            document.body.classList.remove('openProductListingSidebar');
         });
     }
 

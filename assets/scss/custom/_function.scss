@@ -202,7 +202,7 @@
         top: calc(var(--collection-nav-height) + var(--menu-height) - var(--border-width));
         height: calc(var(--full-screen) - var(--collection-nav-height) - var(--menu-height) + var(--border-width));
     
-        &.is-show {
+        .openProductListingSidebar & {
             visibility: visible;
             transform: translateZ(0);
             min-width: var(--sidebar-width);
@@ -214,6 +214,10 @@
 
         #facetedSearch {
             padding: 15px 0 24px 18px;
+
+            @include smax-m {
+                padding: 0;
+            }; 
         }
 
         .facetedSearch-refineFilters {
@@ -251,6 +255,14 @@
         #facetedSearch-navList {
             padding: 0 31px 20px 32px;
             margin-top: 0;
+
+            @include smax-m {
+                padding: 15px 30px 0;
+            }; 
+
+            @include smax-s {
+                padding: 16px;
+            }; 
         }
     }
     

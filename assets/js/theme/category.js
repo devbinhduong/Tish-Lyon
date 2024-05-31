@@ -60,6 +60,12 @@ export default class Category extends CatalogPage {
         this.ariaNotifyNoProducts();
 
         this.loadOptionForProductCard(this.context);
+
+        window.addEventListener('scroll', (e) => {
+            const scrollY = window.scrollY;
+
+            this.productListingNavFixed(scrollY);
+        });
     }
 
     ariaNotifyNoProducts() {
@@ -123,5 +129,16 @@ export default class Category extends CatalogPage {
         if($('#product-listing-container .product').length > 0){
             customAddOptionForProduct(context, 'product-listing-container');
         }
+    }
+
+    productListingNavFixed(scrollY) {
+        const productListingNav = document.querySelector(".productListingPage__nav");
+        const headerHeight = document.querySelector(".header").offsetHeight
+        
+        if(!productListingNav) return;
+
+        if (scrollY > headerHeight) {
+            productListingNav.style.top = `${headerHeight}px`;
+        };
     }
 }

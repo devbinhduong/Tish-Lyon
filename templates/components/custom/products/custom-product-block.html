@@ -25,17 +25,22 @@
 
             <a href="{{product.url}}" class="card-figure__link card-link" aria-label="{{name}},{{> components/products/product-aria-label}}"
                 data-event-type="product-click">
-                <div class="card-img-container{{#if images.length '<' 1}} card-img-container2{{/if}}">
+                <div class="card-img-container" data-aos="img-in" data-aos-delay="0" data-aos-duration="800" data-aos-easing="ease-out-quart">
                     <img class="card-image lazyload card-image-loading" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage product.main_image 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{product.title}}" title="{{product.title}}">
-                    {{#if images.length '>=' 2}}
-                        {{#each product.images}}
+                </div>
+
+                {{#gt product.images.length 1}}
+                    <div class="card-img-container card-img-container-under" data-aos="img-in" data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-out-quart">
+                        {{#each product.images }}
                             {{#if @index '==' 1}}
-                                <span class="product-additional" data-product-id="">
-                                    <img class="card-image-2 img-responsive lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
-                                </span>
-                            {{/if}}
+                                <img class="card-image-2 img-responsive lazyload" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage this 'productgallery_size' (cdn theme_settings.default_image_product)}}" alt="{{this.alt}}" title="{{this.alt}}">
+                            {{/if}}    
                         {{/each}}
-                    {{/if}}
+                    </div>
+                {{/gt}}
+
+                <div class="card-img-container card-img-container-options" data-aos="img-in" data-aos-delay="0" data-aos-duration="300" data-aos-easing="ease-out-quart">
+                    <img class="lazyload" src="" data-src="" alt="">
                 </div>
             </a>
 
@@ -62,11 +67,13 @@
                 {{/or}}
             </div>
 
-            <p class="card-text" data-test-info-type="productRating">
-                <span class="rating--small">
-                    {{> components/products/ratings rating_target=name rating=rating}}
-                </span>
-            </p>
+            {{#if theme_settings.show_card_rating}}
+                <p class="card-text" data-test-info-type="productRating">
+                    <span class="rating--small">
+                        {{> components/products/ratings rating_target=name rating=rating}}
+                    </span>
+                </p>
+            {{/if}}
         </div>
     </article>
 </div>

@@ -12,6 +12,9 @@
 // -----------------------------------------------------------------------------
 
 .card {
+    @include smax-s {
+        margin-bottom: 2rem;
+    }; 
     &:focus-within {
         .card-figcaption {
             opacity: 1;
@@ -165,11 +168,7 @@
 }
 
 .card-body {
-    text-align: center;
-
-    @include breakpoint("small") {
-        text-align: left;
-    }
+    text-align: left;
 }
 
 
