@@ -19,7 +19,7 @@
                             </span>
                         </p>
                         <div class="navPage-subMenu navPage-subMenu-horizontal level-3" aria-hidden="true" tabindex="-1">
-                            <ul class="navPage-subMenu-list">
+                            <ul class="navPage-subMenu-list navPage-subMenu-list--lv3">
                                 <li class="navPage-subMenu-item-parent navPage-subMenu-item-child navPage-subMenu-title">
                                     <p class="navPage-subMenu-action navPages-action navPages-action-lv2 {{#if is_active}} activePage{{/if}}">
                                         <span class="navPages-action-moreIcon" aria-hidden="true">
@@ -29,7 +29,7 @@
                                     </p>
                                 </li>
                                 {{#each children}}
-                                    <li class="navPage-subMenu-item-child navPages-action-end">
+                                    <li class="navPage-subMenu-item-child navPages-action-end fadeInRight" data-step-animate="{{@index}}">
                                         <a class="navPage-subMenu-action navPages-action navPages-action-lv3 no-subMenu hover-link level-3 {{#if is_active}} activePage{{/if}}" href="{{url}}"><span class="text">{{name}}</span></a>
                                     </li>
                                 {{/each}}

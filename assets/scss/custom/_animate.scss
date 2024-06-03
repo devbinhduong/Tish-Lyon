@@ -16,6 +16,18 @@
     }
 }
 
+@keyframes itemFadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(15px);
+    }
+    
+}
+
 @keyframes heroFade {
     0% {
         opacity: 0;
@@ -99,20 +111,46 @@
 }
 
 .has-activeNavPages {
-     .fadeInRight {
-        &[data-step-animate] {
-            -webkit-animation-name: itemFadeInRight;
-            animation-name: itemFadeInRight;
-            opacity: 0;
-            will-change: transform, opacity;
-            animation-fill-mode: both;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    
-            @for $i from 0 through 100 {
+    @for $i from 0 through 100 {
+        .fadeInRight {
+            &[data-step-animate='#{$i}'] {
+                -webkit-animation-name: itemFadeInRight;
+                animation-name: itemFadeInRight;
+                opacity: 0;
+                will-change: transform, opacity;
+                animation-fill-mode: both;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                animation-delay: 0.25s + $i * 0.05;
+                animation-duration: .5s;
+            }
+        }
+
+        .navPage-subMenu-list {
+            > .fadeInRight {
                 &[data-step-animate='#{$i}'] {
-                    animation-delay: 0.25s + $i * 0.05;
-                    animation-duration: .5s;
+                    -webkit-animation-name: itemFadeOutRight;
+                    animation-name: itemFadeOutRight;
+                    animation-duration: .25s;
+                    animation-delay: 0.2s + $i * 0.1;
+                    animation-fill-mode: both;
+                }
+
+            }
+
+            &.show-subMenu {
+                > .fadeInRight {
+                    &[data-step-animate='#{$i}'] {
+                        -webkit-animation-name: itemFadeInRight;
+                        animation-name: itemFadeInRight;
+                        opacity: 0;
+                        will-change: transform, opacity;
+                        animation-fill-mode: both;
+                        -webkit-backface-visibility: hidden;
+                        backface-visibility: hidden;
+                        animation-delay: 0.25s + $i * 0.05;
+                        animation-duration: .5s;
+                    }
                 }
             }
         }

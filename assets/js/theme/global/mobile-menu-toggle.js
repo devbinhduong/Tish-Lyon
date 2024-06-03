@@ -161,6 +161,13 @@ export class MobileMenuToggle {
             if (!$closestAction.hasClass('navPages-action-end')) {
                 if($closestAction.hasClass('has-dropdown')){
                     $closestAction.toggleClass('is-open');
+
+                    $closestAction.find('.navPage-subMenu-list--lv2').addClass('show-subMenu');
+
+                    if($(event.target).hasClass('navPages-action-lv2')) {
+                        $closestAction.find('.navPage-subMenu-list--lv3').addClass('show-subMenu');
+                    }
+
                 }
             }
 
@@ -174,8 +181,6 @@ export class MobileMenuToggle {
                 $parentSiblings.addClass('is-hidden');
 
                 const subMenuList = $closestAction.find('.navPage-subMenu-list--lv2 > li');
-
-                console.log(".$subMenuList", subMenuList)
 
                 subMenuList.each(function (index, element) {
                     $(element).addClass('fadeInRight');
@@ -194,14 +199,20 @@ export class MobileMenuToggle {
                 this.$navList.removeClass('subMenu-is-open');
             }
 
-            $parentSiblings2.removeClass('is-open');
-            $parentAction2.removeClass('is-hidden');
+            $parentSiblings2.find('.navPage-subMenu-list--lv2').removeClass('show-subMenu');
+            
+            $parentSiblings2.find('.navPage-subMenu-list--lv3').removeClass('show-subMenu');
+
+            setTimeout(() => {
+                $parentSiblings2.removeClass('is-open');
+                $parentAction2.removeClass('is-hidden');
+            }, 500);
 
             const subMenuList2 = $('.navPage-subMenu-list--lv2 > li.fadeInRight');
 
-            subMenuList2.each(function (index, element) {
-                $(element).removeClass('fadeInRight');
-            });
+            // subMenuList2.each(function (index, element) {
+            //     $(element).removeClass('fadeInRight');
+            // });
 
         }
     }
