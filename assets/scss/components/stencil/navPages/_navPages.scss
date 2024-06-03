@@ -216,6 +216,11 @@
             margin-left: 15px;
             margin-right: 15px;
             display: block;
+
+            @include smax-m {
+                margin-left: 0;
+                margin-right: 0;
+            }; 
         }
     }
 
