@@ -26,6 +26,10 @@
             margin-top: 0;
             margin-bottom: 9px;
         }
+
+        .item-text {
+            margin-bottom: 3px;
+        }
     }
 }
 
@@ -34,6 +38,10 @@
     overflow: hidden;
     
     &__list {
+        &.slick-dotted {
+            margin-bottom: 0;
+        }
+
         &:not(.slick-initialized) {
             .homeSlickBanner__item:nth-child(n + 2) {
                 display: none;
@@ -74,10 +82,24 @@
 
 // * ------ Home Columns Banner ------
 .homeColBanner {
+    padding: 50px 0;
+
+    @include smax-m {
+        padding: 40px 0;
+    }; 
+
+    @include smax-s {
+        padding: 30px 0;
+    }; 
+
     &__list {
         @include smin-s {
             @include flex-layout(3, 32px);
         }; 
+
+        .item {
+            margin-bottom: 0;
+        }
     }
 
     &__title {
@@ -101,12 +123,18 @@
 
     &__link {
         @include image-padding-bottom(793, 1030);
+        display: block;
+        
+        @include smax-s {
+            @include image-padding-bottom(600, 600);
+        }; 
     }
 }
 
 // * ------ Home Gallery Section ------
 .homeHoverBanner {
     position: relative;
+    padding-top: 15px;
 
     &__content {
         @include pos($pos: abs, $cb: center);
@@ -136,7 +164,8 @@
         width: 100%;
 
         @include smin-s {
-            margin: 0 --offset;
+            margin: 0 var(--offset);
+            margin-top: 10px;
         }
 
         @include smax-s {
@@ -201,8 +230,8 @@
                 transform: scale(1);
             }
 
-            @include image-padding-bottom(2543, 1080);
-            min-height: 1080px;
+            @include image-padding-bottom(2543, 988);
+            min-height: 988px;
         }
     }
 }
@@ -218,6 +247,15 @@
     @include smax-s {
         padding: 60px 0;
     }; 
+
+    .mb-16 {
+        margin-bottom: 12px;
+    }
+
+    .button--icon {
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
 }
 
 // * ------ Home Products Block ------
@@ -239,6 +277,7 @@
 
         &__link {
             @include image-padding-bottom(540, 540);
+            display: block;
         }
 
         &__content {
@@ -256,7 +295,15 @@
 
     .productCarousel-slide {
         padding: 0;
-        margin-left: 32px;
+        margin-right: 32px;
+
+        @include smax-m {
+            margin-right: 22px;
+        }; 
+
+        @include smax-s {
+            margin-right: 16px;
+        }; 
     }
 }
 

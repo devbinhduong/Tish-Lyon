@@ -386,6 +386,17 @@
         }; 
     }
 
+    &-10 {
+        font-size: 61px;
+        line-height: 73px;
+        letter-spacing: 0;
+
+        @include smax-s {
+            font-size: 46px;
+            line-height: 55px;
+        }; 
+    }
+
     &-12 {
         font-size: 71px;
         line-height: 86px;
