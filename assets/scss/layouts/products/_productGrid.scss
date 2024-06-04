@@ -55,7 +55,7 @@
             }
     
             @include smin-l {
-                width: grid-calc(3, $total-columns);
+                width: grid-calc(2.4, $total-columns);
             }
         }
     }

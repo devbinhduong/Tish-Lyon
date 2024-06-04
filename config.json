@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Update 31052024",
+  "name": "Cornerstone Update 03062024",
   "version": "6.14.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -431,7 +431,7 @@
         "productpage_reviews_count": 9,
         "productpage_related_products_count": 10,
         "productpage_similar_by_views_count": 10,
-        "categorypage_products_per_page": 12,
+        "categorypage_products_per_page": 30,
         "shop_by_price_visibility": true,
         "brandpage_products_per_page": 12,
         "searchpage_products_per_page": 12,

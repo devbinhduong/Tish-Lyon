@@ -1148,6 +1148,65 @@
     ]
   },
   {
+    "name": "Demo Home Setting",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Home Slider Banner"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 1 Image",
+        "id": "home_banner_carousel_1_img"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 1 Title",
+        "id": "home_banner_carousel_1_title"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 1 Text",
+        "id": "home_banner_carousel_1_text"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 1 Button",
+        "id": "home_banner_carousel_1_button"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 1 Link",
+        "id": "home_banner_carousel_1_link"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 2 Image",
+        "id": "home_banner_carousel_2_img"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 2 Title",
+        "id": "home_banner_carousel_2_title"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 2 Text",
+        "id": "home_banner_carousel_2_text"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 2 Button",
+        "id": "home_banner_carousel_2_button"
+      },
+      {
+        "type": "input",
+        "label": "Home Slide 2 Link",
+        "id": "home_banner_carousel_2_link"
+      }
+    ]
+  },
+  {
     "name": "Products",
     "settings": [
       {
