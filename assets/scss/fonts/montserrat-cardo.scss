@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat.woff2') format('woff2'),
+        url('../fonts/Montserrat.woff') format('woff'),
+        url('../fonts/Montserrat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat_1.woff2') format('woff2'),
+        url('../fonts/Montserrat_1.woff') format('woff'),
+        url('../fonts/Montserrat_1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/MontserratLight.woff2') format('woff2'),
+        url('../fonts/MontserratLight.woff') format('woff'),
+        url('../fonts/MontserratLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/MontserratLight_1.woff2') format('woff2'),
+        url('../fonts/MontserratLight_1.woff') format('woff'),
+        url('../fonts/MontserratLight_1.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cardo';
+    src: url('../fonts/') format('woff2'),
+        url('../fonts/Cardo.woff') format('woff'),
+        url('../fonts/Cardo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

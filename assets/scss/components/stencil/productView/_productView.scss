@@ -7,7 +7,17 @@
 // -----------------------------------------------------------------------------
 
 .productView {
+    --block-padding-top: 20px;
+    --block-padding-bottom: 20px;
+    --border: rgb(244, 242, 240);
+
     padding-top: spacing("base");
+
+    p {
+        margin: 8px 0;
+        font-weight: 400;
+        line-height: 19px;
+    }
 }
 
 
@@ -59,10 +69,10 @@
 
 .productView-thumbnails {
     @include u-listBullets("none");
-    @include grid-row($behavior: "nest");
 
-    margin-left: -(spacing("quarter"));
-    margin-right: -(spacing("quarter"));
+    @include smax-s {
+        @include flexbox($align-items: center);
+    }; 
 
     &[data-slick] {
         opacity: 0;
@@ -70,11 +80,6 @@
         &.slick-initialized {
             opacity: 1;
         }
-    }
-
-    .slick-list {
-        margin-left: remCalc(40px);
-        margin-right: remCalc(40px);
     }
 
     .slick-next {
@@ -97,29 +102,56 @@
 }
 
 .productView-thumbnail {
-    @include grid-column(3);
-    padding: spacing("quarter");
+    position: relative;
     text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
 
-    @include breakpoint("large") {
-        width: 20%;
-    }
+    @include smax-s {
+        width: 25%;
+    }; 
 }
 
 .productView-thumbnail-link {
-    border: container("border");
     box-sizing: content-box;
     display: flex;
-    height: 67px;
     justify-content: center;
     max-width: 75px;
-    padding: 2px;
+    height: 75px;
+    padding: 0;
     position: relative;
     width: 100%;
 
-    &:hover,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -10px;
+        width: 2px;
+        height: 30px;
+        max-height: 90%;
+        margin: 0;
+        background: #c9bfb5;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-50%);
+        transition: opacity .2s;
+
+        @include smax-s {
+            bottom: 0;
+            left: 0;
+            top: unset;
+            right: 0;
+            margin: auto;
+            width: 100%;
+            height: 2px;
+        }; 
+    }
+
     &.is-active {
-        border-color: color("greys", "darker");
+        &::after {
+            opacity: 1;
+        }
     }
 }
 
@@ -135,28 +167,22 @@
 // Details - Product details
 // -----------------------------------------------------------------------------
 
-.productView-product {
-    @include breakpoint("medium") {
-        border-bottom: container("border");
-        padding-bottom: spacing("single") + spacing("third");
-    }
-
-    > :last-child {
-        margin-bottom: 0;
-    }
+.productViewRight__wrapper {
+   @include smin-s {
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+   }; 
 }
 
 .productView-title {
-    font-size: fontSize("small");
-    margin: -(spacing("half")) 0 spacing("quarter");
+    margin: 0;
+    font-size: 32px;
+    line-height: 39px;
+    letter-spacing: 0;
+    padding-right: 70px;
+    margin-bottom: 7px;
 
-    @include breakpoint("medium") {
-        margin-top: spacing("single");
-    }
-
-    @include breakpoint("large") {
-        font-size: fontSize("largest");
-    }
 }
 
 .productView-brand {
@@ -182,22 +208,39 @@
 // -----------------------------------------------------------------------------
 
 .productView-price {
-    font-size: fontSize("smaller");
-    margin-bottom: spacing("third");
-
-    @include breakpoint("medium") {
-        font-size: fontSize("larger");
-        margin-bottom: spacing("base");
-    }
-
-    .price-section--saving {
-        font-size: fontSize("smaller");
-    }
-
     abbr {
         border: 0;
         color: inherit;
         font-size: inherit;
+        padding-left: 4px;
+    }
+
+    .priceSection__wrapper {
+        .price-section {
+            font-size: 0px;
+            margin: 10px 0 0;
+            padding: 5px 0;
+
+            span,
+            abbr {
+                font-size: $fontSize-root;
+            }
+
+            &.price-section--withoutTax {
+                padding-right: 4px;
+            }
+        }
+    }
+}
+
+.productView-showStock {
+    margin-bottom: 16px;
+
+    span {
+        color: $color-custom-black;
+        font-size: $fontSize-root - 2;
+        line-height: 1.125rem;
+        letter-spacing: 0px;
     }
 }
 
@@ -306,9 +349,12 @@
         font-size: fontSize("smallest"); // 3
     }
 
-    .form-field {
+    .form-field { 
         font-size: 0; // 2
-        margin-bottom: 2rem;
+        
+        &:not(.product-block-line) {
+            margin-bottom: 2rem;
+        } 
 
         &--error > .form-inlineMessage {
             font-size: 1rem;
@@ -410,6 +456,45 @@
             }
         }
     }
+
+    .customFormField {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: minmax(0, 7.5rem) minmax(0, 100%);
+
+        &::before,
+        &::after {
+            content: unset;
+        }
+
+        &__left {
+            > .form-label {
+                color: $color-custom-black;
+                font-size: $fontSize-root;
+                line-height: 19px;
+                letter-spacing: 0px;
+                font-weight: 400;
+                font-family: $body-font-family;
+
+                [data-option-value] {
+                    font-size: 12px;
+                    padding: 4px 0 0;
+                }
+            }
+
+            .form-field--increments {
+                margin-bottom: 0;
+            }
+        }
+
+        &__right {
+            .add-to-cart-buttons {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+            }
+        }
+    }
 }
 
 
@@ -474,5 +559,47 @@
     img {
         max-width: none;
         width: auto;
+    }
+}
+
+.product-block {
+    margin-top: var(--block-padding-top, 0px);
+    margin-bottom: var(--block-padding-bottom, 16px);
+}
+
+.divider {
+    margin: 0;
+    border-color: var(--border);
+}
+
+.product-block-line {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top: 1px solid --border;
+    border-bottom: 1px solid --border;
+    margin-bottom: 16px;
+}
+
+.text-bold {
+    margin: 0;
+    font-weight: 400;
+}
+
+.productView__findStore {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    .findStore {
+        &__content {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            min-height: 100%;
+            width: 100%;
+            padding: 12px 20px;
+            background: #f4f2f0;
+        }
+        &__heading {}
+        &__text {}
     }
 }

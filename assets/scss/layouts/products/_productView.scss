@@ -7,15 +7,11 @@
 // -----------------------------------------------------------------------------
 
 .productView {
-    @include grid-row($behavior: "nest");
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-left: -(spacing("base"));
-    margin-right: -(spacing("base"));
 
-    @include breakpoint("medium") {
+    @include smin-m {
         display: block;
     }
 
@@ -33,31 +29,43 @@
 
 .productView-images {
     @include grid-column(12);
-    padding-left: spacing("base");
-    padding-right: spacing("base");
+    float: unset;
+    padding: 0;
+    @include flexbox($flex-direction: row-reverse);
 
-    @include breakpoint("medium") {
-        width: grid-calc(6, $total-columns);
+    @include smax-s {
+        flex-direction: column;
+    }; 
+
+    .productView-image {
+        &--nav {
+            width: calc(100% - 85px);
+            padding-left: 20px;
+
+            @include smax-s {
+                width: 100%;
+            }; 
+        }
+        
+        &--thumbnail {
+            width: 85px;
+            padding-left: 8px;
+
+            
+            @include smax-s {
+                width: 100%;
+            }; 
+        }
     }
 }
 
 .productView-details {
     @include grid-column(12);
-    padding-left: spacing("base");
-    padding-right: spacing("base");
-
-    @include breakpoint("medium") {
-        clear: right;
-        float: right;
-        width: grid-calc(6, $total-columns);
-    }
+    float: unset;
+    padding: 0;
 
     .productView--quickView & {
         position: relative;
-    }
-
-    &.product-data {
-        order: -1;
     }
 }
 
@@ -76,10 +84,54 @@
     }
 
     .productView-description {
-        @include breakpoint("medium") {
+        @include smin-m {
             clear: both;
             float: none;
             width: 100%;
         }
+    }
+}
+
+
+.productViewTop {
+    &__wrapper {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        @include smax-s {
+            grid-template-columns: 1fr;
+        }; 
+    }
+
+    &__item {
+        width: 100%;
+
+    }
+
+    &__left {
+    }
+
+    &__right {
+        padding-left: 50px;
+
+        @include smax-s {
+            padding-left: 0;
+        }; 
+    }
+
+    &__breadcrumb {
+        .breadcrumbs {
+            margin-bottom: 7px;
+        }
+    }
+}
+
+.product-icon {
+    color: #cba052;
+    margin: 8px 10px 8px 0;
+
+    svg {
+        @include square(20);
     }
 }

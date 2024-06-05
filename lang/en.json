@@ -153,7 +153,7 @@
         "form_submit": "Submit",
         "no_preference": "No Preference",
         "other_details": "Other Details",
-        "required": "Required",
+        "required": "*",
         "optional": "Optional",
         "email_address": "Email Address",
         "edit": "Edit",
@@ -490,7 +490,7 @@
             "you_have_none": "You have no Wish Lists, add one now.",
             "empty_wishlist": "Your Wish List is empty. When you add items to your Wish List they will appear here.",
             "num_items": "Items",
-            "add_item": "Add to Wish List",
+            "add_item": "Add to WishList",
             "remove_item": "Remove Item",
             "name": "Wish List Name",
             "shared": "Shared",
@@ -823,7 +823,8 @@
             "price": "and get {discount} off",
             "fixed": "and pay only {discount} each"
         },
-        "card_default_image_alt": "Image coming soon"
+        "card_default_image_alt": "Image coming soon",
+        "tab_details_title": "Details"
     },
     "invoice": {
         "for_order": "{name} Invoice for Order #{id}",

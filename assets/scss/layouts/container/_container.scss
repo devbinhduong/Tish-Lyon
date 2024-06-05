@@ -20,4 +20,8 @@
     &.container--full {
         padding: 0;
     }
+
+    &.container-small {
+        max-width: 1500px;
+    }
 }

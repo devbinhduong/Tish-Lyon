@@ -307,10 +307,11 @@
     cursor: pointer;
     display: inline-block;
     font-size: 0; // 2
-    margin-bottom: spacing("third");
-    margin-right: spacing("third");
-    padding: 1px;
+    padding: 3px;
     transition: all 0.15s ease;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    margin-right: 8px;
 
     &:hover {
         border-color: stencilColor("input-border-color-active");
@@ -319,6 +320,37 @@
     .form-radio:checked + & {
         border-color: stencilColor("checkRadio-color");
         box-shadow: 0 0 0 1px stencilColor("checkRadio-color");
+    }
+
+    &.form-option-swatch {
+        position: relative;
+        border-color: transparent;
+        margin-right: 0;
+
+        &::after {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            border: 1px solid stencilColor("checkRadio-color");
+            overflow: initial;
+            opacity: 0;
+            transition: opacity .3s ease, transform .3s ease;
+            transform: scale(.95);
+            @include square(38);
+            top: 0;
+            left: 0;
+            border-radius: 50%;
+        }
+
+        .form-radio:checked + & {
+            border-color: transparent;
+            box-shadow: none;
+
+            &::after {
+                opacity: 1;
+                transform: translateZ(0);
+            }
+        }
     }
 }
 
@@ -333,9 +365,10 @@
 
 .form-option-variant--color,
 .form-option-variant--pattern {
-    @include square(22);
+    @include square(32);
     min-width: initial;
     padding: 0;
+    border-radius: 50%;
 
     @include breakpoint("small") { // 4
         pointer-events: inherit; // 3

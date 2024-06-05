@@ -35,6 +35,12 @@ body {
             padding: 0 !important;
         }
     }
+
+    &.page-type-product {
+        .body {
+            padding: 90px 0 30px;
+        }
+    }
 }
 
 .page {

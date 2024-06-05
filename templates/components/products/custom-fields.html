@@ -1,4 +1,20 @@
+{{#if productSKU}}
+    <p class="fw-400"><span>SKU:</span> <span>{{productSKU}}</span></p>
+{{/if}}
+
 {{#each product.custom_fields}}
-<dt class="productView-info-name">{{name}}:</dt>
-<dd class="productView-info-value">{{{value}}}</dd>
+<div class="productViewInfo__list">
+    {{#if showSKU}}
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam porro qui ex a? Cupiditate incidunt dignissimos culpa recusandae dolorum voluptates totam reprehenderit aperiam laborum? Nulla, placeat! Tempora in itaque mollitia.
+    {{/if}}
+    
+    <div class="productViewInfo__item">
+        <p>{{name}}:</p>
+        <ul>
+            {{#each (split value ",")}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</div>
 {{/each}}

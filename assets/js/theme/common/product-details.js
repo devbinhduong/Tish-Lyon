@@ -68,7 +68,7 @@ export default class ProductDetails extends ProductDetailsBase {
             this.$swatchOptionMessage.removeClass('u-hidden');
 
             $productSwatchGroup.on('change', ({ target }) => {
-                const swatchGroupElement = target.parentNode.parentNode;
+                const swatchGroupElement = target.parentNode.parentNode.parentNode;
 
                 this.showSwatchNameOnOption($(target), $(swatchGroupElement));
             });
