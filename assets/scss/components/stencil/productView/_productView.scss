@@ -599,7 +599,14 @@
             padding: 12px 20px;
             background: #f4f2f0;
         }
-        &__heading {}
-        &__text {}
+        &__heading {
+            .product-icon {
+                color: #212121;
+            }
+        }
+
+        &__text {
+            font-weight: 300;
+        }
     }
 }
