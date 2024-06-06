@@ -17,6 +17,15 @@
         margin: 8px 0;
         font-weight: 400;
         line-height: 19px;
+
+        @include smax-m {
+            font-size: $fontSize-root - 1;
+        }; 
+
+        @include smax-s {
+            font-size: $fontSize-root - 2;
+            font-weight: 300;
+        };
     }
 }
 
@@ -25,7 +34,7 @@
 // -----------------------------------------------------------------------------
 
 .productView-images {
-    margin-bottom: spacing("double");
+    margin-bottom: 0;
 }
 
 .productView-image {
@@ -72,6 +81,7 @@
 
     @include smax-s {
         @include flexbox($align-items: center);
+        margin-bottom: 14px;
     }; 
 
     &[data-slick] {
@@ -109,6 +119,7 @@
 
     @include smax-s {
         width: 25%;
+        margin-bottom: 0;
     }; 
 }
 
@@ -183,6 +194,12 @@
     padding-right: 70px;
     margin-bottom: 7px;
 
+    @include smax-s {
+        font-size: 24px;
+        line-height: 29px;
+        margin: 12px 0 0 0;
+    }; 
+
 }
 
 .productView-brand {
@@ -224,6 +241,14 @@
             span,
             abbr {
                 font-size: $fontSize-root;
+
+                @include smax-m {
+                    font-size: $fontSize-root - 1;
+                }; 
+
+                @include smax-s {
+                    font-size: $fontSize-root - 2;
+                };
             }
 
             &.price-section--withoutTax {
@@ -241,6 +266,11 @@
         font-size: $fontSize-root - 2;
         line-height: 1.125rem;
         letter-spacing: 0px;
+
+        @include smax-s {
+            font-size: 12px;
+            line-height: 15px;
+        }; 
     }
 }
 
@@ -339,6 +369,12 @@
 
     .form {
         display: inline;
+
+        &.form-wishlist {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
         .add-to-cart-wrapper {
             display: inline;
@@ -468,6 +504,10 @@
         }
 
         &__left {
+            @include smax-s {
+                text-align: left;
+            }
+
             > .form-label {
                 color: $color-custom-black;
                 font-size: $fontSize-root;
@@ -488,6 +528,9 @@
         }
 
         &__right {
+            @include smax-s {
+                text-align: left;
+            }
             .add-to-cart-buttons {
                 margin: 0;
                 padding: 0;
@@ -565,6 +608,10 @@
 .product-block {
     margin-top: var(--block-padding-top, 0px);
     margin-bottom: var(--block-padding-bottom, 16px);
+
+    @include smax-s {
+        margin-bottom: 16px;
+    }; 
 }
 
 .divider {
@@ -575,8 +622,8 @@
 .product-block-line {
     padding-top: 16px;
     padding-bottom: 16px;
-    border-top: 1px solid --border;
-    border-bottom: 1px solid --border;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
     margin-bottom: 16px;
 }
 
@@ -598,6 +645,10 @@
             width: 100%;
             padding: 12px 20px;
             background: #f4f2f0;
+
+            @include smax-s {
+                padding: 9px 16px;
+            }; 
         }
         &__heading {
             .product-icon {

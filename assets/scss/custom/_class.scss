@@ -636,6 +636,14 @@
     }
 }
 
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
 .frame {
     display: grid;
     grid-template-columns: 1fr;

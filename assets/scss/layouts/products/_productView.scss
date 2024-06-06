@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    padding-bottom: 30px;
 
     @include smin-m {
         display: block;
@@ -18,6 +19,10 @@
     .modal & {
         padding-bottom: 0;
         padding-top: 0;
+    }
+
+    &__tabs {
+        padding-top: 30px;
     }
 }
 
@@ -101,6 +106,7 @@
 
         @include smax-s {
             grid-template-columns: 1fr;
+            gap: 0;
         }; 
     }
 
@@ -125,6 +131,18 @@
             margin-bottom: 7px;
         }
     }
+}
+
+.product-text {
+    font-size: $fontSize-root;
+
+    @include smax-m {
+        font-size: $fontSize-root - 1;
+    };
+
+    @include smax-s {
+        font-size: $fontSize-root - 2;
+    };
 }
 
 .product-icon {

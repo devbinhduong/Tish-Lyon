@@ -488,3 +488,26 @@
     transition: opacity .3s ease, visibility .3s;
     cursor: pointer;
 }
+
+.cartBar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 99;
+    width: 100%;
+    height: 80px;
+    overflow: hidden;
+    background: var(--COLOR-BG);
+    box-shadow: 0 0 10px #0003;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(calc(var(--cookie-bar-height)* -1));
+        transition: opacity .5s ease, transform .5s ease, visibility 0s linear 0s;
+    }
+}

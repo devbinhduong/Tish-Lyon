@@ -21,6 +21,14 @@ ol.breadcrumbs {
     display: inline-block;
     float: none;
 
+    @include smax-m {
+        font-size: 13px;
+    }; 
+
+    @include smax-s {
+        font-size: 12px;
+    }; 
+
     &.is-active {
         > .breadcrumb-label {
             cursor: pointer;

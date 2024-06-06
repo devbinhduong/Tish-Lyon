@@ -22,6 +22,7 @@
 .tab {
     padding: 10px 0 0;
     color: #646464;
+    display: inline-block;
 
     &.is-active {
         color: #000000;
@@ -79,6 +80,14 @@
     color: $color-custom-black;
     line-height: 19px;
     font-weight: 300;
+
+    @include smax-m {
+        font-size: $fontSize-root - 1;
+    }; 
+
+    @include smax-s {
+        font-size: $fontSize-root - 2;
+    };
 
     .productView-info {
         > .productViewInfo__list {

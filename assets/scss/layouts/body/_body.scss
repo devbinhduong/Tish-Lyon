@@ -39,6 +39,14 @@ body {
     &.page-type-product {
         .body {
             padding: 90px 0 30px;
+
+            @include smax-m {
+                padding: 72px 0 24px;
+            }; 
+
+            @include smax-s {
+                padding: 54px 0 18px;
+            }; 
         }
     }
 }

@@ -504,7 +504,7 @@ export default function(context){
                                 "infinite": false,
                                 "mobileFirst": true,
                                 "adaptiveHeight": true,
-                                "slidesToShow": 1.3,
+                                "slidesToShow": 1.1,
                                 "slidesToScroll": 1,
                                 "responsive": [
                                     {
