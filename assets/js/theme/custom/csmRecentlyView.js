@@ -1,3 +1,5 @@
+import { data } from "jquery";
+import 'slick-carousel';
 
 
 export default function(context){
@@ -43,6 +45,12 @@ export default function(context){
                           }
                         }
                     }
+                    settings {
+                        tax {
+                            pdp
+                            plp
+                        }
+                    }
                     currency (currencyCode: `+curCode+`) {
                         display {
                             symbol
@@ -79,29 +87,50 @@ export default function(context){
                     img70px: url(width: 320)
                     altText
                 }
-                prices {
-                    priceRange {
-                        min {
-                            ...MoneyFields
-                        }
-                        max {
-                            ...MoneyFields
-                        }
-                    }
-                    retailPrice {
+                pricesWithTax: prices(includeTax: true, currencyCode: `+curCode+`) {
+                    price {  
+                        ...MoneyFields  
+                    }  
+                    basePrice {  
+                        ...MoneyFields  
+                    }  
+                    salePrice {  
                         ...MoneyFields
                     }
-                    basePrice {
-                        ...MoneyFields
-                    }
-                    price {
-                        ...MoneyFields
-                    }
-
-                    savePrice {
-                        ...MoneyFields
-                    }
+                    retailPrice {  
+                        ...MoneyFields  
+                    }  
+                    priceRange {  
+                        min {  
+                            ...MoneyFields  
+                        }  
+                        max {  
+                            ...MoneyFields  
+                        }  
+                    }                             
                 }
+                pricesWithoutTax: prices(includeTax: false, currencyCode: `+curCode+`) {  
+                    price {  
+                        ...MoneyFields  
+                    }  
+                    basePrice {  
+                        ...MoneyFields
+                    }
+                    salePrice {  
+                        ...MoneyFields  
+                    }  
+                    retailPrice {  
+                        ...MoneyFields  
+                    }  
+                    priceRange {  
+                        min {  
+                            ...MoneyFields  
+                        }  
+                        max {  
+                            ...MoneyFields  
+                        }  
+                    } 
+                }                           
             }
             fragment MoneyFields on Money {
                 value
@@ -184,7 +213,7 @@ export default function(context){
     
             if (productIds.length > 0) {
                 getProduct(list).then(data => {
-                    renderProduct(data.site.products.edges, data.site.currency.display, $tempList);
+                    renderProduct(data.site.products.edges, data.site.settings.tax.pdp, data.site.currency.display, $tempList);
                     showProducts();
                 });
             }
@@ -246,7 +275,7 @@ export default function(context){
         };
     }();
 
-    function renderProduct(product, curDisplay, tmp) {
+    function renderProduct(product, checkTaxVal, curDisplay, tmp) {
         if (product != undefined) {
             $.each(product, (index, element) => {
                 const item = element.product,
@@ -257,10 +286,16 @@ export default function(context){
                     thousandsToken = curDisplay.thousandsToken;
                 let title, price, btnAct, img, brand;
 
+                let priceTax = checkTaxVal == "EX" ? item.pricesWithoutTax : item.pricesWithTax;
+                
+                let priceWithTax = item.pricesWithTax;
+                let priceWithoutTax = item.pricesWithoutTax;
+ 
+
                 if ($('.body').hasClass('is-login') || context.themeSettings.restrict_to_login !== true) {
-                    if (item.prices.priceRange.min.value < item.prices.priceRange.max.value && context.themeSettings.price_ranges) {
-                        const priceMin = (symbolPlacement == "left" ? symbol : "") + (formatMoney(item.prices.priceRange.min.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
-                        const priceMax = (symbolPlacement == "left" ? symbol : "") + (formatMoney(item.prices.priceRange.max.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
+                    if (priceTax.priceRange.min.value < priceTax.priceRange.max.value && context.themeSettings.price_ranges) {
+                        const priceMin = (symbolPlacement == "left" ? symbol : "") + (formatMoney(priceTax.priceRange.min.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
+                        const priceMax = (symbolPlacement == "left" ? symbol : "") + (formatMoney(priceTax.priceRange.max.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
 
                         price = '<div class="price-section price-section--withoutTax non-sale-price--withoutTax price-none" style="display: none;">\
                                     <span data-product-non-sale-price-without-tax="" class="price price--non-sale"></span>\
@@ -270,13 +305,19 @@ export default function(context){
                                 </div>';
                     }
                     else {
-                        const priceDef = (symbolPlacement == "left" ? symbol : "") + (formatMoney(item.prices.price.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
+                        const priceDef = (symbolPlacement == "left" ? symbol : "") + (formatMoney(priceTax.price.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
 
-                        console.log("price info", item.prices);
+                        const priceWithTaxValue = (symbolPlacement == "left" ? symbol : "") + (formatMoney(priceWithTax.price.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
 
-                        if (item.prices.retailPrice == null) {
-                            if (item.prices.basePrice.value > item.prices.price.value) {
-                                const priceBas = (symbolPlacement == "left" ? symbol : "") + (formatMoney(item.prices.basePrice.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
+                        const priceWithoutTaxValue = (symbolPlacement == "left" ? symbol : "") + (formatMoney(priceWithoutTax.price.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
+
+                        
+
+
+                        if (priceTax.retailPrice == null) {
+                            // * ------ Check sale price ------
+                            if (priceTax.basePrice.value > priceTax.price.value) {
+                                const priceBas = (symbolPlacement == "left" ? symbol : "") + (formatMoney(priceTax.basePrice.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
 
                                 price = '<div class="price-section price-section--withoutTax non-sale-price--withoutTax">\
                                             <span data-product-non-sale-price-without-tax="" class="price price--non-sale">'+priceBas+'</span>\
@@ -286,17 +327,38 @@ export default function(context){
                                         </div>';
                             }
                             else {
-                                price = '<div class="price-section price-section--withoutTax non-sale-price--withoutTax price-none" style="display: none;">\
+                                if(checkTaxVal == "BOTH") {
+                                    price = `
+                                    <div class="priceSection__wrapper">
+                                            <div class="price-section price-section--withoutTax">
+                                                <span class="price-label">
+                                                    
+                                                </span>
+                                                <span data-product-price-without-tax="" class="price price--withoutTax price-section--minor">${priceWithoutTaxValue}</span>
+                                                    <abbr title="Excluding Tax">exc. VAT |</abbr>
+                                            </div>
+                                            <div class="price-section price-section--withTax">
+                                                <span class="price-label">
+                                                    
+                                                </span>
+                                                <span data-product-price-with-tax="" class="price price--withTax">${priceWithTaxValue}</span>
+                                                    <abbr title="Including Tax">inc. VAT</abbr>
+                                            </div>
+                                    </div>
+                                    `;
+                                } else {
+                                    price = '<div class="price-section price-section--withoutTax non-sale-price--withoutTax price-none" style="display: none;">\
                                             <span data-product-non-sale-price-without-tax="" class="price price--non-sale"></span>\
                                         </div>\
                                         <div class="price-section price-section--withoutTax">\
                                             <span data-product-price-without-tax="" class="price price--withoutTax">'+priceDef+'</span>\
                                         </div>';
+                                }
                             }
                         }
                         else {
-                            if (item.prices.retailPrice.value > item.prices.price.value) {
-                                const priceRet = (symbolPlacement == "left" ? symbol : "") + (formatMoney(item.prices.retailPrice.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
+                            if (priceTax.retailPrice.value > priceTax.price.value) {
+                                const priceRet = (symbolPlacement == "left" ? symbol : "") + (formatMoney(priceTax.retailPrice.value, decimalPlaces, decimalToken, thousandsToken)) + (symbolPlacement != "left" ? symbol : "");
                             
                                 price = '<div class="price-section price-section--withoutTax non-sale-price--withoutTax">\
                                             <span data-product-non-sale-price-without-tax="" class="price price--non-sale">'+priceRet+'</span>\
@@ -319,22 +381,20 @@ export default function(context){
                 else {
                     price = '<p translate>Log in for pricing</p>';
                 }
-
-                if (item.inventory.isInStock == false) {
-                    btnAct = '<a href="'+item.path+'" class="card_out_of_stock" disabled data-product-id="'+item.entityId+'">Out Of Stock</a>';
-
-                }
-                else if (item.productOptions.edges.length > 0) {
-                    btnAct = '<a href="'+item.path+'" class="card-figcaption-link" data-product-id="'+item.entityId+'">Choose Options</a>';
-                }
-                else {
-                    if ($('.recently-viewed-products-sidebar').data('tag-enabled') == false) {
-                        btnAct = '<a href="/cart.php?action=add&product_id='+item.entityId+'" class="card-figcaption-link" data-product-id="'+item.entityId+'">Add to Cart</a>';
+                
+                if(context.themeSettings.show_card_body) {
+                    if (item.inventory.isInStock == false) {
+                        btnAct = '<a href="'+item.path+'" class="card_out_of_stock" disabled data-product-id="'+item.entityId+'">Out Of Stock</a>';
+    
+                    }
+                    else if (item.productOptions.edges.length > 0) {
+                        btnAct = '<a href="'+item.path+'" class="card-figcaption-link" data-product-id="'+item.entityId+'">Choose Options</a>';
                     }
                     else {
                         btnAct = '<a href="/cart.php?action=add&product_id='+item.entityId+'" class="card-figcaption-link" data-product-id="'+item.entityId+'">Add to Cart</a>';
                     }
                 }
+
                 if (item.defaultImage != null) {
                     img = '<img src="'+item.defaultImage.img70px+'" alt="'+item.defaultImage.altText+'" title="'+item.defaultImage.altText+'" class="card-image" />';
                 } else {
@@ -346,7 +406,7 @@ export default function(context){
                     brand = '';
                 }
                 const html_card = `
-                <div class="product">
+                <div class="item productCarousel-slide" data-target="img-${index}" data-id="product-${item.entityId}">
                     <article
                         class="card
                         {{#if alternate}} card--alternate{{/if}}"
@@ -357,7 +417,7 @@ export default function(context){
                         data-position="{{position}}"
                         data-name="${item.name}" 
                         data-product-brand="{{brand.name}}"
-                        data-product-price="${item.prices.price.value}"
+                        data-product-price="${priceTax.price.value}"
                         data-section-load="animation"
                     >
                         <figure class="card-figure">
@@ -374,12 +434,14 @@ export default function(context){
                                     <img class="lazyload" src="" data-src="" alt="">
                                 </div>
                             </a>
+
+                            ${context.themeSettings.show_card_body ? `
                             <figcaption class="card-figcaption">
                                 <div class="card-figcaption-body">
                                     <a
                                     href="/cart.php?action=add&amp;product_id=${item.entityId}"
                                     data-button-type="add-cart"
-                                    class="button button--primary card-figcaption-button halo-add-to-cart"
+                                    class="button button--primary card-figcaption-button"
                                     data-product-id="${item.entityId}"
                                     data-wait-message="Adding to Cart…"
                                     tabindex="0"
@@ -389,6 +451,7 @@ export default function(context){
                                 <span class="product-status-message aria-description--hidden">The item has been added</span>
                                 </div>
                             </figcaption>
+                            ` : ''}
                         </figure>
                         <div class="card-body">
                             <h3 class="card-title">
@@ -424,9 +487,54 @@ export default function(context){
         }
         else {
             RecentlyViewedProducts .showRecentlyViewed({
-                howManyToShow: context.themeSettings.halo_recently_viewed_products_count,
-                howManyToStoreInMemory: context.themeSettings.halo_recently_viewed_products_count,
-                wrapperId: 'recentlyViewedWrapper'
+                howManyToShow: context.themeSettings.csmRecentViewCount,
+                howManyToStoreInMemory: context.themeSettings.csmRecentViewCount,
+                wrapperId: 'recentlyViewedWrapper',
+                onComplete: function() {
+                    //start
+                    var recentlyGrid = $('#recentlyViewedWrapper');
+                    var productGrid = recentlyGrid.find('.item');
+                    recentlyGrid.find(".no-products").remove();
+
+                    if (productGrid.length) {
+                        if (!recentlyGrid.hasClass('slick-initialized')) {
+                            $("#recentlyViewedListing").slick({
+                                "dots": false,
+                                "arrows": true,
+                                "infinite": false,
+                                "mobileFirst": true,
+                                "adaptiveHeight": true,
+                                "slidesToShow": 1.3,
+                                "slidesToScroll": 1,
+                                "responsive": [
+                                    {
+                                        "breakpoint": 1024,
+                                        "settings": {
+                                            "slidesToShow": 4,
+                                            "slidesToScroll": 4
+                                        }
+                                    },
+                                    {
+                                        "breakpoint": 767,
+                                        "settings": {
+                                            "slidesToShow": 3,
+                                            "slidesToScroll": 3
+                                        }
+                                    },
+                                    {
+                                        "breakpoint": 551,
+                                        "settings": {
+                                            "arrows": false,
+                                            "slidesToShow": 2,
+                                            "slidesToScroll": 2
+                                        }
+                                    }
+                                ]
+                            });
+                        };
+                    }
+                    //end
+                }
             });
         }
     });

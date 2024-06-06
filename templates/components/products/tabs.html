@@ -10,7 +10,7 @@
     <!-- * Recently View Product Section -->
     {{#if theme_settings.showRecentlyViewSection}}
         <li class="tab{{#unless product.related_products}} is-active{{/unless}}" role="presentation">
-            <a class="tab-title" href="#tab-related" role="tab" tabindex="0" aria-selected="true" controls="tab-related">
+            <a class="tab-title" href="#tab-recentlyViewed" role="tab" tabindex="0" aria-selected="true" controls="tab-related">
                 <span>{{lang 'products.recently_view_products'}}</span>
             </a>
         </li>
@@ -28,13 +28,13 @@
 <div class="tabs-contents">
 {{#if product.related_products}}
     <div role="tabpanel" aria-hidden="false" class="tab-content has-jsContent is-active" id="tab-related">
-        {{> components/custom/products/csm-recently-viewed-block }}
+        {{> components/products/carousel products=product.related_products columns=4 list="Related Products"}}
     </div>
 {{/if}}
 
 {{#if theme_settings.showRecentlyViewSection}}
-    <div role="tabpanel" aria-hidden="{{#if product.related_products}}true{{else}}false{{/if}}" class="tab-content has-jsContent{{#unless product.related_products}} is-active{{/unless}}" id="tab-related">
-        
+    <div role="tabpanel" aria-hidden="{{#if product.related_products}}true{{else}}false{{/if}}" class="tab-content has-jsContent{{#unless product.related_products}} is-active{{/unless}}" id="tab-recentlyViewed">
+       {{> components/custom/products/csm-recently-viewed-block }}
     </div>
 {{/if}}
 

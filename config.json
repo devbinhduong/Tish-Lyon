@@ -1022,7 +1022,8 @@
         "home_fullwidth_banner_link": "#",
         "customAddOptionForProduct":  true,
         "showRecentlyViewSection": true,
-        "csmRecentViewExpires": 30
+        "csmRecentViewExpires": 30,
+        "csmRecentViewCount": 5
       }
     }
   ]
