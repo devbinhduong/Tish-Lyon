@@ -1020,7 +1020,9 @@
         "home_fullwidth_banner_text": "Luxury displays for luxury jewellery.",
         "home_fullwidth_banner_button": "View products",
         "home_fullwidth_banner_link": "#",
-        "customAddOptionForProduct":  true
+        "customAddOptionForProduct":  true,
+        "showRecentlyViewSection": true,
+        "csmRecentViewExpires": 30
       }
     }
   ]
