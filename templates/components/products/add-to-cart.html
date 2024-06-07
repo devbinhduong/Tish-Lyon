@@ -21,15 +21,15 @@
                                 </i>
                             </button>
                             <input class="form-input form-input--incrementTotal"
-                                   id="qty[]"
-                                   name="qty[]"
-                                   type="tel"
-                                   value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
-                                   data-quantity-min="{{product.min_purchase_quantity}}"
-                                   data-quantity-max="{{product.max_purchase_quantity}}"
-                                   min="1"
-                                   pattern="[0-9]*"
-                                   aria-live="polite">
+                                id="qty[]"
+                                name="qty[]"
+                                type="tel"
+                                value="{{#if product.min_purchase_quantity}}{{product.min_purchase_quantity}}{{else}}1{{/if}}"
+                                data-quantity-min="{{product.min_purchase_quantity}}"
+                                data-quantity-max="{{product.max_purchase_quantity}}"
+                                min="1"
+                                pattern="[0-9]*"
+                                aria-live="polite">
                             <button class="button button--icon" data-action="inc">
                                 <span class="is-srOnly">{{lang 'products.quantity_increase' name=product.title}}</span>
                                 <i class="icon" aria-hidden="true">
@@ -50,11 +50,21 @@
                         <button
                                 id="form-action-addToCart"
                                 data-wait-message="{{lang 'products.adding_to_cart'}}"
-                                class="button button--primary"
+                                class="button button--primary productSubmit__add"
                                 type="submit"
                                 value=""
                         >
-                        {{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}
+                            <span class="btn__text" data-add-to-cart-text="">
+                                {{#if product.pre_order}}{{lang 'products.pre_order'}}{{else}}{{lang 'products.add_to_cart'}}{{/if}}
+                            </span>
+                            <span class="btn__loader">
+                                <svg height="18" width="18" class="svg-loader">
+                                <circle r="7" cx="9" cy="9"></circle>
+                                <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9"></circle>
+                                </svg>
+                            </span>
+                            <span class="btn__added">&nbsp;</span>
+                            
                         </button>
                         <span class="product-status-message aria-description--hidden">{{lang 'products.adding_to_cart'}} {{lang 'category.add_cart_announcement'}}</span>
                     </div>

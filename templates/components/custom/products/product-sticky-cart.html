@@ -1,0 +1,39 @@
+<div class="cartBar is-visible" id="cartBar">
+    <div class="container h-full">
+        <div class="cartBar__wrapper flex flex-center-x flex-between h-full">
+            <div class="cartBar__info">
+                <h4 class="productTitle m-0">{{product.title}}</h4>
+            </div>
+
+            <div class="cartBar__form">
+                {{#if product.options}}
+                    <button class="button button--secondary mb-0 productSubmit__scroll productSubmit__add" data-cart-bar-scroll>
+                        <span class="btn__text">Configure</span>
+                        <span class="btn__loader">
+                            <svg height="18" width="18" class="svg-loader">
+                            <circle r="7" cx="9" cy="9"></circle>
+                            <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9"></circle>
+                            </svg>
+                        </span>
+                        <span class="btn__added">&nbsp;</span>
+
+                        <span class="icon icon--atc-arrow">
+                            <svg><use xlink:href="#icon-atc-arrow"></use></svg>
+                        </span>
+                    </button>
+                {{else}}
+                    <button type="button" class="button button--secondary mb-0 productSubmit__add" data-add-to-cart-bar="">
+                        <span class="btn__text" data-add-to-cart-text="">Add to cart</span>
+                        <span class="btn__loader">
+                            <svg height="18" width="18" class="svg-loader">
+                            <circle r="7" cx="9" cy="9"></circle>
+                            <circle stroke-dasharray="87.96459430051421 87.96459430051421" r="7" cx="9" cy="9"></circle>
+                            </svg>
+                        </span>
+                        <span class="btn__added">&nbsp;</span>
+                    </button>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>

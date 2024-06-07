@@ -63,6 +63,8 @@ export default class ProductDetails extends ProductDetailsBase {
             $.each($productSwatchLabels, placeSwatchLabelImage);
 
             this.selectSwatchOption();
+            this.stickyAddToCart();
+            this.handleStcikyAddToCart();
         });
 
         if (context.showSwatchNames) {
@@ -409,6 +411,7 @@ export default class ProductDetails extends ProductDetailsBase {
         const $addToCartBtn = $('#form-action-addToCart', $(event.target));
         const originalBtnVal = $addToCartBtn.val();
         const waitMessage = $addToCartBtn.data('waitMessage');
+        const $body = $('body');
 
         // Do not do AJAX if browser doesn't support FormData
         if (window.FormData === undefined) {
@@ -422,7 +425,9 @@ export default class ProductDetails extends ProductDetailsBase {
             .val(waitMessage)
             .prop('disabled', true);
 
-        this.$overlay.show();
+        // this.$overlay.show();
+
+        $body.addClass('atc-is-loading');
 
         // Add item to cart
         utils.api.cart.itemAdd(normalizeFormData(new FormData(form)), (err, response) => {
@@ -433,7 +438,10 @@ export default class ProductDetails extends ProductDetailsBase {
                 .val(originalBtnVal)
                 .prop('disabled', false);
 
-            this.$overlay.hide();
+                $body.removeClass('atc-is-loading')
+                $body.addClass('atc-is-added');
+                
+            // this.$overlay.hide();
 
             // Guard statement
             if (errorMessage) {
@@ -449,22 +457,54 @@ export default class ProductDetails extends ProductDetailsBase {
             }
 
             // Open preview modal and update content
-            if (this.previewModal) {
-                this.previewModal.open();
+            if(this.context.themeSettings.csmATCAction === 'sidebar') {
+                const options = {
+                    template: 'common/cart-preview'
+                };
+                const loadingClass = 'is-loading';
+                const $cartDropdown = $('#custom-cart-sidebar .custom-sidebar-wrapper');
+                const $cartLoading = $('<div class="loadingOverlay"></div>');
 
-                if (window.ApplePaySession) {
-                    this.previewModal.$modal.addClass('apple-pay-supported');
+                $body.toggleClass('openCartSidebar');
+
+                $cartDropdown
+                    .addClass(loadingClass)
+                    .html($cartLoading);
+                $cartLoading
+                    .show();
+
+                utils.api.cart.getContent(options, (err, response) => {
+                    $cartDropdown
+                        .removeClass(loadingClass)
+                        .html(response);
+                    $cartLoading
+                        .hide();
+
+                    $body.removeClass('atc-is-added');
+                    
+                    const quantity = $(response).find('[data-cart-quantity]').data('cartQuantity') || 0;
+
+                    $body.trigger('cart-quantity-update', quantity);
+                });
+            }
+            else {
+                if (this.previewModal) {
+                    this.previewModal.open();
+    
+                    if (window.ApplePaySession) {
+                        this.previewModal.$modal.addClass('apple-pay-supported');
+                    }
+    
+                    if (!this.checkIsQuickViewChild($addToCartBtn)) {
+                        this.previewModal.$preModalFocusedEl = $addToCartBtn;
+                    }
+    
+                    this.updateCartContent(this.previewModal, response.data.cart_item.id);
+                } else {
+                    this.$overlay.show();
+                    // if no modal, redirect to the cart page
+                    this.redirectTo(response.data.cart_item.cart_url || this.context.urls.cart);
                 }
-
-                if (!this.checkIsQuickViewChild($addToCartBtn)) {
-                    this.previewModal.$preModalFocusedEl = $addToCartBtn;
-                }
-
-                this.updateCartContent(this.previewModal, response.data.cart_item.id);
-            } else {
-                this.$overlay.show();
-                // if no modal, redirect to the cart page
-                this.redirectTo(response.data.cart_item.cart_url || this.context.urls.cart);
             }
         });
 
@@ -607,5 +647,42 @@ export default class ProductDetails extends ProductDetailsBase {
         if(!optionSelect) return;
 
         optionSelect.click();
+    }
+
+    stickyAddToCart() {
+        const stickyCartBar = document.getElementById('cartBar');
+        const productViewTop = document.querySelector('.productView .productViewTop');
+        if (!stickyCartBar || !productViewTop) return;
+
+        const productViewTopHeight = productViewTop.offsetHeight;
+        const stickyCartBarHeight = stickyCartBar.offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > productViewTopHeight) {
+            stickyCartBar.classList.add('is-visible');
+            } else {
+            stickyCartBar.classList.remove('is-visible');
+            }
+        }); 
+    }
+
+    handleStcikyAddToCart() {
+        const cartBarButton = document.querySelector('.cartBar .productSubmit__add');
+        const productViewTop = document.querySelector('.productView .productViewTop');
+        const buttonATCDefault = document.querySelector('#form-action-addToCart');
+
+        if (!cartBarButton) return;
+
+        cartBarButton.addEventListener('click', (e) => {
+            const currentTarget = e.currentTarget;
+            e.preventDefault();
+
+            if(currentTarget.classList.contains('productSubmit__scroll')) {
+                productViewTop.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                buttonATCDefault.click();
+            }
+        });
     }
 }
