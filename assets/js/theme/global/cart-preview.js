@@ -2,6 +2,7 @@ import 'foundation-sites/js/foundation/foundation';
 import 'foundation-sites/js/foundation/foundation.dropdown';
 import utils from '@bigcommerce/stencil-utils';
 import quickEditCart from '../custom/quickEditCart';
+import calculateFreeShipping from '../custom/calculateFreeShipping';
 
 export const CartPreviewEvents = {
     close: 'closed.fndtn.dropdown',
@@ -42,7 +43,7 @@ export default function (secureBaseUrl, cartId, context) {
     });
 
      /* Custom Start */
-     if (!$('body').hasClass('page-type-cart')) {
+    if (!$('body').hasClass('page-type-cart')) {
         quickEditCart(context);
 
         $cart.on('click', event => {
@@ -78,6 +79,8 @@ export default function (secureBaseUrl, cartId, context) {
                 $cartLoading
                     .hide();
             });
+
+            calculateFreeShipping(context);
         });
 
         $cart2.on('click', event => {
@@ -103,6 +106,8 @@ export default function (secureBaseUrl, cartId, context) {
                 $cartLoading
                     .hide();
             });
+
+            calculateFreeShipping(context);
         });
     }
 
@@ -369,5 +374,7 @@ export default function (secureBaseUrl, cartId, context) {
         if(location.pathname == "/cart.php"){
             cart_page.refreshContent(remove);
         }
+
+        calculateFreeShipping(context);
     }
 }

@@ -19,6 +19,10 @@
     padding: 26px 0 30px;
     position: relative;
     transform: translateZ(0); // 3
+
+    .page-type-product & {
+        padding-bottom: 110px;
+    }
 }
 
 .footerLogo {

@@ -1024,7 +1024,12 @@
         "showRecentlyViewSection": true,
         "csmRecentViewExpires": 30,
         "csmRecentViewCount": 5,
-        "csmATCAction": "sidebar"
+        "csmATCAction": "sidebar",
+        "enaCalculateShipping": true,
+        "calculateFreeShippingType": "all",
+        "calculateFreeSuccess": "Congratulations! Your order qualifies for free UK shipping",
+        "calculateFreeDefault": "You are {{remaining}} away from free UK shipping.",
+        "calculalePriceRequire": "£100"
       }
     }
   ]

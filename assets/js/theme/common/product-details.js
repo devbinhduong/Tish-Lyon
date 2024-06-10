@@ -13,6 +13,7 @@ import { isBrowserIE, convertIntoArray } from './utils/ie-helpers';
 import bannerUtils from './utils/banner-utils';
 import currencySelector from '../global/currency-selector';
 import csmRecentlyView from '../custom/csmRecentlyView';
+import calculateFreeShipping from '../custom/calculateFreeShipping';
 
 export default class ProductDetails extends ProductDetailsBase {
     constructor($scope, context, productAttributesData = {}) {
@@ -486,6 +487,8 @@ export default class ProductDetails extends ProductDetailsBase {
 
                     $body.trigger('cart-quantity-update', quantity);
                 });
+
+                calculateFreeShipping(this.context);
             }
             else {
                 if (this.previewModal) {

@@ -6,6 +6,15 @@ cart: true
 {{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
 <div class="page">
 
+    {{#if theme_settings.enaCalculateShipping}}
+    <div class="freeShipping__message free-shipping" data-free-shipping="true" data-free-shipping-limit="100" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="300">
+        <div class="freeShippingMessage__wrapper">
+
+        </div>
+        <progress class="freeShipping__progress" data-progress-bar="" value="0" max="100"></progress>
+    </div>
+    {{/if}}
+
     <div class="page-content" data-cart>
         {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 

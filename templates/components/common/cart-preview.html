@@ -1,8 +1,18 @@
 <div class="previewCart-header">
     <h2 class="title">{{lang 'cart.preview.title'}}</h2>
 </div>
-<div class="previewCartWrapper">
-  <div class="previewCart">
+
+{{#if theme_settings.enaCalculateShipping}}
+<div class="freeShipping__message free-shipping" data-free-shipping="true" data-free-shipping-limit="100" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="300">
+    <div class="freeShippingMessage__wrapper">
+
+    </div>
+    <progress class="freeShipping__progress" data-progress-bar="" value="0" max="100"></progress>
+</div>
+{{/if}}
+
+<div class="previewCartWrapper{{#gt cart.items.length 0}} previewCartWrapper--hasProducts{{else}} previewCartWrapper--empty{{/gt}}">
+    <div class="previewCart">
     {{#if cart.items.length}}
         <ul class="previewCartList" data-cart-quantity="{{cart.quantity}}">
             {{#each cart.items}}

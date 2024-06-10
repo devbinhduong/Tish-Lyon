@@ -16,6 +16,9 @@
     --COLOR-TEXT-LIGHT: #646464;
     --text: #212121;
     --RADIUS: 300px;
+    --inner: 15px;
+    --bg-accent: #f4f2f0;
+    --FREE-SHIPPING-GRADIENT: linear-gradient(270deg, rgba(203, 160, 82, 1), rgba(249, 208, 163, 1) 100%);
 
     @include smax-m {
         --outer: 30px;
@@ -523,5 +526,45 @@
         line-height: 0;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+}
+
+// * ------ Calculate Free Shipping ------
+.freeShipping {
+    &__message {
+        padding: 12px var(--inner);
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: var(--inner);
+        padding-bottom: var(--inner);
+        border-bottom: 1px solid var(--border);
+        margin: 0;
+        font-size: 12px;
+        line-height: 1.3;
+        transition: max-height .3s, padding .3s, border .3s, opacity .3s, visibility .3s;
+    }
+
+    &__progress {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        display: block;
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        margin-top: 5px;
+        overflow: hidden;
+
+        &::-webkit-progress-bar {
+            background: var(--bg-accent);
+        }
+
+        &::-webkit-progress-value {
+            background: var(--FREE-SHIPPING-GRADIENT);
+            border-radius: 12px;
+            transition: all 0.4s ease-in-out;
+        }
     }
 }

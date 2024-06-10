@@ -6,6 +6,7 @@ import utils from '@bigcommerce/stencil-utils';
 import ShippingEstimator from './cart/shipping-estimator';
 import { defaultModal, showAlertModal, ModalEvents } from './global/modal';
 import CartItemDetails from './common/cart-item-details';
+import calculateFreeShipping from './custom/calculateFreeShipping';
 
 export default class Cart extends PageManager {
     onReady() {
@@ -22,6 +23,8 @@ export default class Cart extends PageManager {
 
         this.setApplePaySupport();
         this.bindEvents();
+
+        calculateFreeShipping(this.context);
     }
 
     setApplePaySupport() {
@@ -230,6 +233,8 @@ export default class Cart extends PageManager {
                 .filter(`[data-action='${this.$activeCartItemBtnAction}']`)
                 .trigger('focus');
         });
+
+        calculateFreeShipping(this.context);
     }
 
     bindCartEvents() {

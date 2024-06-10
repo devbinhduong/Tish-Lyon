@@ -207,11 +207,36 @@
     }
 }
 
+[data-animation=cart-items-fade] {
+    opacity: 0;
+    will-change: transform, opacity;
+    animation-fill-mode: both;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    .openCartSidebar &,
+    .page-type-cart & {
+        animation-name: cartDrawerItemsFadeInLeft;
+    }
+}
+
 @keyframes animate-svg {
     0% {
         stroke-dashoffset: 88;
     }
     100% {
         stroke-dashoffset: 0;
+    }
+}
+
+@keyframes cartDrawerItemsFadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translate(15px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
     }
 }
