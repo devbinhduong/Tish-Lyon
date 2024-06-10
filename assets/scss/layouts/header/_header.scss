@@ -312,18 +312,8 @@
                 &.item--cart {
                     .header-countPill {
                         position: absolute;
-                        top: -8px;
-                        right: 8px;
-
-                        @include smax-m {
-                            top: 0px;
-                            right: 0px;
-                        }
-
-                        @include smax-xs {
-                            top: -12px;
-                            right: -12px;
-                        }
+                        top: -2px;
+                        right: -8px;
                     }
                 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Update 03062024",
+  "name": "Cornerstone Update Product Page",
   "version": "6.14.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -585,7 +585,7 @@
         "navUser-color-hover": "#757575",
         "navUser-dropdown-backgroundColor": "#ffffff",
         "navUser-dropdown-borderColor": "#cccccc",
-        "navUser-indicator-backgroundColor": "#333333",
+        "navUser-indicator-backgroundColor": "#cba052",
         "navPages-color": "#212121",
         "navPages-color-hover": "#757575",
         "navPages-subMenu-backgroundColor": "#f4f2f0",

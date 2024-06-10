@@ -4,7 +4,7 @@
 <div class="previewCartWrapper">
   <div class="previewCart">
     {{#if cart.items.length}}
-        <ul class="previewCartList">
+        <ul class="previewCartList" data-cart-quantity="{{cart.quantity}}">
             {{#each cart.items}}
                 <li class="previewCartItem" {{#if options}}data-cart-edit-productItem{{/if}}>
                     <div class="previewCartItem-image">

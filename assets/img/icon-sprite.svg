@@ -289,4 +289,10 @@
     <symbol id="icon-atc-arrow" viewBox="0 0 24 24" fill="none">
         <path d="m6 15 6-6 6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
     </symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24">
+        <path d="M6 12h6m6 0h-6m0 0V6m0 6v6" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
+    <symbol id="icon-minus" viewBox="0 0 24 24">
+        <path d="M6 12h12" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path>
+    </symbol>
 </svg>
