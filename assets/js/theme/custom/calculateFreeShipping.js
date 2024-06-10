@@ -4,8 +4,6 @@ import utils from '@bigcommerce/stencil-utils';
 export default function (context) {
     if(!context.themeSettings.enaCalculateShipping) return;
 
-    console.log('Calculate Free Shipping');
-
     let defaultMessage = `<span class="freeShipping__message--default">${context.themeSettings.calculateFreeDefault}</span>`;
     let priceRemaining = `<span data-left-to-spend="">${context.themeSettings.calculalePriceRequire}</span>`;
     let successMessage = `<span class="freeShipping__message--success hidden">${context.themeSettings.calculateFreeSuccess}</span>`;
@@ -27,11 +25,10 @@ export default function (context) {
     loadFreeShippingMessage();
 
     function showFreeShippingMessage(message) {
-        console.log(document.querySelector('.freeShipping__message'))
-
-
         let messageWrapper = document.querySelector('.freeShippingMessage__wrapper');
-        messageWrapper.innerHTML = defaultMessage + successMessage;
+        if(messageWrapper) {
+            messageWrapper.innerHTML = defaultMessage + successMessage;
+        }
 
 
         if($(message).length > 0) {

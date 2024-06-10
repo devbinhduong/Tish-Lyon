@@ -898,7 +898,7 @@
         "header_right_item3_link": "#",
         "header_right_item4_text": "Live Chat",
         "header_right_item4_link": "#",
-        "quickEditCart": true,
+        "quickEditCart": false,
         "beforeQuickSearch": false,
         "beforeQuickSearch-trending-now": true,
         "beforeQuickSearch-trending-now-title": "Trending Now",

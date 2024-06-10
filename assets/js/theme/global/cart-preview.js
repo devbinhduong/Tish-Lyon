@@ -2,7 +2,10 @@ import 'foundation-sites/js/foundation/foundation';
 import 'foundation-sites/js/foundation/foundation.dropdown';
 import utils from '@bigcommerce/stencil-utils';
 import quickEditCart from '../custom/quickEditCart';
+import { showAlertModal } from './modal';
 import calculateFreeShipping from '../custom/calculateFreeShipping';
+import checkPolicy from '../custom/checkPolicy';
+
 
 export const CartPreviewEvents = {
     close: 'closed.fndtn.dropdown',
@@ -81,6 +84,7 @@ export default function (secureBaseUrl, cartId, context) {
             });
 
             calculateFreeShipping(context);
+            checkPolicy();
         });
 
         $cart2.on('click', event => {
@@ -108,6 +112,7 @@ export default function (secureBaseUrl, cartId, context) {
             });
 
             calculateFreeShipping(context);
+            checkPolicy();
         });
     }
 
@@ -173,10 +178,19 @@ export default function (secureBaseUrl, cartId, context) {
         cartRemoveItem(itemId);
     });
 
+    $(document).on('click','.previewCartItem-qty [data-cart-update]', (event) => {
+        const $target = $(event.currentTarget);
+
+        event.preventDefault();
+
+        // update cart quantity
+        cartUpdate($target);
+    });
+
     $(document).on('focus','.previewCart .form-input--incrementTotal', (event) => {
         const $target = $(event.currentTarget);
         $target.data('preVal', $target.val());
-    });    
+    });
     
     $(document).on('change','.previewCart .form-input--incrementTotal', (event) => {
         const $target = $(event.currentTarget);
@@ -229,7 +243,7 @@ export default function (secureBaseUrl, cartId, context) {
                 $el.val(oldQty);
                 alert("We don't have enough "+ proTitle +" stock on hand for the quantity you selected. Please try again.");
             } else {
-               $el.val(newQty);
+                $el.val(newQty);
             }            
         });
 
@@ -328,6 +342,45 @@ export default function (secureBaseUrl, cartId, context) {
         });
     }
 
+    function cartUpdate($target) {
+        
+        const itemId = $target.data('cart-itemid');
+        const $el = $(`#qty-${itemId}`);
+        const oldQty = parseInt($el.val(), 10);
+        const maxQty = parseInt($el.data('quantityMax'), 10);
+        const minQty = parseInt($el.data('quantityMin'), 10);
+        const minError = $el.data('quantityMinError');
+        const maxError = $el.data('quantityMaxError');
+        const newQty = $target.data('action') === 'inc' ? oldQty + 1 : oldQty - 1;
+        let invalidEntry;
+
+        // Does not quality for min/max quantity
+        if (!newQty) {
+            invalidEntry = newQty;
+            $el.val(oldQty);
+            return showAlertModal(`${invalidEntry} is not a valid entry`);
+        } else if (newQty < minQty) {
+            return showAlertModal(minError);
+        } else if (maxQty > 0 && newQty > maxQty) {
+            return showAlertModal(maxError);
+        } else {
+            utils.api.cart.itemUpdate(itemId, newQty, (err, response) => {
+                if (response.data.status === 'succeed') {
+                    // if the quantity is changed "1" from "0", we have to remove the row.
+                    const remove = (newQty === 0);
+
+                    refreshContent(remove);
+                } else {
+                    $el.val(oldQty);
+                    return showAlertModal(response.data.errors.join('\n'));
+                }
+            });
+
+            calculateFreeShipping(context);
+            checkPolicy();
+        }        
+    }
+
     function refreshContent(remove) {
         const options = {
             template: 'common/cart-preview',
@@ -376,5 +429,6 @@ export default function (secureBaseUrl, cartId, context) {
         }
 
         calculateFreeShipping(context);
+        checkPolicy();
     }
 }

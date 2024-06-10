@@ -44,11 +44,12 @@
 
                             {{#if options}}
                                 <div class="previewCartItem-options"> 
-                                    <span class="previewCartItem-variant">
+                                    <p class="previewCartItem-variant">
                                         {{#each options}}
-                                            <span>{{{ sanitize value}}}</span>
+                                            <span class="option-name">{{{ sanitize name}}}:</span>
+                                            <span class="option-value">{{{ sanitize value}}}</span>
                                         {{/each}}
-                                    </span>
+                                    </p>
 
                                     {{#if ../theme_settings.quickEditCart}}
                                         <a href="#" class="previewCartItem-edit" data-cart-edit-id="{{product_id}}" data-cart-itemid="{{id}}" data-cart-edit-price="{{price.formatted}}" data-cart-edit-quantity="{{quantity}}">
@@ -73,8 +74,12 @@
                             </span>
 
                             <div class="previewCartItem-qty">
-                                <label class="form-label" for="qty-{{id}}">{{lang 'products.quantity'}}</label>
                                 <div class="form-increment">
+                                    <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="dec">
+                                        <span class="is-srOnly">{{lang 'products.quantity_decrease'}}</span>
+                                        <span class="icon" aria-hidden="true"><svg title="icon keyboard arrow down"><use xlink:href="#icon-minus" /></svg></span>
+                                    </button>
+
                                     <input class="form-input form-input--incrementTotal"
                                         id="qty-{{id}}"
                                         name="qty-{{id}}"
@@ -89,18 +94,27 @@
                                         data-cart-itemid="{{id}}"
                                         data-action="manualQtyChange"
                                         aria-live="polite"{{#unless can_modify}} disabled{{/unless}}>
+
+                                        <button class="button button--icon" data-cart-update data-cart-itemid="{{id}}" data-action="inc">
+                                            <span class="is-srOnly">{{lang 'products.quantity_increase'}}</span>
+                                            <span class="icon" aria-hidden="true"><svg title="icon keyboard arrow up"><use xlink:href="#icon-plus" /></svg></span>
+                                        </button>
                                 </div>
                             </div>
 
                             {{#if can_modify}}
-                                <a class="previewCartItem-remove hover-link" style="--underlineColor: #ce2b1e; --underlineBottom: 4px;" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
-                                    <svg><use xlink:href="#icon-close"></use></svg>
+                                <a class="previewCartItem-remove" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
+                                    <span class="icon icon--cancel">
+                                        <svg><use xlink:href="#icon-cancel"></use></svg>
+                                    </span>
                                     <span>{{lang 'cart.checkout.remove'}}</span>
                                 </a>
                             {{else}}
                                 {{#if type '==' 'GiftCertificate'}}
-                                    <a class="previewCartItem-remove hover-link" style="--underlineColor: #ce2b1e; --underlineBottom: 4px;" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
-                                        <svg><use xlink:href="#icon-close"></use></svg>
+                                    <a class="previewCartItem-remove" data-cart-itemid="{{id}}" href="#" data-confirm-delete="{{lang 'cart.confirm_delete'}}">
+                                        <span class="icon icon--cancel">
+                                            <svg><use xlink:href="#icon-cancel"></use></svg>
+                                        </span>
                                         <span>{{lang 'cart.checkout.remove'}}</span>
                                     </a>
                                 {{/if}}
@@ -108,26 +122,62 @@
                         </div>
                     </li>
                 {{/each}}
+        </ul>
+        <div class="previewCart__bottom">
+            <ul class="previewCartTotalsPrice">
+                <li class="previewCartTotals subTotal">
+                    <div class="previewCartTotals-label">
+                        {{lang 'cart.checkout.subtotal'}}:
+                    </div>
+                    <div class="previewCartTotals-value">
+                        {{#or customer (unless settings.hide_price_from_guests)}}
+                            {{cart.sub_total.formatted}}
+                        {{else}}
+                            {{> components/common/login-for-pricing}}
+                        {{/or}}
+                    </div>
+                </li>
             </ul>
             <div class="previewCartAction">
+                <div class="cartPolicy">
+                    <div class="policy__container">
+                        <span class="policy__checkbox">
+                            <input type="checkbox" name="accept-policy-checkbox" id="accept-policy-checkbox">
+                            <span class="policy__box">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="rale-icon"><path d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758" transform="translate(-2.000000, -2.000000)"></path></svg>
+                            </span>
+                        </span>
+
+                        <label for="accept-policy-checkbox" class="policy__text">
+                            I have read and agreed with the <a href="/terms-conditions" target="_blank" class="policy__link">terms and conditions</a> and <a href="/terms-of-service" target="_blank" class="rale-link">shipping information</a>
+                        </label>
+                    </div>
+                </div>
+                
                 {{#if cart.show_primary_checkout_button}}
                     <div class="previewCartAction-checkout">
                         <a
                                 href="{{urls.checkout.single_address}}"
-                                class="button button--primary button--action"
+                                class="button button--primary button--action button--disabled"
                                 data-primary-checkout-now-action
-                        >
+                        >   
+                            <span class="icon icon--lock">
+                                <svg><use xlink:href="#icon-lock2"></use></svg>
+                            </span>
+
                             {{lang 'cart.preview.checkout_now'}}
                         </a>
                     </div>
                 {{/if}}
-
+    
+                {{#if theme_settings.showSidebarButtonCart}}
                 <div class="previewCartAction-viewCart{{#unless cart.show_primary_checkout_button}} previewCartAction-viewCart--sole{{/unless}}">
                     <a href="{{urls.cart}}" class="button button--transparent button--action">
                         {{lang 'cart.preview.view_cart'}}
                     </a>
                 </div>
-
+                {{/if}}
+    
                 {{#if cart.show_multiple_address_shipping}}
                     <div class="previewCartAction-checkoutMultiple">
                         <a href="{{urls.checkout.multiple_address}}">
@@ -143,33 +193,36 @@
                     {{/each}}
                 </div>
             {{/and}}
-        {{else}}
-            <div role="alert" aria-live="polite" aria-atomic="false" class="previewCart-emptyBody">
-                <p>{{lang 'cart.checkout.empty_cart'}}</p>
 
-                <div class="emptyBody__buttons">
-                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="50">
-                       <a href="/" class="button button--secondary button--full">
-                       Home
-                       </a>
-                    </div>
-                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="100">
-                       <a href="/collections/new-arrivals" class="button button--secondary button--full">
-                       New Arrivals
-                       </a>
-                    </div>
-                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="150">
-                       <a href="/collections/best-sellers" class="button button--secondary button--full">
-                       Best Sellers
-                       </a>
-                    </div>
-                    <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="200">
-                       <a href="/pages/contact" class="button button--secondary button--full">
-                       Contact
-                       </a>
-                    </div>
+            <em class="cart__note" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="700">Shipping, taxes, and discount codes are calculated at checkout</em>
+        </div>
+    {{else}}
+        <div role="alert" aria-live="polite" aria-atomic="false" class="previewCart-emptyBody">
+            <p>{{lang 'cart.checkout.empty_cart'}}</p>
+
+            <div class="emptyBody__buttons">
+                <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="50">
+                    <a href="/" class="button button--secondary button--full">
+                    Home
+                    </a>
+                </div>
+                <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="100">
+                    <a href="/collections/new-arrivals" class="button button--secondary button--full">
+                    New Arrivals
+                    </a>
+                </div>
+                <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="150">
+                    <a href="/collections/best-sellers" class="button button--secondary button--full">
+                    Best Sellers
+                    </a>
+                </div>
+                <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="200">
+                    <a href="/pages/contact" class="button button--secondary button--full">
+                    Contact
+                    </a>
                 </div>
             </div>
-        {{/if}}
+        </div>
+    {{/if}}
     </div>
 </div>

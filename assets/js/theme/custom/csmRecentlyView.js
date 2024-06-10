@@ -398,7 +398,7 @@ export default function(context){
                 if (item.defaultImage != null) {
                     img = '<img src="'+item.defaultImage.img70px+'" alt="'+item.defaultImage.altText+'" title="'+item.defaultImage.altText+'" class="card-image" />';
                 } else {
-                    img = '<img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="Image coming soon" class="card-no-image ls-is-cached lazyloaded">';
+                    img = '<img src="/stencil/00000000-0000-0000-0000-000000000001/img/ProductDefault.gif" alt="Image coming soon" class="card-no-image ls-is-cached lazyloaded card-image">';
                 }
                 if (item.brand != null) {
                     brand = item.brand.name;
