@@ -1291,6 +1291,11 @@
         max-height: calc(100% - 106px);
         &.previewCartWrapper--empty {
             @include flexbox($flex-direction: column, $justify-content: center);
+
+            .previewCart {
+                height: auto;
+                padding: 15px;
+            }
         }
         
         .previewCart {

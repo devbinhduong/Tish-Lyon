@@ -16,7 +16,7 @@ export default function (secureBaseUrl, cartId, context) {
     const loadingClass = 'is-loading';
     const $cart = $('[data-cart-preview]');
     const $cartDropdown = $('#custom-cart-sidebar .custom-sidebar-wrapper');
-    const $cartLoading = $('<div class="loadingOverlay"></div>');
+    const $cartLoading = $('<div class="loadingOverlay"><div class="loader-progress"></div></div>');
 
      /* Custom Start */
      const $cart2 = $('[data-cart-preview2]');

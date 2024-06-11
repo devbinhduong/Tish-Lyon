@@ -487,7 +487,7 @@ export default function (context) {
 	    	if (!$('body').hasClass('page-type-cart')) {
 	    		const loadingClass = 'is-loading';
 			    const $cartDropdown = $('.dropdown-cart');
-			    const $cartLoading = $('<div class="loadingOverlay"></div>');
+			    const $cartLoading = $('<div class="loadingOverlay"><div class="loader-progress"></div></div>');
 			    const $body = $('body');
 			    var options = {
 		                template: 'common/cart-preview',

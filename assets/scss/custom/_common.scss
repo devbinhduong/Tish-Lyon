@@ -503,45 +503,6 @@
     visibility: hidden;
 }
 
-.custom-loader {
-    position: relative;
-    height: 4px;
-    display: block;
-    background-color: rgba(203, 160, 82, 0.05);
-    border-radius: 2px;
-    overflow: hidden;
-    width: 150px;
-
-    .loader-progress {
-        background-color: $color-custom-yellow;
-
-        &::before {
-            content: "";
-            position: absolute;
-            background-color: inherit;
-            top: 0;
-            left: -35%;
-            width: 100%;
-            bottom: 0;
-            will-change: transform;
-            animation: indeterminate 2.1s cubic-bezier(.65,.815,.735,.395) infinite;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            background-color: inherit;
-            top: 0;
-            left: -200%;
-            width: 100%;
-            bottom: 0;
-            will-change: transform;
-            animation: indeterminate-short 2.1s cubic-bezier(.165,.84,.44,1) infinite;
-            animation-delay: 1.15s;
-        }
-    }
-}
-
 .tooltip-default {
     position: absolute;
     z-index: 10;
