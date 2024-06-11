@@ -544,6 +544,10 @@
         font-size: 12px;
         line-height: 1.3;
         transition: max-height .3s, padding .3s, border .3s, opacity .3s, visibility .3s;
+
+        .page-type-cart & {
+            padding: 15px 0;
+        }
     }
 
     &__progress {

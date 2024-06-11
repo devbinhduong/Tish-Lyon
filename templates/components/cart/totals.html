@@ -1,64 +1,54 @@
+{{#if theme_settings.enaCalculateShipping}}
+    <div class="freeShipping__message free-shipping" data-free-shipping="true" data-free-shipping-limit="100" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="300">
+        <div class="freeShippingMessage__wrapper"></div>
+        <progress class="freeShipping__progress" data-progress-bar="" value="0" max="100"></progress>
+    </div>
+{{/if}}
+
 <ul class="cart-totals">
-    <li class="cart-total">
+    <li class="cart-total cart-total-subtotal">
         <div class="cart-total-label">
             <strong>{{lang 'cart.checkout.subtotal'}}:</strong>
         </div>
         <div class="cart-total-value">
             {{#or customer (unless settings.hide_price_from_guests)}}
-                <span>{{cart.sub_total.formatted}}</span>
+                <span class="cartTotalPriceExTax"></span>
+                <span>{{cart.grand_total.formatted}} <span>inc. VAT</span></span>
             {{else}}
                 {{> components/common/login-for-pricing}}
             {{/or}}
         </div>
     </li>
-    {{#if cart.gift_wrapping_cost.value}}
-        <li class="cart-total">
-            <div class="cart-total-label">
+    {{#if cart.gift_wrapping_cost.amount}}
+        <li class="cart-total cartTotal__item">
+            <div class="cart-total-label cartTotal__title">
                 <strong>{{lang 'cart.checkout.gift_wrapping'}}:</strong>
             </div>
-            <div class="cart-total-value">
+            <div class="cart-total-value cartTotal__content">
                 <span>{{cart.gift_wrapping_cost.formatted}}</span>
             </div>
         </li>
     {{/if}}
-    {{#if cart.fees}}
-        {{#each cart.fees}}
-            <li class="cart-total">
-                <div class="cart-total-label">
-                    <strong>{{display_name}}:</strong>
-                </div>
-                <div class="cart-total-value">
-                    <span>{{cost.formatted}}</span>
-                </div>
-            </li>
-        {{/each}}
-    {{/if}}
     {{#if cart.shipping_handling.show_estimator}}
-        <li class="cart-total">
-            <div class="cart-total-label">
+        <li class="cart-total cartTotal__item">
+            <div class="cart-total-label cartTotal__title">
                 <strong>{{lang 'cart.checkout.shipping'}}:</strong>
             </div>
-            {{> components/cart/shipping-estimator cart.shipping_handling}}
+
+            <div class="cartTotal__content">
+                {{> components/cart/shipping-estimator cart.shipping_handling}}
+            </div>
         </li>
     {{/if}}
     {{#each cart.taxes}}
-        {{#unless included}}
-            <li class="cart-total">
-                <div class="cart-total-label">
-                    <strong>{{name}}:</strong>
-                </div>
-                <div class="cart-total-value">
-                    <span>{{cost.formatted}}</span>
-                </div>
-            </li>
-        {{/unless}}
+        <span data-cart-tax="{{cost.value}}"></span>
     {{/each}}
     {{#if cart.discount }}
-        <li class="cart-total">
-            <div class="cart-total-label">
+        <li class="cart-total cartTotal__item">
+            <div class="cart-total-label cartTotal__title">
                 <strong>{{lang 'cart.discount'}}:</strong>
             </div>
-            <div class="cart-total-value">
+            <div class="cart-total-value cartTotal__content">
                 {{cart.discount.formatted}}
             </div>
         </li>
@@ -77,57 +67,88 @@
                 </div>
             </li>
         {{/each}}
-    {{else}}
-        <li class="cart-total">
-            <div class="cart-total-label">
-                <strong>{{lang 'cart.coupon_code'}}:</strong>
-            </div>
-            {{> components/cart/coupon-input}}
-        </li>
     {{/if}}
     {{#if settings.gift_certificates_enabled}}
         {{#each cart.gift_certificates}}
-            <li class="cart-total">
-                <div class="cart-total-label">
+            <li class="cart-total cartTotal__content">
+                <div class="cart-total-label cartTotal__title">
                     <strong>{{lang 'cart.gift_certificates.code_label' code=code}}</strong>
                     <span>
                         {{remaining.formatted}} | <a href="{{remove_url}}">{{lang 'cart.gift_certificates.remove'}}</a>
                     </span>
                 </div>
-                <div class="cart-total-value">
+                <div class="cart-total-value cartTotal__content">
                     {{used.formatted}}
                 </div>
             </li>
         {{/each}}
-        <li class="cart-total">
-            <div class="cart-total-label">
+        <li class="cart-total cartTotal__content">
+            <div class="cart-total-label cartTotal__title">
                 <strong>{{lang 'cart.gift_certificates.gift_certificate'}}:</strong>
             </div>
-            {{> components/cart/gift-certificate-input}}
+            <div class="cartTotal__content">{{> components/cart/gift-certificate-input}}</div>
         </li>
     {{/if}}
-    <li class="cart-total">
+    <li class="cart-total cart-total-grandtotal" style="display: none;">
         <div class="cart-total-label">
             <strong>{{lang 'cart.checkout.grand_total'}}:</strong>
         </div>
         <div class="cart-total-value cart-total-grandTotal">
             {{#or customer (unless settings.hide_price_from_guests)}}
                 <span>{{cart.grand_total.formatted}}</span>
+
+                <span data-cart-incTax="{{cart.grand_total.value}}"></span>
+
             {{else}}
                 {{> components/common/login-for-pricing}}
             {{/or}}
         </div>
     </li>
-    {{#each cart.taxes}}
-        {{#if included}}
-            <li class="cart-total">
-                <div class="cart-total-label">
-                    <strong>{{concat name (lang 'cart.included_in_total')}}:</strong>
-                </div>
-                <div class="cart-total-value">
-                    <span>{{cost.formatted}}</span>
-                </div>
-            </li>
-        {{/if}}
-    {{/each}}
 </ul>
+<div class="cartPolicy">
+    <div class="policy__container">
+        <span class="policy__checkbox">
+            <input type="checkbox" name="accept-policy-checkbox" id="accept-policy-checkbox">
+            <span class="policy__box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" class="rale-icon"><path d="M14,24 L21,31 L39.7428882,11.5937758 C35.2809627,6.53125861 30.0333333,4 24,4 C12.95,4 4,12.95 4,24 C4,35.05 12.95,44 24,44 C35.05,44 44,35.05 44,24 C44,19.3 42.5809627,15.1645919 39.7428882,11.5937758" transform="translate(-2.000000, -2.000000)"></path></svg>
+            </span>
+        </span>
+
+        <label for="accept-policy-checkbox" class="policy__text">
+            I have read and agreed with the <a href="/terms-conditions" target="_blank" class="policy__link">terms and conditions</a> and <a href="/terms-of-service" target="_blank" class="rale-link">shipping information</a>
+        </label>
+    </div>
+</div>
+
+{{#if cart.show_primary_checkout_button}}
+    <div class="cart-actions">
+        <a class="button button--primary csmCheckoutButton button--disabled" href="{{urls.checkout.single_address}}" title="{{lang 'cart.checkout.title'}}">
+            <span class="icon icon--lock">
+                <svg><use xlink:href="#icon-lock2"></use></svg>
+            </span>
+
+            {{lang 'cart.checkout.button'}}
+        </a>
+        {{#if cart.show_multiple_address_shipping}}
+            <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
+                {{lang 'cart.preview.checkout_multiple'}}
+            </a>
+        {{/if}}
+    </div>
+{{else}}
+    <div class="cart-actions">
+        <a class="button button--transparent" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
+    </div>
+{{/if}}
+
+{{#if cart.additional_checkout_buttons}}
+    <div data-cart-additional-checkout-buttons class="cart-additionalCheckoutButtons cart-content-padding-right">
+        {{> components/cart/additional-checkout-buttons}}
+    </div>
+{{/if}}
+
+<em class="cart__note" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="700">Shipping, taxes, and discount codes are calculated at checkout</em>
+
+{{#unless cart.coupons}}
+    <div class="cartBottomMobile"></div>
+{{/unless}}

@@ -7,6 +7,9 @@ import ShippingEstimator from './cart/shipping-estimator';
 import { defaultModal, showAlertModal, ModalEvents } from './global/modal';
 import CartItemDetails from './common/cart-item-details';
 import calculateFreeShipping from './custom/calculateFreeShipping';
+import checkPolicy from './custom/checkPolicy';
+
+import handlePriceExTax from './cart/handlePriceExTax';
 
 export default class Cart extends PageManager {
     onReady() {
@@ -23,8 +26,12 @@ export default class Cart extends PageManager {
 
         this.setApplePaySupport();
         this.bindEvents();
+        this.activeCouponFormMobile();
+        this.toggleTabSidebar();
 
         calculateFreeShipping(this.context);
+        checkPolicy();
+        handlePriceExTax(this.context);
     }
 
     setApplePaySupport() {
@@ -232,9 +239,12 @@ export default class Cart extends PageManager {
             $(`[data-cart-itemid='${this.$activeCartItemId}']`, this.$cartContent)
                 .filter(`[data-action='${this.$activeCartItemBtnAction}']`)
                 .trigger('focus');
+
+            handlePriceExTax(this.context);
         });
 
         calculateFreeShipping(this.context);
+        checkPolicy();
     }
 
     bindCartEvents() {
@@ -435,6 +445,39 @@ export default class Cart extends PageManager {
         $('[name="giftwraptype"]').on('click', toggleViews);
 
         toggleViews();
+    }
+
+    activeCouponFormMobile() {
+        const formDesktop = document.querySelector(".cartBottomDesktop");
+        const formMobile = document.querySelector(".cartBottomMobile");
+        if (!formDesktop || !formMobile) return;
+        
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 768) {
+            formMobile.innerHTML = formDesktop.innerHTML;
+            formDesktop.innerHTML = "";
+        }
+    }
+
+    toggleTabSidebar() {
+        const $cartTotalTitle = $('.cartTotal__title');
+
+        $cartTotalTitle.on('click', (e) => {
+            e.preventDefault();
+
+            const $target = $(e.currentTarget);
+            const $cartTotal = $target.parents('.cartTotal__item');
+            const $cartTotal_list = $cartTotal.find('.cartTotal__content');
+
+            $cartTotal.toggleClass('is-active');
+
+            if ($cartTotal.hasClass('is-active')) {
+                $cartTotal_list.slideDown(400);
+            }
+            else {
+                $cartTotal_list.slideUp(400);
+            }
+        });
     }
 
     bindEvents() {

@@ -158,7 +158,7 @@
                     <div class="previewCartAction-checkout">
                         <a
                                 href="{{urls.checkout.single_address}}"
-                                class="button button--primary button--action button--disabled"
+                                class="button button--primary button--action csmCheckoutButton button--disabled"
                                 data-primary-checkout-now-action
                         >   
                             <span class="icon icon--lock">
@@ -202,23 +202,23 @@
 
             <div class="emptyBody__buttons">
                 <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="50">
-                    <a href="/" class="button button--secondary button--full">
-                    Home
+                    <a href="{{theme_settings.cartEmpty1L}}" class="button button--secondary button--full">
+                    {{theme_settings.cartEmpty1T}}
                     </a>
                 </div>
                 <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="100">
-                    <a href="/collections/new-arrivals" class="button button--secondary button--full">
-                    New Arrivals
+                    <a href="{{theme_settings.cartEmpty2L}}" class="button button--secondary button--full">
+                    {{theme_settings.cartEmpty2T}}
                     </a>
                 </div>
                 <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="150">
-                    <a href="/collections/best-sellers" class="button button--secondary button--full">
-                    Best Sellers
+                    <a href="{{theme_settings.cartEmpty3L}}" class="button button--secondary button--full">
+                    {{theme_settings.cartEmpty3T}}
                     </a>
                 </div>
                 <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="200">
-                    <a href="/pages/contact" class="button button--secondary button--full">
-                    Contact
+                    <a href="{{theme_settings.cartEmpty4L}}" class="button button--secondary button--full">
+                    {{theme_settings.cartEmpty4T}}
                     </a>
                 </div>
             </div>

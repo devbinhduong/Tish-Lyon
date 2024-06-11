@@ -37,8 +37,9 @@
         "title": "Checkout"
     },
     "cart": {
+        "heading": "Cart",
         "nav_aria_label": "Cart with 0 items",
-        "continue_shopping": "Click here to continue shopping",
+        "continue_shopping": "Continue shopping",
         "login_to_checkout": "Login to proceed to checkout",
         "items": "{NUM, plural, =0{(0 items)} one {(# item)} other {(# items)}}",
         "checkout": {
@@ -57,7 +58,7 @@
             "enter_code": "Coupon code / Gift certificate",
             "gift_wrapping": "Gift wrapping",
             "unit_price": "Unit Price",
-            "shipping": "Shipping",
+            "shipping": "Estimate shipping",
             "grand_total": "Grand total",
             "select": "Select",
             "remove": "Remove",
@@ -83,6 +84,7 @@
         "remove_item": "Remove {name} from cart",
         "confirm_delete": "Are you sure you want to delete this item?",
         "coupons": {
+            "heading": "Discount Code",
             "apply_coupon": "Apply coupon",
             "empty_error": "Please enter your coupon code.",
             "cancel": "Cancel",
@@ -107,7 +109,7 @@
             "cancel": "Cancel",
             "select_a_country": "Country",
             "select_a_state": "State/province",
-            "estimate_shipping": "Estimate Shipping",
+            "estimate_shipping": "Calculate shipping",
             "suburb_city": "Suburb/city",
             "zip_postal_code": "Zip/postcode",
             "free_shipping": "Free shipping",

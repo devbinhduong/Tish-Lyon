@@ -4,77 +4,61 @@ cart: true
 {{inject 'cancelButtonText' (lang 'common.cancel')}}
 {{#partial "page"}}
 {{inject 'invalidEntryMessage' (lang 'cart.invalid_entry_message')}}
-<div class="page">
-
-    {{#if theme_settings.enaCalculateShipping}}
-    <div class="freeShipping__message free-shipping" data-free-shipping="true" data-free-shipping-limit="100" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="300">
-        <div class="freeShippingMessage__wrapper">
-
-        </div>
-        <progress class="freeShipping__progress" data-progress-bar="" value="0" max="100"></progress>
-    </div>
-    {{/if}}
-
-    <div class="page-content" data-cart>
-        {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-
-        {{> components/cart/page-title}}
-
-        <div data-cart-status>
-            {{> components/cart/status-messages}}
-        </div>
-
-        {{#if cart.items.length}}
-            <div class="loadingOverlay"></div>
-
-            <div data-cart-content class="cart-content-padding-right">
-                {{> components/cart/content}}
+<div class="page page-cart{{#if theme_settings.enaCalculateShipping}} has-calculate-shipping{{/if}}">
+    <div class="container container-small">
+        <div class="page-content" data-cart>
+            <div data-cart-status style="display: none;">
+                {{> components/cart/status-messages}}
             </div>
-
-            <div data-cart-totals class="cart-content-padding-right">
-                {{> components/cart/totals}}
-            </div>
-
-            {{{region name="cart_below_totals"}}}
-
-            {{#or customer (unless settings.hide_price_from_guests)}}
-                {{#if cart.show_primary_checkout_button}}
-                    <div class="cart-actions cart-content-padding-right">
-                        <a
-                            class="button button--primary"
-                            href="{{urls.checkout.single_address}}"
-                            title="{{lang 'cart.checkout.title'}}"
-                            data-primary-checkout-now-action
-                        >
-                            {{lang 'cart.checkout.button'}}
-                        </a>
-                        {{#if cart.show_multiple_address_shipping}}
-                            <a class="checkoutMultiple" href="{{urls.checkout.multiple_address}}">
-                                {{lang 'cart.preview.checkout_multiple'}}
-                            </a>
-                        {{/if}}
+            {{#if cart.items.length}}
+                <div class="loadingOverlay"></div>
+                <div class="cart-content-wrapper">
+                    <div data-cart-content class="cart-content-item">
+                        {{> components/cart/content}}
                     </div>
-                {{else}}
-                    <div class="cart-actions cart-content-padding-right">
-                        <a class="button" href="{{urls.home}}" title="{{lang 'cart.continue_shopping'}}">{{lang 'cart.continue_shopping'}}</a>
-                    </div>
-                {{/if}}
 
-                {{#if cart.additional_checkout_buttons}}
-                    <div data-cart-additional-checkout-buttons class="cart-additionalCheckoutButtons cart-content-padding-right">
-                        {{> components/cart/additional-checkout-buttons}}
+                    <div data-cart-totals class="cart-content-item">
+                        {{> components/cart/totals}}
                     </div>
-                {{/if}}
-            {{else}}
-                <div class="cart-actions cart-content-padding-right">
-                    <a class="button" href="{{urls.auth.login}}" title="{{lang 'cart.login_to_checkout'}}">{{lang 'cart.login_to_checkout'}}</a>
                 </div>
-            {{/or}}
+            {{else}}
+                <div class="pageCartEmpty">
+                    <h1 class="page-heading" data-cart-page-title>
+                        {{lang 'cart.heading'}}
+                    </h1>
+                    <p class="cart-content-empty">{{lang 'cart.checkout.empty_cart'}}</p>
+                    {{#if theme_settings.enaCalculateShipping}}
+                        <div class="freeShipping__message free-shipping" data-free-shipping="true" data-free-shipping-limit="100" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="300">
+                            <div class="freeShippingMessage__wrapper"></div>
+                            <progress class="freeShipping__progress" data-progress-bar="" value="0" max="100"></progress>
+                        </div>
+                    {{/if}}
+                    <div class="emptyBody__buttons">
+                        <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="50">
+                            <a href="{{theme_settings.cartEmpty1L}}" class="button button--secondary button--full">
+                            {{theme_settings.cartEmpty1T}}
+                            </a>
+                        </div>
+                        <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="100">
+                            <a href="{{theme_settings.cartEmpty2L}}" class="button button--secondary button--full">
+                            {{theme_settings.cartEmpty2T}}
+                            </a>
+                        </div>
+                        <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="150">
+                            <a href="{{theme_settings.cartEmpty3L}}" class="button button--secondary button--full">
+                            {{theme_settings.cartEmpty3T}}
+                            </a>
+                        </div>
+                        <div class="emptyBody__item" data-animation="cart-items-fade" data-animation-duration="500" data-animation-delay="200">
+                            <a href="{{theme_settings.cartEmpty4L}}" class="button button--secondary button--full">
+                            {{theme_settings.cartEmpty4T}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-        {{else}}
-            <h3 tabindex="0">{{lang 'cart.checkout.empty_cart'}}</h3>
-        {{/if}}
-
+            {{/if}}
+        </div>
     </div>
 </div>
 {{/partial}}

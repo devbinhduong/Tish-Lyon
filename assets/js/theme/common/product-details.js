@@ -14,6 +14,7 @@ import bannerUtils from './utils/banner-utils';
 import currencySelector from '../global/currency-selector';
 import csmRecentlyView from '../custom/csmRecentlyView';
 import calculateFreeShipping from '../custom/calculateFreeShipping';
+import checkPolicy from '../custom/checkPolicy';
 
 export default class ProductDetails extends ProductDetailsBase {
     constructor($scope, context, productAttributesData = {}) {
@@ -489,6 +490,7 @@ export default class ProductDetails extends ProductDetailsBase {
                 });
 
                 calculateFreeShipping(this.context);
+                checkPolicy();
             }
             else {
                 if (this.previewModal) {

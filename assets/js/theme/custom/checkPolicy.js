@@ -1,7 +1,7 @@
 export default function () {
     function checkAcceptPolicy() {
         let policyCheckbox = document.querySelector('.policy__checkbox input[type="checkbox"]'),
-            checkOutButton = document.querySelector('.previewCartAction-checkout [data-primary-checkout-now-action]');
+            checkOutButton = document.querySelector('.csmCheckoutButton');
 
         if (policyCheckbox && checkOutButton) {
 

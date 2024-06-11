@@ -1029,7 +1029,15 @@
         "calculateFreeShippingType": "all",
         "calculateFreeSuccess": "Congratulations! Your order qualifies for free UK shipping",
         "calculateFreeDefault": "You are {{remaining}} away from free UK shipping.",
-        "calculalePriceRequire": "£100"
+        "calculalePriceRequire": "£100",
+        "cartEmpty1T": "Home",
+        "cartEmpty1L": "/",
+        "cartEmpty2T": "New Arrivals",
+        "cartEmpty2L": "/new-arrivals",
+        "cartEmpty3T": "Best Sellers",
+        "cartEmpty3L": "/best-sellers",
+        "cartEmpty4T": "Contact",
+        "cartEmpty4L": "/contact-us"
       }
     }
   ]
