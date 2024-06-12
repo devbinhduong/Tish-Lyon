@@ -2,33 +2,44 @@
 // LOGIN (CSS)
 // =============================================================================
 
+.page-type-login {
+    .body#main-content {
+        padding: 40px 0;
+
+        .page-heading {
+            margin-bottom: 20px;
+        }
+    }
+}
+
 .login {
-    margin: spacing("double") auto spacing("double")*2;
+    margin: 0 auto;
     max-width: remCalc(900px);
+}
+
+.page-login-desc {
+    margin-bottom: 0;
+
+    @include smax-s {
+        font-size: $fontSize-root - 2px;
+    }; 
 }
 
 .login-row {
     @include grid-row();
-    @include breakpoint("medium") {
-        margin-top: spacing("double")*2;
+    max-width: 570px;
+    padding: 20px 0;
+    margin-top: 32px;
+
+    .form-actions {
+        display: flex;
+        justify-content: space-between;
     }
 }
 
 .login-form {
     @include grid-column(12);
-
-    @include breakpoint("medium") {
-        @include grid-column(6);
-
-        margin-top: spacing("double");
-    }
-}
-
-.new-customer {
-    @include grid-column(12);
-    @include breakpoint("medium") {
-        @include grid-column(6);
-    }
+    padding: 0;
 }
 
 .new-customer-intro {
@@ -42,3 +53,32 @@
 .new-customer-fact {
     padding-left: spacing("half");
 }
+
+.csmLoginText {
+    font-size: $fontSize-root - 2px;
+    line-height: 1;
+    color: $color-textBase;
+    font-weight: $fontWeight-thin;
+
+    @include smax-s {
+        font-size: $fontSize-root - 4px;
+    }; 
+}
+
+.form-legal {
+    margin-top: 15px;
+
+    [data-spam-detection-disclaimer] {
+        color: rgba(33, 33, 33, 0.7);
+        font-size: $fontSize-root - 4px;
+        font-style: italic;
+        line-height: 1;
+        font-weight: $fontWeight-thin;
+
+        > a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+}
+

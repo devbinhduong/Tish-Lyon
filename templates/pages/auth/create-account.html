@@ -1,10 +1,10 @@
 {{inject 'passwordRequirements' settings.password_requirements}}
 {{inject 'recaptchaTitle' (lang 'create_account.recaptcha_title')}}
 {{#partial "page"}}
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-    <h1 class="page-heading">{{lang 'create_account.heading' }}</h1>
+<div class="registerWrapper">
+    <h1 class="page-heading text-center">{{lang 'create_account.heading' }}</h1>
 
-    <div class="account account--fixed">
+    <div class="account">
         <div class="account-body">
             {{#if forms.create_account.error}}
                 {{> components/common/alert/alert-error forms.create_account.error}}
@@ -29,5 +29,6 @@
             {{/if}}
         </div>
     </div>
+</div>
 {{/partial}}
 {{> layout/base}}

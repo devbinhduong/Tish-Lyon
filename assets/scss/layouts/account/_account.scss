@@ -75,3 +75,22 @@
         }
     }
 }
+
+
+// * ------ Custom Register Form ------
+.registerWrapper {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .account-body {
+        margin: 0;
+
+        .form-label {
+            small {
+                float: none;
+                margin-top: 0;
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 {{#partial "page"}}
 <div class="login">
-    {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
-    <h1 class="page-heading">{{lang 'login.heading' }}</h1>
+    <h1 class="page-heading text-center">{{lang 'login.heading' }}</h1>
+    <p class="page-login-desc text-center">Don't have an account? <a href="{{urls.auth.create_account}}" class="hover-link-2">Sign up here.</a></p>
     {{#if forms.login.error}}
         {{> components/common/alert/alert-error forms.login.error}}
     {{/if}}
@@ -12,20 +12,20 @@
         <form class="login-form form" action="{{urls.auth.check_login}}" method="post">
             {{inject 'useValidEmail' (lang 'forms.validate.common.email_address')}}
             {{inject 'enterPass' (lang 'forms.validate.common.password')}}
-            <div class="form-field">
+            <div class="form-field csmFormField">
+                <input class="form-input" placeholder="" name="login_email" id="login_email" type="email">
                 <label class="form-label" for="login_email">{{lang 'login.field_email'}}</label>
-                <input class="form-input" name="login_email" id="login_email" type="email">
             </div>
-            <div class="form-field">
+            <div class="form-field csmFormField">
+                <input class="form-input" placeholder="" id="login_pass" type="password" name="login_pass" autocomplete="off">
                 <label class="form-label" for="login_pass">{{lang 'login.field_password'}}</label>
-                <input class="form-input" id="login_pass" type="password" name="login_pass" autocomplete="off">
             </div>
-            <div class="form-actions">
-                <input type="submit" class="button button--primary" value="{{lang 'login.submit_value' }}">
-                <a class="forgot-password" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
+            <div class="flex flex-between flex-center-x pt-20 pb-20">
+                <button type="submit" class="button button--primary mb-0">{{lang 'login.submit_value' }}</button>
+                <a class="forgot-password hover-link-2 csmLoginText fw-400" href="{{urls.auth.forgot_password}}">{{lang 'login.forgot_password' }}</a>
             </div>
         </form>
-        {{#if settings.account_creation_enabled}}
+        {{#and (if settings.account_creation_enabled) (if theme_settings.show_newCustomerHint)}}
             <div class="new-customer">
                 <div class="panel">
                     <div class="panel-header">
@@ -44,7 +44,15 @@
                     </div>
                 </div>
             </div>
-        {{/if}}
+        {{/and}}
+
+        <div class="login-bottom mb-20">
+            <a href="/" class="hover-link-2 csmLoginText">Return to Store</a>
+    
+            <div class="form-legal">
+                <p data-spam-detection-disclaimer="">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="/account/register">Terms of Service</a> apply.</p>
+            </div>
+        </div>
     </div>
 </div>
 {{/partial}}

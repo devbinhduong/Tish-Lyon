@@ -278,9 +278,9 @@
         "recaptcha_title": "Google recaptcha"
     },
     "login": {
-        "heading": "Sign in",
-        "field_email": "Email Address:",
-        "field_password": "Password:",
+        "heading": "Login",
+        "field_email": "Email",
+        "field_password": "Password",
         "submit_value": "Sign in",
         "forgot_password": "Forgot your password?",
         "new_customer": {

@@ -679,3 +679,39 @@
         }
     }
 }
+
+// * ------ Custom Form Field Effect ------
+.csmFormField {
+    position: relative;
+    margin-bottom: 0;
+
+    + .csmFormField {
+        margin-top: 13px;
+    }
+
+    label {
+        @include pos($pos: abs, $l: 16px, $t: 16px);
+        pointer-events: none;
+        color: rgb(100, 100, 100);
+        font-size: $fontSize-root;
+        margin-bottom: 0;
+        transition: all 0.3s ease;
+        background-color: #ffffff;
+
+        @include smax-s {
+            font-size: $fontSize-root - 2px;
+        }; 
+    }
+
+    :is(input:focus) ~ label {
+        top: -10px;
+        font-size: 12px;
+    }
+
+    input:not(:placeholder-shown) ~ label {
+        top: -10px;
+        font-size: 12px;
+    }
+}
+
+

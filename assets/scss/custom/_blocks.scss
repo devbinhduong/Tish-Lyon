@@ -891,6 +891,10 @@
 .storeLocator {
     margin-bottom: 24px;
 
+    .page-heading {
+        text-align: left;
+    }
+
     &__wrapper {
         display: flex;
         gap: 32px;
