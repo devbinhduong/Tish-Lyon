@@ -13,21 +13,18 @@
 .account--fixed {
     @include breakpoint("medium") {
         margin: 0 auto;
-        width: grid-calc(8, $total-columns);
     }
 }
 
 .account--fixedSmall {
     @include breakpoint("medium") {
         margin: 0 auto;
-        width: grid-calc(6, $total-columns);
     }
 }
 
 .account--fixedLarge {
     @include breakpoint("medium") {
         margin: 0 auto;
-        width: grid-calc(9, $total-columns);
     }
 }
 
@@ -93,4 +90,87 @@
             }
         }
     }
+}
+
+.customAccount {
+    &__wrapper {
+        display: grid;
+        grid-gap: 32px;
+        grid-template-columns: 1fr 3fr;
+        align-items: start;
+
+        @include smax-s {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }; 
+    }
+
+    &__left {
+        .accountSidebar__title {
+            padding: 10px 15px;
+            font-weight: $fontWeight-normal;
+            margin: 0 0 20px;
+            text-align: left;
+            min-height: 0;
+            position: relative;
+            background: #f2f4f0;
+            cursor: pointer;
+
+            &::before {
+                top: 50%;
+                right: 25px;
+                z-index: 2;
+                content: '';
+                width: 2px;
+                height: 12px;
+                position: absolute;
+                -webkit-transition: all .4s ease;
+                transition: all .4s ease;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                background-color: $color-textBase;
+            }
+    
+            &::after {
+                top: 50%;
+                right: 20px;
+                z-index: 2;
+                content: '';
+                width: 12px;
+                height: 2px;
+                position: absolute;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                background-color: $color-textBase;
+            }
+    
+            &.is-active {
+                &::before {
+                    transform: translateY(-50%) rotate(90deg);
+                }
+            }
+
+            > a {
+                text-decoration: none;
+            }
+        }
+        
+        .accountSidebar__content {
+            @include smax-s {
+                display: none;
+            }; 
+        }
+    }
+
+    &__right {
+        .account--fixed,
+        .account--fixedLarge {
+            width: 100%;
+        }
+
+        .page-heading {
+            line-height: 1.2;
+            margin: 22px 0 !important;
+        }
+    }   
 }

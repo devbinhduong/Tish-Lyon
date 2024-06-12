@@ -61,7 +61,7 @@ $color-textBase-hover:              stencilColor("color-textBase--hover");
 $color-textBase-active:             stencilColor("color-textBase--active");
 
 $color-textSecondary:               stencilColor("color-textSecondary");
-$color-textSecondary-hover:         stencilColor("color-textSecondary--hover");
+$color-textSecondary-hover:         rgba(stencilColor("color-textSecondary--hover"), 0.7);
 $color-textSecondary-active:        stencilColor("color-textSecondary--active");
 
 $color-textLink:                    stencilColor("color-textLink");

@@ -27,7 +27,6 @@ export default class Cart extends PageManager {
         this.setApplePaySupport();
         this.bindEvents();
         this.activeCouponFormMobile();
-        this.toggleTabSidebar();
 
         calculateFreeShipping(this.context);
         checkPolicy();
@@ -457,27 +456,6 @@ export default class Cart extends PageManager {
             formMobile.innerHTML = formDesktop.innerHTML;
             formDesktop.innerHTML = "";
         }
-    }
-
-    toggleTabSidebar() {
-        const $cartTotalTitle = $('.cartTotal__title');
-
-        $cartTotalTitle.on('click', (e) => {
-            e.preventDefault();
-
-            const $target = $(e.currentTarget);
-            const $cartTotal = $target.parents('.cartTotal__item');
-            const $cartTotal_list = $cartTotal.find('.cartTotal__content');
-
-            $cartTotal.toggleClass('is-active');
-
-            if ($cartTotal.hasClass('is-active')) {
-                $cartTotal_list.slideDown(400);
-            }
-            else {
-                $cartTotal_list.slideUp(400);
-            }
-        });
     }
 
     bindEvents() {

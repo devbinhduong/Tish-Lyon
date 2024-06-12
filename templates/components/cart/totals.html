@@ -21,21 +21,21 @@
     </li>
     {{#if cart.gift_wrapping_cost.amount}}
         <li class="cart-total cartTotal__item">
-            <div class="cart-total-label cartTotal__title">
+            <div class="cart-total-label cartTotal__title toggle__title">
                 <strong>{{lang 'cart.checkout.gift_wrapping'}}:</strong>
             </div>
-            <div class="cart-total-value cartTotal__content">
+            <div class="cart-total-value cartTotal__content toggle__content">
                 <span>{{cart.gift_wrapping_cost.formatted}}</span>
             </div>
         </li>
     {{/if}}
     {{#if cart.shipping_handling.show_estimator}}
         <li class="cart-total cartTotal__item">
-            <div class="cart-total-label cartTotal__title">
+            <div class="cart-total-label cartTotal__title toggle__title">
                 <strong>{{lang 'cart.checkout.shipping'}}:</strong>
             </div>
 
-            <div class="cartTotal__content">
+            <div class="cartTotal__content toggle__content">
                 {{> components/cart/shipping-estimator cart.shipping_handling}}
             </div>
         </li>
@@ -45,10 +45,10 @@
     {{/each}}
     {{#if cart.discount }}
         <li class="cart-total cartTotal__item">
-            <div class="cart-total-label cartTotal__title">
+            <div class="cart-total-label cartTotal__title toggle__title">
                 <strong>{{lang 'cart.discount'}}:</strong>
             </div>
-            <div class="cart-total-value cartTotal__content">
+            <div class="cart-total-value cartTotal__content toggle__content">
                 {{cart.discount.formatted}}
             </div>
         </li>
@@ -70,23 +70,23 @@
     {{/if}}
     {{#if settings.gift_certificates_enabled}}
         {{#each cart.gift_certificates}}
-            <li class="cart-total cartTotal__content">
-                <div class="cart-total-label cartTotal__title">
+            <li class="cart-total cartTotal__content toggle__content">
+                <div class="cart-total-label cartTotal__title toggle__title">
                     <strong>{{lang 'cart.gift_certificates.code_label' code=code}}</strong>
                     <span>
                         {{remaining.formatted}} | <a href="{{remove_url}}">{{lang 'cart.gift_certificates.remove'}}</a>
                     </span>
                 </div>
-                <div class="cart-total-value cartTotal__content">
+                <div class="cart-total-value cartTotal__content toggle__content">
                     {{used.formatted}}
                 </div>
             </li>
         {{/each}}
-        <li class="cart-total cartTotal__content">
-            <div class="cart-total-label cartTotal__title">
+        <li class="cart-total cartTotal__content toggle__content">
+            <div class="cart-total-label cartTotal__title toggle__title">
                 <strong>{{lang 'cart.gift_certificates.gift_certificate'}}:</strong>
             </div>
-            <div class="cartTotal__content">{{> components/cart/gift-certificate-input}}</div>
+            <div class="cartTotal__content toggle__content">{{> components/cart/gift-certificate-input}}</div>
         </li>
     {{/if}}
     <li class="cart-total cart-total-grandtotal" style="display: none;">

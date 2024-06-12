@@ -993,11 +993,11 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
             transform: translateY(-50%);
             background-color: $color-textBase;
         }
-    }
 
-    &__item.is-active {
-        .cartTotal__title::before {
-            transform: translateY(-50%) rotate(90deg);
+        &.is-active {
+            &::before {
+                transform: translateY(-50%) rotate(90deg);
+            }
         }
     }
 

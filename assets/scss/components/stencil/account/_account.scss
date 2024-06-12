@@ -6,13 +6,6 @@
 // Account navigation
 // -----------------------------------------------------------------------------
 
-.navBar--account {
-    display: none;
-
-    @include breakpoint("medium") {
-        display: block;
-    }
-}
 
 
 // Account headings

@@ -114,47 +114,29 @@
 // -----------------------------------------------------------------------------
 
 .navBar--sub {
-    margin-bottom: spacing("single") * 3;
-    text-align: center;
-
     .navBar-section {
-        float: none;
     }
 
     .navBar-item {
-        float: none;
-        margin: 0 spacing("half");
-
-        @include breakpoint("medium") {
-            display: inline-block;
-        }
+        margin: 4px 0;
 
         &.is-active {
-            @include breakpoint("medium") {
-                border-bottom: 1px solid stencilColor("color-textBase");
-            }
-
-            > .navBar-action {
-                color: color("greys", "dark");
-            }
-        }
-
-        &.navBar-item--separate {
-            @include breakpoint("medium") {
-                border-left: 1px solid stencilColor("color-textSecondary");
-                margin: 0;
-                padding-left: spacing("half");
+            .navBar-action {
+                color: $color-textBase;
             }
         }
     }
 
     .navBar-action {
-        color: stencilColor("color-textSecondary");
-        font-size: fontSize("base");
         padding: 0;
+        color: $color-textSecondary;
+        font-size: $fontSize-root;
+        font-weight: $fontWeight-thin;
+        line-height: auto;
+        letter-spacing: 0px;
 
         &:hover {
-            color: stencilColor("color-textSecondary--hover");
+            color: $color-textSecondary-hover;
         }
     }
 }

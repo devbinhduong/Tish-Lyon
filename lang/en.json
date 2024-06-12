@@ -303,6 +303,7 @@
         "logged": "My Account",
         "breadcrumb": "Your Account",
         "nav": {
+            "my_account": "My Account",
             "overview": "Overview",
             "orders": "Orders",
             "returns": "Returns",
