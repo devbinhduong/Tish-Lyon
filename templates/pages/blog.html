@@ -23,21 +23,22 @@ blog:
     mobileSize= theme_settings.blogBannerSizeMb
     title= theme_settings.blogBannerT
     desc = theme_settings.blogBannerD
-
-    desktopHeight= 500
-    desktopWidth= 1920
 }}
 
-<main class="page">
-    {{#unless theme_settings.hide_blog_page_heading }}
-        <h1 class="page-heading">{{ blog.name }}</h1>
-    {{/unless}}
+<main class="page page-blog">
+    <div class="container">
+        {{> components/custom/global/futured-blog-post-section }}
 
-    {{#each blog.posts}}
-        {{> components/blog/post post=this theme_settings=../theme_settings}}
-    {{/each}}
+        {{#unless theme_settings.hide_blog_page_heading }}
+            <h1 class="page-heading">{{ blog.name }}</h1>
+        {{/unless}}
 
-    {{> components/common/paginator pagination.blog}}
+        {{#each blog.posts}}
+            {{> components/blog/post post=this theme_settings=../theme_settings}}
+        {{/each}}
+
+        {{> components/common/paginator pagination.blog}}
+    </div>
 </main>
 
 {{/partial}}
