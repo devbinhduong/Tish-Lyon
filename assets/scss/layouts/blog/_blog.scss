@@ -2,97 +2,98 @@
 // BLOG
 // =============================================================================
 
-
 // Blog post
 // -----------------------------------------------------------------------------
 
-.blog {
-    margin-bottom: spacing("single");
+.csmBlog {
+    &__listing {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    @include breakpoint("medium") {
-        margin: auto;
-        width: 100%;
+        @include smax-m {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+        }; 
+
+        @include smax-s {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        };
+
+        @include smax-xs {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        };
     }
 
-    + .blog {
-        border-top: container("border");
-        margin-top: spacing("double");
-        padding-top: spacing("double");
+    &__item {
+        .blog-post-figure {
+            width: 100%;
+        }
+
+        .blog-post-body {
+            width: 100%;
+            padding: 20px 0;
+
+            @include smax-m {
+                padding: 18px 0;
+            }; 
+
+            @include smax-s {
+                padding: 16px 0;
+            }; 
+        }
+
+        .blog-thumbnail {
+            position: relative;
+            margin: 0;
+
+            > a {
+                @include lazy-loaded-padding('blog_size');
+                display: block;
+            }
+
+            img {
+                @include lazy-loaded-img();
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
 
-    .tags {
-        margin-top: spacing("double");
-        text-align: center;
+    &__title {
+        line-height: 26px;
+        margin: 0 0 8px;
+
+        > a {
+            text-decoration: none;
+            font-size: 22px;
+            line-height: 26px;
+            color: $color-textBase;
+
+            &:hover {
+                color: $color-custom-yellow;
+            }
+
+            @include smax-s {
+                font-size: 18px;
+                font-size: 22px;
+            }; 
+        }
     }
+    &__summary {
+        font-size:  13.84px;
+        margin-top: 16px;
+        margin-bottom: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
 
-    .socialLinks {
-        text-align: center;
-    }
-
-    .addthis_toolbox {
-        margin-top: spacing("double");
-    }
-}
-
-.blog-title {
-    font-size: fontSize("large");
-    margin: 0 spacing("single") spacing("quarter");
-
-    a {
-        text-decoration: none;
-    }
-}
-
-.blog-date,
-.blog-author {
-    color: stencilColor("color-textSecondary");
-    text-align: center;
-}
-
-.blog-author {
-    margin-bottom: spacing("single") + spacing("base");
-}
-
-.blog-post {
-    font-size: fontSize("smaller");
-    text-align: left;
-}
-
-.blog-thumbnail {
-    margin: 0 auto (spacing("base") * 2);
-    max-width: get_width(stencilString("blog_size"));
-    position: relative;
-
-    img {
-        width: 100%;
-    }
-}
-
-.blog-post-figure {
-    display: block;
-    margin: auto;
-    text-align: center;
-
-    @include breakpoint("medium") {
-        width: grid-calc(8, $total-columns);
-    }
-}
-
-.blog-post-body {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
-
-    @include breakpoint("small") {
-        width: grid-calc(10, $total-columns);
-    }
-
-    @include breakpoint("medium") {
-        width: grid-calc(8, $total-columns);
-    }
-
-    @include breakpoint("large") {
-        width: grid-calc(6, $total-columns);
+        @include smax-s {
+            font-size: 12px;
+            line-height: 15px;
+        }; 
     }
 }

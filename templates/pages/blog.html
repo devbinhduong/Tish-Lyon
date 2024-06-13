@@ -3,7 +3,7 @@ blog:
     posts:
         limit: 5
         pages: 3
-        summary: 200
+        summary: 205
 ---
 {{#partial "head"}}
     {{#if pagination.blog.previous}}
@@ -33,9 +33,11 @@ blog:
             <h1 class="page-heading">{{ blog.name }}</h1>
         {{/unless}}
 
-        {{#each blog.posts}}
-            {{> components/blog/post post=this theme_settings=../theme_settings}}
-        {{/each}}
+        <div class="csmBlog__listing">
+            {{#each blog.posts}}
+                {{> components/blog/post post=this theme_settings=../theme_settings}}
+            {{/each}}
+        </div>
 
         {{> components/common/paginator pagination.blog}}
     </div>
