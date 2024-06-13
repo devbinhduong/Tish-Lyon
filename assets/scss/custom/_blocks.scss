@@ -1082,3 +1082,60 @@
         }
     }
 }
+
+// * ------ Global Banner Layout ------
+.globalBanner {
+    position: relative;
+
+    &__img {
+        position: relative;
+        min-height: var(--minHeightDT);
+
+        @include smax-s {
+            min-height: var(--minHeightMB);
+        }; 
+
+        &::after {
+            content: "";
+            display: block;
+            height: 0;
+            padding-bottom: calc(var(--bannerHeight)/var(--bannerWidth) * 100%);
+            width: 100%;
+        }
+
+        img {
+            @include pos($pos: abs, $cb: full);
+            object-fit: cover;
+        }
+    }
+
+    &__content {
+        @include pos($pos: abs, $cb: center);
+        z-index: 99;
+        width: 100%;
+        max-width: 50%;
+        padding: 50px 50px 34px;
+
+        @include smax-m {
+            padding: 30px 30px 15px;
+        }; 
+
+        @include smax-s {
+            max-width: 100%;
+        }; 
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    &__desc {
+        margin-bottom: 16px;
+        
+        @include smax-s {
+            font-size: 19px;
+            line-height: normal;
+        }; 
+    }
+}

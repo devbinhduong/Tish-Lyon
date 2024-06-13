@@ -16,7 +16,17 @@ blog:
 
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+{{> components/custom/global/global-banner 
+    isLazyload=false
+    image= theme_settings.blogBannerI
+    desktopSize= theme_settings.blogBannerSize
+    mobileSize= theme_settings.blogBannerSizeMb
+    title= theme_settings.blogBannerT
+    desc = theme_settings.blogBannerD
+
+    desktopHeight= 500
+    desktopWidth= 1920
+}}
 
 <main class="page">
     {{#unless theme_settings.hide_blog_page_heading }}

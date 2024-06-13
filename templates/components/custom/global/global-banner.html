@@ -1,0 +1,20 @@
+<section class="globalBanner" style="--bannerHeight: {{#get '1' (split desktopSize 'x')}}{{this}}{{/get}};--bannerWidth: {{#get '0' (split desktopSize 'x')}}{{this}}{{/get}}; --minHeightDT: {{#get '1' (split desktopSize 'x')}}{{this}}{{/get}}px; --minHeightMB: {{#get '1' (split mobileSize 'x')}}{{this}}{{/get}}px">
+    <div class="globalBanner__img">
+        {{#if isLazyload}}
+            <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="/product_images/uploaded_images/{{image}}" alt="{{title}} Banner">
+        {{else}}
+            <img src="/product_images/uploaded_images/{{image}}" alt="{{title}} Banner">
+        {{/if}}
+
+        <div class="image-overlay" style="--overlay-opacity: 0.45;"></div>
+    </div>
+
+    <div class="globalBanner__content">
+        <h2 class="globalBanner__title text-white text-center heading-size-11 aos-animate" data-aos="hero" data-aos-order="2">
+            {{title}}
+        </h2>
+        <p class="globalBanner__desc text-white text-center body-size-5 font-body aos-animate" data-aos="hero" data-aos-order="3">
+            {{desc}}
+        </p>
+    </div>
+</section>

@@ -1037,7 +1037,13 @@
         "cartEmpty3T": "Best Sellers",
         "cartEmpty3L": "/best-sellers",
         "cartEmpty4T": "Contact",
-        "cartEmpty4L": "/contact-us"
+        "cartEmpty4L": "/contact-us",
+
+        "blogBannerI": "blog-top-banner.jpg",
+        "blogBannerSize": "2543x659",
+        "blogBannerSizeMb": "730x988",
+        "blogBannerT": "Tish Tips",
+        "blogBannerD": "Welcome to the Tish Tips blog, filled with handy jewellery details, shopping guides and stockist spotlights."
       }
     }
   ]
