@@ -1,74 +1,97 @@
-<form data-contact-form class="form" action="{{urls.contact_us_submit}}" method="post">
-    {{inject 'contactEmail' (lang 'forms.validate.contact.email_address')}}
-    {{inject 'contactQuestion' (lang 'forms.validate.contact.question')}}
-    {{#if forms.contact.error}}
-    <div id="contact-us-error">{{> components/common/alert/alert-error forms.contact.error}}</div>
-    {{/if}}
-    <input type="hidden" name="page_id" id="page_id" value="{{forms.contact.page_id}}">
-    <div class="form-row form-row--half">
-        {{#if forms.contact.name}}
-            <div class="form-field">
-                <label class="form-label" for="contact_fullname">{{lang 'forms.contact_us.full_name'}}</label>
-                <input class="form-input" type="text" id="contact_fullname" name="contact_fullname" value="{{customer.name}}">
-            </div>
+<div class="form-contact-wrapper">
+    <form data-contact-form class="form form-locator custom-form" action="{{urls.contact_us_submit}}" method="post">
+        {{inject 'contactEmail' (lang 'forms.validate.contact.email_address')}}
+        {{inject 'contactQuestion' (lang 'forms.validate.contact.question')}}
+        {{#if forms.contact.error}}
+        <div id="contact-us-error">{{> components/common/alert/alert-error forms.contact.error}}</div>
         {{/if}}
-
-        {{#if forms.contact.phone}}
-            <div class="form-field">
-                <label class="form-label" for="contact_phone">{{lang 'forms.contact_us.phone'}}</label>
-                <input class="form-input" type="text" id="contact_phone" name="contact_phone" value="{{customer.phone}}">
+        <input type="hidden" name="page_id" id="page_id" value="{{forms.contact.page_id}}">
+        <div class="form-row">
+            {{#if forms.contact.name}}
+                <div class="form-field custom-form__block">
+                    <input class="form-input field" placeholder="{{lang 'forms.contact_us.full_name'}}" type="text" id="contact_fullname" name="contact_fullname" value="{{customer.name}}">
+                </div>
+            {{/if}}
+    
+            {{#if forms.contact.phone}}
+                <div class="form-field custom-form__block">
+                    <input class="form-input field" placeholder="{{lang 'forms.contact_us.phone'}}" type="text" id="contact_phone" name="contact_phone" value="{{customer.phone}}">
+                </div>
+            {{/if}}
+    
+            <div class="form-field custom-form__block">
+                <input class="form-input field" placeholder="{{lang 'forms.contact_us.email'}}" type="text" id="contact_email" name="contact_email" value="{{customer.email}}">
             </div>
-        {{/if}}
-
+    
+            {{#if forms.contact.order}}
+                <div class="form-field custom-form__block">
+                    <input class="form-input field" placeholder="{{lang 'forms.contact_us.order'}}" type="text" id="contact_orderno" name="contact_orderno">
+                </div>
+            {{/if}} 
+    
+            {{#if forms.contact.company}}
+                <div class="form-field custom-form__block">
+                    <input class="form-input field" placeholder="{{lang 'forms.contact_us.company'}}" type="text" id="contact_companyname" name="contact_companyname">
+                </div>
+            {{/if}}
+    
+            {{#if forms.contact.rma}}
+                <div class="form-field custom-form__block">
+                    <input class="form-input field" placeholder="{{lang 'forms.contact_us.rma'}}" type="text" id="contact_rma" name="contact_rma">
+                </div>
+            {{/if}}
+        </div>
+    
         <div class="form-field">
-            <label class="form-label" for="contact_email">{{lang 'forms.contact_us.email'}}
-                <small>{{lang 'common.required' }}</small>
-            </label>
-            <input class="form-input" type="text" id="contact_email" name="contact_email" value="{{customer.email}}">
+            <textarea placeholder="{{lang 'forms.contact_us.question'}}" name="contact_question" id="contact_question" rows="10" cols="50" class="form-input field"></textarea>
         </div>
 
-        {{#if forms.contact.order}}
-            <div class="form-field">
-                <label class="form-label" for="contact_orderno">{{lang 'forms.contact_us.order'}}</label>
-                <input class="form-input" type="text" id="contact_orderno" name="contact_orderno">
-            </div>
-        {{/if}}
-
-        {{#if forms.contact.company}}
-            <div class="form-field">
-                <label class="form-label" for="contact_companyname">{{lang 'forms.contact_us.company'}}</label>
-                <input class="form-input" type="text" id="contact_companyname" name="contact_companyname">
-            </div>
-        {{/if}}
-
-        {{#if forms.contact.rma}}
-            <div class="form-field">
-                <label class="form-label" for="contact_rma">{{lang 'forms.contact_us.rma'}}</label>
-                <input class="form-input" type="text" id="contact_rma" name="contact_rma">
-            </div>
-        {{/if}}
-    </div>
-
-    <div class="form-field">
-        <label class="form-label" for="contact_question">{{lang 'forms.contact_us.question'}}
-            <small>{{lang 'common.required' }}</small>
-        </label>
-        <textarea name="contact_question" id="contact_question" rows="5" cols="50" class="form-input"></textarea>
-    </div>
-    {{#if forms.contact.manualcaptcha}}
-        <div class="form-field">
-            <label class="form-label" for="{{forms.contact.manualcaptcha.name}}">
-                {{lang 'forms.contact_us.manual_captcha_instruction'}}
-                <small>{{lang 'common.required' }}</small>
+        <!-- * business type -->
+        <div class="custom-form__block custom-form__block--heading">
+            <p class="strong">Optional:</p>
+        </div>
+        <div class="custom-form__block checkbox">
+            <input type="checkbox" id="contactFormUrgent" class="contactFormCheckbox" name="contact[this-is-urgent]" value="This is urgent">
+            <label for="contactFormUrgent">
+                This is urgent
             </label>
-            <div class="manual-captcha-input-container">
-                <span class="question">{{forms.contact.manualcaptcha.question}}</span>
-                <input class="form-input" type="text" id="{{forms.contact.manualcaptcha.name}}" name="{{forms.contact.manualcaptcha.name}}" value="" aria-disabled="true" autocomplete="off" required>
+        </div>
+        <fieldset class="custom-form__block custom-form__block--group">
+            <label class="custom-form__label label--block">What type of business do you have?</label>
+            <select class="contactFormSelect field" name="contact[what-type-of-business-do-you-have]">
+                <option value="- Pick an option -">- Pick an option -</option>
+                <option value="Studio">Studio</option>
+                <option value="Jewellers">Jewellers</option>
+                <option value="Other Retailer">Other Retailer</option>
+            </select>
+        </fieldset>
+
+        {{#if forms.contact.manualcaptcha}}
+            <div class="form-field">
+                <label class="form-label" for="{{forms.contact.manualcaptcha.name}}">
+                    {{lang 'forms.contact_us.manual_captcha_instruction'}}
+                    <small>{{lang 'common.required' }}</small>
+                </label>
+                <div class="manual-captcha-input-container">
+                    <span class="question">{{forms.contact.manualcaptcha.question}}</span>
+                    <input class="form-input field" type="text" id="{{forms.contact.manualcaptcha.name}}" name="{{forms.contact.manualcaptcha.name}}" value="" aria-disabled="true" autocomplete="off" required>
+                </div>
+            </div>
+        {{/if}}
+        {{{forms.contact.recaptcha.markup}}}
+        <div class="custom-form__block">
+            <div class="form-actions">
+                <button class="button button--primary" type="submit">
+                    {{lang 'forms.contact_us.submit' }}
+                </button>
             </div>
         </div>
-    {{/if}}
-    {{{forms.contact.recaptcha.markup}}}
-    <div class="form-actions">
-        <input class="button button--primary" type="submit" value="{{lang 'forms.contact_us.submit' }}">
-    </div>
-</form>
+
+        <div class="form__legal">
+            <p data-spam-detection-disclaimer="">
+                This site is protected by reCAPTCHA and the Google 
+                <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+            </p>
+        </div>
+    </form>
+</div>
