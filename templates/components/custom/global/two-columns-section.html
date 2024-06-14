@@ -1,0 +1,27 @@
+<section class="twoColSection">
+    <div class="twoColSection__wrapper{{#if reverse}} layout-reverse{{/if}}">
+        <div class="twoColSection__banner">
+            <div class="twoColSection__image skeleton-loader">
+                {{#if isLazyload}}
+                    <img class="lazyload" src="" data-src="/product_images/uploaded_images/{{image}}" alt="{{title}} Banner">
+                {{else}}
+                    <img src="/product_images/uploaded_images/{{image}}" alt="{{title}} Banner">
+                {{/if}}
+            </div>
+        </div>
+        <div class="twoColSection__aside">
+            <div class="twoColSection__content">
+                {{#if title}}
+                    <h2 class="twoColSection__title heading-size-8 aos-animate mt-0 mb-16 mb-10-mobile" data-aos="hero" data-aos-order="2">
+                        {{title}}
+                    </h2>
+                {{/if}}
+                {{#if desc}}
+                    <p class="twoColSection__desc body-size-4 font-body aos-animate mb-16 mb-10-mobile" data-aos="hero" data-aos-order="3">
+                        {{desc}}
+                    </p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1128,6 +1128,26 @@
     &__title {
         margin-top: 0;
         margin-bottom: 16px;
+
+        .aboutUsTopBanner & {
+            font-size: 37px;
+            line-height: 44px;
+
+            @include smax-s {
+                font-size: 31px;
+                line-height: 37px;
+            }; 
+        }
+
+        .aboutUsBottomBanner & {
+            font-size: 52px;
+            line-height: 62px;
+
+            @include smax-s {
+                font-size: 42px;
+                line-height: 51px;
+            }; 
+        }
     }
 
     &__desc {
@@ -1137,5 +1157,77 @@
             font-size: 19px;
             line-height: normal;
         }; 
+    }
+}
+
+// * ------ Section 2 Columns layout ------
+.twoColSection {
+    &__wrapper {
+        display: flex;
+
+        @include smax-s {
+            flex-wrap: wrap;
+        };
+
+        &.layout-reverse {
+            @include smin-s {
+                flex-direction: row-reverse;
+            }; 
+        }
+    }
+
+    &__banner {
+        flex: 0 0 50%;
+
+        @include smax-s {
+            flex: 0 1 100%;
+        }; 
+    }
+
+    &__image {
+        @include image-padding-bottom(1296,1944);
+        min-height: 1317px;
+
+        @include smax-s {
+            @include image-padding-bottom(750,659);
+            min-height: 659px;
+        }; 
+    }
+
+    &__aside {
+        flex-basis: 38%;
+        padding: 50px;
+        margin: 0 auto;
+        display: flex;
+
+        @include smax-m {
+            flex-basis: 45%;
+            padding: 30px;
+        }; 
+
+        @include smax-s {
+            flex-basis: 100%;
+            padding: 16px;
+        }; 
+    }
+
+    &__content {
+        @include flexcb($cb: flex-center);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 50px 34px;
+
+        @include smax-m {
+            padding: 30px 30px 15px;
+        }; 
+
+        @include smax-s {
+            padding: 16px 16px 7px;
+        }; 
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 16px;
     }
 }

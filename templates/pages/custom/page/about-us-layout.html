@@ -1,0 +1,102 @@
+{{#partial "page"}}
+    {{> components/custom/global/global-banner 
+        isLazyload=false
+        image= theme_settings.aboutUsBannerI
+        desktopSize= theme_settings.aboutUsBannerSize
+        mobileSize= theme_settings.aboutUsBannerSizeMb
+        title= page.title
+        csmClass = "aboutUsTopBanner"
+    }}
+
+    <section class="aboutUsIntro">
+        <div class="wrapper aboutUsIntro__wrapper">
+            <h2 class="aboutUsIntro__title heading-size-8 aos-animate" data-aos="hero" data-aos-order="1">
+                Supplying piercing excellence to lead the movement in ear styling.
+            </h2>
+            <div class="aboutUsIntro__text body-size-4 font-body aos-animate" data-aos="hero" data-aos-order="2">
+                <p>&nbsp;</p>
+                <p>Tish Lyon is the UK's most trusted wholesale gold body jewellery brand. As a dedicated team of solid gold jewellery experts, we dedicate ourselves to creating a seamless wholesale shopping experience for luxury piercing jewellery, designed with you in mind.</p>
+                <p>Since 2000, we have proudly built a collection of transcendent original designs. We strive to adapt with the everchanging world of piercing and develop innovative designs to meet the needs of piercers and jewellers worldwide. </p>
+                <p>Tish Lyon jewellery isn't just a luxury product. It is a lifestyle. In our mission to modernise the ear styling movement, we make it our focus to bring quality and comfort to every piece. With the luxury piercing experience being bigger than ever, we believe in creating jewellery that will shine bright every day and night without compromising on comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    {{> components/custom/global/two-columns-section
+        reverse=false
+        image=theme_settings.sectionTwoCol1_img
+        title=theme_settings.sectionTwoCol1_title
+        desc=theme_settings.sectionTwoCol1_desc
+        isLazyload=false
+    }}
+
+    {{> components/custom/global/two-columns-section
+        reverse=true
+        image=theme_settings.sectionTwoCol2_img
+        title=theme_settings.sectionTwoCol2_title
+        desc=theme_settings.sectionTwoCol2_desc
+        isLazyload=true
+    }}
+
+    {{> components/custom/global/two-columns-section
+        reverse=false
+        image=theme_settings.sectionTwoCol3_img
+        title=theme_settings.sectionTwoCol3_title
+        desc=theme_settings.sectionTwoCol3_desc
+        isLazyload=true
+    }}
+
+    <section class="sectionService">
+        <div class="container">
+            <div class="sectionService__wrapper custom-mobile-slider">
+                <div class="item sectionService__item aos-animate" data-aos="hero" data-aos-order="1">
+                    <div class="sectionService__image">
+                        <div class="image-wrapper">
+                            <img class="lazyload" src="" data-src="/product_images/uploaded_images/{{theme_settings.absService1I}}" alt="{{theme_settings.absService1T}}">
+                        </div>
+                    </div>
+                    <div class="sectionService__content">
+                        <h4 class="sectionService__title heading-size-4">{{theme_settings.absService1T}}</h4>
+                        <p class="sectionService__desc body-size-3">{{theme_settings.absService1D}}</p>
+                    </div>
+                </div>
+                <div class="item sectionService__item aos-animate" data-aos="hero" data-aos-order="2">
+                    <div class="sectionService__image">
+                        <div class="image-wrapper">
+                            <img class="lazyload" src="" data-src="/product_images/uploaded_images/{{theme_settings.absService2I}}" alt="{{theme_settings.absService2T}}">
+                        </div>
+                    </div>
+                    <div class="sectionService__content">
+                        <h4 class="sectionService__title heading-size-4">{{theme_settings.absService2T}}</h4>
+                        <p class="sectionService__desc body-size-3">{{theme_settings.absService2D}}</p>
+                    </div>
+                </div>
+                <div class="item sectionService__item aos-animate" data-aos="hero" data-aos-order="3">
+                    <div class="sectionService__image">
+                        <div class="image-wrapper">
+                            <img class="lazyload" src="" data-src="/product_images/uploaded_images/{{theme_settings.absService3I}}" alt="{{theme_settings.absService3T}}">
+                        </div>
+                    </div>
+                    <div class="sectionService__content">
+                        <h4 class="sectionService__title heading-size-4">{{theme_settings.absService3T}}</h4>
+                        <p class="sectionService__desc body-size-3">{{theme_settings.absService3D}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{> components/custom/global/global-banner 
+        isLazyload=true
+        image= theme_settings.aboutUsBottomBannerI
+        desktopSize= theme_settings.aboutUsBottomBannerSize
+        mobileSize= theme_settings.aboutUsBottomBannerSizeMb
+        title= theme_settings.aboutUsBottomBannerT
+        desc = theme_settings.aboutUsBottomBannerD
+        csmClass = "aboutUsBottomBanner"
+        button = theme_settings.aboutUsBottomBannerB
+        buttonLink = theme_settings.aboutUsBottomBannerL
+        opacity = 0.4
+    }}
+{{/partial}}
+{{> layout/base}}

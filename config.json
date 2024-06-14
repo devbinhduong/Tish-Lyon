@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Update Product Page",
+  "name": "Cornerstone Apply About Us Page Layout",
   "version": "6.14.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -1044,7 +1044,35 @@
         "blogBannerSize": "2543x659",
         "blogBannerSizeMb": "730x988",
         "blogBannerT": "Tish Tips",
-        "blogBannerD": "Welcome to the Tish Tips blog, filled with handy jewellery details, shopping guides and stockist spotlights."
+        "blogBannerD": "Welcome to the Tish Tips blog, filled with handy jewellery details, shopping guides and stockist spotlights.",
+        "aboutUsBannerI": "about-us-top-banner.jpg",
+        "aboutUsBannerSize": "2543x659",
+        "aboutUsBannerSizeMb": "659x659",
+        "aboutUsBottomBannerI": "about-us-bottom-banner.jpg",
+        "aboutUsBottomBannerSize": "2543x878",
+        "aboutUsBottomBannerSizeMb": "750x988",
+        "aboutUsBottomBannerT": "Start your Tish shopping journey",
+        "aboutUsBottomBannerD": "",
+        "aboutUsBottomBannerB": "Shop Now",
+        "aboutUsBottomBannerL": "#",
+        "sectionTwoCol1_img": "about-us-section-col-1.jpg",
+        "sectionTwoCol1_title": "Quality",
+        "sectionTwoCol1_desc": "We believe in creating jewellery to exceptional standards, so our pieces can be worn and loved with assurance.",
+        "sectionTwoCol2_img": "about-us-section-col-2.jpg",
+        "sectionTwoCol2_title": "Comfort",
+        "sectionTwoCol2_desc": "We believe comfort and beauty work in harmony. Tish Lyon jewellery is designed to be enjoyed day and night with comfort focused designs.",
+        "sectionTwoCol3_img": "about-us-section-col-3.jpg",
+        "sectionTwoCol3_title": "Creativity",
+        "sectionTwoCol3_desc": "We believe in designing spectacular pieces that dazzle with individuality. We aim to offer balance in luxury ear styling with pieces ranging from simplistic to intricate.",
+        "absService1I": "about-us-service-1.png",
+        "absService1T": "Accessible",
+        "absService1D": "Price matters. We are dedicated to offering competitive wholesale prices for your business. We believe exceptional ear styling should be accessible to all and quality shouldn't be compromised.",
+        "absService2I": "about-us-service-2.png",
+        "absService2T": "Fast",
+        "absService2D": "We understand the importance of getting stock quickly, which is why we offer same working day dispatch and next day delivery in the UK.",
+        "absService3I": "about-us-service-3.png",
+        "absService3T": "Community Focused",
+        "absService3D": "We pride ourselves on empowering the creativity and diversity in the piercing and jewellery industry. We love working with our stockists to help grow the accessibility of quality piercing jewellery."
       }
     }
   ]

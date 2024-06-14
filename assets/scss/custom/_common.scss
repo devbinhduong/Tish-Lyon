@@ -346,6 +346,11 @@
         font-size: 22px;
         line-height: 26px;
         letter-spacing: 0;
+
+        @include smax-m {
+            font-size: 21px;
+            line-height: 25px;
+        }; 
     
         @include smax-s {
             font-size: 18px;
@@ -368,6 +373,11 @@
         font-size: 44px;
         line-height: 52px;
         letter-spacing: 0;
+
+        @include smax-m {
+            font-size: 40px;
+            line-height: 48px;
+        }; 
 
         @include smax-s {
             font-size: 37px;
@@ -426,6 +436,11 @@
         font-weight: 300;
         line-height: 24px;
         letter-spacing: 0;
+
+        @include smax-m {
+            font-size: 15px;
+            line-height: 23px;
+        }; 
     
         @include smax-s {
             font-size: 14px;
@@ -438,6 +453,10 @@
         font-weight: 300;
         line-height: 23px;
         letter-spacing: 0;
+
+        @include smax-m {
+            font-size: 18px;
+        }; 
 
         @include smax-s {
             font-size: 16px;

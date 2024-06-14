@@ -13,7 +13,8 @@ export default class Post extends PageManager {
 
     getRecentlyPost() {
         const url = `/blog/`;
-        const currentURL = window.location.pathname;
+        const currentURL = window.location.href;
+        const currentPath = window.location.pathname;
 
         utils.api.getPage(url, { template: 'blog/recently-post' }, (err, response) => {
             if (err) {
@@ -27,7 +28,7 @@ export default class Post extends PageManager {
                 const $this = $(this);
                 const postURL = $this.attr('href');
 
-                if (postURL === currentURL) {
+                if (postURL === currentPath || postURL === currentURL) {
                     $this.remove();
                 }
             });

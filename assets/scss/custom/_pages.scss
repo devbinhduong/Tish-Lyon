@@ -1,0 +1,83 @@
+// * ------ About Us Page ------
+.aboutUsIntro {
+    &__wrapper {
+        padding-top: 48px;
+        padding-bottom: 100px;
+
+        @include smax-m {
+            padding-top: 39px;
+            padding-bottom: 80px;
+        }; 
+
+        @include smax-s {
+            padding-top: 29px;
+            padding-bottom: 60px;
+        }; 
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    &__text {   
+        p:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 9.5px 0;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.sectionService {
+    padding: 50px 0;
+    
+    @include smax-m {
+        padding: 40px 0;
+    }; 
+
+    @include smax-s {
+        padding: 30px 0;
+    }; 
+
+    &__wrapper {
+        @include smin-m {
+            @include flex-layout(3, 32px);
+        }; 
+
+        @include smin-s {
+            @include flex-layout(3, 22px);
+        }; 
+    }
+
+    &__image {
+        margin-bottom: 20px;
+
+        @include smax-m {
+            margin-bottom: 18px;
+        }; 
+
+        @include smax-s {
+            margin-bottom: 16px;
+        }; 
+
+        .image-wrapper {
+            @include image-padding-bottom(793,555);
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 7px;
+    }
+
+    &__desc {
+        margin-bottom: 0;
+    }
+}
