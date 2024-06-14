@@ -1,4 +1,4 @@
-<article class="blog">
+<article class="blog csmBlog__item csmBlogPost__item">
     <div class="blog-post-figure">
         {{#if post.thumbnail}}
             <figure class="blog-thumbnail">
@@ -9,43 +9,58 @@
                         lazyload=theme_settings.lazyload_mode
                     }}
                 </a>
+
+                <div class="image-overlay" style="--bg: #000000; --overlay-opacity: 0.15;"></div>
             </figure>
         {{/if}}
     </div>
 
-    <div class="blog-post-body">
-        <header class="blog-header">
-            <h{{#if is_blog_post}}1{{else}}2{{/if}} class="blog-title">
-                <a href="{{post.url}}">{{post.title}}</a>
-            </h{{#if is_blog_post}}1{{else}}2{{/if}}>
-            <p class="blog-date">{{#if post.author}}{{lang 'blog.posted_by' name=post.author}} on {{/if}}{{post.date_published}}</p>
-        </header>
+    <div class="wrapper csmBlogPost__wrapper">
+        <div class="csmBlogPost__grid">
+            <div class="blog-post-body">
+                <header class="blog-header">
+                    <h{{#if is_blog_post}}1{{else}}2{{/if}} class="blog-title">
+                    {{post.title}}
+                    </h{{#if is_blog_post}}1{{else}}2{{/if}}>
+                </header>
+                <hr>
+                <div class="csmBlogPost__meta flex flex-between flex-center-x">
+                    <p class="meta__date">{{post.date_published}}</p>
 
-        <div class="blog-post">
-            {{#if post.body}}
-                {{{post.body}}}
-            {{else}}
-                {{{post.summary}}}
-                {{#if post.show_read_more}}
-                    &hellip; <a href="{{url}}" aria-label="{{post.title}} {{lang 'blog.read_more'}}">{{lang 'blog.read_more'}}</a>
-                {{/if}}
-            {{/if}}
+                    <button type="button" class="meta__share" data-share-button="" data-share-url="{{url}}">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-share" viewBox="0 0 24 24">
+                            <path d="M18 22a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-14a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="m15.5 6.5-7 4m0 3 7 4" stroke="#000"></path>
+                        </svg>
+                        <span class="hover-link">
+                            <span>Share</span>
+                        </span>
+                    </button>
+                </div>
+                <hr>
+                <div class="blog-post csmBlogPost__content">
+                    {{#if post.body}}
+                        {{{post.body}}}
+                    {{/if}}
+                </div>
+                {{#and show_tags (if theme_settings.show_blogPostTag)}}
+                    {{#if post.tags}}
+                        <ul class="tags">
+                            {{#each post.tags}}
+                            <li class="tag">
+                                <a href="{{url}}">#{{name}}</a>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    {{/if}}
+                {{/and}}
+            </div>
+
+            <div class="csmBlogPost__recentlyPost">
+                <h3>Recent articles</h3>
+
+                <div class="recentPosts__sidebar"></div>
+            </div>
         </div>
-
-
-        {{#if show_tags}}
-            {{#if post.tags}}
-                <ul class="tags">
-                    {{#each post.tags}}
-                    <li class="tag">
-                        <a href="{{url}}">#{{name}}</a>
-                    </li>
-                    {{/each}}
-                </ul>
-            {{/if}}
-        {{/if}}
-
-        {{>components/common/share url=post.url}}
-
     </div>
 </article>

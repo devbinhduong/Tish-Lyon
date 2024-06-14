@@ -7,7 +7,7 @@
 //
 // =============================================================================
 body {
-    &:not(.page-type-default):not(.page-type-product):not(.ezStreetPage):not(.page-type-cart):not(.page-type-blog) {
+    &:not(.page-type-default):not(.page-type-product):not(.ezStreetPage):not(.page-type-cart):not(.page-type-blog):not(.page-type-blog_post) {
         .page-heading {
             font-size: 44px;
             line-height: 53px;
@@ -71,4 +71,3 @@ body {
     text-align: center;
     float: none;
 }
-

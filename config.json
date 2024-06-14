@@ -460,6 +460,7 @@
         "thumb_size": "100x100",
         "zoom_size": "1280x1280",
         "blog_size": "640x640",
+        "blog_post_size": "2543x659",
         "default_image_brand": "img/BrandDefault.gif",
         "default_image_product": "img/ProductDefault.gif",
         "default_image_gift_certificate": "img/GiftCertificate.png",

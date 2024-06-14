@@ -1,0 +1,21 @@
+<div class="recentPosts__list">
+    {{#each (limit blog.posts 3)}}
+        <a href="{{url}}" class="recentPosts__item">
+            <div class="recentPosts__image">
+                {{#if thumbnail}}
+                    {{> components/common/responsive-img
+                        image=thumbnail
+                        fallback_size=theme_settings.blog_size
+                        lazyload=theme_settings.lazyload_mode
+                    }}
+                {{/if}}
+            </div>
+
+            <div class="recentPosts__info">
+                <p>{{title}}</p>
+                <span class="date">{{date_published}}</span>
+            </div>
+
+        </a>
+    {{/each}}
+</div>

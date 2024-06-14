@@ -26,8 +26,8 @@ blog:
 }}
 
 <main class="page page-blog">
+    {{> components/custom/global/futured-blog-post-section }}
     <div class="container">
-        {{> components/custom/global/futured-blog-post-section }}
 
         {{#unless theme_settings.hide_blog_page_heading }}
             <h1 class="page-heading">{{ blog.name }}</h1>
@@ -42,6 +42,29 @@ blog:
         {{> components/common/paginator pagination.blog}}
     </div>
 </main>
+
+<!-- * Recently Posts List for Get Page -->
+<div class="recentPosts__list" style="display: none;">
+    {{#each blog.posts}}
+        <a href="{{url}}" class="recentPosts__item">
+            <div class="recentPost__image">
+                {{#if thumbnail}}
+                    {{> components/common/responsive-img
+                        image=thumbnail
+                        fallback_size=theme_settings.blog_size
+                        lazyload=theme_settings.lazyload_mode
+                    }}
+                {{/if}}
+            </div>
+
+            <div class="recentPosts__info">
+                <p>{{title}}</p>
+                <span class="date">{{date_published}}</span>
+            </div>
+
+        </a>
+    {{/each}}
+</div>
 
 {{/partial}}
 {{> layout/base}}
