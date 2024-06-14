@@ -8,6 +8,7 @@ export default class Post extends PageManager {
 
 	onReady() {
         this.getRecentlyPost();
+        this.sharePost();
     }
 
     getRecentlyPost() {
@@ -35,4 +36,22 @@ export default class Post extends PageManager {
         });
     }
 
+    sharePost() {
+        const shareURL = window.location.href;
+        const shareButton = document.querySelector(".meta__share");
+
+        if(!shareButton) return;
+
+        shareButton.addEventListener('click', function() {
+            if (navigator.share) {
+                navigator.share({
+                    title: document.title,
+                    url: shareURL
+                })
+                .then(() => console.log('Successful share'))
+                .catch((error) => console.log('Error sharing', error));
+            }
+        });
+
+    }
 }
