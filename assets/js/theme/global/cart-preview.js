@@ -6,6 +6,8 @@ import { showAlertModal } from './modal';
 import calculateFreeShipping from '../custom/calculateFreeShipping';
 import checkPolicy from '../custom/checkPolicy';
 
+import ShippingEstimator from '../cart/shipping-estimator';
+
 
 export const CartPreviewEvents = {
     close: 'closed.fndtn.dropdown',
@@ -81,6 +83,8 @@ export default function (secureBaseUrl, cartId, context) {
                     .html(response);
                 $cartLoading
                     .hide();
+
+                toggleContent();
             });
 
             calculateFreeShipping(context);
@@ -109,10 +113,14 @@ export default function (secureBaseUrl, cartId, context) {
                     .html(response);
                 $cartLoading
                     .hide();
+
+                toggleContent();
+                
             });
 
             calculateFreeShipping(context);
             checkPolicy();
+
         });
     }
 
@@ -153,7 +161,7 @@ export default function (secureBaseUrl, cartId, context) {
 
 
      /* Custom Start */
-     $(document).on('click', event => {
+    $(document).on('click', event => {
         if (($(event.target).closest('[data-cart-preview]').length === 0) && ($(event.target).closest('#cart-preview-dropdown').length === 0) && ($(event.target).closest('#modal').length === 0) && ($(event.target).closest('[data-cart-edit-item-remove]').length === 0)){
             $('body').removeClass('openCartDropdown');
         }
@@ -430,5 +438,31 @@ export default function (secureBaseUrl, cartId, context) {
 
         calculateFreeShipping(context);
         checkPolicy();
+
+        toggleContent();
+    }
+    
+    function toggleContent() {
+        const $toggleTitle = $('.toggle__title');
+
+        console.log("toggleContent", $toggleTitle)
+
+        if (!$toggleTitle) return;
+
+        $toggleTitle.on('click', (e) => {
+            e.preventDefault();
+
+            const $target = $(e.currentTarget);
+            const $toggleContent = $target.next();
+
+            $target.toggleClass('is-active');
+
+            if ($target.hasClass('is-active')) {
+                $toggleContent.slideDown(400);  
+            }
+            else {
+                $toggleContent.slideUp(400);
+            }
+        });
     }
 }

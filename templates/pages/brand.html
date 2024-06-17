@@ -26,24 +26,29 @@ brand:
 {{/if}}
 <h1 class="page-heading">{{brand.name}}</h1>
 {{{region name="brand_below_header"}}}
-<div class="page">
-    <aside class="page-sidebar" id="faceted-search-container">
-        {{> components/brand/sidebar}}
-    </aside>
 
-    <main class="page-content" id="product-listing-container">
-        {{#if brand.search_error }}
-            <p>{{lang 'search.errorMessage'}}</p>
-        {{else}}
-            {{#if brand.products}}
-                {{> components/brand/product-listing}}
+<div class="productListingPage__wrapper">
+    {{> components/custom/page/product-listing-nav isBrand=true}}
+    
+    <div class="productListingPage__main">
+        <aside class="page-sidebar productListingPage__sidebar" id="faceted-search-container">
+            {{> components/brand/sidebar}}
+        </aside>
+    
+        <main class="page-content productListingPage__products" id="product-listing-container">
+            {{#if brand.search_error }}
+                <p>{{lang 'search.errorMessage'}}</p>
             {{else}}
-                <p>{{lang 'brands.no_products'}}</p>
+                {{#if brand.products}}
+                    {{> components/brand/product-listing}}
+                {{else}}
+                    <p>{{lang 'brands.no_products'}}</p>
+                {{/if}}
+                {{{region name="brand_below_content"}}}
             {{/if}}
-            {{{region name="brand_below_content"}}}
-        {{/if}}
-    </main>
+        </main>
+    </div>
 </div>
-
+    
 {{/partial}}
 {{> layout/base}}

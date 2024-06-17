@@ -184,6 +184,7 @@
         transition-property: min-width, margin, transform, visibility;
         transition-duration: var(--duration);
         transition-timing-function: cubic-bezier(.215,.61,.355,1);
+        left: 0;
 
         @include smin-s {
             width: 0;

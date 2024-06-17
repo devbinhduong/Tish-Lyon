@@ -476,3 +476,13 @@
         }
     }
 }
+
+ul[data-search-page-tabs] {
+    > .navBar-item {
+        margin-right: 12px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -30,6 +30,7 @@ export default class ShippingEstimator {
             // estimator error messages are being injected in html as a result
             // of user submit; clearing and adding role on submit provides
             // regular announcement of these error messages
+            
             if (shippingEstimatorAlert.attr('role')) {
                 shippingEstimatorAlert.removeAttr('role');
             }

@@ -24,10 +24,22 @@
             <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-nav-arrow-down" viewBox="0 0 24 24">
                <path d="m6 9 6 6 6-6" stroke="#000" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
-         </button>
+        </button>
             
-        {{#if category.products}}
-            {{> components/products/filter sort=pagination.category.sort hasEffect=true}}
+        {{#if isCategory}}
+            {{#if category.products}}
+                {{> components/products/filter sort=pagination.category.sort hasEffect=true}}
+            {{/if}}
+        {{/if}}
+
+        {{#if isBrand}}
+            {{> components/products/filter sort=pagination.brand.sort hasEffect=true}}
+        {{/if}}
+
+        {{#if isSearch}}
+            {{#if product_results.products.length}}
+                {{> components/products/filter sort=pagination.product_results.sort hasEffect=true}}
+            {{/if}}
         {{/if}}
     </div>
 </div>
