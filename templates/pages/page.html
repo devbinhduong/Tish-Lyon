@@ -1,11 +1,24 @@
 {{#partial "page"}}
 
-{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+<main class="page{{#if (toLowerCase page.title) '==' 'privacy policy'}} policyPage{{/if}} {{#if (toLowerCase page.title) '==' 'terms & conditions'}} conditionPage{{/if}}">
+    
+    {{{region name="csm_page_content_1"}}}
+    {{{region name="csm_page_content_2"}}}
+    {{{region name="csm_page_content_3"}}}
+    {{{region name="csm_page_content_4"}}}
 
-<main class="page">
-    {{#unless theme_settings.hide_page_heading }}
-        <h1 class="page-heading">{{ page.title }}</h1>
+    {{#unless (toLowerCase page.title) '==' 'brand hub'}}
+        {{#unless theme_settings.hide_page_heading }}
+            <h1 class="page-heading">{{ page.title }}</h1>
+        {{/unless}}
     {{/unless}}
+
+    {{{region name="csm_page_content_5"}}}
+    {{{region name="csm_page_content_6"}}}
+    {{{region name="csm_page_content_7"}}}
+    {{{region name="csm_page_content_8"}}}
+    {{{region name="csm_page_content_9"}}}
+    {{{region name="csm_page_content_10"}}}
 
     {{#if page.sub_pages}}
     <nav class="navBar navBar--sub">
@@ -19,11 +32,11 @@
 
     {{{region name="page_builder_content"}}}
 
-    <div class="page-content page-content--centered">
+    <div class="page-content csmPageContent page-content--centered">
         {{#replace '%%Syndicate%%' page.content}}
             {{> components/page/rss_feed}}
         {{else}}
-            <p>{{{page.content}}}</p>
+            <p class="mb-0">{{{page.content}}}</p>
         {{/replace}}
     </div>
 

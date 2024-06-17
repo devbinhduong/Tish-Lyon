@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Apply About Us Page Layout",
+  "name": "Cornerstone Update Return Page",
   "version": "6.14.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -1072,7 +1072,14 @@
         "absService2D": "We understand the importance of getting stock quickly, which is why we offer same working day dispatch and next day delivery in the UK.",
         "absService3I": "about-us-service-3.png",
         "absService3T": "Community Focused",
-        "absService3D": "We pride ourselves on empowering the creativity and diversity in the piercing and jewellery industry. We love working with our stockists to help grow the accessibility of quality piercing jewellery."
+        "absService3D": "We pride ourselves on empowering the creativity and diversity in the piercing and jewellery industry. We love working with our stockists to help grow the accessibility of quality piercing jewellery.",
+        "brandHubBanner2I": "",
+        "brandHubBanner2T": "Download Brand Guidelines",
+        "brandHubBanner2D": "Need some help on using our logos and fonts? Download our handy guide.",
+        "brandHubBanner2Size": "1900x612",
+        "brandHubBanner2SizeMb": "750x460",
+        "brandHubBannerB": "Download",
+        "brandHubBannerL": "#"
       }
     }
   ]
