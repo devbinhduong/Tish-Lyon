@@ -86,6 +86,9 @@ $cart-item-label-offset:                $cart-thumbnail-maxWidth + $cart-item-sp
 // -----------------------------------------------------------------------------
 
 .page-cart {
+    @include smin-m {
+        min-height: 50vh;
+    }; 
     .page-content {
         float: unset;
         max-width: 1210px;

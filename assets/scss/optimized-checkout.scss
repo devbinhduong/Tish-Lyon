@@ -379,3 +379,43 @@ $optimizedCheckout-input--error-boxShadow: 0 0 3px transparentize(stencilColor("
     background-color: stencilColor("optimizedCheckout-loadingToaster-backgroundColor");
     color: stencilColor("optimizedCheckout-loadingToaster-textColor");
 }
+
+
+// * ------ Custom Checkout Page ------
+.optimizedCheckout-header {
+    min-height: 80px;
+}
+
+.checkoutHeader-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 21px 38px;
+
+    &::after,
+    &::before {
+        content: unset;
+    }
+}
+
+.checkoutHeader__left {
+    flex: 1;
+}
+
+.checkoutHeader__right {
+    .cartLink {
+        display: block;
+        width: 24px;
+        height: 24px;
+
+        svg {
+            fill: none;
+            stroke: rgb(203,160,82);
+        }
+    }
+}
+
+.checkoutHeader-heading {
+    line-height: 1;
+}
