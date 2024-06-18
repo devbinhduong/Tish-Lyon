@@ -15,6 +15,29 @@
     "home": {
         "heading": "Home"
     },
+    "home_service": {
+        "item_1_title": "First class wholesale experience",
+        "item_1_text": "Are you a piercing studio or jewellery reseller? Create your account <a class=\"body-size-3 hover-link-2\" href=\"https://www.tishlyon.com/pages/wholesale-sign-up-form\" title=\"https://www.tishlyon.com/pages/wholesale-sign-up-form\"><em>here.</em></a>",
+        "item_2_title": "Free UK shipping",
+        "item_2_text": "Enjoy free shipping on all orders over £100 + VAT",
+        "item_3_title": "Global Reach",
+        "item_3_text": "Add Tish Lyon to your business, no matter your location. Discover <a class=\"body-size-3 hover-link-2\" href=\"/pages/shipping-information\" target=\"_blank\" title=\"Shipping Information\"><em>here</em></a> international shipping information.",
+        "item_4_title": "Exceptional Quality",
+        "item_4_text": "We believe every business deserves the best. Luxury piercing jewellery made accessible."
+    },
+    "about_us_page": {
+        "intro_text_1": "Tish Lyon is the UK's most trusted wholesale gold body jewellery brand. As a dedicated team of solid gold jewellery experts, we dedicate ourselves to creating a seamless wholesale shopping experience for luxury piercing jewellery, designed with you in mind.",
+        "intro_text_2": "Since 2000, we have proudly built a collection of transcendent original designs. We strive to adapt with the everchanging world of piercing and develop innovative designs to meet the needs of piercers and jewellers worldwide.",
+        "intro_text_3": "Tish Lyon jewellery isn't just a luxury product. It is a lifestyle. In our mission to modernise the ear styling movement, we make it our focus to bring quality and comfort to every piece. With the luxury piercing experience being bigger than ever, we believe in creating jewellery that will shine bright every day and night without compromising on comfort."
+    },
+    "home_account_section": {
+        "subHeading": "Become a Tish Lyon stockist",
+        "heading": "Create a wholesale account",
+        "desc": "Tish Lyon is the UK's most trusted wholesale solid gold body jewellery brand, offering luxury supplies to piercers and resellers. Apply for a wholesale account today to start your shopping journey.",
+        "create": "Create a wholesale account",
+        "login": "Log In"
+    },
+
     "blog": {
         "recent_posts": "Recent Posts",
         "label": "Blog",

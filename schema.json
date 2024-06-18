@@ -264,7 +264,7 @@
     ]
   },
   {
-    "name": "Header And Footer",
+    "name": "Header",
     "settings": [
       {
         "type": "heading",
@@ -498,6 +498,515 @@
     ]
   },
   {
+    "name": "Mega Menu",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Menu Style 1"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 1 Position",
+        "id": "mega_menu_styleCustom_item1"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 1 Image 1",
+        "id": "mega_menu_styleCustom_img1"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 1 Link 1",
+        "id": "mega_menu_styleCustom_link1"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 1 Image 1 Title",
+        "id": "mega_menu_styleCustom_img1_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 1 Image 1 Text",
+        "id": "mega_menu_styleCustom_img1_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 1 Image 2",
+        "id": "mega_menu_styleCustom_img2"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 1 Link 2",
+        "id": "mega_menu_styleCustom_link2"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 1 Image 2 Title",
+        "id": "mega_menu_styleCustom_img2_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 1 Image 2 Text",
+        "id": "mega_menu_styleCustom_img2_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Menu Style 2"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Position",
+        "id": "mega_menu_styleCustom_item2"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Image 1",
+        "id": "mega_menu_styleCustom_img3"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Link 1",
+        "id": "mega_menu_styleCustom_link3"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Image 1 Title",
+        "id": "mega_menu_styleCustom_img3_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 2 Image 1 Text",
+        "id": "mega_menu_styleCustom_img3_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Image 2",
+        "id": "mega_menu_styleCustom_img4"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Link 2",
+        "id": "mega_menu_styleCustom_link4"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Image 2 Title",
+        "id": "mega_menu_styleCustom_img4_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 2 Image 2 Text",
+        "id": "mega_menu_styleCustom_img4_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Image 3",
+        "id": "mega_menu_styleCustom_img5"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Link 3",
+        "id": "mega_menu_styleCustom_link5"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 2 Image 3 Title",
+        "id": "mega_menu_styleCustom_img5_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 2 Image 3 Text",
+        "id": "mega_menu_styleCustom_img5_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Menu Style 3"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Position",
+        "id": "mega_menu_styleCustom_item3"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Image 1",
+        "id": "mega_menu_styleCustom_img6"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Link 1",
+        "id": "mega_menu_styleCustom_link6"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Image 1 Title",
+        "id": "mega_menu_styleCustom_img6_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 3 Image 1 Text",
+        "id": "mega_menu_styleCustom_img6_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Image 2",
+        "id": "mega_menu_styleCustom_img7"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Link 2",
+        "id": "mega_menu_styleCustom_link7"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Image 2 Title",
+        "id": "mega_menu_styleCustom_img7_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 3 Image 2 Text",
+        "id": "mega_menu_styleCustom_img7_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Image 3",
+        "id": "mega_menu_styleCustom_img8"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Link 3",
+        "id": "mega_menu_styleCustom_link8"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 3 Image 3 Title",
+        "id": "mega_menu_styleCustom_img8_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 3 Image 3 Text",
+        "id": "mega_menu_styleCustom_img8_desc"
+      },
+
+      {
+        "type": "heading",
+        "content": "Menu Style 4"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Position",
+        "id": "mega_menu_styleCustom_item4"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Image 1",
+        "id": "mega_menu_styleCustom_img9"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Link 1",
+        "id": "mega_menu_styleCustom_link9"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Image 1 Title",
+        "id": "mega_menu_styleCustom_img9_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 4 Image 1 Text",
+        "id": "mega_menu_styleCustom_img9_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Image 2",
+        "id": "mega_menu_styleCustom_img10"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Link 2",
+        "id": "mega_menu_styleCustom_link10"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Image 2 Title",
+        "id": "mega_menu_styleCustom_img10_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 4 Image 2 Text",
+        "id": "mega_menu_styleCustom_img10_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Image 3",
+        "id": "mega_menu_styleCustom_img11"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Link 3",
+        "id": "mega_menu_styleCustom_link11"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 4 Image 3 Title",
+        "id": "mega_menu_styleCustom_img11_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 4 Image 3 Text",
+        "id": "mega_menu_styleCustom_img11_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Menu Style 5"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Position",
+        "id": "mega_menu_styleCustom_item5"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 1",
+        "id": "mega_menu_styleCustom_img12"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Link 1",
+        "id": "mega_menu_styleCustom_link12"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 1 Title",
+        "id": "mega_menu_styleCustom_img12_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 5 Image 1 Text",
+        "id": "mega_menu_styleCustom_img12_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 2",
+        "id": "mega_menu_styleCustom_img13"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Link 2",
+        "id": "mega_menu_styleCustom_link13"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 2 Title",
+        "id": "mega_menu_styleCustom_img13_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 5 Image 2 Text",
+        "id": "mega_menu_styleCustom_img13_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 3",
+        "id": "mega_menu_styleCustom_img14"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Link 3",
+        "id": "mega_menu_styleCustom_link14"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 3 Title",
+        "id": "mega_menu_styleCustom_img14_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 5 Image 3 Text",
+        "id": "mega_menu_styleCustom_img14_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 4",
+        "id": "mega_menu_styleCustom_img15"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Link 4",
+        "id": "mega_menu_styleCustom_link15"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 4 Title",
+        "id": "mega_menu_styleCustom_img15_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 5 Image 4 Text",
+        "id": "mega_menu_styleCustom_img15_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 5",
+        "id": "mega_menu_styleCustom_img16"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Link 5",
+        "id": "mega_menu_styleCustom_link16"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 5 Image 5 Title",
+        "id": "mega_menu_styleCustom_img16_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 5 Image 5 Text",
+        "id": "mega_menu_styleCustom_img16_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Menu Style 6"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 6 Position",
+        "id": "mega_menu_styleCustom_item6"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 6 Image 1",
+        "id": "mega_menu_styleCustom_img17"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 6 Link 1",
+        "id": "mega_menu_styleCustom_link17"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 6 Image 1 Title",
+        "id": "mega_menu_styleCustom_img17_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 6 Image 1 Text",
+        "id": "mega_menu_styleCustom_img17_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 6 Image 2",
+        "id": "mega_menu_styleCustom_img18"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 6 Link 2",
+        "id": "mega_menu_styleCustom_link18"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 6 Image 2 Title",
+        "id": "mega_menu_styleCustom_img18_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 6 Image 2 Text",
+        "id": "mega_menu_styleCustom_img18_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Menu Style 7"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Position",
+        "id": "mega_menu_styleCustom_item7"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 1",
+        "id": "mega_menu_styleCustom_img19"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Link 1",
+        "id": "mega_menu_styleCustom_link19"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 1 Title",
+        "id": "mega_menu_styleCustom_img19_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 7 Image 1 Text",
+        "id": "mega_menu_styleCustom_img19_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 2",
+        "id": "mega_menu_styleCustom_img20"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Link 2",
+        "id": "mega_menu_styleCustom_link20"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 2 Title",
+        "id": "mega_menu_styleCustom_img20_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 7 Image 2 Text",
+        "id": "mega_menu_styleCustom_img20_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 3",
+        "id": "mega_menu_styleCustom_img21"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Link 3",
+        "id": "mega_menu_styleCustom_link21"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 3 Title",
+        "id": "mega_menu_styleCustom_img21_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 7 Image 3 Text",
+        "id": "mega_menu_styleCustom_img21_desc"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 4",
+        "id": "mega_menu_styleCustom_img22"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Link 4",
+        "id": "mega_menu_styleCustom_link22"
+      },
+      {
+        "type": "text",
+        "label": "Menu Style 7 Image 4 Title",
+        "id": "mega_menu_styleCustom_img22_title"
+      },
+      {
+        "type": "input",
+        "label": "Menu Style 7 Image 4 Text",
+        "id": "mega_menu_styleCustom_img22_desc"
+      }
+    ]
+  },
+  {
     "name": "Footer",
     "settings": [
       {
@@ -508,6 +1017,199 @@
         "type": "color",
         "label": "Footer Background",
         "id": "footer-backgroundColor"
+      },
+      {
+        "type": "text",
+        "label": "Footer Logo",
+        "id": "footer_logo"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 1"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer_col1_heading"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Text",
+        "id": "footer_col1_item1_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 1 Link",
+        "id": "footer_col1_item1_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Text",
+        "id": "footer_col1_item2_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 2 Link",
+        "id": "footer_col1_item2_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Text",
+        "id": "footer_col1_item3_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 3 Link",
+        "id": "footer_col1_item3_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 4 Text",
+        "id": "footer_col1_item4_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 4 Link",
+        "id": "footer_col1_item4_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 5 Text",
+        "id": "footer_col1_item5_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 5 Link",
+        "id": "footer_col1_item5_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 6 Text",
+        "id": "footer_col1_item6_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 6 Link",
+        "id": "footer_col1_item6_link"
+      },
+      
+
+      {
+        "type": "heading",
+        "content": "Footer Column 2"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer_col2_heading"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Text",
+        "id": "footer_col2_item1_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 1 Link",
+        "id": "footer_col2_item1_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Text",
+        "id": "footer_col2_item2_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 2 Link",
+        "id": "footer_col2_item2_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Text",
+        "id": "footer_col2_item3_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 3 Link",
+        "id": "footer_col2_item3_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 4 Text",
+        "id": "footer_col2_item4_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 4 Link",
+        "id": "footer_col2_item4_link"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 3"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer_col3_heading"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Text",
+        "id": "footer_col3_item1_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 1 Link",
+        "id": "footer_col3_item1_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Text",
+        "id": "footer_col3_item2_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 2 Link",
+        "id": "footer_col3_item2_link"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Text",
+        "id": "footer_col3_item3_text"
+      },
+      {
+        "type": "input",
+        "label": "Item 3 Link",
+        "id": "footer_col3_item3_link"
+      },
+      {
+        "type": "heading",
+        "content": "Footer Column 4"
+      },
+      {
+        "type": "text",
+        "label": "Heading",
+        "id": "footer_col4_heading"
+      },
+      {
+        "type": "input",
+        "label": "Socials Text",
+        "id": "footer_col4_desc"
+      },
+      {
+        "type": "input",
+        "label": "Instagram Link",
+        "id": "footer_col4_item1_link"
+      },
+      {
+        "type": "input",
+        "label": "Facebook Link",
+        "id": "footer_col4_item2_link"
+      },
+      {
+        "type": "input",
+        "label": "Tiktok Link",
+        "id": "footer_col4_item3_link"
       },
       {
         "type": "heading",
@@ -613,190 +1315,6 @@
       },
       {
         "type": "heading",
-        "content": "Products"
-      },
-      {
-        "type": "select",
-        "label": "Number Of Featured Products",
-        "id": "homepage_featured_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "Number Of Most Popular Products",
-        "id": "homepage_top_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
-      },
-      {
-        "type": "select",
-        "label": "Number Of New Products",
-        "id": "homepage_new_products_count",
-        "force_reload": true,
-        "options": [
-          {
-            "value": 0,
-            "label": "Disable"
-          },
-          {
-            "value": 1,
-            "label": "1"
-          },
-          {
-            "value": 2,
-            "label": "2"
-          },
-          {
-            "value": 3,
-            "label": "3"
-          },
-          {
-            "value": 4,
-            "label": "4"
-          },
-          {
-            "value": 5,
-            "label": "5"
-          },
-          {
-            "value": 6,
-            "label": "6"
-          },
-          {
-            "value": 7,
-            "label": "7"
-          },
-          {
-            "value": 8,
-            "label": "8"
-          },
-          {
-            "value": 9,
-            "label": "9"
-          },
-          {
-            "value": 10,
-            "label": "10"
-          },
-          {
-            "value": 11,
-            "label": "11"
-          },
-          {
-            "value": 12,
-            "label": "12"
-          }
-        ]
-      },
-      {
-        "type": "heading",
         "content": "Home Slider Banner"
       },
       {
@@ -848,6 +1366,390 @@
         "type": "input",
         "label": "Home Slide 2 Link",
         "id": "home_banner_carousel_2_link"
+      },
+      {
+        "type": "heading",
+        "content": "Home Section 3 Banners"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Image",
+        "id": "home_col_banner_1_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Title",
+        "id": "home_col_banner_1_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Text",
+        "id": "home_col_banner_1_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Button",
+        "id": "home_col_banner_1_button"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Link",
+        "id": "home_col_banner_1_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Image",
+        "id": "home_col_banner_2_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Title",
+        "id": "home_col_banner_2_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Text",
+        "id": "home_col_banner_2_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Button",
+        "id": "home_col_banner_2_button"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Link",
+        "id": "home_col_banner_2_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner 3 Image",
+        "id": "home_col_banner_3_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner 3 Title",
+        "id": "home_col_banner_3_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner 3 Text",
+        "id": "home_col_banner_3_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner 3 Button",
+        "id": "home_col_banner_3_button"
+      },
+      {
+        "type": "text",
+        "label": "Banner 3 Link",
+        "id": "home_col_banner_3_link"
+      },
+      {
+        "type": "heading",
+        "content": "Home Gallery Section"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 1 Image",
+        "id": "home_gallery_1_img"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 1 Title",
+        "id": "home_gallery_1_title"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 1 Link",
+        "id": "home_gallery_1_link"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 2 Image",
+        "id": "home_gallery_2_img"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 2 Title",
+        "id": "home_gallery_2_title"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 2 Link",
+        "id": "home_gallery_2_link"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 3 Image",
+        "id": "home_gallery_3_img"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 3 Title",
+        "id": "home_gallery_3_title"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 3 Link",
+        "id": "home_gallery_3_link"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 4 Image",
+        "id": "home_gallery_4_img"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 4 Title",
+        "id": "home_gallery_4_title"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 4 Link",
+        "id": "home_gallery_4_link"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 5 Image",
+        "id": "home_gallery_5_img"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 5 Title",
+        "id": "home_gallery_5_title"
+      },
+      {
+        "type": "text",
+        "label": "Home Gallery 5 Link",
+        "id": "home_gallery_5_link"
+      },
+      {
+        "type": "heading",
+        "content": "Home Product Banner Section"
+      },
+      {
+        "type": "input",
+        "label": "Product List Ids",
+        "id": "home_product_banner_listid"
+      },
+      {
+        "type": "text",
+        "label": "Product Banner Image",
+        "id": "home_product_banner_image"
+      },
+      {
+        "type": "text",
+        "label": "Banner Product Count",
+        "id": "home_product_banner_count"
+      },
+      {
+        "type": "text",
+        "label": "Banner Product Text",
+        "id": "home_product_banner_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner Product Button",
+        "id": "home_product_banner_button"
+      },
+      {
+        "type": "text",
+        "label": "Banner Product Link",
+        "id": "home_product_banner_link"
+      },
+      {
+        "type": "heading",
+        "content": "Home Shop The Look"
+      },
+      {
+        "type": "text",
+        "label": "Shop The Look Image",
+        "id": "homeTheLookBanner"
+      },
+      {
+        "type": "text",
+        "label": "Shop The Look Text",
+        "id": "homeTheLookText"
+      },
+      {
+        "type": "text",
+        "label": "Product List Ids",
+        "id": "homeTheLookProductList"
+      },
+      {
+        "type": "text",
+        "label": "Dot 1 Position Top",
+        "id": "homeTheLookItem1DotT"
+      },
+      {
+        "type": "text",
+        "label": "Dot 1 Position Left",
+        "id": "homeTheLookItem1DotL"
+      },
+      {
+        "type": "text",
+        "label": "Dot 1 For Poduct ID:",
+        "id": "homeTheLookItem1ProId"
+      },
+      {
+        "type": "text",
+        "label": "Dot 2 Position Top",
+        "id": "homeTheLookItem2DotT"
+      },
+      {
+        "type": "text",
+        "label": "Dot 2 Position Left",
+        "id": "homeTheLookItem2DotL"
+      },
+      {
+        "type": "text",
+        "label": "Dot 2 For Poduct ID:",
+        "id": "homeTheLookItem2ProId"
+      },
+      {
+        "type": "text",
+        "label": "Dot 3 Position Top",
+        "id": "homeTheLookItem3DotT"
+      },
+      {
+        "type": "text",
+        "label": "Dot 3 Position Left",
+        "id": "homeTheLookItem3DotL"
+      },
+      {
+        "type": "text",
+        "label": "Dot 3 For Poduct ID:",
+        "id": "homeTheLookItem3ProId"
+      },
+      {
+        "type": "text",
+        "label": "Dot 4 Position Top",
+        "id": "homeTheLookItem4DotT"
+      },
+      {
+        "type": "text",
+        "label": "Dot 4 Position Left",
+        "id": "homeTheLookItem4DotL"
+      },
+      {
+        "type": "text",
+        "label": "Dot 4 For Poduct ID:",
+        "id": "homeTheLookItem4ProId"
+      },
+      {
+        "type": "text",
+        "label": "Dot 5 Position Top",
+        "id": "homeTheLookItem5DotT"
+      },
+      {
+        "type": "text",
+        "label": "Dot 5 Position Left",
+        "id": "homeTheLookItem5DotL"
+      },
+      {
+        "type": "text",
+        "label": "Dot 5 For Poduct ID:",
+        "id": "homeTheLookItem5ProId"
+      },
+      {
+        "type": "text",
+        "label": "Dot 6 Position Top",
+        "id": "homeTheLookItem6DotT"
+      },
+      {
+        "type": "text",
+        "label": "Dot 6 Position Left",
+        "id": "homeTheLookItem6DotL"
+      },
+      {
+        "type": "text",
+        "label": "Dot 6 For Poduct ID:",
+        "id": "homeTheLookItem6ProId"
+      },
+      {
+        "type": "heading",
+        "content": "Home Section 2 Banners"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Image",
+        "id": "home_banner_2col_item1_image"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Title",
+        "id": "home_banner_2col_item1_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Text",
+        "id": "home_banner_2col_item1_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Button",
+        "id": "home_banner_2col_item1_button"
+      },
+      {
+        "type": "text",
+        "label": "Banner 1 Link",
+        "id": "home_banner_2col_item1_link"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Image",
+        "id": "home_banner_2col_item2_image"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Title",
+        "id": "home_banner_2col_item2_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Text",
+        "id": "home_banner_2col_item2_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Button",
+        "id": "home_banner_2col_item2_button"
+      },
+      {
+        "type": "text",
+        "label": "Banner 2 Link",
+        "id": "home_banner_2col_item2_link"
+      },
+      {
+        "type": "heading",
+        "content": "Home Banner Bottom Full"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "home_fullwidth_banner_image"
+      },
+      {
+        "type": "text",
+        "label": "Banner Title",
+        "id": "home_fullwidth_banner_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner Text",
+        "id": "home_fullwidth_banner_text"
+      },
+      {
+        "type": "text",
+        "label": "Banner Button",
+        "id": "home_fullwidth_banner_button"
+      },
+      {
+        "type": "text",
+        "label": "Banner Link",
+        "id": "home_fullwidth_banner_link"
       }
     ]
   },
@@ -3005,196 +3907,266 @@
     ]
   },
   {
-    "name": "Payment Banners",
-    "enable": "paymentBanners",
+    "name": "About Us Page",
     "settings": [
       {
-        "type": "paragraph",
-        "content": "Banners Messaging"
+        "type": "heading",
+        "content": "About Us Banner Top"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "aboutUsBannerI"
       },
       {
         "type": "heading",
-        "content": "Product PageBanner"
+        "content": "About Us Banner Bottom"
       },
       {
-        "type": "select",
-        "label": "Banner Style Color",
-        "id": "paymentbanners-proddetailspage-color",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "blue",
-            "label": "Blue"
-          },
-          {
-            "value": "black",
-            "label": "Black"
-          },
-          {
-            "value": "white",
-            "label": "White"
-          },
-          {
-            "value": "white-no-border",
-            "label": "White-no-border"
-          },
-          {
-            "value": "gray",
-            "label": "gray"
-          },
-          {
-            "value": "monochrome",
-            "label": "monochrome"
-          },
-          {
-            "value": "grayscale",
-            "label": "grayscale"
-          }
-        ]
+        "type": "text",
+        "label": "Banner Image",
+        "id": "aboutUsBottomBannerI"
       },
       {
-        "type": "select",
-        "label": "Banner Style Ratio",
-        "id": "paymentbanners-proddetailspage-ratio",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "8x1",
-            "label": "8x1"
-          },
-          {
-            "value": "20x1",
-            "label": "20x1"
-          }
-        ]
+        "type": "text",
+        "label": "Banner Title",
+        "id": "aboutUsBottomBannerT"
+      },
+      {
+        "type": "text",
+        "label": "Banner Description",
+        "id": "aboutUsBottomBannerD"
+      },
+      {
+        "type": "text",
+        "label": "Banner Button",
+        "id": "aboutUsBottomBannerB"
+      },
+      {
+        "type": "text",
+        "label": "Banner Link",
+        "id": "aboutUsBottomBannerL"
       },
       {
         "type": "heading",
-        "content": "Home Page Banner"
+        "content": "Section Banner With Text 1"
       },
       {
-        "type": "select",
-        "label": "Banner Style Color",
-        "id": "paymentbanners-homepage-color",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "blue",
-            "label": "Blue"
-          },
-          {
-            "value": "black",
-            "label": "Black"
-          },
-          {
-            "value": "white",
-            "label": "White"
-          },
-          {
-            "value": "white-no-border",
-            "label": "White-no-border"
-          },
-          {
-            "value": "gray",
-            "label": "gray"
-          },
-          {
-            "value": "monochrome",
-            "label": "monochrome"
-          },
-          {
-            "value": "grayscale",
-            "label": "grayscale"
-          }
-        ]
+        "type": "text",
+        "label": "Banner Image",
+        "id": "sectionTwoCol1_img"
       },
       {
-        "type": "select",
-        "label": "Banner Style Ratio",
-        "id": "paymentbanners-homepage-ratio",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "8x1",
-            "label": "8x1"
-          },
-          {
-            "value": "20x1",
-            "label": "20x1"
-          }
-        ]
+        "type": "text",
+        "label": "Banner Title",
+        "id": "sectionTwoCol1_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner Description",
+        "id": "sectionTwoCol1_desc"
       },
       {
         "type": "heading",
-        "content": "Cart Page Banner"
+        "content": "Section Banner With Text 2"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "sectionTwoCol2_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner Title",
+        "id": "sectionTwoCol2_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner Description",
+        "id": "sectionTwoCol2_desc"
+      },
+      {
+        "type": "heading",
+        "content": "Section Banner With Text 3"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "sectionTwoCol3_img"
+      },
+      {
+        "type": "text",
+        "label": "Banner Title",
+        "id": "sectionTwoCol3_title"
+      },
+      {
+        "type": "text",
+        "label": "Banner Description",
+        "id": "sectionTwoCol3_desc"
+      },
+      {
+        "type": "heading",
+        "content": "About Us Service Section"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Image",
+        "id": "absService1I"
+      },
+      {
+        "type": "text",
+        "label": "Item 1 Title",
+        "id": "absService1T"
+      },
+      {
+        "type": "input",
+        "label": "Item 1 Description",
+        "id": "absService1D"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Image",
+        "id": "absService2I"
+      },
+      {
+        "type": "text",
+        "label": "Item 2 Title",
+        "id": "absService2T"
+      },
+      {
+        "type": "input",
+        "label": "Item 2 Description",
+        "id": "absService2D"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Image",
+        "id": "absService3I"
+      },
+      {
+        "type": "text",
+        "label": "Item 3 Title",
+        "id": "absService3T"
+      },
+      {
+        "type": "input",
+        "label": "Item 3 Description",
+        "id": "absService3D"
+      }
+    ]
+  },
+  {
+    "name": "Others Settings",
+    "settings": [
+      {
+        "type": "heading",
+        "content": "Calculate Free Shipping"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable Calculate Free Shipping",
+        "id": "enaCalculateShipping"
       },
       {
         "type": "select",
-        "label": "Banner Text Style Color",
-        "id": "paymentbanners-cartpage-text-color",
+        "label": "Layout",
+        "id": "calculateFreeShippingType",
         "force_reload": true,
         "options": [
           {
-            "value": "black",
-            "label": "Black"
+            "value": "all",
+            "label": "All Shipping Zones"
           },
           {
-            "value": "white",
-            "label": "White"
-          },
-          {
-            "value": "monochrome",
-            "label": "monochrome"
-          },
-          {
-            "value": "grayscale",
-            "label": "grayscale"
+            "value": "custom",
+            "label": "Specify Country"
           }
         ]
       },
       {
-        "type": "select",
-        "label": "Banner Style Logo Position",
-        "id": "paymentbanners-cartpage-logo-position",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "left",
-            "label": "left"
-          },
-          {
-            "value": "right",
-            "label": "right"
-          },
-          {
-            "value": "top",
-            "label": "top"
-          }
-        ]
+        "type": "text",
+        "label": "Specify Country",
+        "reference": "calculateFreeShippingType",
+        "reference_default": "all",
+        "id": "calculateFreeShippingList"
       },
       {
-        "type": "select",
-        "label": "Banner Style Logo Type",
-        "id": "paymentbanners-cartpage-logo-type",
-        "force_reload": true,
-        "options": [
-          {
-            "value": "inline",
-            "label": "inline"
-          },
-          {
-            "value": "primary",
-            "label": "primary"
-          },
-          {
-            "value": "alternative",
-            "label": "alternative"
-          },
-          {
-            "value": "none",
-            "label": "none"
-          }
-        ]
+        "type": "text",
+        "label": "Price Required",
+        "id": "calculalePriceRequire"
+      },
+      {
+        "type": "input",
+        "label": "Text Show Default",
+        "id": "calculateFreeDefault"
+      },
+      {
+        "type": "input",
+        "label": "Text Show When Free Shipping",
+        "id": "calculateFreeSuccess"
+      },
+      {
+        "type": "heading",
+        "content": "Cart Empty Buttons"
+      },
+      {
+        "type": "text",
+        "label": "Button 1 Text",
+        "id": "cartEmpty1T"
+      },
+      {
+        "type": "text",
+        "label": "Button 1 Link",
+        "id": "cartEmpty1L"
+      },
+      {
+        "type": "text",
+        "label": "Button 2 Text",
+        "id": "cartEmpty2T"
+      },
+      {
+        "type": "text",
+        "label": "Button 2 Link",
+        "id": "cartEmpty2L"
+      },
+      {
+        "type": "text",
+        "label": "Button 3 Text",
+        "id": "cartEmpty3T"
+      },
+      {
+        "type": "text",
+        "label": "Button 3 Link",
+        "id": "cartEmpty3L"
+      },
+      {
+        "type": "text",
+        "label": "Button 4 Text",
+        "id": "cartEmpty4T"
+      },
+      {
+        "type": "text",
+        "label": "Button 4 Link",
+        "id": "cartEmpty4L"
+      },
+      {
+        "type": "heading",
+        "content": "Blog Banner Top"
+      },
+      {
+        "type": "text",
+        "label": "Banner Image",
+        "id": "blogBannerI"
+      },
+      {
+        "type": "text",
+        "label": "Banner Title",
+        "id": "blogBannerT"
+      },
+      {
+        "type": "text",
+        "label": "Banner Description",
+        "id": "blogBannerD"
       }
     ]
   }
