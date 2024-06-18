@@ -376,7 +376,7 @@
             z-index: 105;
         }
         .searchNewLayout__wrapper {
-            background-color: #f4f2f0;
+            background-color: stencilColor("dropdown--quickSearch-backgroundColor");
             position: absolute;
             z-index: 103;
             top: 0;

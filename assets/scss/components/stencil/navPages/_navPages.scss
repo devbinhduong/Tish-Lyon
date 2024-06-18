@@ -316,6 +316,14 @@
         stroke: stencilColor("navPages-color");
         transition: all 0.15s ease;
     }
+
+    > a:hover {
+        color: stencilColor("navPages-color-hover");
+
+        span:not(.navPages-label) {
+            color: inherit;
+        }
+    }
 }
 
 .navPages-action--storeCredit {
