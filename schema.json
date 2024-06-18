@@ -1372,77 +1372,77 @@
         "content": "Home Section 3 Banners"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Image",
         "id": "home_col_banner_1_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Title",
         "id": "home_col_banner_1_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Text",
         "id": "home_col_banner_1_text"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Button",
         "id": "home_col_banner_1_button"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Link",
         "id": "home_col_banner_1_link"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Image",
         "id": "home_col_banner_2_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Title",
         "id": "home_col_banner_2_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Text",
         "id": "home_col_banner_2_text"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Button",
         "id": "home_col_banner_2_button"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Link",
         "id": "home_col_banner_2_link"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 3 Image",
         "id": "home_col_banner_3_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 3 Title",
         "id": "home_col_banner_3_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 3 Text",
         "id": "home_col_banner_3_text"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 3 Button",
         "id": "home_col_banner_3_button"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 3 Link",
         "id": "home_col_banner_3_link"
       },
@@ -1451,77 +1451,77 @@
         "content": "Home Gallery Section"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 1 Image",
         "id": "home_gallery_1_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 1 Title",
         "id": "home_gallery_1_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 1 Link",
         "id": "home_gallery_1_link"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 2 Image",
         "id": "home_gallery_2_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 2 Title",
         "id": "home_gallery_2_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 2 Link",
         "id": "home_gallery_2_link"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 3 Image",
         "id": "home_gallery_3_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 3 Title",
         "id": "home_gallery_3_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 3 Link",
         "id": "home_gallery_3_link"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 4 Image",
         "id": "home_gallery_4_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 4 Title",
         "id": "home_gallery_4_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 4 Link",
         "id": "home_gallery_4_link"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 5 Image",
         "id": "home_gallery_5_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 5 Title",
         "id": "home_gallery_5_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Home Gallery 5 Link",
         "id": "home_gallery_5_link"
       },
@@ -1535,27 +1535,27 @@
         "id": "home_product_banner_listid"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Product Banner Image",
         "id": "home_product_banner_image"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Product Count",
         "id": "home_product_banner_count"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Product Text",
         "id": "home_product_banner_text"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Product Button",
         "id": "home_product_banner_button"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Product Link",
         "id": "home_product_banner_link"
       },
@@ -1564,107 +1564,107 @@
         "content": "Home Shop The Look"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Shop The Look Image",
         "id": "homeTheLookBanner"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Shop The Look Text",
         "id": "homeTheLookText"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Product List Ids",
         "id": "homeTheLookProductList"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 1 Position Top",
         "id": "homeTheLookItem1DotT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 1 Position Left",
         "id": "homeTheLookItem1DotL"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 1 For Poduct ID:",
         "id": "homeTheLookItem1ProId"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 2 Position Top",
         "id": "homeTheLookItem2DotT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 2 Position Left",
         "id": "homeTheLookItem2DotL"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 2 For Poduct ID:",
         "id": "homeTheLookItem2ProId"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 3 Position Top",
         "id": "homeTheLookItem3DotT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 3 Position Left",
         "id": "homeTheLookItem3DotL"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 3 For Poduct ID:",
         "id": "homeTheLookItem3ProId"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 4 Position Top",
         "id": "homeTheLookItem4DotT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 4 Position Left",
         "id": "homeTheLookItem4DotL"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 4 For Poduct ID:",
         "id": "homeTheLookItem4ProId"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 5 Position Top",
         "id": "homeTheLookItem5DotT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 5 Position Left",
         "id": "homeTheLookItem5DotL"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 5 For Poduct ID:",
         "id": "homeTheLookItem5ProId"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 6 Position Top",
         "id": "homeTheLookItem6DotT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 6 Position Left",
         "id": "homeTheLookItem6DotL"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Dot 6 For Poduct ID:",
         "id": "homeTheLookItem6ProId"
       },
@@ -1673,52 +1673,52 @@
         "content": "Home Section 2 Banners"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Image",
         "id": "home_banner_2col_item1_image"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Title",
         "id": "home_banner_2col_item1_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Text",
         "id": "home_banner_2col_item1_text"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Button",
         "id": "home_banner_2col_item1_button"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 1 Link",
         "id": "home_banner_2col_item1_link"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Image",
         "id": "home_banner_2col_item2_image"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Title",
         "id": "home_banner_2col_item2_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Text",
         "id": "home_banner_2col_item2_text"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Button",
         "id": "home_banner_2col_item2_button"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner 2 Link",
         "id": "home_banner_2col_item2_link"
       },
@@ -1727,27 +1727,27 @@
         "content": "Home Banner Bottom Full"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Image",
         "id": "home_fullwidth_banner_image"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Title",
         "id": "home_fullwidth_banner_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Text",
         "id": "home_fullwidth_banner_text"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Button",
         "id": "home_fullwidth_banner_button"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Link",
         "id": "home_fullwidth_banner_link"
       }
@@ -3914,7 +3914,7 @@
         "content": "About Us Banner Top"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Image",
         "id": "aboutUsBannerI"
       },
@@ -3923,27 +3923,27 @@
         "content": "About Us Banner Bottom"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Image",
         "id": "aboutUsBottomBannerI"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Title",
         "id": "aboutUsBottomBannerT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Description",
         "id": "aboutUsBottomBannerD"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Button",
         "id": "aboutUsBottomBannerB"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Link",
         "id": "aboutUsBottomBannerL"
       },
@@ -3952,17 +3952,17 @@
         "content": "Section Banner With Text 1"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Image",
         "id": "sectionTwoCol1_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Title",
         "id": "sectionTwoCol1_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Description",
         "id": "sectionTwoCol1_desc"
       },
@@ -3971,17 +3971,17 @@
         "content": "Section Banner With Text 2"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Image",
         "id": "sectionTwoCol2_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Title",
         "id": "sectionTwoCol2_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Description",
         "id": "sectionTwoCol2_desc"
       },
@@ -3990,17 +3990,17 @@
         "content": "Section Banner With Text 3"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Image",
         "id": "sectionTwoCol3_img"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Title",
         "id": "sectionTwoCol3_title"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Description",
         "id": "sectionTwoCol3_desc"
       },
@@ -4009,12 +4009,12 @@
         "content": "About Us Service Section"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Item 1 Image",
         "id": "absService1I"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Item 1 Title",
         "id": "absService1T"
       },
@@ -4024,12 +4024,12 @@
         "id": "absService1D"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Item 2 Image",
         "id": "absService2I"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Item 2 Title",
         "id": "absService2T"
       },
@@ -4039,12 +4039,12 @@
         "id": "absService2D"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Item 3 Image",
         "id": "absService3I"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Item 3 Title",
         "id": "absService3T"
       },
@@ -4084,14 +4084,14 @@
         ]
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Specify Country",
         "reference": "calculateFreeShippingType",
         "reference_default": "all",
         "id": "calculateFreeShippingList"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Price Required",
         "id": "calculalePriceRequire"
       },
@@ -4110,42 +4110,42 @@
         "content": "Cart Empty Buttons"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 1 Text",
         "id": "cartEmpty1T"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 1 Link",
         "id": "cartEmpty1L"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 2 Text",
         "id": "cartEmpty2T"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 2 Link",
         "id": "cartEmpty2L"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 3 Text",
         "id": "cartEmpty3T"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 3 Link",
         "id": "cartEmpty3L"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 4 Text",
         "id": "cartEmpty4T"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Button 4 Link",
         "id": "cartEmpty4L"
       },
@@ -4154,17 +4154,17 @@
         "content": "Blog Banner Top"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Image",
         "id": "blogBannerI"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Title",
         "id": "blogBannerT"
       },
       {
-        "type": "text",
+        "type": "input",
         "label": "Banner Description",
         "id": "blogBannerD"
       }
