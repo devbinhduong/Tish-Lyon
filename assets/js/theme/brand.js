@@ -15,9 +15,6 @@ export default class Brand extends CatalogPage {
 
         if ($('#facetedSearch').length > 0) {
             this.initFacetedSearch();
-        } else {
-            this.onSortBySubmit = this.onSortBySubmit.bind(this);
-            hooks.on('sortBy-submitted', this.onSortBySubmit);
         }
     }
 

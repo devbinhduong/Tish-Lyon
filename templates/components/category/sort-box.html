@@ -1,18 +1,49 @@
-<fieldset class="form-fieldset actionBar-section">
-    <div class="form-field">
-        <label class="form-label" for="sort">{{lang 'common.sorter.sort_by'}}</label>
-        <select class="form-select form-select--small " name="sort" id="sort" role="listbox"{{#if hasEffect}}{{#if result_count}} size="9"{{else}} size="8"{{/if}}{{/if}}>
-            <option value="featured" {{#if sort '==' 'featured'}}selected{{/if}}>{{lang 'common.sorter.featured'}}</option>
-            <option value="newest" {{#if sort '==' 'newest'}}selected{{/if}}>{{lang 'common.sorter.newest'}}</option>
-            <option value="bestselling" {{#if sort '==' 'bestselling'}}selected{{/if}}>{{lang 'common.sorter.top_sellers'}}</option>
-            <option value="alphaasc" {{#if sort '==' 'alphaasc'}}selected{{/if}}>{{lang 'common.sorter.alpha_asc'}}</option>
-            <option value="alphadesc" {{#if sort '==' 'alphadesc'}}selected{{/if}}>{{lang 'common.sorter.alpha_desc'}}</option>
-            <option value="avgcustomerreview" {{#if sort '==' 'avgcustomerreview'}}selected{{/if}}>{{lang 'common.sorter.reviews'}}</option>
-            <option value="priceasc" {{#if sort '==' 'priceasc'}}selected{{/if}}>{{lang 'common.sorter.price_asc'}}</option>
-            <option value="pricedesc" {{#if sort '==' 'pricedesc'}}selected{{/if}}>{{lang 'common.sorter.price_desc'}}</option>
-            {{#if result_count}}
-                <option value="relevance" {{#if sort '==' 'relevance'}}selected{{/if}}>{{lang 'common.sorter.relevance'}}</option>
-            {{/if}}
-        </select>
-    </div>
-</fieldset>
+<ul id="sort" class="popout-list form-fieldset actionBar-section">
+    <li class="popout-list__item popout-list__item--current">
+        <a class="popout-list__option{{#if sort '==' 'featured'}} selected{{/if}}" data-value="featured" href="{{url}}?sort=featured">
+            <span class="color-base">{{lang 'common.sorter.featured'}}</span>
+        </a>
+    </li>
+    <li class="popout-list__item ">
+        <a class="popout-list__option{{#if sort '==' 'newest'}} selected{{/if}}" data-value="newest" href="{{url}}?sort=newest">
+            <span class="color-base">{{lang 'common.sorter.newest'}}</span>
+        </a>
+    </li> 
+    <li class="popout-list__item ">
+        <a class="popout-list__option{{#if sort '==' 'bestselling'}} selected{{/if}}" data-value="bestselling" href="{{url}}?sort=bestselling">
+            <span class="color-base">{{lang 'common.sorter.top_sellers'}}</span>
+        </a>
+    </li>   
+    <li class="popout-list__item ">
+        <a class="popout-list__option{{#if sort '==' 'alphaasc'}} selected{{/if}}" data-value="alphaasc" href="{{url}}?sort=alphaasc">
+            <span class="color-base">{{lang 'common.sorter.alpha_asc'}}</span>
+        </a>
+    </li>
+    <li class="popout-list__item ">
+        <a class="popout-list__option{{#if sort '==' 'alphadesc'}} selected{{/if}}" data-value="alphadesc" href="{{url}}?sort=alphadesc">
+            <span class="color-base">{{lang 'common.sorter.alpha_desc'}}</span>
+        </a>
+    </li>
+    <li class="popout-list__item ">
+        <a class="popout-list__option{{#if sort '==' 'avgcustomerreview'}} selected{{/if}}" data-value="avgcustomerreview" href="{{url}}?sort=avgcustomerreview">
+            <span class="color-base">{{lang 'common.sorter.reviews'}}</span>
+        </a>
+    </li>
+    <li class="popout-list__item ">
+        <a class="popout-list__option{{#if sort '==' 'priceasc'}} selected{{/if}}" data-value="priceasc" href="{{url}}?sort=priceasc">
+            <span class="color-base">{{lang 'common.sorter.price_asc'}}</span>
+        </a>
+    </li> 
+    <li class="popout-list__item ">
+        <a class="popout-list__option{{#if sort '==' 'pricedesc'}} selected{{/if}}" data-value="pricedesc" href="{{url}}?sort=pricedesc">
+            <span class="color-base">{{lang 'common.sorter.price_desc'}}</span>
+        </a>
+    </li>
+    {{#if result_count}}
+        <li class="popout-list__item ">
+            <a class="popout-list__option{{#if sort '==' 'relevance'}} selected{{/if}}" data-value="relevance" href="{{url}}?sort=relevance">
+                <span class="color-base">{{lang 'common.sorter.relevance'}}</span>
+            </a>
+        </li>
+    {{/if}}
+</ul>

@@ -23,6 +23,7 @@ const defaultOptions = {
     priceRangeMaxPriceSelector: $('#facetedSearch').length ? '#facet-range-form [name=max_price]' : '#facet-range-form [name=price_max]',
     priceRangeMinPriceSelector: $('#facetedSearch').length ? '#facet-range-form [name=min_price]' : '#facet-range-form [name=price_min]',
     showMoreToggleSelector: '#facetedSearch .accordion-content .toggleLink',
+    sortButton: '.popout--sort .popout-list__option',
     facetedSearchFilterItems: '#facetedSearch-filterItems .form-input',
     modal: modalFactory('#modal')[0],
     modalOpen: false,
@@ -96,7 +97,6 @@ class FacetedSearch {
         this.onClearFacet = this.onClearFacet.bind(this);
         this.onFacetClick = this.onFacetClick.bind(this);
         this.onRangeSubmit = this.onRangeSubmit.bind(this);
-        this.onSortBySubmit = this.onSortBySubmit.bind(this);
         this.filterFacetItems = this.filterFacetItems.bind(this);
 
         this.bindEvents();
@@ -122,7 +122,6 @@ class FacetedSearch {
         this.bindEvents();
 
         countFacetedFilter();
-        handleFilterSort();
     }
 
     updateView() {
@@ -320,11 +319,11 @@ class FacetedSearch {
         $(document).on('toggle.collapsible', this.options.accordionToggleSelector, this.onAccordionToggle);
         $(document).on('keyup', this.options.facetedSearchFilterItems, this.filterFacetItems);
         $(this.options.clearFacetSelector).on('click', this.onClearFacet);
+        $(document).on('click', this.options.sortButton, this.onSortBySubmit);
 
         // Hooks
         hooks.on('facetedSearch-facet-clicked', this.onFacetClick);
         hooks.on('facetedSearch-range-submitted', this.onRangeSubmit);
-        hooks.on('sortBy-submitted', this.onSortBySubmit);
     }
 
     unbindEvents() {
@@ -339,7 +338,6 @@ class FacetedSearch {
         // Hooks
         hooks.off('facetedSearch-facet-clicked', this.onFacetClick);
         hooks.off('facetedSearch-range-submitted', this.onRangeSubmit);
-        hooks.off('sortBy-submitted', this.onSortBySubmit);
     }
 
     onClearFacet(event) {
@@ -380,9 +378,17 @@ class FacetedSearch {
         }
     }
 
-    onSortBySubmit(event, currentTarget) {
+    onSortBySubmit(event) {
+        event.preventDefault();
+
+        $('.popout--sort .popout-list__option').removeClass('selected');
+
+        $(event.currentTarget).addClass('selected');
+
+        $(".popout__toggleable-text").text($(event.currentTarget).find('span').text());
+
         const url = Url.parse(window.location.href, true);
-        const queryParams = $(currentTarget).serialize().split('=');
+        const queryParams = ['sort', $(event.currentTarget).attr('data-value')];
 
         url.query[queryParams[0]] = queryParams[1];
         delete url.query.page;
@@ -390,8 +396,6 @@ class FacetedSearch {
         // Url object `query` is not a traditional JavaScript Object on all systems, clone it instead
         const urlQueryParams = {};
         Object.assign(urlQueryParams, url.query);
-
-        event.preventDefault();
 
         urlUtils.goToUrl(Url.format({ pathname: url.pathname, search: urlUtils.buildQueryString(urlQueryParams) }));
     }

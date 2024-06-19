@@ -199,3 +199,28 @@
         margin-bottom: 0;
     }
 }
+
+// * ------ Sort Dropdown ------
+#sort {
+    .popout-list {
+        &__option {
+            text-decoration: none;
+            padding: 8px 15px;
+            font-size: 12px;
+            font-weight: $fontWeight-thin;
+            line-height: 14px;
+            display: block;
+            white-space: nowrap;
+
+            &.selected {
+                span {
+                    border-bottom: 1px solid #646464;
+                }
+            }
+
+            &:hover {
+                background-color: #f7f7f7;
+            }
+        }
+    }
+}

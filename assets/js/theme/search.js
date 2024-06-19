@@ -148,9 +148,6 @@ export default class Search extends CatalogPage {
         // Init faceted search
         if ($('#facetedSearch').length > 0) {
             this.initFacetedSearch();
-        } else {
-            this.onSortBySubmit = this.onSortBySubmit.bind(this);
-            hooks.on('sortBy-submitted', this.onSortBySubmit);
         }
 
         // Init collapsibles

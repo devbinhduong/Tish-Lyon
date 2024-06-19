@@ -6,6 +6,7 @@ import { createTranslationDictionary } from '../theme/common/utils/translations-
 
 import customAddOptionForProduct from './custom/customAddOptionForProduct';
 import countFacetedFilter from './custom/countFacetedFilter';
+import handleFilterSort from './custom/handleFilterSort';
 
 export default class Category extends CatalogPage {
     constructor(context) {
@@ -39,12 +40,11 @@ export default class Category extends CatalogPage {
 
         compareProducts(this.context);
 
-        this.initFacetedSearch();
+        if ($('#facetedSearch').length > 0) {
+            this.initFacetedSearch();
+        }
 
         if (!$('#facetedSearch').length) {
-            this.onSortBySubmit = this.onSortBySubmit.bind(this);
-            hooks.on('sortBy-submitted', this.onSortBySubmit);
-
             // Refresh range view when shop-by-price enabled
             const urlParams = new URLSearchParams(window.location.search);
 
@@ -70,6 +70,7 @@ export default class Category extends CatalogPage {
 
         this.hoverHomeMenu();
         countFacetedFilter();
+        handleFilterSort();
     }
 
     ariaNotifyNoProducts() {
