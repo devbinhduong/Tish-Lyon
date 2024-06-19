@@ -1,5 +1,5 @@
 {{#if items}}
-<div class="accordion-block fadeInRight" data-step-animate="2">
+<div class="accordion-block">
     {{> components/faceted-search/faceted-search-navigation}}
 
     <div id="facetedSearch-content--{{dashcase facet}}" class="accordion-content{{#unless start_collapsed}} is-open{{/unless}}">
@@ -28,7 +28,11 @@
 
         {{#if show_more_toggle}}
             <a href="#facetedSearch-navList--{{dashcase facet}}" role="button" class="toggleLink">
-                <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.show-more'}}</span>
+                <span class="icon icon--expand">
+                    <svg><use xlink:href="#icon-expand"></use></svg>
+                </span>
+                
+                <span class="toggleLink-text toggleLink-text--off">{{lang 'search.faceted.more-options'}}</span>
             </a>
         {{/if}}
     </div>

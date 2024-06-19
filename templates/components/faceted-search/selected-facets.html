@@ -1,6 +1,14 @@
 <div class="facetedSearch-refineFilters sidebarBlock{{#if items}} has-result{{/if}}" role="region" aria-label="{{lang 'search.faceted.selected.facet-label'}}">
     {{#if items}}
         <ul class="inlineList inlineList--labels">
+            {{#and remove_all_url (if items.length '>' 1)}}
+                <li>
+                    <a href="{{remove_all_url}}" class="facetLabel facetLabel--all fw-400" data-faceted-search-facet>
+                        {{lang 'search.faceted.selected.clear-all'}}
+                    </a>
+                </li>
+            {{/and}}
+            
             {{#each items}}
                 <li>
                     <a href="{{url}}"

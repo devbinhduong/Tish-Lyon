@@ -64,10 +64,10 @@
 
 @keyframes overlaySlide {
     25%, 75% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     100% {
-      transform: translateY(100%);
+        transform: translateY(100%);
     }
 }
 
@@ -156,6 +156,29 @@
         }
     }
 }
+
+#facetedSearch-navList {
+    @for $i from 0 through 100 {
+        .fadeInRight {
+            &[data-step-animate='#{$i}'] {
+                opacity: 0;
+                will-change: transform, opacity;
+                animation-fill-mode: both;
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+                animation-delay: 0.25s + $i * 0.05;
+                animation-duration: .5s;
+                transform: translateX(-15px);
+
+                .openProductListingSidebar & {
+                    -webkit-animation-name: itemFadeInRight;
+                    animation-name: itemFadeInRight;
+                }
+            }
+        }
+    }
+}
+
 
 // * ------ Custom AOS Animate ------
 [data-aos=hero] {

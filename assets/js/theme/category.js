@@ -5,6 +5,7 @@ import FacetedSearch from './common/faceted-search';
 import { createTranslationDictionary } from '../theme/common/utils/translations-utils';
 
 import customAddOptionForProduct from './custom/customAddOptionForProduct';
+import countFacetedFilter from './custom/countFacetedFilter';
 
 export default class Category extends CatalogPage {
     constructor(context) {
@@ -68,6 +69,7 @@ export default class Category extends CatalogPage {
         });
 
         this.hoverHomeMenu();
+        countFacetedFilter();
     }
 
     ariaNotifyNoProducts() {

@@ -215,8 +215,13 @@
             }; 
         }
 
+        > nav {
+            height: 100%;
+        }
+
         #facetedSearch {
             padding: 15px 0 24px 18px;
+            height: 100%;
 
             @include smax-m {
                 padding: 0;
@@ -240,6 +245,10 @@
                         @include flexbox($display: inline-flex, $align-items: center);
                         margin-bottom: 0;
 
+                        &.facetLabel--all {
+                            padding: 8px 14px;
+                        }
+
                         .icon {
                             top: 0;
                             margin-left: 4px;
@@ -257,9 +266,11 @@
 
         #facetedSearch-navList {
             padding: 0 31px 20px 32px;
+            padding-bottom: 120px;
             margin-top: 0;
             max-height: calc(100vh - 200px);
             overflow-y: auto;
+            height: 100%;
 
             &::-webkit-scrollbar {
                 width: 4px;

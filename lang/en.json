@@ -933,7 +933,9 @@
             "show-less": "Show Less",
             "show-filters": "Show Filters",
             "hide-filters": "Hide Filters",
-            "browse-by": "Browse by"
+            "browse-by": "Browse by",
+            "reset-filters": "Reset",
+            "more-options": "More options"
         },
         "error": {
             "empty_field": "Search field cannot be empty."

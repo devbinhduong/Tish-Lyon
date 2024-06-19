@@ -45,6 +45,8 @@
     letter-spacing: 0;
     display: inline-flex;
     align-items: center;
+    margin-bottom: 4px;
+    line-height: 1;
 
     &::before,
     &::after {
@@ -90,13 +92,18 @@
 .navList-action-close {
     background: $navList-action-close-background;
     border-radius: $navList-action-close-borderRadius;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     float: right;
     line-height: 0;
     opacity: 0;
     padding: $navList-action-close-padding;
     transition: $navList-action-close-transition;
     visibility: hidden;
+    margin-left: 8px;
+
+    @include square(16);
 
     .icon {
         @include square($navList-action-close-iconSize);

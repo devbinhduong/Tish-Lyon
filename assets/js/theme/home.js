@@ -1,5 +1,6 @@
 import PageManager from './page-manager';
 import utils from '@bigcommerce/stencil-utils';
+import featuredBlogPost from './custom/featuredBlogPost';
 
 export default class Home extends PageManager {
     constructor(context) {
@@ -27,6 +28,7 @@ export default class Home extends PageManager {
 
             this.homeProductsListIDCarousel();
 
+            featuredBlogPost(this.context);
         }
     }
 
