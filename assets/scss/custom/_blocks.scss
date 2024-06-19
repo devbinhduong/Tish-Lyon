@@ -585,6 +585,40 @@
             fill: none;
         }
     }
+
+    // * ------ Tooth Category Layout ------
+    &.shopLook__tooth {
+        padding-top: 25px;
+
+        @include smax-m {
+            padding-top: 20px;
+        }; 
+
+        @include smax-s {
+            padding-top: 15px;
+        }; 
+    }
+
+    // * ------ Category full width product ------
+    &.shopLook__fullListing {
+        @include smin-s {
+        .shopLook__aside {
+            .productsByListId2  {
+                max-width: calc(25vw + 150px);
+                padding-left: 75px;
+                padding-right: 75px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .productGridCustom {
+                    .productCarousel-slide {
+                        width: 100%;
+                    }
+                }; 
+            }
+        }
+    }
 }
 
 // * ------ Home Section 2 Banners ------
@@ -1033,5 +1067,146 @@
     &__title {
         margin-top: 0;
         margin-bottom: 16px;
+    }
+
+    // * ------ Section 2 Columns Category Page  ------
+    &.twoColSection__category {
+        padding-top: 34px;
+
+        @include smax-m {
+            padding-top: 27px;
+        }; 
+
+        @include smax-s {
+            padding-top: 20px;
+        }; 
+
+        .twoColSection__image {
+            @include image-padding-bottom(1271,878);
+            min-height: 878px;
+
+            @include smax-s {
+                min-height: 659px;
+            }; 
+        }
+    }
+}
+
+// * ------ Category Custom Layoyt ------
+.bannerVideo {
+    position: relative;
+    &__background {
+        min-height: 988px;
+
+        @include smax-s {
+            min-height: 878px
+        }; 
+    }
+
+    &__player {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        transition: opacity .5s ease;
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+.blockText {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @include smax-m {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    };  
+
+    @include smax-s {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }; 
+}
+
+.blockBanner {
+    padding-top: 11px;
+    padding-bottom: 50px;
+
+    @include smax-m {
+        padding-top: 8px;
+        padding-bottom: 40px;
+    }; 
+
+    @include smax-s {
+        padding-top: 7px;
+        padding-bottom: 30px;
+    }; 
+
+    &__list {
+        @include smin-s {
+            @include flex-layout(3, 22px);
+        }; 
+
+        @include smin-m {
+            @include flex-layout(3, 32px);
+        }; 
+    }
+
+    &__item {
+        @include image-padding-bottom(793,1030);
+    }
+}
+
+.bannerTopBlock {
+    position: relative;
+
+    &__image {
+        @include image-padding-bottom(2543, 659);
+        min-height: 659px;
+
+        @include smax-s {
+            min-height: 439px;
+        }; 
+    }
+
+    &__content {
+        @include pos($pos: abs, $l: 0px, $b: 0px);
+        z-index: 12;
+        padding: 50px 50px 34px;
+
+        @include smax-m {
+            padding: 30px 30px 15px;
+        }; 
+
+        @include smax-s {
+            padding: 16px 16px 7px;
+        };
+    }
+
+    &__title {
+        font-size: 31px;
+        line-height: 37px;
+        letter-spacing: 0;
+
+        @include smax-m {
+            font-size: 28px;
+            line-height: 34px;
+        }; 
+
+        @include smax-s {
+            font-size: 26px;
+            line-height: 31px;
+        }; 
     }
 }

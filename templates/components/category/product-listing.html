@@ -14,11 +14,7 @@
     {{#if category.search_error}}
         <p>{{lang 'search.errorMessage'}}</p>
     {{else}}
-        <p data-no-products-notification
-           role="alert"
-           aria-live="assertive"
-           tabindex="-1"
-        >
+        <p data-no-products-notification>
             {{lang 'categories.no_products'}}
         </p>
     {{/if}}

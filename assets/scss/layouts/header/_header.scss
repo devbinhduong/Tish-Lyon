@@ -53,6 +53,7 @@
             display: none;
         }
 
+        .categorycustom &,
         .page-type-default & {
             position: fixed;
             top: 0;
@@ -513,6 +514,7 @@
     position: absolute;
     z-index: zIndex('high');
     
+    .categorycustom &,
     .page-type-default & {
         color: #ffffff;
     }

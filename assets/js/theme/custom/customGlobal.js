@@ -44,6 +44,7 @@ export default function(context) {
 
             facetedSearchToggle();
             toggleContent();
+            homeProductsListIDGrid();
 
             /* AOS */
             Aos.init();
@@ -476,5 +477,139 @@ export default function(context) {
                 $toggleContent.slideUp(400);
             }
         });
+    }
+
+    function homeProductsListIDGrid() {
+        var $options;
+
+        $(document).ready(function () {
+            const tScroll = $(this).scrollTop();
+
+            homeListId(tScroll);
+        });
+
+        function homeListId(tScroll) {
+            if ($('.productsByListId2[data-list-id-2]').length > 0) {
+                $('.productsByListId2[data-list-id-2]').each((index, element) => {
+                    let thisOffetTop =
+                        $(element).offset().top - screen.height * 1.5;
+
+                    if (!$(element).hasClass('is-loaded')) {
+                        $(element).addClass('is-loaded');
+
+                        var $prodWrapId = $(element).attr('id'),
+                            $wrap,
+                            $listId = $(element).data('list-id-2');
+
+                        if ($(element).find('.productGridCustom').length > 0) {
+                            $wrap = $(element).find('.productGridCustom');
+                            $options = {
+                                template:
+                                    'custom/products/custom-product-block',
+                            };
+                        }
+
+                        if (!$('#product-by-list-' +$prodWrapId +' .productGridCustom .productCarousel-slide').length) {
+                            if ($listId.length > 1) {
+                                loadListID($listId, $options, $wrap);
+
+                            } else {
+                                loadListID($($listId), $options, $wrap);
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        function loadListID(id, options, wrap) {
+            if (id.length <= 1) {
+                var arr = id;
+            } else {
+                var arr = id.split(',');
+            }
+
+            var list = arr;
+
+            var num = 0;
+
+            var isHideLoading = true;
+
+            const shopLook = document.querySelector(".shopLook")
+
+            for (var i = 0; i <= list.length; i++) {
+                var $prodId = list[i];
+
+                if ($prodId != undefined) {
+                    utils.api.product.getById($prodId, options, (err, response) => {
+                        let hasProd = $(response).find('.card').data('product-id');
+                        if (hasProd != undefined && hasProd != '' && hasProd != null && !$(response).find('.page-content--err').length) {
+                            if (isHideLoading) {
+                                wrap.parents('.productsByListId2[data-list-id-2]')
+                                    .find('.custom_productLoading')
+                                    .remove();
+
+                                isHideLoading = false;
+                            }
+                            wrap.append(response);
+                        }
+
+                        num++;
+
+                        if (num === list.length) {
+                            shopLook.classList.add("loaded-products");
+                            handleScrollLookbook();
+                            activeLookbookMobile();
+                        }
+                    });
+                }
+            }
+        }
+
+        function handleScrollLookbook() {
+            const dotList = document.querySelectorAll(".look__dot__button");
+
+            if (!dotList) return;
+
+            dotList.forEach((dot) => {
+                dot.addEventListener("click", (e) => {
+                    const dataThumb = dot.getAttribute("data-slider-thumb");
+
+                    const item = document.querySelector(`.productCarousel-slide .card[data-product-id="${dataThumb}"]`);
+
+                    if (!item) return;
+
+                    const itemOffset = item.offsetTop;
+
+                    window.scrollTo({
+                        top: itemOffset - 100,
+                        behavior: "smooth",
+                    });
+                });
+            });
+        }
+
+        function activeLookbookMobile() {
+            const showLookbookButton = document.querySelector(".shopLook__actions > a");
+            const lookbook = document.querySelector(".shopLook__aside");
+            const lookbookClose = document.querySelector(".shopLook__close");
+            const lookbookOverlay = document.querySelector(".shopLook__overlay");
+
+            if (!showLookbookButton) return;
+
+            showLookbookButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                lookbook.classList.add("is-open");
+            });
+
+            lookbookClose.addEventListener("click", (e) => {
+                e.preventDefault();
+                lookbook.classList.remove("is-open");
+            });
+
+            lookbookOverlay.addEventListener("click", (e) => {
+                lookbook.classList.remove("is-open");
+            });
+        }
     }
 }
