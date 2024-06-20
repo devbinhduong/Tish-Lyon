@@ -16,6 +16,8 @@ import csmRecentlyView from '../custom/csmRecentlyView';
 import calculateFreeShipping from '../custom/calculateFreeShipping';
 import checkPolicy from '../custom/checkPolicy';
 
+import csmToggleLayout from '../custom/csmToggleLayout';
+
 export default class ProductDetails extends ProductDetailsBase {
     constructor($scope, context, productAttributesData = {}) {
         super($scope, context);
@@ -487,6 +489,8 @@ export default class ProductDetails extends ProductDetailsBase {
                     const quantity = $(response).find('[data-cart-quantity]').data('cartQuantity') || 0;
 
                     $body.trigger('cart-quantity-update', quantity);
+
+                    csmToggleLayout();
                 });
 
                 calculateFreeShipping(this.context);

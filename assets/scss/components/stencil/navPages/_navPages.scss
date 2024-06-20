@@ -1544,12 +1544,6 @@
                 }
             }
 
-            &:not(.navPages-action-end) {
-                .text {
-                    pointer-events: none;
-                }
-            }
-
             +.level-3 {
                 .navPages-action {
                     color: stencilColor('navPages-level-2-color');

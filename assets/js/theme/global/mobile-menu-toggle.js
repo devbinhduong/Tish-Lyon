@@ -64,27 +64,6 @@ export class MobileMenuToggle {
         this.$toggle.on('click', this.onToggleClick);
         this.$subMenus.on('click', this.onSubMenuClick);
 
-        // close menu mobile
-        $('#menu-mobile .themevale_close').on('click', function () {
-            $('.mobileMenu-toggle').trigger('click');
-            $('body').removeClass('has-activeNavPages');
-            $('.mobileMenu-toggle')
-                .removeClass('is-open')
-                .attr('aria-expanded', false);
-            // $('body').removeClass('has-activeNavPages');
-        });
-
-        $('.themevale_background').on('click', function () {
-            if ($('body').hasClass('has-activeNavPages')) {
-                $('.mobileMenu-toggle').trigger('click');
-                $('body').removeClass('has-activeNavPages');
-                $('.mobileMenu-toggle')
-                    .removeClass('is-open')
-                    .attr('aria-expanded', false);
-                // $('body').removeClass('has-activeNavPages');
-            }
-        });
-
         if (
             this.mediumMediaQueryList &&
             this.mediumMediaQueryList.addListener
@@ -193,6 +172,8 @@ export class MobileMenuToggle {
             const $parentSiblings2 = $closestAction2.parent();
             const $parentAction2 = $parentSiblings2.siblings();
 
+            console.log("back")
+
             if (this.$subMenus.hasClass('is-open')) {
                 this.$navList.addClass('subMenu-is-open');
             } else {
@@ -207,13 +188,6 @@ export class MobileMenuToggle {
                 $parentSiblings2.removeClass('is-open');
                 $parentAction2.removeClass('is-hidden');
             }, 500);
-
-            const subMenuList2 = $('.navPage-subMenu-list--lv2 > li.fadeInRight');
-
-            // subMenuList2.each(function (index, element) {
-            //     $(element).removeClass('fadeInRight');
-            // });
-
         }
     }
     

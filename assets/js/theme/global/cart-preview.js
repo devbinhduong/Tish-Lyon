@@ -7,6 +7,7 @@ import calculateFreeShipping from '../custom/calculateFreeShipping';
 import checkPolicy from '../custom/checkPolicy';
 
 import ShippingEstimator from '../cart/shipping-estimator';
+import csmToggleLayout from '../custom/csmToggleLayout';
 
 
 export const CartPreviewEvents = {
@@ -84,7 +85,7 @@ export default function (secureBaseUrl, cartId, context) {
                 $cartLoading
                     .hide();
 
-                toggleContent();
+                csmToggleLayout();
 
                 const shippingErrorMessages = {
                     country: "this.context.shippingCountryErrorMessage",
@@ -120,7 +121,7 @@ export default function (secureBaseUrl, cartId, context) {
                 $cartLoading
                     .hide();
 
-                toggleContent();
+                csmToggleLayout();
                 
             });
 
@@ -445,28 +446,7 @@ export default function (secureBaseUrl, cartId, context) {
         calculateFreeShipping(context);
         checkPolicy();
 
-        toggleContent();
+        csmToggleLayout();
     }
-    
-    function toggleContent() {
-        const $toggleTitle = $('.toggle__title');
 
-        if (!$toggleTitle) return;
-
-        $toggleTitle.on('click', (e) => {
-            e.preventDefault();
-
-            const $target = $(e.currentTarget);
-            const $toggleContent = $target.next();
-
-            $target.toggleClass('is-active');
-
-            if ($target.hasClass('is-active')) {
-                $toggleContent.slideDown(400);  
-            }
-            else {
-                $toggleContent.slideUp(400);
-            }
-        });
-    }
 }
