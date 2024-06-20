@@ -51,14 +51,14 @@
             <p class="strong">Optional:</p>
         </div>
         <div class="custom-form__block checkbox">
-            <input type="checkbox" id="contactFormUrgent" class="contactFormCheckbox" name="contact[this-is-urgent]" value="This is urgent">
+            <input type="checkbox" id="contactFormUrgent" class="contactFormCheckbox" name="csm_urgent" value="This is urgent">
             <label for="contactFormUrgent">
                 This is urgent
             </label>
         </div>
         <fieldset class="custom-form__block custom-form__block--group">
-            <label class="custom-form__label label--block">What type of business do you have?</label>
-            <select class="contactFormSelect field" name="contact[what-type-of-business-do-you-have]">
+            <label class="custom-form__label label--block csm-label-select-form">What type of business do you have?</label>
+            <select class="contactFormSelect field" name="csm_seclect">
                 <option value="- Pick an option -">- Pick an option -</option>
                 <option value="Option one">Option one</option>
                 <option value="Option two">Option two</option>
@@ -96,4 +96,6 @@
             </p>
         </div>
     </form>
+
+    <div id="csm-form-results"></div>
 </div>

@@ -7,8 +7,7 @@ import collapsibleFactory from './collapsible';
 import { Validators } from './utils/form-utils';
 import nod from './nod';
 
-import handleFilterSort from '../custom/handleFilterSort';
-import countFacetedFilter from '../custom/countFacetedFilter';
+import productListingDisplay from '../custom/productListingDisplay';
 
 
 const defaultOptions = {
@@ -121,7 +120,7 @@ class FacetedSearch {
         // Bind events
         this.bindEvents();
 
-        countFacetedFilter();
+        productListingDisplay();
     }
 
     updateView() {
@@ -385,7 +384,7 @@ class FacetedSearch {
 
         $(event.currentTarget).addClass('selected');
 
-        $(".popout__toggleable-text").text($(event.currentTarget).find('span').text());
+        $(".popout--sort .popout__toggleable-text").text($(event.currentTarget).find('span').text());
 
         const url = Url.parse(window.location.href, true);
         const queryParams = ['sort', $(event.currentTarget).attr('data-value')];

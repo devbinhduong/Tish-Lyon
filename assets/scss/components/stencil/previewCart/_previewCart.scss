@@ -145,7 +145,49 @@
     }
 
     .previewCart__bottom {
-        padding: 15px;
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+
+        .previewCartTotalsPrice,
+        .previewCartAction,
+        .cart__note {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        // * ------ Cart Preview Shipping Estimator ------
+        .cartTotal__item {
+            position: relative;
+            border-top: 1px solid $input-border-color;
+            border-bottom: 1px solid $input-border-color;
+            padding: 13px 15px;
+
+            strong {
+                font-size: 12px;
+                line-height: 14px;
+                font-weight: 400;
+            }
+
+            .form-label {
+                font-weight: $fontWeight-normal;
+            }
+
+            .form-input {
+                font-size: $fontSize-root - 4px;
+                margin-bottom: 0;
+            }
+
+            .shipping-estimate-default-text {
+                display: none;
+            }
+
+            .cartTotal__content  {
+                .shipping-estimate-show {
+                    background: none;
+                }
+            }
+        }
     }
 
     .previewCartItem {

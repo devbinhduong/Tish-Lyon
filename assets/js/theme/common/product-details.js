@@ -465,7 +465,7 @@ export default class ProductDetails extends ProductDetailsBase {
                 };
                 const loadingClass = 'is-loading';
                 const $cartDropdown = $('#custom-cart-sidebar .custom-sidebar-wrapper');
-                const $cartLoading = $('<div class="loadingOverlay"></div>');
+                const $cartLoading = $('<div class="loadingOverlay"><div class="loader-progress"></div></div>');
 
                 $body.toggleClass('openCartSidebar');
 
@@ -579,7 +579,7 @@ export default class ProductDetails extends ProductDetailsBase {
             const bannerUpdateHandler = () => {
                 const $productContainer = $('#main-content > .container');
 
-                $productContainer.append('<div class="loadingOverlay pdp-update"></div>');
+                $productContainer.append('<div class="loadingOverlay pdp-update"><div class="loader-progress"></div></div>');
                 $('.loadingOverlay.pdp-update', $productContainer).show();
                 window.location.reload();
             };

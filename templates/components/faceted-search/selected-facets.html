@@ -2,7 +2,7 @@
     {{#if items}}
         <ul class="inlineList inlineList--labels">
             {{#and remove_all_url (if items.length '>' 1)}}
-                <li>
+                <li class="inlineList--removeAll">
                     <a href="{{remove_all_url}}" class="facetLabel facetLabel--all fw-400" data-faceted-search-facet>
                         {{lang 'search.faceted.selected.clear-all'}}
                     </a>

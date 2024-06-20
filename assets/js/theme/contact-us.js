@@ -40,11 +40,38 @@ export default class ContactUs extends PageManager {
         $contactForm.on('submit', event => {
             contactUsValidator.performCheck();
 
+            event.preventDefault();
+
             if (contactUsValidator.areAll('valid')) {
+                const currentTarget = event.currentTarget;
+                const isUrgent = currentTarget.querySelector('input[name="csm_urgent"]');
+                const selectOption = currentTarget.querySelector('select[name="csm_seclect"]');
+                const selectLabel = currentTarget.querySelector("label.csm-label-select-form").textContent;
+
+                let contactMessage = currentTarget.querySelector('textarea[name="contact_question"]').value;
+
+                let message;
+
+                if(isUrgent) {
+                    message = `Message: ${contactMessage}\n  Urgent: ${isUrgent.checked ? 'Yes' : 'No'}\n ${selectLabel} : ${selectOption.value}\n\n`;
+                } else {
+                    message = `Message: ${contactMessage}\n  What type of business do you have? : ${selectOption.value}\n\n`;
+                }
+
+                $('#contact_question').val(message);
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/pages.php?action=sendContactForm',
+                    data: $('.custom-form').serialize(),
+                    success: function() {
+                        $('.custom-form').hide();
+                        $('#csm-form-results').html('<div class="alertBox alertBox--success">Thank you. We\'ve received your feedback and will respond shortly.</div>');
+                    },
+                });
+
                 return;
             }
-
-            event.preventDefault();
         });
     }
 }

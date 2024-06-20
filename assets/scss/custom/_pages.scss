@@ -317,10 +317,15 @@
     }
 }
 
-.contactUsTop {
+.pageBlockTop {
     background-color: #f7f7f7;
     padding: 50px 0;
     margin-bottom: 50px;
+
+    &.pageBlockTop--faqs {
+        background-color: #F4F2F0;
+        margin-bottom: 0;
+    }
 
     @include smax-m {
         padding: 40px 0;
@@ -876,6 +881,17 @@
         }; 
     }
 
+    h3 {
+        margin-top: 18px 0;
+        font-size: 37px;
+        line-height: 44px;
+
+        @include smax-s {
+            font-size: 31px;
+            line-height: 37px;
+        }; 
+    }
+
     h4 {
         font-size: 31px;
         line-height: 37px;
@@ -932,6 +948,26 @@
             font-size: $fontSize-root - 2px;
         }; 
     }
+
+    strong {
+        font-weight: 400;
+        font-size: 19px;
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        border: 1px solid $input-border-color;
+        margin: 19px 0;
+
+        tr > td {
+            border-bottom: 1px solid $input-border-color;
+            border-right: 1px solid $input-border-color;
+            padding: 10px;
+            line-height: 1.3;
+            vertical-align: middle;
+        }
+    }
 }
 
 .conditionPage {
@@ -941,5 +977,128 @@
 
     .page-heading {
         text-align: left !important;
+    }
+}
+
+.faqBlock {
+    padding: 50px 0;
+
+    @include smax-m {
+        padding: 40px 0;
+    }; 
+
+    @include smax-s {
+        padding: 30px 0;
+    }; 
+    &__wrapper {
+        max-width: 670px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 50px;
+
+        @include smax-m {
+            padding: 0 30px;
+        }; 
+
+        @include smax-s {
+            padding: 0 16px;
+        }; 
+    }
+
+    &__title {
+        margin-top: 0;
+        margin-bottom: 40px;
+        font-size: 31px;
+        line-height: 37px;
+        letter-spacing: 0;
+
+        @include smax-m {
+            font-size: 28px;
+            line-height: 35px;
+        }; 
+
+        @include smax-s {
+            margin-bottom: 35px;
+            font-size: 26px;
+            line-height: 32px;
+        }; 
+    }
+
+    &__accordion {
+        padding: 24px 30px 16px 0;
+        border-bottom: 1px solid $input-border-color;
+        border-top: 1px solid $input-border-color;
+
+        .accordion {
+            &__title {
+                margin-top: 0;
+                margin-bottom: 0;
+                position: relative;
+                cursor: pointer;
+                font-size: 22px;
+                line-height: 26px;
+
+                @include smax-m {
+                    font-size: 20px;
+                    line-height: 24px;
+                }; 
+
+                @include smax-s {
+                    font-size: 18px;
+                    line-height: 22px;
+                }; 
+
+                &::before {
+                    top: 50%;
+                    right: -10px;
+                    z-index: 2;
+                    content: '';
+                    width: 1px;
+                    height: 10px;
+                    position: absolute;
+                    -webkit-transition: all .4s ease;
+                    transition: all .4s ease;
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    background-color: $color-textBase;
+                }
+
+                &::after {
+                    top: 50%;
+                    right: -15px;
+                    z-index: 2;
+                    content: '';
+                    width: 10px;
+                    height: 1px;
+                    position: absolute;
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    background-color: $color-textBase;
+                }
+
+                &.is-active {
+                    &::before {
+                        transform: translateY(-50%) rotate(90deg);
+                    }
+                }
+            }
+
+            &__body {
+                display: none;
+
+                @include smax-m {
+                    font-size: $fontSize-root - 1px;
+                }; 
+
+                @include smax-s {
+                    font-size: $fontSize-root - 2px;
+                }; 
+
+                p {
+                    margin-top: 8px;
+                    margin-bottom: 8px;
+                }
+            }
+        }
     }
 }

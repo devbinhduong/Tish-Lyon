@@ -85,6 +85,12 @@ export default function (secureBaseUrl, cartId, context) {
                     .hide();
 
                 toggleContent();
+
+                const shippingErrorMessages = {
+                    country: "this.context.shippingCountryErrorMessage",
+                    province: "this.context.shippingProvinceErrorMessage",
+                };
+                const shippingEstimator = new ShippingEstimator($('[data-shipping-estimator]'), shippingErrorMessages);
             });
 
             calculateFreeShipping(context);
@@ -444,8 +450,6 @@ export default function (secureBaseUrl, cartId, context) {
     
     function toggleContent() {
         const $toggleTitle = $('.toggle__title');
-
-        console.log("toggleContent", $toggleTitle)
 
         if (!$toggleTitle) return;
 

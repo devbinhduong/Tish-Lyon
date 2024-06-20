@@ -1,5 +1,5 @@
-export default function countFacetedFilter() {
-    let filterResults = document.querySelectorAll(".facetedSearch-refineFilters.has-result ul li").length;
+export default function productListingDisplay() {
+    let filterResults = document.querySelectorAll(".facetedSearch-refineFilters.has-result ul li:not(.inlineList--removeAll)").length;
 
     let countTextList = document.querySelectorAll(".popout__toggleable-text .filter-count");
 
@@ -39,4 +39,25 @@ export default function countFacetedFilter() {
         itemCount.textContent = `(${count})`;
     });
 
+
+    // * ------ Toogle Faceted Search Buttons ------
+    const facetedSearchButtons = document.querySelectorAll('#facetedSearch .accordion-navigation.toggleLink');
+
+    if (!facetedSearchButtons) return;
+
+    facetedSearchButtons.forEach((filterTitle) => {
+        filterTitle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            filterTitle.classList.toggle('is-show');
+
+            const filterHeader = filterTitle.closest('.accordion-heading');
+            const filterContent = filterHeader.nextElementSibling;
+
+            filterContent.classList.toggle('is-show');
+
+            $(filterContent).slideToggle();
+        });
+    });
 }

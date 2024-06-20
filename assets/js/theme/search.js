@@ -11,6 +11,7 @@ import nod from './common/nod';
 
 const leftArrowKey = 37;
 const rightArrowKey = 39;
+import productListingDisplay from './custom/productListingDisplay';
 
 export default class Search extends CatalogPage {
     formatCategoryTreeForJSTree(node) {
@@ -210,6 +211,8 @@ export default class Search extends CatalogPage {
             .prependTo('body');
 
         setTimeout(() => $searchResultsMessage.focus(), 100);
+
+        productListingDisplay();
     }
 
     loadTreeNodes(node, cb) {

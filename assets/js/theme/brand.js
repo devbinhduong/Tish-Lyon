@@ -3,6 +3,7 @@ import CatalogPage from './catalog';
 import compareProducts from './global/compare-products';
 import FacetedSearch from './common/faceted-search';
 import { createTranslationDictionary } from '../theme/common/utils/translations-utils';
+import productListingDisplay from './custom/productListingDisplay';
 
 export default class Brand extends CatalogPage {
     constructor(context) {
@@ -16,6 +17,8 @@ export default class Brand extends CatalogPage {
         if ($('#facetedSearch').length > 0) {
             this.initFacetedSearch();
         }
+
+        productListingDisplay();
     }
 
     initFacetedSearch() {

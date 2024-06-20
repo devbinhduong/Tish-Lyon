@@ -42,7 +42,6 @@ export default function(context) {
                 showOptions();
             }, 1000);
 
-            facetedSearchToggle();
             toggleContent();
             homeProductsListIDGrid();
 
@@ -431,28 +430,6 @@ export default function(context) {
                 const card = option.closest('.card');
                 const optionForm = card.querySelector('.card-option');
                 optionForm.classList.remove('is-visible');
-            });
-        });
-    }
-
-    function facetedSearchToggle () {
-        const facetedSearchButtons = document.querySelectorAll('#facetedSearch .accordion-navigation.toggleLink');
-
-        if (!facetedSearchButtons) return;
-
-        forEach(facetedSearchButtons, (filterTitle) => {
-            filterTitle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                e.preventDefault();
-
-                filterTitle.classList.toggle('is-show');
-
-                const filterHeader = filterTitle.closest('.accordion-heading');
-                const filterContent = filterHeader.nextElementSibling;
-
-                filterContent.classList.toggle('is-show');
-
-                $(filterContent).slideToggle();
             });
         });
     }

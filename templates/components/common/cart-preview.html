@@ -124,7 +124,7 @@
                 {{/each}}
         </ul>
         <div class="previewCart__bottom">
-            {{#if cart.shipping_handling.show_estimator}}
+            {{#and (if cart.shipping_handling.show_estimator) (if theme_settings.show_shipping_estimate_sidebar)}}
                 <div class="cart-total cartTotal__item">
                     <div class="cart-total-label cartTotal__title toggle__title">
                         <strong>{{lang 'cart.checkout.shipping'}}:</strong>
@@ -134,7 +134,7 @@
                         {{> components/cart/shipping-estimator cart.shipping_handling}}
                     </div>
                 </div>
-            {{/if}}
+            {{/and}}
             <ul class="previewCartTotalsPrice">
                 <li class="previewCartTotals subTotal">
                     <div class="previewCartTotals-label">
