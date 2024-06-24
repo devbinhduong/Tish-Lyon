@@ -478,6 +478,13 @@
         }; 
     }
 
+    .productGrid--shoplook {
+        @include smin-s {
+            display: flex;
+            flex-wrap: wrap;
+        }; 
+    }
+
    @include smax-s {
         .productGridCustom {
             display: flex;
@@ -658,6 +665,11 @@
             z-index: 12;
         }
     }
+
+    &__button {
+        margin-top: 7px;
+        margin-bottom: 16px;
+    }
 }
 
 // * ------ Home Testimonial ------
@@ -735,6 +747,7 @@
 
                 p {
                     margin-bottom: 0;
+                    font-size: 23px;
                 }
             }
 
@@ -766,11 +779,7 @@
         }
 
         &__author {
-            margin: 28.5px 0 0;
-
-            @include smax-s {
-                margin-top: 24px;
-            }; 
+            margin: 0;
 
             &__name {
                 font-size: 14.4px;
@@ -888,6 +897,7 @@
                 margin: 0;
                 padding: 8px 0;
                 font-weight: 300;
+                line-height: 19px;
 
                 @include smax-s {
                     font-size: 14px;

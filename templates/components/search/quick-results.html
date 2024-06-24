@@ -15,19 +15,9 @@
             </li>
             {{/each}}
         </ul>
-        
-        <button class="quickResults-close" type="button" title="Close">
-            <span class="aria-description--hidden">Close</span>
-            <span aria-hidden="true">×</span>
-        </button>
     {{else}}
         <p class="quickSearchMessage">
             {{{lang 'search.results.quick_count' count=pagination.product_results.total search_query=(sanitize forms.search.query) }}}
         </p>
-        
-        <button class="quickResults-close" type="button" title="Close">
-            <span class="aria-description--hidden">Close</span>
-            <span aria-hidden="true">×</span>
-        </button>
     {{/if}}
 </div>

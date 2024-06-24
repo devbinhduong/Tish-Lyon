@@ -193,10 +193,10 @@
     }
 
     &:hover {
-        border-color: stencilColor("color-primary");
+        border-color: stencilColor("card--alternate-backgroundColor");
 
         .card-body {
-            background-color: stencilColor("color-primary");
+            background-color: stencilColor("card--alternate-backgroundColor");
 
             .card-text {
                 color: stencilColor("card--alternate-color--hover");

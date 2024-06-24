@@ -284,13 +284,9 @@
 
     &.navPages-action-lv2 {
         span:not(.navPages-action-moreIcon) {
-            font-size: $fontSize-root;
+            font-size: $fontSize-root - 2;
             color: stencilColor("navPages-lv2-color");
             font-weight: 400;
-
-            @include smin-m {
-                font-weight: 500;
-            }
         }
 
         svg {
@@ -303,6 +299,7 @@
         span:not(.navPages-action-moreIcon) {
             font-size: $fontSize-root - 2px;
             color: stencilColor("navPages-lv3-color");
+            font-weight: 300;
         }
 
         svg {
@@ -941,7 +938,7 @@
                     display: block;
                     padding-top: 0;
                     padding-bottom: 0;
-                    line-height: 1.5;
+                    line-height: 1;
                     padding: 6px 0;
 
                     .text {
@@ -1080,6 +1077,7 @@
                     font-size: $fontSize-root;
                     font-weight: 400;
                     padding-left: 0;
+                    margin-bottom: 20px;
 
                     >.text:not(.hover-link) {
                         &:before {

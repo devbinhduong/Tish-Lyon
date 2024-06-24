@@ -41,7 +41,7 @@ export default function (context) {
     });
 
     /* Custom Start */
-    $(document).on('click', '.quickResults-close', (e) => {
+    $(document).on('click', '.search-popdown__close', (e) => {
         e.preventDefault();
         $searchDropdown.removeClass('is-open');
         document.body.classList.remove('openSearchDropdown');
@@ -50,13 +50,16 @@ export default function (context) {
     // stagger searching for 1200ms after last input
     const debounceWaitTime = 1200;
     const doSearch = _.debounce((searchQuery) => {
+        $quickSearchResults.addClass('is-open');
+        $quickSearchResults.html('<div class="loadingOverlay"><div class="loader-progress"></div></div>');
+
         utils.api.search.search(searchQuery, { template: 'search/quick-results' }, (err, response) => {
             if (err) {
                 return false;
             }
             /* Custom Start */
             $quickSearchResultsCustom.removeClass('is-open');
-            $quickSearchResults.html(response).addClass('is-open');
+            $quickSearchResults.html(response);
             
             const $quickSearchResultsCurrent = $quickSearchResults.filter(':visible');
 

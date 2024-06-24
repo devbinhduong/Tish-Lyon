@@ -1,5 +1,5 @@
 {
-  "name": "Cornerstone Done Setup Theme",
+  "name": "Cornerstone Done Custom Theme",
   "version": "6.14.0",
   "template_engine": "handlebars_v4",
   "meta": {
@@ -563,7 +563,7 @@
         "card-figcaption-button-color": "#333333",
         "card--alternate-backgroundColor": "#ffffff",
         "card--alternate-borderColor": "#ffffff",
-        "card--alternate-color--hover": "#ffffff",
+        "card--alternate-color--hover": "#212121",
         "form-label-font-color": "#666666",
         "input-font-color": "#666666",
         "input-border-color": "#f4f2f0",

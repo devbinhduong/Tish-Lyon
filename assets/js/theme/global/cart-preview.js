@@ -418,6 +418,7 @@ export default function (secureBaseUrl, cartId, context) {
                 const quantity = $(response).find('[data-cart-quantity]').data('cartQuantity') || $('[data-cart-quantity]').data('cartQuantity') || 0;
 
                 $body.trigger('cart-quantity-update', quantity);
+                csmToggleLayout();
             });
         } else if($body.hasClass('openCartSidebar')){
             $cartDropdown2
@@ -436,6 +437,7 @@ export default function (secureBaseUrl, cartId, context) {
                 const quantity = $(response).find('[data-cart-quantity]').data('cartQuantity') || $('[data-cart-quantity]').data('cartQuantity') || 0;
 
                 $body.trigger('cart-quantity-update', quantity);
+                csmToggleLayout();
             });
         }
 
@@ -446,7 +448,6 @@ export default function (secureBaseUrl, cartId, context) {
         calculateFreeShipping(context);
         checkPolicy();
 
-        csmToggleLayout();
     }
 
 }

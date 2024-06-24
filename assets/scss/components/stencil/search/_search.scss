@@ -186,7 +186,7 @@
 
     >.container {
         @include smax-m {
-            padding: 0;
+            padding: 20px 0 !important;
         }
     }
 
